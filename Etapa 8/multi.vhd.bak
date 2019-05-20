@@ -5,18 +5,16 @@ entity multi is
     port(clk       : IN  STD_LOGIC;
          boot      : IN  STD_LOGIC;
          ldpc_l    : IN  STD_LOGIC;
-         wrd_l     : IN  STD_LOGIC; 
-			wrd_simd_l: IN  STD_LOGIC; --new
+         wrd_l     : IN  STD_LOGIC;
          wr_m_l    : IN  STD_LOGIC;
          w_b       : IN  STD_LOGIC;
-			intr_enabled :IN  STD_LOGIC;
+			intr_enabled :IN  STD_LOGIC;--new
 			intr_l	 :IN  STD_LOGIC;
 			d_sys_l		:IN  STD_LOGIC;
 			a_sys_l		:IN  STD_LOGIC;
-			sys_state : OUT STD_LOGIC; 
+			sys_state : OUT STD_LOGIC; --new
          ldpc      : OUT STD_LOGIC;
          wrd       : OUT STD_LOGIC;
-			wrd_simd  : OUT STD_LOGIC; --new
          wr_m      : OUT STD_LOGIC;
          ldir      : OUT STD_LOGIC;
          ins_dad   : OUT STD_LOGIC;
@@ -56,9 +54,6 @@ begin
 			 '0';
 			 
 	wrd  <= wrd_l when state=DEMW else 
-			 '0';
-	
-	wrd_simd  <= wrd_simd_l when state=DEMW else 
 			 '0';
 			 
 	d_sys  <= d_sys_l when state=DEMW else 

@@ -1,0 +1,435 @@
+Analysis & Elaboration report for sisa
+Mon May 20 08:54:57 2019
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Parameter Settings for User Entity Instance: genericClock:clock
+  5. Parameter Settings for User Entity Instance: controladores_IO:controlador_IO|keyboard_controller_intr:kb|keyboard_controller:kb|ps2_keyboard_interface:k0
+  6. Parameter Settings for User Entity Instance: vga_controller:vga|vga_ram_dual:U_MonitorRam
+  7. Analysis & Elaboration Settings
+  8. Port Connectivity Checks: "vga_controller:vga|vga_sync:u_vga_sync"
+  9. Port Connectivity Checks: "vga_controller:vga"
+ 10. Port Connectivity Checks: "controladores_IO:controlador_IO|keyboard_controller_intr:kb|keyboard_controller:kb|ps2_keyboard_interface:k0"
+ 11. Port Connectivity Checks: "controladores_IO:controlador_IO|interruptores:sw"
+ 12. Port Connectivity Checks: "proc:processador|datapath:e0"
+ 13. Port Connectivity Checks: "proc:processador|tlb:tlbi"
+ 14. Port Connectivity Checks: "proc:processador"
+ 15. Analysis & Elaboration Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                       ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Elaboration Status      ; Successful - Mon May 20 08:54:57 2019           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; sisa                                            ;
+; Top-level Entity Name              ; sisa                                            ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; N/A until Partition Merge                       ;
+;     Total combinational functions  ; N/A until Partition Merge                       ;
+;     Dedicated logic registers      ; N/A until Partition Merge                       ;
+; Total registers                    ; N/A until Partition Merge                       ;
+; Total pins                         ; N/A until Partition Merge                       ;
+; Total virtual pins                 ; N/A until Partition Merge                       ;
+; Total memory bits                  ; N/A until Partition Merge                       ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
+; Total PLLs                         ; N/A until Partition Merge                       ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: genericClock:clock ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; original       ; 7     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controladores_IO:controlador_IO|keyboard_controller_intr:kb|keyboard_controller:kb|ps2_keyboard_interface:k0 ;
++-----------------------+-------+---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name        ; Value ; Type                                                                                                                      ;
++-----------------------+-------+---------------------------------------------------------------------------------------------------------------------------+
+; TIMER_60USEC_VALUE_PP ; 2950  ; Signed Integer                                                                                                            ;
+; TIMER_60USEC_BITS_PP  ; 12    ; Signed Integer                                                                                                            ;
+; TIMER_5USEC_VALUE_PP  ; 186   ; Signed Integer                                                                                                            ;
+; TIMER_5USEC_BITS_PP   ; 8     ; Signed Integer                                                                                                            ;
+; TRAP_SHIFT_KEYS_PP    ; 0     ; Signed Integer                                                                                                            ;
++-----------------------+-------+---------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_controller:vga|vga_ram_dual:U_MonitorRam ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; d_width        ; 16    ; Signed Integer                                                   ;
+; addr_width     ; 12    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                                      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                                      ; sisa               ; sisa               ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga_controller:vga|vga_sync:u_vga_sync"                                                     ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; pixel_row[9] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga_controller:vga"                                                                                                 ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                                                  ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; red_out[7..4]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; green_out[7..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; blue_out[7..4]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; blank_out       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; csync_out       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controladores_IO:controlador_IO|keyboard_controller_intr:kb|keyboard_controller:kb|ps2_keyboard_interface:k0" ;
++--------------------------+--------+----------+-------------------------------------------------------------------------------------------+
+; Port                     ; Type   ; Severity ; Details                                                                                   ;
++--------------------------+--------+----------+-------------------------------------------------------------------------------------------+
+; rx_extended              ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
+; rx_scan_code             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
+; tx_data                  ; Input  ; Info     ; Stuck at GND                                                                              ;
+; tx_write                 ; Input  ; Info     ; Stuck at GND                                                                              ;
+; tx_write_ack_o           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
+; tx_error_no_keyboard_ack ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.       ;
++--------------------------+--------+----------+-------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controladores_IO:controlador_IO|interruptores:sw"                                        ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; rd_switch ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "proc:processador|datapath:e0"                                                           ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; a[15..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; b[15..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "proc:processador|tlb:tlbi"                                                           ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; r_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "proc:processador"                                                                    ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; wr_io ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; pc    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Elaboration
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon May 20 08:54:54 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sisa -c sisa --analysis_and_elaboration
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: alu-Structure
+    Info (12023): Found entity 1: alu
+Info (12021): Found 2 design units, including 1 entities, in source file control_l.vhd
+    Info (12022): Found design unit 1: control_l-Structure
+    Info (12023): Found entity 1: control_l
+Info (12021): Found 2 design units, including 1 entities, in source file datapath.vhd
+    Info (12022): Found design unit 1: datapath-Structure
+    Info (12023): Found entity 1: datapath
+Info (12021): Found 2 design units, including 1 entities, in source file multi.vhd
+    Info (12022): Found design unit 1: multi-Structure
+    Info (12023): Found entity 1: multi
+Info (12021): Found 2 design units, including 1 entities, in source file proc.vhd
+    Info (12022): Found design unit 1: proc-Structure
+    Info (12023): Found entity 1: proc
+Info (12021): Found 2 design units, including 1 entities, in source file regfile.vhd
+    Info (12022): Found design unit 1: regfile-Structure
+    Info (12023): Found entity 1: regfile
+Info (12021): Found 2 design units, including 1 entities, in source file unidad_control.vhd
+    Info (12022): Found design unit 1: unidad_control-Structure
+    Info (12023): Found entity 1: unidad_control
+Info (12021): Found 2 design units, including 1 entities, in source file memorycontroller.vhd
+    Info (12022): Found design unit 1: MemoryController-comportament
+    Info (12023): Found entity 1: MemoryController
+Info (12021): Found 2 design units, including 1 entities, in source file sisa.vhd
+    Info (12022): Found design unit 1: sisa-Structure
+    Info (12023): Found entity 1: sisa
+Info (12021): Found 2 design units, including 1 entities, in source file sramcontroller.vhd
+    Info (12022): Found design unit 1: SRAMController-comportament
+    Info (12023): Found entity 1: SRAMController
+Info (12021): Found 2 design units, including 1 entities, in source file genericclock.vhd
+    Info (12022): Found design unit 1: genericClock-Structure
+    Info (12023): Found entity 1: genericClock
+Info (12021): Found 2 design units, including 1 entities, in source file driver7segments.vhd
+    Info (12022): Found design unit 1: driver7segments-Structure
+    Info (12023): Found entity 1: driver7segments
+Info (12021): Found 2 design units, including 1 entities, in source file controladores_io.vhd
+    Info (12022): Found design unit 1: controladores_IO-Structure
+    Info (12023): Found entity 1: controladores_IO
+Info (12021): Found 2 design units, including 1 entities, in source file keyboard_controller.vhd
+    Info (12022): Found design unit 1: keyboard_controller-Behavioral
+    Info (12023): Found entity 1: keyboard_controller
+Info (12021): Found 2 design units, including 1 entities, in source file ps2_keyboard.vhd
+    Info (12022): Found design unit 1: ps2_keyboard_interface-trans
+    Info (12023): Found entity 1: ps2_keyboard_interface
+Info (12021): Found 2 design units, including 1 entities, in source file pulsadores.vhd
+    Info (12022): Found design unit 1: pulsadores-Structure
+    Info (12023): Found entity 1: pulsadores
+Info (12021): Found 2 design units, including 1 entities, in source file interruptores.vhd
+    Info (12022): Found design unit 1: interruptores-Structure
+    Info (12023): Found entity 1: interruptores
+Info (12021): Found 2 design units, including 1 entities, in source file keyboard_controller_intr.vhd
+    Info (12022): Found design unit 1: keyboard_controller_intr-Structure
+    Info (12023): Found entity 1: keyboard_controller_intr
+Info (12021): Found 2 design units, including 1 entities, in source file timer.vhd
+    Info (12022): Found design unit 1: timer-Structure
+    Info (12023): Found entity 1: timer
+Info (12021): Found 2 design units, including 1 entities, in source file interrupt_controller.vhd
+    Info (12022): Found design unit 1: interrupt_controller-Structure
+    Info (12023): Found entity 1: interrupt_controller
+Info (12021): Found 2 design units, including 1 entities, in source file modulo_excepciones.vhd
+    Info (12022): Found design unit 1: modulo_excepciones-Structure
+    Info (12023): Found entity 1: modulo_excepciones
+Info (12021): Found 2 design units, including 1 entities, in source file tlb.vhd
+    Info (12022): Found design unit 1: tlb-Structure
+    Info (12023): Found entity 1: tlb
+Info (12021): Found 2 design units, including 1 entities, in source file regfilesimd.vhd
+    Info (12022): Found design unit 1: regfileSIMD-Structure
+    Info (12023): Found entity 1: regfileSIMD
+Info (12127): Elaborating entity "sisa" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at sisa.vhd(161): object "s_pc" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at sisa.vhd(169): object "s_wr_io" assigned a value but never read
+Info (12128): Elaborating entity "genericClock" for hierarchy "genericClock:clock"
+Info (12128): Elaborating entity "proc" for hierarchy "proc:processador"
+Warning (10036): Verilog HDL or VHDL warning at proc.vhd(167): object "s_r_out_i" assigned a value but never read
+Info (12128): Elaborating entity "tlb" for hierarchy "proc:processador|tlb:tlbi"
+Warning (10492): VHDL Process Statement warning at tlb.vhd(95): signal "read_only" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at tlb.vhd(90): inferring latch(es) for signal or variable "ret", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "ret[0]" at tlb.vhd(90)
+Info (10041): Inferred latch for "ret[1]" at tlb.vhd(90)
+Info (10041): Inferred latch for "ret[2]" at tlb.vhd(90)
+Info (10041): Inferred latch for "ret[3]" at tlb.vhd(90)
+Info (10041): Inferred latch for "ret[4]" at tlb.vhd(90)
+Info (10041): Inferred latch for "ret[5]" at tlb.vhd(90)
+Info (12128): Elaborating entity "unidad_control" for hierarchy "proc:processador|unidad_control:c0"
+Info (12128): Elaborating entity "control_l" for hierarchy "proc:processador|unidad_control:c0|control_l:logica_control"
+Info (12128): Elaborating entity "multi" for hierarchy "proc:processador|unidad_control:c0|multi:multi_0"
+Info (12128): Elaborating entity "datapath" for hierarchy "proc:processador|datapath:e0"
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(38): used implicit default value for signal "wr_io" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info (12128): Elaborating entity "regfile" for hierarchy "proc:processador|datapath:e0|regfile:banco_registros"
+Warning (10541): VHDL Signal Declaration warning at regfile.vhd(46): used implicit default value for signal "s_addr_m" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info (12128): Elaborating entity "alu" for hierarchy "proc:processador|datapath:e0|alu:alu0"
+Info (12128): Elaborating entity "MemoryController" for hierarchy "MemoryController:control_mem"
+Info (12128): Elaborating entity "SRAMController" for hierarchy "MemoryController:control_mem|SRAMController:sram_ctrl"
+Info (12128): Elaborating entity "controladores_IO" for hierarchy "controladores_IO:controlador_IO"
+Warning (10036): Verilog HDL or VHDL warning at controladores_IO.vhd(124): object "s_sw" assigned a value but never read
+Info (12128): Elaborating entity "timer" for hierarchy "controladores_IO:controlador_IO|timer:tmr"
+Warning (10492): VHDL Process Statement warning at timer.vhd(25): signal "boot" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "pulsadores" for hierarchy "controladores_IO:controlador_IO|pulsadores:k0"
+Warning (10492): VHDL Process Statement warning at pulsadores.vhd(25): signal "keys" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "interruptores" for hierarchy "controladores_IO:controlador_IO|interruptores:sw"
+Warning (10492): VHDL Process Statement warning at interruptores.vhd(27): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "keyboard_controller_intr" for hierarchy "controladores_IO:controlador_IO|keyboard_controller_intr:kb"
+Info (12128): Elaborating entity "keyboard_controller" for hierarchy "controladores_IO:controlador_IO|keyboard_controller_intr:kb|keyboard_controller:kb"
+Warning (10036): Verilog HDL or VHDL warning at keyboard_controller.vhd(39): object "rx_extended" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at keyboard_controller.vhd(44): object "tx_write_ack_o" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at keyboard_controller.vhd(45): object "tx_error_no_keyboard_ack" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at keyboard_controller.vhd(47): object "rx_scan_code" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at keyboard_controller.vhd(100): signal "rx_data_ready" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at keyboard_controller.vhd(100): signal "rx_released" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at keyboard_controller.vhd(101): signal "rx_shift_key_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at keyboard_controller.vhd(101): signal "rx_ascii" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at keyboard_controller.vhd(96): inferring latch(es) for signal or variable "data_available", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "data_available" at keyboard_controller.vhd(96)
+Info (12128): Elaborating entity "ps2_keyboard_interface" for hierarchy "controladores_IO:controlador_IO|keyboard_controller_intr:kb|keyboard_controller:kb|ps2_keyboard_interface:k0"
+Info (12128): Elaborating entity "interrupt_controller" for hierarchy "controladores_IO:controlador_IO|interrupt_controller:i_c"
+Info (10041): Inferred latch for "iid[0]" at interrupt_controller.vhd(54)
+Info (10041): Inferred latch for "iid[1]" at interrupt_controller.vhd(54)
+Info (10041): Inferred latch for "iid[2]" at interrupt_controller.vhd(54)
+Info (10041): Inferred latch for "iid[3]" at interrupt_controller.vhd(54)
+Info (10041): Inferred latch for "iid[4]" at interrupt_controller.vhd(54)
+Info (10041): Inferred latch for "iid[5]" at interrupt_controller.vhd(54)
+Info (10041): Inferred latch for "iid[6]" at interrupt_controller.vhd(54)
+Info (10041): Inferred latch for "iid[7]" at interrupt_controller.vhd(54)
+Info (12128): Elaborating entity "driver7segments" for hierarchy "controladores_IO:controlador_IO|driver7segments:d0"
+Info (12128): Elaborating entity "modulo_excepciones" for hierarchy "modulo_excepciones:excep_module"
+Warning (12125): Using design file vga_controller.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: vga_controller-vga_controller_rtl
+    Info (12023): Found entity 1: vga_controller
+Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_controller:vga"
+Warning (12125): Using design file vga_sync.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: vga_sync-vga_sync_arch
+    Info (12023): Found entity 1: vga_sync
+Info (12128): Elaborating entity "vga_sync" for hierarchy "vga_controller:vga|vga_sync:u_vga_sync"
+Warning (12125): Using design file vga_font_rom.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: vga_font_rom-vga_font_rom_arch
+    Info (12023): Found entity 1: vga_font_rom
+Info (12128): Elaborating entity "vga_font_rom" for hierarchy "vga_controller:vga|vga_font_rom:u_font_rom"
+Warning (12125): Using design file vga_ram_dual.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: vga_ram_dual-vga_ram_dual_arch
+    Info (12023): Found entity 1: vga_ram_dual
+Info (12128): Elaborating entity "vga_ram_dual" for hierarchy "vga_controller:vga|vga_ram_dual:U_MonitorRam"
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info: Quartus II 64-Bit Analysis & Elaboration was successful. 0 errors, 25 warnings
+    Info: Peak virtual memory: 540 megabytes
+    Info: Processing ended: Mon May 20 08:54:57 2019
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+

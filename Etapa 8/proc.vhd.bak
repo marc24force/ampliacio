@@ -52,7 +52,7 @@ component datapath IS
           ins_dad  : IN  STD_LOGIC;
 			 pcup		 : IN  STD_LOGIC_VECTOR(15 DOWNTO 0); 
           pc       : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
-          in_d     : IN  STD_LOGIC_VECTOR (2 DOWNTO 0); 
+          in_d     : IN  STD_LOGIC_VECTOR (1 DOWNTO 0); 
 		    rd_io 	  : IN std_logic_vector(15 downto 0);
 			 d_sys  : IN  STD_LOGIC;
 			 a_sys  : IN  STD_LOGIC;
@@ -70,15 +70,6 @@ component datapath IS
 			 z        : OUT STD_LOGIC;								
           data_wr  : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 			 wr_io 	  : OUT std_logic_vector(15 downto 0));
-END component;
-
-component unidadSIMD IS
- PORT    (clk    : IN  STD_LOGIC;
-          wrd    : IN  STD_LOGIC;
-          addr_a : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
-			 addr_b : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
-          addr_d : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
-			 boot   : IN  STD_LOGIC;
 END component;
 
 component unidad_control is
@@ -106,7 +97,6 @@ component unidad_control is
 			 codigo    : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 			 intr_ctrl : OUT STD_LOGIC_VECTor(2 DOWNTO 0); 
           wrd       : OUT STD_LOGIC;
-			 wrd_simd  : OUT STD_LOGIC; -- new indica permiso escritura en br simd
           addr_a    : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
           addr_b    : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
           addr_d    : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
@@ -114,8 +104,7 @@ component unidad_control is
 			 pcup		  : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
           pc        : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
           ins_dad   : OUT STD_LOGIC;
-          in_d      : OUT STD_LOGIC_VECTOR(2 DOWNTO 0); -- +1 bit 
-			 in_d_simd : OUT STD_LOGIC_VECTor(1 DOWNTO 0); -- new indica la fuente del registro d simd  
+          in_d      : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  
           immed_x2  : OUT STD_LOGIC;
           wr_m      : OUT STD_LOGIC;
           word_byte : OUT STD_LOGIC;
@@ -146,15 +135,13 @@ END component;
 signal s_op     :  STD_LOGIC_VECTOR(2 DOWNTO 0);
 signal s_codigo :  STD_LOGIC_VECTOR(3 DOWNTO 0);
 signal s_wrd    :  STD_LOGIC;
-signal s_wrd_simd:  STD_LOGIC;
 signal s_addr_a :  STD_LOGIC_VECTOR(2 DOWNTO 0);
 signal s_addr_b :  STD_LOGIC_VECTOR(2 DOWNTO 0);
 signal s_addr_d :  STD_LOGIC_VECTOR(2 DOWNTO 0);
 signal s_immed  :  STD_LOGIC_VECTOR(15 DOWNTO 0);
 signal s_pc        : STD_LOGIC_VECTOR(15 DOWNTO 0);
 signal s_ins_dad   : STD_LOGIC;
-signal s_in_d      : STD_LOGIC_VECTOR(2 DOWNTO 0);
-signal s_in_d_simd : STD_LOGIC_VECTOR(1 DOWNTO 0);
+signal s_in_d      : STD_LOGIC_VECTOR(1 DOWNTO 0);
 signal s_immed_x2  : STD_LOGIC;
 signal s_z		    : STD_LOGIC; 	
 signal s_aluout	 : STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -308,7 +295,6 @@ BEGIN
 				 codigo => s_codigo,
 				 intr_ctrl => s_intr_ctrl,
 				 wrd    => s_wrd,
-				 wrd_simd => s_wrd_simd,
 				 addr_a => s_addr_a,
 				 addr_b => s_addr_b,
 				 addr_d => s_addr_d,
@@ -317,7 +303,6 @@ BEGIN
 				 pc     => s_pc,
 				 ins_dad => s_ins_dad,
 				 in_d      => s_in_d,
-				 in_d_simd => s_in_d_simd,
 				 immed_x2  => s_immed_x2,
 				 wr_m      => s_wr_m,
 				 word_byte => word_byte,
@@ -326,14 +311,6 @@ BEGIN
 				 rd_in 	  => rd_in);
 				 
 	intr_enabled <= s_intr_enabled;
-	
-	simd:unidadSIMD
-	PORT  map(clk => clk,
-				 wrd => s_wrd_simd,
-				 addr_a => s_addr_a,
-				 addr_b => s_addr_b,
-				 addr_d => s_addr_d,
-				 boot => boot);
 	
 	-- En los esquemas de la documentacion a la instancia del DATAPATH le hemos llamado e0
 	e0:datapath
