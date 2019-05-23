@@ -54,6 +54,7 @@ component datapath IS
           pc       : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
           in_d     : IN  STD_LOGIC_VECTOR (2 DOWNTO 0); 
 		    rd_io 	  : IN std_logic_vector(15 downto 0);
+			 out_simd : IN std_logic_vector(15 downto 0);
 			 d_sys  : IN  STD_LOGIC;
 			 a_sys  : IN  STD_LOGIC;
 			 inter  : IN  STD_LOGIC;
@@ -79,6 +80,8 @@ component unidadSIMD IS
 			 addr_b : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
           addr_d : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
 			 boot   : IN  STD_LOGIC;
+			 op_simd: IN  STD_LOGIC_VECTOR(2 DOWNTO 0); -- indica la operacion
+			 out_simd: OUT STD_LOGIC_VECTOR(15 DOWNTO 0)); --de momento solo saca los movsr (16b)
 END component;
 
 component unidad_control is
@@ -103,6 +106,7 @@ component unidad_control is
 			 d_sys 	  : OUT  STD_LOGIC;
 			 a_sys 	  : OUT  STD_LOGIC;
           op        : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+			 op_simd   : OUT STD_LOGIC_VECTor(2 DOWNTO 0); --new
 			 codigo    : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 			 intr_ctrl : OUT STD_LOGIC_VECTor(2 DOWNTO 0); 
           wrd       : OUT STD_LOGIC;
@@ -144,9 +148,10 @@ component tlb is --new
 END component;
 
 signal s_op     :  STD_LOGIC_VECTOR(2 DOWNTO 0);
+signal s_op_simd:  STD_LOGIC_VECTOR(2 DOWNTO 0); --new
 signal s_codigo :  STD_LOGIC_VECTOR(3 DOWNTO 0);
 signal s_wrd    :  STD_LOGIC;
-signal s_wrd_simd:  STD_LOGIC;
+signal s_wrd_simd:  STD_LOGIC; --new
 signal s_addr_a :  STD_LOGIC_VECTOR(2 DOWNTO 0);
 signal s_addr_b :  STD_LOGIC_VECTOR(2 DOWNTO 0);
 signal s_addr_d :  STD_LOGIC_VECTOR(2 DOWNTO 0);
@@ -154,11 +159,13 @@ signal s_immed  :  STD_LOGIC_VECTOR(15 DOWNTO 0);
 signal s_pc        : STD_LOGIC_VECTOR(15 DOWNTO 0);
 signal s_ins_dad   : STD_LOGIC;
 signal s_in_d      : STD_LOGIC_VECTOR(2 DOWNTO 0);
-signal s_in_d_simd : STD_LOGIC_VECTOR(1 DOWNTO 0);
+signal s_in_d_simd : STD_LOGIC_VECTOR(1 DOWNTO 0); --new
 signal s_immed_x2  : STD_LOGIC;
 signal s_z		    : STD_LOGIC; 	
 signal s_aluout	 : STD_LOGIC_VECTOR(15 DOWNTO 0);
 signal s_pcup		 : STD_LOGIC_VECTOR(15 DOWNTO 0);
+signal s_out_simd_16: std_logic_vector(15 downto 0);
+
 signal s_intr_ctrl : STD_LOGIC_VECTor(2 DOWNTO 0); 
 signal s_intr_enabled : STD_LOGIC; 
 
@@ -305,6 +312,7 @@ BEGIN
 				 sys_state => s_sys_state,
 				 intr_ack => intr_ack,
 				 op     => s_op,
+				 op_simd => s_op_simd,
 				 codigo => s_codigo,
 				 intr_ctrl => s_intr_ctrl,
 				 wrd    => s_wrd,
@@ -333,7 +341,9 @@ BEGIN
 				 addr_a => s_addr_a,
 				 addr_b => s_addr_b,
 				 addr_d => s_addr_d,
-				 boot => boot);
+				 boot => boot,
+				 op_simd => s_op_simd,
+				 out_simd => s_out_simd_16);
 	
 	-- En los esquemas de la documentacion a la instancia del DATAPATH le hemos llamado e0
 	e0:datapath
@@ -354,6 +364,7 @@ BEGIN
 				 pc       => s_pc,
 				 in_d     => s_in_d,
 				 rd_io 	 => rd_io,
+				 out_simd => s_out_simd_16,
 				 d_sys  => s_d_sys,
 				 a_sys  => s_a_sys,
 				 inter	=> s_sys_state,

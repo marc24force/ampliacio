@@ -9,6 +9,7 @@ ENTITY control_l IS
 			 d_sys 	  : OUT  STD_LOGIC;
 			 a_sys 	  : OUT  STD_LOGIC;
           op        : OUT STD_LOGIC_VECTor(2 DOWNTO 0);
+			 op_simd   : OUT STD_LOGIC_VECTor(2 DOWNTO 0);
           codigo    : OUT STD_LOGIC_VECTor(3 DOWNTO 0);
 			 intr_ctrl : OUT STD_LOGIC_VECTor(2 DOWNTO 0); 
 			 intr_ack  : OUT STD_LOGIC; 
@@ -87,7 +88,7 @@ constant ESP  : STD_LOGIC_VECTOR(3 downto 0):="1111";
 -- signals
 signal codigo_op : std_LOGIC_VECTor(3 downto 0);
 signal op_func : std_LOGIC_VECTor(2 downto 0);
-signal op_simd : std_LOGIC_VECTor(2 downto 0);
+signal s_op_simd : std_LOGIC_VECTor(2 downto 0);
 signal esp_func : std_LOGIC_VECTor(5 downto 0);
 signal jxx_func : std_LOGIC_VECTor(2 downto 0);
 signal br_func : std_logic;
@@ -98,7 +99,10 @@ BEGIN
 					  ir(15 downto 12) ;
 					  
 	 op_func <= ir(5 downto 3);
-	 op_simd <= ir(5 downto 3);
+	 
+	 s_op_simd <= ir(5 downto 3);
+	 op_simd <= s_op_simd;
+	 
 	 esp_func <= ir(5 downto 0);
 	 jxx_func <= JMP when sys_state = '1' else 
 					 ir(2 downto 0);
@@ -161,12 +165,12 @@ BEGIN
 								  codigo_op=STB or codigo_op=ST or
 								  (codigo_op = JXX and (jxx_func = JZ or jxx_func = JNZ or jxx_func = JMP)) or
 								  codigo_op = BR or 
-								  (codigo_op = AL_SIMD and op_simd /= MOVSR) or --En el caso move de simd a reg permiso wrd 
+								  (codigo_op = AL_SIMD and s_op_simd /= MOVSR) or --En el caso move de simd a reg permiso wrd 
 								  (codigo_op = IO and io_func = OUTPUT) else
 					  '1'; --Puede escribir en el banco de registros
 					  
 	-- Controlamos cuando se puede escribir en el banco simd
-	 wrd_simd   <= '1' when (codigo_op = AL_SIMD and op_simd = MOVRS) else 
+	 wrd_simd   <= '1' when (codigo_op = AL_SIMD and s_op_simd = MOVRS) else 
 						'0';
 		
 	 addr_a    <= ir(11 downto 9) when codigo_op=MOV else
@@ -197,7 +201,7 @@ BEGIN
 				     "100" when codigo_op = AL_SIMD else 
 					  "000";
 					  
-	 in_d_simd <= "01" when codigo_op = AL_SIMD and op_simd = MOVRS else --registro d(simd) viene de br normal
+	 in_d_simd <= "01" when codigo_op = AL_SIMD and s_op_simd = MOVRS else --registro d(simd) viene de br normal
 					  --"10" when op_simd = Registro d viene de memoria
 						"00"; -- registro d viene de la alu (simd)
 				

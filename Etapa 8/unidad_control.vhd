@@ -25,6 +25,7 @@ ENTITY unidad_control IS
 			 d_sys 	  : OUT  STD_LOGIC;
 			 a_sys 	  : OUT  STD_LOGIC;
           op        : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+			 op_simd   : OUT STD_LOGIC_VECTor(2 DOWNTO 0);
 			 codigo    : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 			 intr_ctrl : OUT STD_LOGIC_VECTor(2 DOWNTO 0); 
           wrd       : OUT STD_LOGIC;
@@ -55,6 +56,7 @@ component control_l IS
 			 d_sys 	  : OUT  STD_LOGIC;
 			 a_sys 	  : OUT  STD_LOGIC;
           op        : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+			 op_simd   : OUT STD_LOGIC_VECTor(2 DOWNTO 0);
 			 codigo    : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 			 intr_ctrl : OUT STD_LOGIC_VECTor(2 DOWNTO 0); 
 			 intr_ack  : OUT STD_LOGIC; 
@@ -135,6 +137,7 @@ BEGIN
 				 d_sys  => s_d_sys,
 				 a_sys  => s_a_sys,
 				 op	  => op,
+				 op_simd=> op_simd,
 				 codigo => codigo,
 				 intr_ctrl => intr_ctrl,
 				 intr_ack  => intr_ack,

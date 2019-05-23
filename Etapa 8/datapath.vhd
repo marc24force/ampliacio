@@ -20,6 +20,7 @@ ENTITY datapath IS
           pc       : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
           in_d     : IN  STD_LOGIC_VECTOR (2 DOWNTO 0); 
 		    rd_io 	  : IN std_logic_vector(15 downto 0);
+			 out_simd : IN std_logic_vector(15 downto 0);
 			 d_sys  : IN  STD_LOGIC;
 			 a_sys  : IN  STD_LOGIC;
 			 inter  : IN  STD_LOGIC;
@@ -103,6 +104,7 @@ BEGIN
 					  datard_m when "001",
 					  pcup     when "010",
 					  rd_io	  when "011",
+					  out_simd when "100",
 					  x"DEAD" when others;
 					 
     
