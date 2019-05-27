@@ -1,4 +1,1 @@
-Fet el br de simd
-Fent les instruccions movsr i movrs:
-	Creades senyals de control i pujades fins a proc
-	Falta crear mecanisme per afegir (o treure) del br 16 bits
+joc funciona, pero en signal tap no es marca data_wr

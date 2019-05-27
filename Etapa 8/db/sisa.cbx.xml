@@ -1,11 +1,18 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="sisa">
-		<CBX_INST_ENTRY INSTANCE_NAME="|sisa|proc:processador|datapath:e0|alu:alu0|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_3gm.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|sisa|proc:processador|datapath:e0|alu:alu0|lpm_mult:Mult1" CBX_FILE_NAME="mult_h1t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|sisa|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram" CBX_FILE_NAME="altsyncram_aq14.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|sisa|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_advance_pointer_counter" CBX_FILE_NAME="cntr_vbi.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|sisa|vga_controller:vga|vga_ram_dual:U_MonitorRam|altsyncram:mem0_rtl_0" CBX_FILE_NAME="altsyncram_qug1.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|sisa|proc:processador|datapath:e0|alu:alu0|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_rto.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|sisa|proc:processador|datapath:e0|alu:alu0|lpm_mult:Mult0" CBX_FILE_NAME="mult_l8t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|sisa|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux" CBX_FILE_NAME="mux_coc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|sisa|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:\adv_point_3_and_more:advance_pointer_counter" CBX_FILE_NAME="cntr_6ci.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|sisa|vga_controller:vga|vga_ram_dual:U_MonitorRam|altsyncram:mem1_rtl_0" CBX_FILE_NAME="altsyncram_qug1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|sisa|proc:processador|datapath:e0|alu:alu0|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_3gm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|sisa|proc:processador|datapath:e0|alu:alu0|lpm_mult:Mult1" CBX_FILE_NAME="mult_h1t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|sisa|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder" CBX_FILE_NAME="decode_rqf.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|sisa|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_read_pointer_counter" CBX_FILE_NAME="cntr_gui.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|sisa|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:read_pointer_counter" CBX_FILE_NAME="cntr_32j.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

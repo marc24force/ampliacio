@@ -79,6 +79,7 @@ component unidadSIMD IS
           addr_a : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
 			 addr_b : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
           addr_d : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
+			 reg_16 : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
 			 boot   : IN  STD_LOGIC;
 			 op_simd: IN  STD_LOGIC_VECTOR(2 DOWNTO 0); -- indica la operacion
 			 out_simd: OUT STD_LOGIC_VECTOR(15 DOWNTO 0)); --de momento solo saca los movsr (16b)
@@ -341,6 +342,7 @@ BEGIN
 				 addr_a => s_addr_a,
 				 addr_b => s_addr_b,
 				 addr_d => s_addr_d,
+				 reg_16 => s_reg_a,
 				 boot => boot,
 				 op_simd => s_op_simd,
 				 out_simd => s_out_simd_16);

@@ -90,8 +90,9 @@ BEGIN
 	read_tlb: process(tag_in,valid,virtual,fisica) is
 	begin
 		hit <= '0';
+		ret  <= (others => '0');
 		for i in 0 to 7 loop
-			if virtual(i) = tag_in then
+			if valid(i) = '1' and virtual(i) = tag_in then
 				ret <= valid(i) & read_only(i) & fisica(i);
 				hit <= '1';
 				exit;	

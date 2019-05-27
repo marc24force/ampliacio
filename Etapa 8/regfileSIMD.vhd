@@ -36,6 +36,11 @@ BEGIN
 		end if;
 	end process;
 	 
+
+--signal first,last : std_logic_vector(7 downto 0);
+--first=addr_b&"1111"
+--last=addr_b&"0000"
+--registres(conv_integer(addr_a))(conv_integer(first) downto conv_integer(last));
 	 
 	b <= registres(conv_integer(addr_b));
 	a(127 downto 16) <= registres(conv_integer(addr_a))(127 downto 16);

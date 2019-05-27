@@ -76,10 +76,10 @@ BEGIN
 	s_INV_PAG_TLB_DATOS <= pag_inv_d;
 	s_READ_ONLY_PAG <= pag_read_only;
 	
-	excep <= no_impl or unalignment or inter or div_zero or 
-							s_MEMORIA_PROTEGIDA or s_INSTR_PROTEGIDA or is_calls or
-							s_MEMORIA_PROTEGIDA_INS or s_MISS_TLB_INS or s_MISS_TLB_DATOS or
-							s_INV_PAG_TLB_INS or s_INV_PAG_TLB_DATOS	or s_READ_ONLY_PAG;
+	excep <= '0'; --no_impl or unalignment or inter or div_zero or 
+					--		s_MEMORIA_PROTEGIDA or s_INSTR_PROTEGIDA or is_calls or
+						--	s_MEMORIA_PROTEGIDA_INS or s_MISS_TLB_INS or s_MISS_TLB_DATOS or
+							--s_INV_PAG_TLB_INS or s_INV_PAG_TLB_DATOS	or s_READ_ONLY_PAG;
 
 	code_excep <= 		 MISS_TLB_INS          when reg_excep(12) = '1' else
 							 MISS_TLB_DATOS        when reg_excep(11) = '1' else

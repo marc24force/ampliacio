@@ -8,6 +8,7 @@ ENTITY unidadSIMD IS
           addr_a : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
 			 addr_b : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
           addr_d : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
+			 reg_16 : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
 			 boot   : IN  STD_LOGIC;
 			 op_simd: IN STD_LOGIC_VECTor(2 DOWNTO 0);
 			 out_simd: OUT STD_LOGIC_VECTOR(15 DOWNTO 0)); -- indica la op
@@ -37,6 +38,8 @@ BEGIN
 		s_16b <= '1' when op_simd = "110" or op_simd = "111" else 
 					'0';
 		out_simd <= s_output_a(15 downto 0);-- en movsr sacamos por a 16 bits
+		
+		s_input_REG(15 downto 0) <= reg_16 when op_simd = "110";
 					
 	   banco_SIMD: regfileSIMD
 		PORT map (clk    => clk,
