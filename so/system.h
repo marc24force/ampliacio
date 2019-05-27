@@ -1,5 +1,5 @@
-#include <stdint.h>
 
+#define uint16_t short
 #define KERNEL_STACK_SIZE 64
 
 struct task_struct {

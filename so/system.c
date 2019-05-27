@@ -1,8 +1,7 @@
-#include <system.h>
+#include "system.h"
 // inicialitzacio del sistema
-
-extern struct task_struct * task0;
-extern struct task_struct * task1;
+struct task_struct * task0;
+struct task_struct * task1;
 
 struct task_struct * task_run; // punter a la tasca que sesta executant
 
@@ -17,20 +16,20 @@ void init_sys_regs (struct task_struct * task) {
 
 void init_task0 () {
     task0->PID = 0;
-    task0->kernel_esp = (uint16_t)task0 + KERNEL_STACK_SIZE - 1;
+    task0->kernel_esp = (uint16_t*)task0 + KERNEL_STACK_SIZE - 1;
     task0->quantum = 1; //a cada interrupcio del timer
-    *(task0->kernel_esp) = 0x1000 - 1; //direccio del stack que hem considerat
-    *(task0->kernel_esp - 1) = 0x1000; // direccio del codi
+    *(task0->kernel_esp) = (uint16_t)(0x1000 - 1); //direccio del stack que hem considerat
+    *(task0->kernel_esp - 1) = (uint16_t)0x1000; // direccio del codi
     init_sys_regs (task0);
     
 }
 
 void init_task1 () {
     task1->PID = 1;
-    task1->kernel_esp = (uint16_t)task1 + KERNEL_STACK_SIZE - 1;
+    task1->kernel_esp = (uint16_t*)task1 + KERNEL_STACK_SIZE - 1;
     task1->quantum = 1; //a cada interrupcio del timer
-    *(task1->kernel_esp) = 0x3000 - 1; //direccio del stack que hem considerat
-    *(task1->kernel_esp - 1) = 0x3000; // direccio del codi
+    *(task1->kernel_esp) = (uint16_t)(0x3000 - 1); //direccio del stack que hem considerat
+    *(task1->kernel_esp - 1) = (uint16_t)0x3000; // direccio del codi
     init_sys_regs (task1);
 
 }
@@ -44,4 +43,6 @@ int main () {
     init_task0();
     init_task1();
     task_run = task0;
+    while (1);
+    return 0;
 }
