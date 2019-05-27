@@ -36,6 +36,14 @@ void init_task1 () {
 
 void return_user () {
     // jal al codi de task0
+    int reg;
+    __asm__ (
+	"movi %0, lo(0x1000)\n\t"
+	"movhi %0, hi(0x1000)\n\t"
+	"jmp %0"
+	: // sense sortida
+	: "r" (reg)
+	);
 }
 
 int main () {

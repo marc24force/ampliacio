@@ -1,0 +1,142 @@
+Mini manual del sisa-emu
+========================
+
+El "sisa-emu" és un emulador que permet executar codis binaris SISA. Pot ser bastant útil a l'hora de dissenyar nous jocs de proves o implementar, debuggar i validar el Sistema Operatiu.
+
+L'emulador simula el comportament del processador dissenyat a PEC i de la placa DE1. Implementa la gestió d'interrupcions i excepcions, el TLB, els ports d'entrada/sortida, el controlador de pantalla VGA (en monocrom), el controlador de teclat PS2 i implementa el InterruptTimer tal i com s'han descrit en el projecte de PEC.
+
+Les principals característiques és que l'emulador:
+    - Permet l'execució de mode "pas a pas" o en mode continuu.
+    - Permet interactuar amb les entrades dels polsador (key) i dels interruptors (switch).
+    - Mostra la sortida dels leds verds i dels leds vermells.
+    - Mostra els visualitzadors 7 segments.
+    - Mostra la VGA.
+    - Permet l'execució pas a pas separant els cicles de fetch i demw.
+    - Permet mostrar en tot moment l'estat dels registres i dels TLBs
+
+
+Funcionament de l'emulador
+==========================
+Un cop engegat l'emulador, aquest està en mode "pas a pas". Prement la tecla "s" ejectareu un únic cicle del processador i prement la tecla "c" intercanviareu el mode continuu amb el mode "pas a pas".
+
+Quan l'emulador està en mode continuu i es premem una tecla, cal tenir en compte qui volem que sigui el receptor d'aquesta tecla. Si l'ha de rebre l'emulador o l'aplicació que s'està executant en aquest moment. Mitjançant la tecla de tabulació (TAB) podem seleccionar qui rep les pulsacions de les tecles del teclat PS2.
+
+Amb la tecla "h" podeu veure totes les opcions disponibles. Compte que l'emulador no respon amb les tecles majúscules (l'emulador és case-sensitive). Aquí en teniu el llistat de tecles i les seves accions:
+    s - do step
+    c - pause/continue
+    r - reset
+    a - info all
+    i - info registers
+    t - info TLB
+    m - dump Memory
+    v - dump VGA
+    k - toggle key
+    w - toggle switch
+    h - show this help
+    q - quit
+
+
+Les principals opcions/paràmetres de l'emulador són:
+====================================================
+    Usage: sisa-emu [OPTIONS] <code.bin> <data.bin>
+
+      -t, --enable-tlb        enables the TLB
+                            (defaults to disabled)
+      -v, --show-vga          prints the VGA when in continue mode
+                            (defaults to disabled)
+      -e, --show-leds         prints the leds when in continue mode
+                            (defaults to disabled)
+      -k, --show-keys         prints the keys when in continue mode
+                            (defaults to disabled)
+      -w, --show-switches     prints the switches when in continue mode
+                            (defaults to disabled)
+      -7, --show-7segments    prints the 7 segments when in continue mode
+                            (defaults to disabled)
+      -s, --speedup=N         executes N steps per iteration in continue mode
+                            (defaults to 1)
+      -c, --code-addr=ADDR    address where to load the code at
+                            (defaults to 0xC000)
+      -d, --data-addr=ADDR    address where to load the data at
+                            (defaults to 0x8000)
+      -p, --pc-addr=ADDR      initial address of the PC
+                            (defaults to 0xC000)
+      -b, --breakpoint=ADDR   adds a breakpoint to ADDR
+      -l, --load addr=ADDR,file=FILE loads FILE to ADDR
+      -h, --help              displays this help and exit
+
+    Example:
+        ./sisa-emu -t -l addr=0x1000,file=user.bin syscode.bin sysdata.bin
+
+         Will enable the TLB and load 'user.bin' to 0x1000, 'syscode.bin' to 0xC000 and 'sysdata.bin' to 0x8000
+
+    To switch between keyboard immersive/non immersive modes press the TAB key.
+
+    Note: when loading a file, if the filename ends with .bin it will be loaded as
+    raw binary, and as text (ASCII) otherwise (for example if it ends with .hex).
+
+
+
+Demostracions / jocs de proves
+==============================
+En el directori Demos hi han compilats alguns dels jocs de proves per a poder provar-los en el emulador. S'han compilat exactament igual com està a la documentació. Si algú vol compilar-los amb la comanda make per generar els binaris i/o alguna cosa més, en el directori Demos/makefiles hi han els fitxers necessaris.
+
+Les següents demos són un exemple representatiu del que es pot arribar a fer. Són els jocs de proves que teniu a la documentació i que fan servir tots els sistemes d'entrada/sortida tan per enquesta com per interrupció.
+
+El paràmetre "-s" serveix per indicar la "velocitat" de la simulació en mode continuu. Bàsicament és cada quants cicles del processador repinta per pantalla el seu estat. El valor d'aquesta velocitat és molt depenent de la màquina on ho estigueu executant.
+
+
+Execució Demos
+==============
+
+    MaquinaEscribir
+    ---------------
+    Recordeu usar TAB (la tecla de tabulació) per canviar el mode de funcionament del teclat. Només mostrem la VGA, els 7 segments i els leds.
+    ./sisa-emu -s 1000 -v -7 -e Demos/maquina_escribir/MaquinaEscribir.code.DE1.hex Demos/maquina_escribir/MaquinaEscribir.data.DE1.hex
+
+
+    nsnake
+    ------
+    Recordeu usar TAB (la tecla de tabulació) per canviar el mode de funcionament del teclat. Només mostrem la VGA.
+    ./sisa-emu -s 5000 -v Demos/nsnake/nsnake.code.DE1.hex Demos/nsnake/nsnake.data.DE1.hex
+
+
+    test_interrupt
+    --------------
+    Recordeu usar TAB (la tecla de tabulació) per canviar el mode de funcionament del teclat. Ho mostrem tot: la VGA, els 7 segments, els leds, els switch i els keys.
+    ./sisa-emu -s 2500 -v -k -7 -w -e Demos/test2_interrupt/6.test2_interrupt.code.DE1.hex Demos/test2_interrupt/6.test2_interrupt.data.DE1.hex
+
+
+    corre_letras
+    ------------
+    Recordeu usar TAB (la tecla de tabulació) per canviar el mode de funcionament del teclat. Només mostrem la VGA.
+    ./sisa-emu -s 2000 -v Demos/corre_letras/corre_letras.code.DE1.hex Demos/corre_letras/corre_letras.data.DE1.hex
+
+
+    Fibonacci
+    ---------
+    Només mostrem els 7 segments, els leds, els switch i els keys. Aquest exemple no fa servir la VGA.
+    ./sisa-emu -s 500 -k -7 -w -e Demos/fibonacci/fibonacci.code.DE1.hex Demos/fibonacci/fibonacci.data.DE1.hex
+
+
+
+Com seria l'execució d'un codi amb més d'un fragment?
+=====================================================
+La següent comanda mostra com seria, per exemple, una crida de tot amb sistema operatiu (kernel i 2 usuaris).
+
+    ./sisa-emu -l addr=0xC000,file=kernel.code.hex -l addr=0x8000,file=kernel.data.hex -l addr=0x0000,file=user1.code.hex -l addr=0x1000,file=user1.data.hex  -l addr=0x2000,file=user2.code.hex -l addr=0x3000,file=user2.data.hex -v -k -7 -w -e -s 5000
+
+Tambe podeu fer la crida d'aquesta manera 
+
+    ./sisa-emu -l addr=0x0000,file=user1.code.hex -l addr=0x1000,file=user1.data.hex -l addr=0x2000,file=user2.code.hex -l addr=0x3000,file=user2.data.hex kernel.code.hex kernel.data.hex -v -k -7 -w -e -s 5000
+
+
+Codi font
+=========
+En el directori "sisa-emu-SourceCode" trobareu el codi font de l'emulador. Només cal fer la comanda "make" per compilar-lo.
+
+
+Autor
+=====
+La versió original d'aquest emulador va ser desenvolupat per un company vostre durant el curs 2015-2016-Q2 de PEC.
+Source code: https://github.com/xerpi/sisa-emu
+

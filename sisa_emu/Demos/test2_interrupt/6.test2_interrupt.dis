@@ -1,0 +1,644 @@
+
+6.test2_interrupt.exe:     formato del fichero elf32-sisa
+6.test2_interrupt.exe
+arquitectura: sisa:3, opciones 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+dirección de inicio 0x0000c000
+
+Encabezado del Programa:
+    LOAD off    0x00000000 vaddr 0x0000bf8c paddr 0x0000bf8c align 2**0
+         filesz 0x0000042a memsz 0x0000042a flags r-x
+    LOAD off    0x0000042a vaddr 0x00008000 paddr 0x0000c3b6 align 2**0
+         filesz 0x0000007a memsz 0x0000007a flags rw-
+
+Secciones:
+Ind Nombre        Tamaño    VMA       LMA       Desp fich Alin  Opciones
+  0 .text         000003b6  0000c000  0000c000  00000074  2**0  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         0000007a  00008000  0000c3b6  0000042a  2**1  CONTENTS, ALLOC, LOAD, DATA
+  2 .stab         0000111c  00000000  00000000  000004a4  2**2  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000055  00000000  00000000  000015c0  2**0  CONTENTS, READONLY, DEBUGGING
+SYMBOL TABLE:
+0000c000 l    d  .text	00000000 .text
+00008000 l    d  .data	00000000 .data
+00000000 l    d  .stab	00000000 .stab
+00000000 l    d  .stabstr	00000000 .stabstr
+00000000 l    d  *ABS*	00000000 .shstrtab
+00000000 l    d  *ABS*	00000000 .symtab
+00000000 l    d  *ABS*	00000000 .strtab
+00004000 l       *ABS*	00000000 PILA
+0000152e l       *ABS*	00000000 CHAR_CLEAR_SCREEN
+00008000 l       .data	00000000 frase0a
+0000800e l       .data	00000000 frase0b
+00008015 l       .data	00000000 frase1
+00008022 l       .data	00000000 frase2
+00008032 l       .data	00000000 frase3a
+00008047 l       .data	00000000 frase3b
+0000805d l       .data	00000000 cadena_aux
+00008068 l       .data	00000000 d_ticks
+0000806a l       .data	00000000 d_pulsadores
+0000806c l       .data	00000000 d_interruptores
+0000806e l       .data	00000000 d_tecla
+00008070 l       .data	00000000 d_clicks_tecla
+00008072 l       .data	00000000 d_ticks_seg
+00008074 l       .data	00000000 d_segundos
+00008076 l       .data	00000000 d_minutos
+00008078 l       .data	00000000 d_horas
+0000c010 l       .text	00000000 RSG
+0000c0ec l       .text	00000000 inici
+0000c04c l       .text	00000000 __interrup_timer
+0000c0a4 l       .text	00000000 __interrup_key
+0000c0ba l       .text	00000000 __interrup_switch
+0000c0ca l       .text	00000000 __interrup_keyboard
+0000c03a l       .text	00000000 end_int
+0000c09e l       .text	00000000 __finreloj
+0000c0e2 l       .text	00000000 __distintas
+0000c0e4 l       .text	00000000 __fin_keyboard
+0000c1b8 l       .text	00000000 __clear_screen
+0000c102 l       .text	00000000 binf
+0000c1ce l       .text	00000000 __write_line
+0000c1de l       .text	00000000 __write_valor
+0000c212 l       .text	00000000 __mostrar_reloj
+0000c1c4 l       .text	00000000 __repe
+0000c1ce l       .text	00000000 bucle_cad
+0000c1dc l       .text	00000000 fin_bucle_cad
+0000c2c2 l       .text	00000000 __itoa
+0000c1fa l       .text	00000000 bucle_val
+0000c208 l       .text	00000000 fin_bucle_val
+0000c22e l       .text	00000000 bcad_hora
+0000c23c l       .text	00000000 fin_bcad_hora
+0000c270 l       .text	00000000 bcad_min
+0000c27e l       .text	00000000 fin_bcad_min
+0000c2b2 l       .text	00000000 bcad_seg
+0000c2c0 l       .text	00000000 fin_bcad_seg
+0000c2f2 l       .text	00000000 __for1
+0000c32a l       .text	00000000 __condfor1
+0000c2fc l       .text	00000000 __cosfor1
+0000c38c l       .text	00000000 __condfor2
+0000c362 l       .text	00000000 __cosfor2
+0000c000 g       .text	00000000 __entry_point
+0000c3b6 g       .text	00000000 _etext
+0000c430 g       *ABS*	00000000 __data_load_end
+0000c3b6 g       *ABS*	00000000 __data_load_start
+0000c3b6 g       .text	00000000 __dtors_end
+0000c3b6 g       .text	00000000 __ctors_start
+0000c3b6 g       .text	00000000 __dtors_start
+0000c3b6 g       .text	00000000 __ctors_end
+0000807a g       .data	00000000 _edata
+0000807a g       *ABS*	00000000 _end
+
+
+
+6.test2_interrupt.exe:     formato del fichero elf32-sisa
+
+Contenido de la sección .data:
+ 8000 5469636b 73205469 6d65723a 2000486f  Ticks Timer: .Ho
+ 8010 72613a20 0050756c 7361646f 7265733a  ra: .Pulsadores:
+ 8020 2000496e 74657272 7570746f 7265733a   .Interruptores:
+ 8030 2000436f 6469676f 20415343 49492074   .Codigo ASCII t
+ 8040 65636c61 3a20004e 756d6572 6f207265  ecla: .Numero re
+ 8050 70657469 63696f6e 65733a20 00000000  peticiones: ....
+ 8060 00000000 00000000 00000000 00000000  ................
+ 8070 00000000 00000000 0000               ..........      
+
+6.test2_interrupt.exe:     formato del fichero elf32-sisa
+
+Desensamblado de la sección .text:
+
+0000c000 <__entry_point>:
+    c000:	5210 	movi	r1, 16
+    c002:	53c0 	movhi	r1, -64
+    c004:	fa70 	wrs	s5, r1
+    c006:	5e00 	movi	r7, 0
+    c008:	5f40 	movhi	r7, 64
+    c00a:	5cec 	movi	r6, -20
+    c00c:	5dc0 	movhi	r6, -64
+    c00e:	a183 	jmp	r6
+
+0000c010 <RSG>:
+    c010:	2ff2 	addi	r7, r7, -14
+    c012:	41c6 	st	12(r7), r0
+    c014:	43c5 	st	10(r7), r1
+    c016:	45c4 	st	8(r7), r2
+    c018:	47c3 	st	6(r7), r3
+    c01a:	49c2 	st	4(r7), r4
+    c01c:	4bc1 	st	2(r7), r5
+    c01e:	4dc0 	st	0(r7), r6
+    c020:	f228 	getiid	r1
+    c022:	5600 	movi	r3, 0
+    c024:	145b 	cmpeq	r2, r1, r3
+    c026:	6512 	bnz	r2, 38
+    c028:	5601 	movi	r3, 1
+    c02a:	145b 	cmpeq	r2, r1, r3
+    c02c:	653b 	bnz	r2, 120
+    c02e:	5602 	movi	r3, 2
+    c030:	145b 	cmpeq	r2, r1, r3
+    c032:	6543 	bnz	r2, 136
+    c034:	5603 	movi	r3, 3
+    c036:	145b 	cmpeq	r2, r1, r3
+    c038:	6548 	bnz	r2, 146
+
+0000c03a <end_int>:
+    c03a:	3dc0 	ld	r6, 0(r7)
+    c03c:	3bc1 	ld	r5, 2(r7)
+    c03e:	39c2 	ld	r4, 4(r7)
+    c040:	37c3 	ld	r3, 6(r7)
+    c042:	35c4 	ld	r2, 8(r7)
+    c044:	33c5 	ld	r1, 10(r7)
+    c046:	31c6 	ld	r0, 12(r7)
+    c048:	2fce 	addi	r7, r7, 14
+    c04a:	f024 	reti	
+
+0000c04c <__interrup_timer>:
+    c04c:	5868 	movi	r4, 104
+    c04e:	5980 	movhi	r4, -128
+    c050:	3700 	ld	r3, 0(r4)
+    c052:	26c1 	addi	r3, r3, 1
+    c054:	4700 	st	0(r4), r3
+    c056:	770a 	out	10, r3
+    c058:	5872 	movi	r4, 114
+    c05a:	5980 	movhi	r4, -128
+    c05c:	3700 	ld	r3, 0(r4)
+    c05e:	26c1 	addi	r3, r3, 1
+    c060:	4700 	st	0(r4), r3
+    c062:	5214 	movi	r1, 20
+    c064:	12d9 	cmpeq	r1, r3, r1
+    c066:	621b 	bz	r1, 56
+    c068:	5600 	movi	r3, 0
+    c06a:	4700 	st	0(r4), r3
+    c06c:	5874 	movi	r4, 116
+    c06e:	5980 	movhi	r4, -128
+    c070:	3700 	ld	r3, 0(r4)
+    c072:	26c1 	addi	r3, r3, 1
+    c074:	4700 	st	0(r4), r3
+    c076:	523c 	movi	r1, 60
+    c078:	12d9 	cmpeq	r1, r3, r1
+    c07a:	6211 	bz	r1, 36
+    c07c:	5600 	movi	r3, 0
+    c07e:	4700 	st	0(r4), r3
+    c080:	5876 	movi	r4, 118
+    c082:	5980 	movhi	r4, -128
+    c084:	3700 	ld	r3, 0(r4)
+    c086:	26c1 	addi	r3, r3, 1
+    c088:	4700 	st	0(r4), r3
+    c08a:	523c 	movi	r1, 60
+    c08c:	12d9 	cmpeq	r1, r3, r1
+    c08e:	6207 	bz	r1, 16
+    c090:	5600 	movi	r3, 0
+    c092:	4700 	st	0(r4), r3
+    c094:	5878 	movi	r4, 120
+    c096:	5980 	movhi	r4, -128
+    c098:	3700 	ld	r3, 0(r4)
+    c09a:	26c1 	addi	r3, r3, 1
+    c09c:	4700 	st	0(r4), r3
+
+0000c09e <__finreloj>:
+    c09e:	5c3a 	movi	r6, 58
+    c0a0:	5dc0 	movhi	r6, -64
+    c0a2:	a183 	jmp	r6
+
+0000c0a4 <__interrup_key>:
+    c0a4:	7607 	in	r3, 7
+    c0a6:	06d8 	not	r3, r3
+    c0a8:	580f 	movi	r4, 15
+    c0aa:	06c4 	and	r3, r3, r4
+    c0ac:	7705 	out	5, r3
+    c0ae:	586a 	movi	r4, 106
+    c0b0:	5980 	movhi	r4, -128
+    c0b2:	4700 	st	0(r4), r3
+    c0b4:	5c3a 	movi	r6, 58
+    c0b6:	5dc0 	movhi	r6, -64
+    c0b8:	a183 	jmp	r6
+
+0000c0ba <__interrup_switch>:
+    c0ba:	7608 	in	r3, 8
+    c0bc:	7706 	out	6, r3
+    c0be:	586c 	movi	r4, 108
+    c0c0:	5980 	movhi	r4, -128
+    c0c2:	4700 	st	0(r4), r3
+    c0c4:	5c3a 	movi	r6, 58
+    c0c6:	5dc0 	movhi	r6, -64
+    c0c8:	a183 	jmp	r6
+
+0000c0ca <__interrup_keyboard>:
+    c0ca:	760f 	in	r3, 15
+    c0cc:	586e 	movi	r4, 110
+    c0ce:	5980 	movhi	r4, -128
+    c0d0:	3b00 	ld	r5, 0(r4)
+    c0d2:	4700 	st	0(r4), r3
+    c0d4:	16dd 	cmpeq	r3, r3, r5
+    c0d6:	5870 	movi	r4, 112
+    c0d8:	5980 	movhi	r4, -128
+    c0da:	6603 	bz	r3, 8
+    c0dc:	3b00 	ld	r5, 0(r4)
+    c0de:	2b41 	addi	r5, r5, 1
+    c0e0:	6701 	bnz	r3, 4
+
+0000c0e2 <__distintas>:
+    c0e2:	5a01 	movi	r5, 1
+
+0000c0e4 <__fin_keyboard>:
+    c0e4:	4b00 	st	0(r4), r5
+    c0e6:	5c3a 	movi	r6, 58
+    c0e8:	5dc0 	movhi	r6, -64
+    c0ea:	a183 	jmp	r6
+
+0000c0ec <inici>:
+    c0ec:	520f 	movi	r1, 15
+    c0ee:	7309 	out	9, r1
+    c0f0:	5200 	movi	r1, 0
+    c0f2:	730a 	out	10, r1
+    c0f4:	7305 	out	5, r1
+    c0f6:	7208 	in	r1, 8
+    c0f8:	7306 	out	6, r1
+    c0fa:	5cb8 	movi	r6, -72
+    c0fc:	5dc1 	movhi	r6, -63
+    c0fe:	ad84 	jal	r6, r6
+    c100:	f020 	ei	
+
+0000c102 <binf>:
+    c102:	5200 	movi	r1, 0
+    c104:	53a0 	movhi	r1, -96
+    c106:	5400 	movi	r2, 0
+    c108:	5580 	movhi	r2, -128
+    c10a:	5cce 	movi	r6, -50
+    c10c:	5dc1 	movhi	r6, -63
+    c10e:	ad84 	jal	r6, r6
+    c110:	521a 	movi	r1, 26
+    c112:	53a0 	movhi	r1, -96
+    c114:	5468 	movi	r2, 104
+    c116:	5580 	movhi	r2, -128
+    c118:	3480 	ld	r2, 0(r2)
+    c11a:	5cde 	movi	r6, -34
+    c11c:	5dc1 	movhi	r6, -63
+    c11e:	ad84 	jal	r6, r6
+    c120:	5232 	movi	r1, 50
+    c122:	53a0 	movhi	r1, -96
+    c124:	540e 	movi	r2, 14
+    c126:	5580 	movhi	r2, -128
+    c128:	5cce 	movi	r6, -50
+    c12a:	5dc1 	movhi	r6, -63
+    c12c:	ad84 	jal	r6, r6
+    c12e:	523e 	movi	r1, 62
+    c130:	53a0 	movhi	r1, -96
+    c132:	5c12 	movi	r6, 18
+    c134:	5dc2 	movhi	r6, -62
+    c136:	ad84 	jal	r6, r6
+    c138:	52a0 	movi	r1, -96
+    c13a:	53a0 	movhi	r1, -96
+    c13c:	5415 	movi	r2, 21
+    c13e:	5580 	movhi	r2, -128
+    c140:	5cce 	movi	r6, -50
+    c142:	5dc1 	movhi	r6, -63
+    c144:	ad84 	jal	r6, r6
+    c146:	52b8 	movi	r1, -72
+    c148:	53a0 	movhi	r1, -96
+    c14a:	546a 	movi	r2, 106
+    c14c:	5580 	movhi	r2, -128
+    c14e:	3480 	ld	r2, 0(r2)
+    c150:	5cde 	movi	r6, -34
+    c152:	5dc1 	movhi	r6, -63
+    c154:	ad84 	jal	r6, r6
+    c156:	5240 	movi	r1, 64
+    c158:	53a1 	movhi	r1, -95
+    c15a:	5422 	movi	r2, 34
+    c15c:	5580 	movhi	r2, -128
+    c15e:	5cce 	movi	r6, -50
+    c160:	5dc1 	movhi	r6, -63
+    c162:	ad84 	jal	r6, r6
+    c164:	525e 	movi	r1, 94
+    c166:	53a1 	movhi	r1, -95
+    c168:	546c 	movi	r2, 108
+    c16a:	5580 	movhi	r2, -128
+    c16c:	3480 	ld	r2, 0(r2)
+    c16e:	5cde 	movi	r6, -34
+    c170:	5dc1 	movhi	r6, -63
+    c172:	ad84 	jal	r6, r6
+    c174:	52e0 	movi	r1, -32
+    c176:	53a1 	movhi	r1, -95
+    c178:	5432 	movi	r2, 50
+    c17a:	5580 	movhi	r2, -128
+    c17c:	5cce 	movi	r6, -50
+    c17e:	5dc1 	movhi	r6, -63
+    c180:	ad84 	jal	r6, r6
+    c182:	5208 	movi	r1, 8
+    c184:	53a2 	movhi	r1, -94
+    c186:	546e 	movi	r2, 110
+    c188:	5580 	movhi	r2, -128
+    c18a:	3480 	ld	r2, 0(r2)
+    c18c:	5cde 	movi	r6, -34
+    c18e:	5dc1 	movhi	r6, -63
+    c190:	ad84 	jal	r6, r6
+    c192:	5212 	movi	r1, 18
+    c194:	53a2 	movhi	r1, -94
+    c196:	5447 	movi	r2, 71
+    c198:	5580 	movhi	r2, -128
+    c19a:	5cce 	movi	r6, -50
+    c19c:	5dc1 	movhi	r6, -63
+    c19e:	ad84 	jal	r6, r6
+    c1a0:	523c 	movi	r1, 60
+    c1a2:	53a2 	movhi	r1, -94
+    c1a4:	5470 	movi	r2, 112
+    c1a6:	5580 	movhi	r2, -128
+    c1a8:	3480 	ld	r2, 0(r2)
+    c1aa:	5cde 	movi	r6, -34
+    c1ac:	5dc1 	movhi	r6, -63
+    c1ae:	ad84 	jal	r6, r6
+    c1b0:	5c02 	movi	r6, 2
+    c1b2:	5dc1 	movhi	r6, -63
+    c1b4:	a183 	jmp	r6
+    c1b6:	ffff 	halt	
+
+0000c1b8 <__clear_screen>:
+    c1b8:	5000 	movi	r0, 0
+    c1ba:	51a0 	movhi	r0, -96
+    c1bc:	5260 	movi	r1, 96
+    c1be:	5309 	movhi	r1, 9
+    c1c0:	542e 	movi	r2, 46
+    c1c2:	5515 	movhi	r2, 21
+
+0000c1c4 <__repe>:
+    c1c4:	4400 	st	0(r0), r2
+    c1c6:	2002 	addi	r0, r0, 2
+    c1c8:	227f 	addi	r1, r1, -1
+    c1ca:	63fc 	bnz	r1, -6
+    c1cc:	a183 	jmp	r6
+
+0000c1ce <__write_line>:
+    c1ce:	d880 	ldb	r4, 0(r2)
+    c1d0:	6805 	bz	r4, 12
+    c1d2:	590f 	movhi	r4, 15
+    c1d4:	4840 	st	0(r1), r4
+    c1d6:	2242 	addi	r1, r1, 2
+    c1d8:	2481 	addi	r2, r2, 1
+    c1da:	69f9 	bnz	r4, -12
+
+0000c1dc <fin_bucle_cad>:
+    c1dc:	a183 	jmp	r6
+
+0000c1de <__write_valor>:
+    c1de:	2ffe 	addi	r7, r7, -2
+    c1e0:	43c0 	st	0(r7), r1
+    c1e2:	585d 	movi	r4, 93
+    c1e4:	5980 	movhi	r4, -128
+    c1e6:	2ffe 	addi	r7, r7, -2
+    c1e8:	49c0 	st	0(r7), r4
+    c1ea:	2ffe 	addi	r7, r7, -2
+    c1ec:	45c0 	st	0(r7), r2
+    c1ee:	5ac2 	movi	r5, -62
+    c1f0:	5bc2 	movhi	r5, -62
+    c1f2:	ab44 	jal	r5, r5
+    c1f4:	2fc4 	addi	r7, r7, 4
+    c1f6:	33c0 	ld	r1, 0(r7)
+    c1f8:	2fc2 	addi	r7, r7, 2
+
+0000c1fa <bucle_val>:
+    c1fa:	db00 	ldb	r5, 0(r4)
+    c1fc:	6a05 	bz	r5, 12
+    c1fe:	5b3c 	movhi	r5, 60
+    c200:	4a40 	st	0(r1), r5
+    c202:	2242 	addi	r1, r1, 2
+    c204:	2901 	addi	r4, r4, 1
+    c206:	6bf9 	bnz	r5, -12
+
+0000c208 <fin_bucle_val>:
+    c208:	5a2e 	movi	r5, 46
+    c20a:	5b15 	movhi	r5, 21
+    c20c:	4a40 	st	0(r1), r5
+    c20e:	4a41 	st	2(r1), r5
+    c210:	a183 	jmp	r6
+
+0000c212 <__mostrar_reloj>:
+    c212:	2040 	addi	r0, r1, 0
+    c214:	585d 	movi	r4, 93
+    c216:	5980 	movhi	r4, -128
+    c218:	2ffe 	addi	r7, r7, -2
+    c21a:	49c0 	st	0(r7), r4
+    c21c:	5678 	movi	r3, 120
+    c21e:	5780 	movhi	r3, -128
+    c220:	36c0 	ld	r3, 0(r3)
+    c222:	2ffe 	addi	r7, r7, -2
+    c224:	47c0 	st	0(r7), r3
+    c226:	5ac2 	movi	r5, -62
+    c228:	5bc2 	movhi	r5, -62
+    c22a:	ab44 	jal	r5, r5
+    c22c:	2fc4 	addi	r7, r7, 4
+
+0000c22e <bcad_hora>:
+    c22e:	db00 	ldb	r5, 0(r4)
+    c230:	6a05 	bz	r5, 12
+    c232:	5b03 	movhi	r5, 3
+    c234:	4a00 	st	0(r0), r5
+    c236:	2002 	addi	r0, r0, 2
+    c238:	2901 	addi	r4, r4, 1
+    c23a:	6bf9 	bnz	r5, -12
+
+0000c23c <fin_bcad_hora>:
+    c23c:	5a3a 	movi	r5, 58
+    c23e:	5b0c 	movhi	r5, 12
+    c240:	4a00 	st	0(r0), r5
+    c242:	2002 	addi	r0, r0, 2
+    c244:	585d 	movi	r4, 93
+    c246:	5980 	movhi	r4, -128
+    c248:	2ffe 	addi	r7, r7, -2
+    c24a:	49c0 	st	0(r7), r4
+    c24c:	5676 	movi	r3, 118
+    c24e:	5780 	movhi	r3, -128
+    c250:	36c0 	ld	r3, 0(r3)
+    c252:	2ffe 	addi	r7, r7, -2
+    c254:	47c0 	st	0(r7), r3
+    c256:	5ac2 	movi	r5, -62
+    c258:	5bc2 	movhi	r5, -62
+    c25a:	ab44 	jal	r5, r5
+    c25c:	2fc4 	addi	r7, r7, 4
+    c25e:	5209 	movi	r1, 9
+    c260:	12c9 	cmple	r1, r3, r1
+    c262:	6206 	bz	r1, 14
+    c264:	d700 	ldb	r3, 0(r4)
+    c266:	e701 	stb	1(r4), r3
+    c268:	5630 	movi	r3, 48
+    c26a:	e700 	stb	0(r4), r3
+    c26c:	5600 	movi	r3, 0
+    c26e:	e702 	stb	2(r4), r3
+
+0000c270 <bcad_min>:
+    c270:	db00 	ldb	r5, 0(r4)
+    c272:	6a05 	bz	r5, 12
+    c274:	5b03 	movhi	r5, 3
+    c276:	4a00 	st	0(r0), r5
+    c278:	2002 	addi	r0, r0, 2
+    c27a:	2901 	addi	r4, r4, 1
+    c27c:	6bf9 	bnz	r5, -12
+
+0000c27e <fin_bcad_min>:
+    c27e:	5a3a 	movi	r5, 58
+    c280:	5b0c 	movhi	r5, 12
+    c282:	4a00 	st	0(r0), r5
+    c284:	2002 	addi	r0, r0, 2
+    c286:	585d 	movi	r4, 93
+    c288:	5980 	movhi	r4, -128
+    c28a:	2ffe 	addi	r7, r7, -2
+    c28c:	49c0 	st	0(r7), r4
+    c28e:	5674 	movi	r3, 116
+    c290:	5780 	movhi	r3, -128
+    c292:	36c0 	ld	r3, 0(r3)
+    c294:	2ffe 	addi	r7, r7, -2
+    c296:	47c0 	st	0(r7), r3
+    c298:	5ac2 	movi	r5, -62
+    c29a:	5bc2 	movhi	r5, -62
+    c29c:	ab44 	jal	r5, r5
+    c29e:	2fc4 	addi	r7, r7, 4
+    c2a0:	5209 	movi	r1, 9
+    c2a2:	12c9 	cmple	r1, r3, r1
+    c2a4:	6206 	bz	r1, 14
+    c2a6:	d700 	ldb	r3, 0(r4)
+    c2a8:	e701 	stb	1(r4), r3
+    c2aa:	5630 	movi	r3, 48
+    c2ac:	e700 	stb	0(r4), r3
+    c2ae:	5600 	movi	r3, 0
+    c2b0:	e702 	stb	2(r4), r3
+
+0000c2b2 <bcad_seg>:
+    c2b2:	db00 	ldb	r5, 0(r4)
+    c2b4:	6a05 	bz	r5, 12
+    c2b6:	5b03 	movhi	r5, 3
+    c2b8:	4a00 	st	0(r0), r5
+    c2ba:	2002 	addi	r0, r0, 2
+    c2bc:	2901 	addi	r4, r4, 1
+    c2be:	6bf9 	bnz	r5, -12
+
+0000c2c0 <fin_bcad_seg>:
+    c2c0:	a183 	jmp	r6
+
+0000c2c2 <__itoa>:
+    c2c2:	2fe0 	addi	r7, r7, -32
+    c2c4:	4bcf 	st	30(r7), r5
+    c2c6:	4dce 	st	28(r7), r6
+    c2c8:	2ddc 	addi	r6, r7, 28
+    c2ca:	2ffc 	addi	r7, r7, -4
+    c2cc:	41c3 	st	6(r7), r0
+    c2ce:	45c2 	st	4(r7), r2
+    c2d0:	47c1 	st	2(r7), r3
+    c2d2:	49c0 	st	0(r7), r4
+    c2d4:	5200 	movi	r1, 0
+    c2d6:	43bd 	st	-6(r6), r1
+    c2d8:	3582 	ld	r2, 4(r6)
+    c2da:	5200 	movi	r1, 0
+    c2dc:	1281 	cmplt	r1, r2, r1
+    c2de:	6209 	bz	r1, 20
+    c2e0:	3383 	ld	r1, 6(r6)
+    c2e2:	542d 	movi	r2, 45
+    c2e4:	e440 	stb	0(r1), r2
+    c2e6:	5201 	movi	r1, 1
+    c2e8:	43bd 	st	-6(r6), r1
+    c2ea:	3382 	ld	r1, 4(r6)
+    c2ec:	0258 	not	r1, r1
+    c2ee:	2241 	addi	r1, r1, 1
+    c2f0:	4382 	st	4(r6), r1
+
+0000c2f2 <__for1>:
+    c2f2:	5200 	movi	r1, 0
+    c2f4:	43be 	st	-4(r6), r1
+    c2f6:	5a2a 	movi	r5, 42
+    c2f8:	5bc3 	movhi	r5, -61
+    c2fa:	a143 	jmp	r5
+
+0000c2fc <__cosfor1>:
+    c2fc:	5409 	movi	r2, 9
+    c2fe:	33be 	ld	r1, -4(r6)
+    c300:	04a9 	sub	r2, r2, r1
+    c302:	45b6 	st	-20(r6), r2
+    c304:	3782 	ld	r3, 4(r6)
+    c306:	520a 	movi	r1, 10
+    c308:	8ae1 	div	r5, r3, r1
+    c30a:	0365 	add	r1, r5, r5
+    c30c:	5402 	movi	r2, 2
+    c30e:	0472 	sha	r2, r1, r2
+    c310:	0262 	add	r1, r1, r2
+    c312:	02e9 	sub	r1, r3, r1
+    c314:	5430 	movi	r2, 48
+    c316:	0262 	add	r1, r1, r2
+    c318:	2840 	addi	r4, r1, 0
+    c31a:	4b82 	st	4(r6), r5
+    c31c:	21b0 	addi	r0, r6, -16
+    c31e:	37b6 	ld	r3, -20(r6)
+    c320:	0223 	add	r1, r0, r3
+    c322:	e840 	stb	0(r1), r4
+    c324:	33be 	ld	r1, -4(r6)
+    c326:	2241 	addi	r1, r1, 1
+    c328:	43be 	st	-4(r6), r1
+
+0000c32a <__condfor1>:
+    c32a:	3382 	ld	r1, 4(r6)
+    c32c:	5409 	movi	r2, 9
+    c32e:	124a 	cmple	r1, r1, r2
+    c330:	5afc 	movi	r5, -4
+    c332:	5bc2 	movhi	r5, -62
+    c334:	a340 	jz	r1, r5
+    c336:	5409 	movi	r2, 9
+    c338:	33be 	ld	r1, -4(r6)
+    c33a:	08a9 	sub	r4, r2, r1
+    c33c:	3382 	ld	r1, 4(r6)
+    c33e:	5430 	movi	r2, 48
+    c340:	0262 	add	r1, r1, r2
+    c342:	2040 	addi	r0, r1, 0
+    c344:	27b0 	addi	r3, r6, -16
+    c346:	47b5 	st	-22(r6), r3
+    c348:	520f 	movi	r1, 15
+    c34a:	0258 	not	r1, r1
+    c34c:	2241 	addi	r1, r1, 1
+    c34e:	0731 	sha	r3, r4, r1
+    c350:	2300 	addi	r1, r4, 0
+    c352:	24c0 	addi	r2, r3, 0
+    c354:	37b5 	ld	r3, -22(r6)
+    c356:	02e1 	add	r1, r3, r1
+    c358:	e040 	stb	0(r1), r0
+    c35a:	33bd 	ld	r1, -6(r6)
+    c35c:	43bf 	st	-2(r6), r1
+    c35e:	5a00 	movi	r5, 0
+    c360:	6a15 	bz	r5, 44
+
+0000c362 <__cosfor2>:
+    c362:	35bf 	ld	r2, -2(r6)
+    c364:	3383 	ld	r1, 6(r6)
+    c366:	04a1 	add	r2, r2, r1
+    c368:	45b7 	st	-18(r6), r2
+    c36a:	5409 	movi	r2, 9
+    c36c:	33be 	ld	r1, -4(r6)
+    c36e:	04a9 	sub	r2, r2, r1
+    c370:	33bf 	ld	r1, -2(r6)
+    c372:	02a1 	add	r1, r2, r1
+    c374:	2440 	addi	r2, r1, 0
+    c376:	33bd 	ld	r1, -6(r6)
+    c378:	08a9 	sub	r4, r2, r1
+    c37a:	21b0 	addi	r0, r6, -16
+    c37c:	2300 	addi	r1, r4, 0
+    c37e:	0221 	add	r1, r0, r1
+    c380:	d240 	ldb	r1, 0(r1)
+    c382:	35b7 	ld	r2, -18(r6)
+    c384:	e280 	stb	0(r2), r1
+    c386:	33bf 	ld	r1, -2(r6)
+    c388:	2241 	addi	r1, r1, 1
+    c38a:	43bf 	st	-2(r6), r1
+
+0000c38c <__condfor2>:
+    c38c:	35be 	ld	r2, -4(r6)
+    c38e:	33bd 	ld	r1, -6(r6)
+    c390:	04a1 	add	r2, r2, r1
+    c392:	33bf 	ld	r1, -2(r6)
+    c394:	1281 	cmplt	r1, r2, r1
+    c396:	62e5 	bz	r1, -52
+    c398:	35bf 	ld	r2, -2(r6)
+    c39a:	3383 	ld	r1, 6(r6)
+    c39c:	04a1 	add	r2, r2, r1
+    c39e:	5200 	movi	r1, 0
+    c3a0:	e280 	stb	0(r2), r1
+    c3a2:	33bf 	ld	r1, -2(r6)
+    c3a4:	31c3 	ld	r0, 6(r7)
+    c3a6:	35c2 	ld	r2, 4(r7)
+    c3a8:	37c1 	ld	r3, 2(r7)
+    c3aa:	39c0 	ld	r4, 0(r7)
+    c3ac:	2f80 	addi	r7, r6, 0
+    c3ae:	3dc0 	ld	r6, 0(r7)
+    c3b0:	3bc1 	ld	r5, 2(r7)
+    c3b2:	2fc4 	addi	r7, r7, 4
+    c3b4:	a143 	jmp	r5

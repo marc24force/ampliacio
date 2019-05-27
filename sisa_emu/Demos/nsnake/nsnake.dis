@@ -1,0 +1,5830 @@
+
+temp_nsnake.o:     file format elf32-sisa
+temp_nsnake.o
+architecture: sisa:3, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00000000
+
+Program Header:
+    LOAD off    0x00000000 vaddr 0x00007f6c paddr 0x00007f6c align 2**0
+         filesz 0x0000009e memsz 0x0000009e flags rw-
+    LOAD off    0x00000090 vaddr 0x00008010 paddr 0x00008010 align 2**0
+         filesz 0x00000000 memsz 0x00000196 flags rw-
+    LOAD off    0x0000009e vaddr 0x0000c000 paddr 0x0000c000 align 2**0
+         filesz 0x000024c4 memsz 0x000024c4 flags r-x
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn  Flags
+  0 .sistema      000024c4  0000c000  0000c000  0000009e  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .sysdata      0000000a  00008000  00008000  00000094  2**1  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000196  00008010  00008010  0000009e  2**4  ALLOC
+  3 .stab         00003114  000081a8  000081a8  00002564  2**2  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      000011ca  0000b2bc  0000b2bc  00005678  2**0  CONTENTS, READONLY, DEBUGGING
+SYMBOL TABLE:
+0000c000 l    d  .sistema	00000000 .sistema
+0000c00e l       .sistema	00000000 __exit
+0000c14c l       .sistema	00000000 __fin
+0000c160 l       .sistema	00000000 __pol
+0000c214 l       .sistema	00000000 __repe
+0000c6ac l       .sistema	00000000 __esp_milisec
+0000c618 g     F .sistema	00000012 has_colors
+0000c62a g     F .sistema	0000001e attron
+0000c000 g       .sistema	00000000 __entry_point
+0000c13c g     F .sistema	0000001c read_one_No_bloq
+0000d7f8 g     F .sistema	0000007a player_teleport_borders
+0000c896 g     F .sistema	00000016 engine_get_game_input
+0000d672 g     F .sistema	00000032 player_hit_fruit
+0000c352 g     F .sistema	00000012 start_color
+0000c1a8 g     F .sistema	00000016 write_red_leds
+0000c69c g     F .sistema	00000020 usleep
+0000c470 g     F .sistema	00000052 mvprintw1
+0000d504 g     F .sistema	00000016 nsnake_pause
+0000cc3c g     F .sistema	00000120 get_main_menu_input
+0000c5d8 g     F .sistema	0000002e mvaddstr
+0000c8ac g     F .sistema	00000092 engine_show_pause
+0000d548 g     F .sistema	00000014 nsnake_exit
+0000d780 g     F .sistema	00000078 player_init
+0000c3be g     F .sistema	0000004c init_pair
+0000d450 g     F .sistema	00000050 draw_fruit_bonus
+0000c9c8 g     F .sistema	00000040 draw_fruit
+0000d20a g     F .sistema	000000f8 draw_score
+0000d302 g     F .sistema	0000014e engine_show_game_over
+0000c22a g     F .sistema	00000118 itoa
+0000c55c g     F .sistema	0000007c mvprintw3
+0000c4c2 g     F .sistema	0000009a mvprintw2
+0000d620 g     F .sistema	00000052 player_hit_borders
+0000d1f4 g     F .sistema	00000016 draw_background
+0000c010 g     F .sistema	00000044 write_one
+0000c666 g     F .sistema	00000036 getch
+0000c090 g     F .sistema	000000ac write
+0000c1f6 g     F .sistema	00000034 clear
+0000c054 g     F .sistema	0000003c write_one_char
+0000c174 g     F .sistema	0000001e write_7segments
+0000c6cc g     F .sistema	00000024 rand
+0000cc20 g     F .sistema	0000001c engine_exit
+0000c866 g     F .sistema	00000030 engine_clean_pause
+0000d6a4 g     F .sistema	000000b8 player_hit_self
+0000cd5c g     F .sistema	000003d4 engine_show_main_menu
+0000ca08 g     F .sistema	00000154 draw_borders
+0000da04 g     F .sistema	00000116 player_increase_size
+0000d51a g     F .sistema	0000002e nsnake_init
+0000db1a g     F .sistema	00000260 main
+0000c342 g     F .sistema	00000010 initscr
+0000d872 g     F .sistema	00000048 player_collided_with_borders
+0000c364 g     F .sistema	00000012 use_default_colors
+0000d55c g     F .sistema	0000002c nsnake_abort
+0000c422 g     F .sistema	00000012 refresh
+0000c718 g     F .sistema	000000f2 fruit_init
+0000c1be g     F .sistema	00000038 strlen_s
+0000c606 g     F .sistema	00000012 curs_set
+0000d4a0 g     F .sistema	00000064 engine_show_screen
+0000c93e g     F .sistema	0000008a draw_player
+0000c434 g     F .sistema	0000003c mvaddch
+0000c376 g     F .sistema	00000048 COLOR_PAIR
+0000d610 g     F .sistema	00000010 player_exit
+0000cb5c g     F .sistema	000000c4 engine_init
+0000c6f0 g     F .sistema	00000028 fruit_update_bonus
+0000d588 g     F .sistema	00000088 player_change_direction
+0000c842 g     F .sistema	00000024 engine_clean_game_over
+0000c40a g     F .sistema	00000018 erase
+0000d75c g     F .sistema	00000024 player_increase_score
+0000c648 g     F .sistema	0000001e nodelay
+0000c6bc g     F .sistema	00000010 exit
+0000c192 g     F .sistema	00000016 write_green_leds
+0000d130 g     F .sistema	000000c4 get_game_over_input
+0000c80a g     F .sistema	00000038 start_atrribute
+0000c158 g     F .sistema	0000001c read_one_bloq
+0000d8ba g     F .sistema	0000014a player_update
+
+
+Disassembly of section .sistema:
+
+0000c000 <__entry_point>:
+    c000:	5e00 	movi	r7, 0
+    c002:	5f82 	movhi	r7, -126
+    c004:	5a0e 	movi	r5, 14
+    c006:	5bc0 	movhi	r5, -64
+    c008:	5c1a 	movi	r6, 26
+    c00a:	5ddb 	movhi	r6, -37
+    c00c:	a183 	jmp	r6
+
+0000c00e <__exit>:
+    c00e:	ffff 	halt	
+
+0000c010 <write_one>:
+#include "lib_sisa.h"
+
+
+int write_one(int fila, int col, int c)
+{
+    c010:	2ff4 	addi	r7, r7, -12
+    c012:	4bc5 	st	10(r7), r5
+    c014:	4dc4 	st	8(r7), r6
+    c016:	2dc8 	addi	r6, r7, 8
+    c018:	41c1 	st	2(r7), r0
+    c01a:	45c0 	st	0(r7), r2
+  int res;
+  int pos;
+
+  /* para DEBUG:muestra por el visor 7segmentos la fila i la columna de la pantalla
+  int aux;
+  aux=(fila<<8)+col;
+  write_7segments(aux, 0x0F);
+  */
+
+  pos=(80*fila+col)*2;   // cada caracter ocupa 2 bytes de memoria de video
+    c01c:	3382 	ld	r1, 4(r6)
+    c01e:	2440 	addi	r2, r1, 0
+    c020:	5204 	movi	r1, 4
+    c022:	04b1 	sha	r2, r2, r1
+    c024:	5202 	movi	r1, 2
+    c026:	02b1 	sha	r1, r2, r1
+    c028:	04a1 	add	r2, r2, r1
+    c02a:	3383 	ld	r1, 6(r6)
+    c02c:	02a1 	add	r1, r2, r1
+    c02e:	0261 	add	r1, r1, r1
+    c030:	43bf 	st	-2(r6), r1
+  pos = pos + 0xA000;	// la memoria de video empieza en la direccion 0xA000 (40960)
+    c032:	33bf 	ld	r1, -2(r6)
+    c034:	5400 	movi	r2, 0
+    c036:	55a0 	movhi	r2, -96
+    c038:	0262 	add	r1, r1, r2
+    c03a:	43bf 	st	-2(r6), r1
+
+  // para DEBUG: muestra por el visor 7segmentos la direccion de memoria de video en la que se va a escribir el caracter
+  //write_7segments(pos, 0x0F);
+
+  __asm__ (
+    c03c:	31bf 	ld	r0, -2(r6)
+    c03e:	3384 	ld	r1, 8(r6)
+    c040:	4200 	st	0(r0), r1
+      "st 0(%0), %1"      // %0 corresponde a la variable "pos" que habra sido cargada en un registro
+                          // %1 corresponde a la variable "c" que habra sido cargada en otro registro
+      : /* sin salidas */
+      : "a" (pos), "b" (c));  
+
+  res=1;
+    c042:	5201 	movi	r1, 1
+    c044:	43be 	st	-4(r6), r1
+  return res;
+    c046:	33be 	ld	r1, -4(r6)
+}
+    c048:	31c1 	ld	r0, 2(r7)
+    c04a:	35c0 	ld	r2, 0(r7)
+    c04c:	3dc4 	ld	r6, 8(r7)
+    c04e:	3bc5 	ld	r5, 10(r7)
+    c050:	2fcc 	addi	r7, r7, 12
+    c052:	a143 	jmp	r5
+
+0000c054 <write_one_char>:
+                        
+int write_one_char(int fila, int col, char c, char color)
+{
+    c054:	2ff6 	addi	r7, r7, -10
+    c056:	4bc4 	st	8(r7), r5
+    c058:	4dc3 	st	6(r7), r6
+    c05a:	2dc6 	addi	r6, r7, 6
+    c05c:	45c0 	st	0(r7), r2
+  int res;
+  int caracter_compuesto;
+
+  caracter_compuesto=color*256+c;
+    c05e:	d589 	ldb	r2, 9(r6)
+    c060:	5208 	movi	r1, 8
+    c062:	04b1 	sha	r2, r2, r1
+    c064:	d388 	ldb	r1, 8(r6)
+    c066:	02a1 	add	r1, r2, r1
+    c068:	43bf 	st	-2(r6), r1
+  res=write_one(fila, col, caracter_compuesto);
+    c06a:	2ffa 	addi	r7, r7, -6
+    c06c:	25c0 	addi	r2, r7, 0
+    c06e:	3382 	ld	r1, 4(r6)
+    c070:	4280 	st	0(r2), r1
+    c072:	3383 	ld	r1, 6(r6)
+    c074:	4281 	st	2(r2), r1
+    c076:	33bf 	ld	r1, -2(r6)
+    c078:	4282 	st	4(r2), r1
+    c07a:	5210 	movi	r1, 16
+    c07c:	53c0 	movhi	r1, -64
+    c07e:	aa44 	jal	r5, r1
+    c080:	2fc6 	addi	r7, r7, 6
+    c082:	43be 	st	-4(r6), r1
+
+  return res;
+    c084:	33be 	ld	r1, -4(r6)
+}
+    c086:	35c0 	ld	r2, 0(r7)
+    c088:	3dc3 	ld	r6, 6(r7)
+    c08a:	3bc4 	ld	r5, 8(r7)
+    c08c:	2fca 	addi	r7, r7, 10
+    c08e:	a143 	jmp	r5
+
+0000c090 <write>:
+                        
+
+int write(int fila, int col, char *buf, int size, char color)
+{
+    c090:	2fec 	addi	r7, r7, -20
+    c092:	4bc9 	st	18(r7), r5
+    c094:	4dc8 	st	16(r7), r6
+    c096:	2dd0 	addi	r6, r7, 16
+    c098:	45c1 	st	2(r7), r2
+    c09a:	47c0 	st	0(r7), r3
+  int i, r, t;
+  int f, c, car;
+  t = 0; f = fila; c = col;
+    c09c:	5200 	movi	r1, 0
+    c09e:	43bc 	st	-8(r6), r1
+    c0a0:	3382 	ld	r1, 4(r6)
+    c0a2:	43bd 	st	-6(r6), r1
+    c0a4:	3383 	ld	r1, 6(r6)
+    c0a6:	43be 	st	-4(r6), r1
+  for (i=0; i<size; i++)   
+    c0a8:	5200 	movi	r1, 0
+    c0aa:	43ba 	st	-12(r6), r1
+    c0ac:	5a22 	movi	r5, 34
+    c0ae:	5bc1 	movhi	r5, -63
+    c0b0:	a143 	jmp	r5
+    {
+      car = buf[i];
+    c0b2:	35ba 	ld	r2, -12(r6)
+    c0b4:	3384 	ld	r1, 8(r6)
+    c0b6:	02a1 	add	r1, r2, r1
+    c0b8:	d240 	ldb	r1, 0(r1)
+    c0ba:	43bf 	st	-2(r6), r1
+      do
+        {
+          r=write_one_char(f, c, car, color);
+    c0bc:	33bf 	ld	r1, -2(r6)
+    c0be:	2640 	addi	r3, r1, 0
+    c0c0:	2ffa 	addi	r7, r7, -6
+    c0c2:	25c0 	addi	r2, r7, 0
+    c0c4:	33bd 	ld	r1, -6(r6)
+    c0c6:	4280 	st	0(r2), r1
+    c0c8:	33be 	ld	r1, -4(r6)
+    c0ca:	4281 	st	2(r2), r1
+    c0cc:	e684 	stb	4(r2), r3
+    c0ce:	d38c 	ldb	r1, 12(r6)
+    c0d0:	e285 	stb	5(r2), r1
+    c0d2:	5254 	movi	r1, 84
+    c0d4:	53c0 	movhi	r1, -64
+    c0d6:	aa44 	jal	r5, r1
+    c0d8:	2fc6 	addi	r7, r7, 6
+    c0da:	43bb 	st	-10(r6), r1
+        }
+      /* Un altre procés està enviant */
+      while (r!=1); t+=r;
+    c0dc:	35bb 	ld	r2, -10(r6)
+    c0de:	5201 	movi	r1, 1
+    c0e0:	1299 	cmpeq	r1, r2, r1
+    c0e2:	62ec 	bz	r1, -38
+    c0e4:	35bc 	ld	r2, -8(r6)
+    c0e6:	33bb 	ld	r1, -10(r6)
+    c0e8:	02a1 	add	r1, r2, r1
+    c0ea:	43bc 	st	-8(r6), r1
+      if (car=='\n') {f++; c=0;}
+    c0ec:	35bf 	ld	r2, -2(r6)
+    c0ee:	520a 	movi	r1, 10
+    c0f0:	1299 	cmpeq	r1, r2, r1
+    c0f2:	6207 	bz	r1, 16
+    c0f4:	33bd 	ld	r1, -6(r6)
+    c0f6:	2241 	addi	r1, r1, 1
+    c0f8:	43bd 	st	-6(r6), r1
+    c0fa:	5200 	movi	r1, 0
+    c0fc:	43be 	st	-4(r6), r1
+    c0fe:	5a00 	movi	r5, 0
+    c100:	6a0d 	bz	r5, 28
+      else if (car=='\r') c=1;
+    c102:	33bf 	ld	r1, -2(r6)
+    c104:	540d 	movi	r2, 13
+    c106:	125a 	cmpeq	r1, r1, r2
+    c108:	6204 	bz	r1, 10
+    c10a:	5201 	movi	r1, 1
+    c10c:	43be 	st	-4(r6), r1
+    c10e:	5a00 	movi	r5, 0
+    c110:	6a05 	bz	r5, 12
+      else if (car!=0) c++;   
+    c112:	33bf 	ld	r1, -2(r6)
+    c114:	6203 	bz	r1, 8
+    c116:	33be 	ld	r1, -4(r6)
+    c118:	2241 	addi	r1, r1, 1
+    c11a:	43be 	st	-4(r6), r1
+    c11c:	33ba 	ld	r1, -12(r6)
+    c11e:	2241 	addi	r1, r1, 1
+    c120:	43ba 	st	-12(r6), r1
+    c122:	33ba 	ld	r1, -12(r6)
+    c124:	3585 	ld	r2, 10(r6)
+    c126:	1242 	cmplt	r1, r1, r2
+    c128:	5ab2 	movi	r5, -78
+    c12a:	5bc0 	movhi	r5, -64
+    c12c:	a341 	jnz	r1, r5
+    }
+
+  return t;
+    c12e:	33bc 	ld	r1, -8(r6)
+}
+    c130:	35c1 	ld	r2, 2(r7)
+    c132:	37c0 	ld	r3, 0(r7)
+    c134:	3dc8 	ld	r6, 16(r7)
+    c136:	3bc9 	ld	r5, 18(r7)
+    c138:	2fd4 	addi	r7, r7, 20
+    c13a:	a143 	jmp	r5
+
+0000c13c <read_one_No_bloq>:
+
+int read_one_No_bloq (void)
+{
+    c13c:	2ffa 	addi	r7, r7, -6
+    c13e:	4bc2 	st	4(r7), r5
+    c140:	4dc1 	st	2(r7), r6
+    c142:	2dc2 	addi	r6, r7, 2
+  int res;
+
+	/*
+		in r1,16         ; leemos el estado del teclado
+		bz r1,fin	 ; si no se ha pulsado ninguna tecla salimos de la espera
+	        in r1,15         ; leemos el valor correspondiente al caracter ASCII de la tecla pulsada
+        	out 16,r1        ; hacemos un clear del teclado. Cualquier registro vale ya que el valor del registro no importa
+	   fin:
+	*/
+
+  __asm__ (
+    c144:	7210 	in	r1, 16
+    c146:	6202 	bz	r1, 6
+    c148:	720f 	in	r1, 15
+    c14a:	7310 	out	16, r1
+
+0000c14c <__fin>:
+    c14c:	43bf 	st	-2(r6), r1
+	"in %0, %1\n\t"
+	"bz %0, __fin\n\t"    // avanzamos 2 instrucciones
+	"in %0, %2\n\t"
+	"out %1, %0\n\t"
+	"__fin:"
+ 	: "=r" (res)
+ 	: "i" (16),           // Puerto 16=Status teclado
+          "i" (15));          // Puerto 15=ASCII tecla
+  return res;
+    c14e:	33bf 	ld	r1, -2(r6)
+}
+    c150:	3dc1 	ld	r6, 2(r7)
+    c152:	3bc2 	ld	r5, 4(r7)
+    c154:	2fc6 	addi	r7, r7, 6
+    c156:	a143 	jmp	r5
+
+0000c158 <read_one_bloq>:
+
+
+int read_one_bloq (void)
+{
+    c158:	2ffa 	addi	r7, r7, -6
+    c15a:	4bc2 	st	4(r7), r5
+    c15c:	4dc1 	st	2(r7), r6
+    c15e:	2dc2 	addi	r6, r7, 2
+
+0000c160 <__pol>:
+  int res;
+
+	/*
+	polling:    in r1,16         ; leemos el estado del teclado
+        	    bz r1,polling    ; esperamos ha que se haya pulsado una tecla
+	            in r1,15         ; leemos el valor correspondiente al caracter ASCII de la tecla pulsada
+        	    out 16,r1        ; hacemos un clear del teclado. Cualquier registro vale ya que el valor del registro no importa
+	*/
+
+  __asm__ (
+    c160:	7210 	in	r1, 16
+    c162:	62fe 	bz	r1, -2
+    c164:	720f 	in	r1, 15
+    c166:	7310 	out	16, r1
+    c168:	43bf 	st	-2(r6), r1
+	"__pol: in %0, %1\n\t"
+	"bz %0, __pol\n\t"    // retorcedemos 2 instrucciones
+	"in %0, %2\n\t"
+	"out %1, %0\n\t"
+ 	: "=r" (res)
+ 	: "i" (16),           // Puerto 16=Status teclado
+          "i" (15));          // Puerto 15=ASCII tecla
+
+  return res;
+    c16a:	33bf 	ld	r1, -2(r6)
+}
+    c16c:	3dc1 	ld	r6, 2(r7)
+    c16e:	3bc2 	ld	r5, 4(r7)
+    c170:	2fc6 	addi	r7, r7, 6
+    c172:	a143 	jmp	r5
+
+0000c174 <write_7segments>:
+
+
+
+int write_7segments(int valor, char control)
+{
+    c174:	2ff8 	addi	r7, r7, -8
+    c176:	4bc3 	st	6(r7), r5
+    c178:	4dc2 	st	4(r7), r6
+    c17a:	2dc4 	addi	r6, r7, 4
+    c17c:	45c0 	st	0(r7), r2
+  int res;
+
+  __asm__ (
+    c17e:	d586 	ldb	r2, 6(r6)
+    c180:	3382 	ld	r1, 4(r6)
+    c182:	7509 	out	9, r2
+    c184:	730a 	out	10, r1
+	"out %0, %1\n\t"      // apagamos/endendemos los visores
+	"out %2, %3\n\t"      // mostramos el valor
+	: /* sin salidas*/
+ 	: "i" (9),            // Puerto 9=Control visores
+	  "r" (control),
+          "i" (10),  	      // Puerto 10=Valor visores
+	  "r" (valor));
+
+  return res;
+    c186:	33bf 	ld	r1, -2(r6)
+}
+    c188:	35c0 	ld	r2, 0(r7)
+    c18a:	3dc2 	ld	r6, 4(r7)
+    c18c:	3bc3 	ld	r5, 6(r7)
+    c18e:	2fc8 	addi	r7, r7, 8
+    c190:	a143 	jmp	r5
+
+0000c192 <write_green_leds>:
+
+
+int write_green_leds(char c)
+{
+    c192:	2ffa 	addi	r7, r7, -6
+    c194:	4bc2 	st	4(r7), r5
+    c196:	4dc1 	st	2(r7), r6
+    c198:	2dc2 	addi	r6, r7, 2
+  int res;
+
+  __asm__ ( "out %0, %1" 
+    c19a:	d384 	ldb	r1, 4(r6)
+    c19c:	7305 	out	5, r1
+            : /* sin salidas*/
+            : "i" (5), "r" (c));    // %0 corresponde al puerto 5 (leds verdes),  %1 corresponde a la variable "c" que habra sido cargada en otro registro
+
+  return res;
+    c19e:	33bf 	ld	r1, -2(r6)
+}
+    c1a0:	3dc1 	ld	r6, 2(r7)
+    c1a2:	3bc2 	ld	r5, 4(r7)
+    c1a4:	2fc6 	addi	r7, r7, 6
+    c1a6:	a143 	jmp	r5
+
+0000c1a8 <write_red_leds>:
+                   
+                   
+int write_red_leds(char c)
+{
+    c1a8:	2ffa 	addi	r7, r7, -6
+    c1aa:	4bc2 	st	4(r7), r5
+    c1ac:	4dc1 	st	2(r7), r6
+    c1ae:	2dc2 	addi	r6, r7, 2
+  int res;
+
+  __asm__ ( "out %0, %1" 
+    c1b0:	d384 	ldb	r1, 4(r6)
+    c1b2:	7306 	out	6, r1
+            : /* sin salidas*/
+            : "i" (6), "r" (c));     // %0 corresponde al puerto 6 (leds rojos),  %1 corresponde a la variable "c" que habra sido cargada en otro registro
+
+  return res;
+    c1b4:	33bf 	ld	r1, -2(r6)
+}
+    c1b6:	3dc1 	ld	r6, 2(r7)
+    c1b8:	3bc2 	ld	r5, 4(r7)
+    c1ba:	2fc6 	addi	r7, r7, 6
+    c1bc:	a143 	jmp	r5
+
+0000c1be <strlen_s>:
+
+
+
+
+int strlen_s(char *str)
+{
+    c1be:	2ff8 	addi	r7, r7, -8
+    c1c0:	4bc3 	st	6(r7), r5
+    c1c2:	4dc2 	st	4(r7), r6
+    c1c4:	2dc4 	addi	r6, r7, 4
+    c1c6:	45c0 	st	0(r7), r2
+  int len;
+  for (len = 0; *str++; len++);
+    c1c8:	5200 	movi	r1, 0
+    c1ca:	43bf 	st	-2(r6), r1
+    c1cc:	5a00 	movi	r5, 0
+    c1ce:	6a03 	bz	r5, 8
+    c1d0:	33bf 	ld	r1, -2(r6)
+    c1d2:	2241 	addi	r1, r1, 1
+    c1d4:	43bf 	st	-2(r6), r1
+    c1d6:	3382 	ld	r1, 4(r6)
+    c1d8:	d440 	ldb	r2, 0(r1)
+    c1da:	5200 	movi	r1, 0
+    c1dc:	1299 	cmpeq	r1, r2, r1
+    c1de:	0258 	not	r1, r1
+    c1e0:	2242 	addi	r1, r1, 2
+    c1e2:	3382 	ld	r1, 4(r6)
+    c1e4:	2241 	addi	r1, r1, 1
+    c1e6:	4382 	st	4(r6), r1
+    c1e8:	65f3 	bnz	r2, -24
+  return len;
+    c1ea:	33bf 	ld	r1, -2(r6)
+}
+    c1ec:	35c0 	ld	r2, 0(r7)
+    c1ee:	3dc2 	ld	r6, 4(r7)
+    c1f0:	3bc3 	ld	r5, 6(r7)
+    c1f2:	2fc8 	addi	r7, r7, 8
+    c1f4:	a143 	jmp	r5
+
+0000c1f6 <clear>:
+
+
+
+int clear(void)
+{
+    c1f6:	2ff2 	addi	r7, r7, -14
+    c1f8:	4bc6 	st	12(r7), r5
+    c1fa:	4dc5 	st	10(r7), r6
+    c1fc:	2dca 	addi	r6, r7, 10
+    c1fe:	45c1 	st	2(r7), r2
+    c200:	47c0 	st	0(r7), r3
+ // En c es muy lento
+
+/*  int fila, col;
+  char car;
+  char color;
+  
+  car=' ';		//espacio en blanco
+  color=COLOR_BLACK;	//color negro
+  car='.';
+  color=COLOR_GRIS_OSCURO; //util para debugar
+  
+  for (fila=0; fila<FIXED_HEIGHT; fila++) {
+    for (col=0; col<FIXED_WIDTH; col++) {
+          write_one_char(fila, col, car, color);
+    }  
+  }   
+*/
+
+
+  //mejor hacerlo en ensamblador por rapidez
+
+  int aux1, aux2, aux3;
+
+__asm__ (  
+    c202:	37bd 	ld	r3, -6(r6)
+    c204:	35be 	ld	r2, -4(r6)
+    c206:	33bf 	ld	r1, -2(r6)
+    c208:	5600 	movi	r3, 0
+    c20a:	57a0 	movhi	r3, -96
+    c20c:	5460 	movi	r2, 96
+    c20e:	5509 	movhi	r2, 9
+    c210:	5220 	movi	r1, 32
+    c212:	5300 	movhi	r1, 0
+
+0000c214 <__repe>:
+    c214:	42c0 	st	0(r3), r1
+    c216:	26c2 	addi	r3, r3, 2
+    c218:	24bf 	addi	r2, r2, -1
+    c21a:	65fc 	bnz	r2, -6
+        "movi  %0, lo(0xA000)\n\t"   //0xA000 direccion de inicio de la memoria de video
+        "movhi %0, hi(0xA000)\n\t"
+        "movi  %1, lo(2400)\n\t"     //(80*30=2400=0x0960) numero caracteres de la pantalla
+        "movhi %1, hi(2400)\n\t"
+        //"movi  %2, lo(0x152E)\n\t"
+        //"movhi %2, hi(0x152E)\n\t"   //un punto gris oscuro util para debugar
+        "movi  %2, lo(0x0020)\n\t"
+        "movhi %2, hi(0x0020)\n\t"   //un espacio en color negro
+        "__repe: st 0(%0), %2\n\t"
+        "addi  %0, %0,2\n\t"
+        "addi  %1, %1,-1\n\t"
+        "bnz   %1, __repe\n\t"
+        : /* sin salidas*/
+        : "r" (aux1),
+          "r" (aux2),
+          "r" (aux3));  
+
+  return OK;
+    c21c:	5200 	movi	r1, 0
+}
+    c21e:	35c1 	ld	r2, 2(r7)
+    c220:	37c0 	ld	r3, 0(r7)
+    c222:	3dc5 	ld	r6, 10(r7)
+    c224:	3bc6 	ld	r5, 12(r7)
+    c226:	2fce 	addi	r7, r7, 14
+    c228:	a143 	jmp	r5
+
+0000c22a <itoa>:
+
+
+/*
+ * itoa() - fa la conversió d'un enter a
+ * ASCII, retorna la longitud de la cadena
+ */
+   
+int itoa(int in, char *str)
+{
+    c22a:	2fe0 	addi	r7, r7, -32
+    c22c:	4bcf 	st	30(r7), r5
+    c22e:	4dce 	st	28(r7), r6
+    c230:	2ddc 	addi	r6, r7, 28
+    c232:	2ffc 	addi	r7, r7, -4
+    c234:	41c3 	st	6(r7), r0
+    c236:	45c2 	st	4(r7), r2
+    c238:	47c1 	st	2(r7), r3
+    c23a:	49c0 	st	0(r7), r4
+  int neg=0, i, j;
+    c23c:	5200 	movi	r1, 0
+    c23e:	43bd 	st	-6(r6), r1
+  char tmpstr[10];
+  if (in<0) { str[0]='-'; neg=1; in=-in; }
+    c240:	3582 	ld	r2, 4(r6)
+    c242:	5200 	movi	r1, 0
+    c244:	1281 	cmplt	r1, r2, r1
+    c246:	6209 	bz	r1, 20
+    c248:	3383 	ld	r1, 6(r6)
+    c24a:	542d 	movi	r2, 45
+    c24c:	e440 	stb	0(r1), r2
+    c24e:	5201 	movi	r1, 1
+    c250:	43bd 	st	-6(r6), r1
+    c252:	3382 	ld	r1, 4(r6)
+    c254:	0258 	not	r1, r1
+    c256:	2241 	addi	r1, r1, 1
+    c258:	4382 	st	4(r6), r1
+
+  for (i=0; in>=10; i++)
+    c25a:	5200 	movi	r1, 0
+    c25c:	43be 	st	-4(r6), r1
+    c25e:	5aac 	movi	r5, -84
+    c260:	5bc2 	movhi	r5, -62
+    c262:	a143 	jmp	r5
+    {
+      tmpstr[9-i]=(in%10) + '0';
+    c264:	5409 	movi	r2, 9
+    c266:	33be 	ld	r1, -4(r6)
+    c268:	04a9 	sub	r2, r2, r1
+    c26a:	45b6 	st	-20(r6), r2
+    c26c:	3782 	ld	r3, 4(r6)
+    c26e:	520a 	movi	r1, 10
+    c270:	82e1 	div	r1, r3, r1
+    c272:	0261 	add	r1, r1, r1
+    c274:	5402 	movi	r2, 2
+    c276:	0472 	sha	r2, r1, r2
+    c278:	0262 	add	r1, r1, r2
+    c27a:	24c0 	addi	r2, r3, 0
+    c27c:	02a9 	sub	r1, r2, r1
+    c27e:	5430 	movi	r2, 48
+    c280:	0262 	add	r1, r1, r2
+    c282:	2840 	addi	r4, r1, 0
+    c284:	21b0 	addi	r0, r6, -16
+    c286:	520f 	movi	r1, 15
+    c288:	0258 	not	r1, r1
+    c28a:	2241 	addi	r1, r1, 1
+    c28c:	37b6 	ld	r3, -20(r6)
+    c28e:	02f1 	sha	r1, r3, r1
+    c290:	43b4 	st	-24(r6), r1
+    c292:	37b6 	ld	r3, -20(r6)
+    c294:	22c0 	addi	r1, r3, 0
+    c296:	37b4 	ld	r3, -24(r6)
+    c298:	24c0 	addi	r2, r3, 0
+    c29a:	0221 	add	r1, r0, r1
+    c29c:	e840 	stb	0(r1), r4
+      in/=10;
+    c29e:	3582 	ld	r2, 4(r6)
+    c2a0:	520a 	movi	r1, 10
+    c2a2:	82a1 	div	r1, r2, r1
+    c2a4:	4382 	st	4(r6), r1
+    c2a6:	33be 	ld	r1, -4(r6)
+    c2a8:	2241 	addi	r1, r1, 1
+    c2aa:	43be 	st	-4(r6), r1
+    c2ac:	3382 	ld	r1, 4(r6)
+    c2ae:	5409 	movi	r2, 9
+    c2b0:	124a 	cmple	r1, r1, r2
+    c2b2:	5a64 	movi	r5, 100
+    c2b4:	5bc2 	movhi	r5, -62
+    c2b6:	a340 	jz	r1, r5
+    }
+  tmpstr[9-i] = in + '0';
+    c2b8:	5409 	movi	r2, 9
+    c2ba:	33be 	ld	r1, -4(r6)
+    c2bc:	08a9 	sub	r4, r2, r1
+    c2be:	3382 	ld	r1, 4(r6)
+    c2c0:	5430 	movi	r2, 48
+    c2c2:	0262 	add	r1, r1, r2
+    c2c4:	2040 	addi	r0, r1, 0
+    c2c6:	27b0 	addi	r3, r6, -16
+    c2c8:	47b5 	st	-22(r6), r3
+    c2ca:	520f 	movi	r1, 15
+    c2cc:	0258 	not	r1, r1
+    c2ce:	2241 	addi	r1, r1, 1
+    c2d0:	0731 	sha	r3, r4, r1
+    c2d2:	2300 	addi	r1, r4, 0
+    c2d4:	24c0 	addi	r2, r3, 0
+    c2d6:	37b5 	ld	r3, -22(r6)
+    c2d8:	02e1 	add	r1, r3, r1
+    c2da:	e040 	stb	0(r1), r0
+
+  for(j=neg; j<=i+neg; j++)
+    c2dc:	33bd 	ld	r1, -6(r6)
+    c2de:	43bf 	st	-2(r6), r1
+    c2e0:	5a00 	movi	r5, 0
+    c2e2:	6a1a 	bz	r5, 54
+    str[j] = tmpstr[9-i+j-neg];
+    c2e4:	35bf 	ld	r2, -2(r6)
+    c2e6:	3383 	ld	r1, 6(r6)
+    c2e8:	04a1 	add	r2, r2, r1
+    c2ea:	45b7 	st	-18(r6), r2
+    c2ec:	5409 	movi	r2, 9
+    c2ee:	33be 	ld	r1, -4(r6)
+    c2f0:	04a9 	sub	r2, r2, r1
+    c2f2:	33bf 	ld	r1, -2(r6)
+    c2f4:	02a1 	add	r1, r2, r1
+    c2f6:	2440 	addi	r2, r1, 0
+    c2f8:	33bd 	ld	r1, -6(r6)
+    c2fa:	08a9 	sub	r4, r2, r1
+    c2fc:	21b0 	addi	r0, r6, -16
+    c2fe:	520f 	movi	r1, 15
+    c300:	0258 	not	r1, r1
+    c302:	2241 	addi	r1, r1, 1
+    c304:	0731 	sha	r3, r4, r1
+    c306:	2300 	addi	r1, r4, 0
+    c308:	24c0 	addi	r2, r3, 0
+    c30a:	0221 	add	r1, r0, r1
+    c30c:	d240 	ldb	r1, 0(r1)
+    c30e:	35b7 	ld	r2, -18(r6)
+    c310:	e280 	stb	0(r2), r1
+    c312:	33bf 	ld	r1, -2(r6)
+    c314:	2241 	addi	r1, r1, 1
+    c316:	43bf 	st	-2(r6), r1
+    c318:	35be 	ld	r2, -4(r6)
+    c31a:	33bd 	ld	r1, -6(r6)
+    c31c:	04a1 	add	r2, r2, r1
+    c31e:	33bf 	ld	r1, -2(r6)
+    c320:	1281 	cmplt	r1, r2, r1
+    c322:	62e0 	bz	r1, -62
+  str[j] = '\0';
+    c324:	35bf 	ld	r2, -2(r6)
+    c326:	3383 	ld	r1, 6(r6)
+    c328:	04a1 	add	r2, r2, r1
+    c32a:	5200 	movi	r1, 0
+    c32c:	e280 	stb	0(r2), r1
+
+  return j;
+    c32e:	33bf 	ld	r1, -2(r6)
+}
+    c330:	31c3 	ld	r0, 6(r7)
+    c332:	35c2 	ld	r2, 4(r7)
+    c334:	37c1 	ld	r3, 2(r7)
+    c336:	39c0 	ld	r4, 0(r7)
+    c338:	2f80 	addi	r7, r6, 0
+    c33a:	3dc0 	ld	r6, 0(r7)
+    c33c:	3bc1 	ld	r5, 2(r7)
+    c33e:	2fc4 	addi	r7, r7, 4
+    c340:	a143 	jmp	r5
+
+0000c342 <initscr>:
+                                              
+
+
+/*
+
+http://www.gnu.org/software/guile-ncurses/manual/html_node/Index.html#Index
+http://linux.die.net/man/3/
+
+*/
+
+/*valiables globales para los colores de la pantalla*/
+int COLOR_PAIRS_ARRAY[COLOR_PAIRS+1];
+int current_color;
+
+/*variables globales para el comportamiento del teclado*/
+int no_wait_keyboard; // indica si la lectura del teclado mediante "getch" es bloqueante o no
+
+/*ncurses.h*/
+void initscr (void)
+{
+    c342:	2ffc 	addi	r7, r7, -4
+    c344:	4bc1 	st	2(r7), r5
+    c346:	4dc0 	st	0(r7), r6
+    c348:	2dc0 	addi	r6, r7, 0
+}
+    c34a:	3dc0 	ld	r6, 0(r7)
+    c34c:	3bc1 	ld	r5, 2(r7)
+    c34e:	2fc4 	addi	r7, r7, 4
+    c350:	a143 	jmp	r5
+
+0000c352 <start_color>:
+
+int start_color (void)
+{
+    c352:	2ffc 	addi	r7, r7, -4
+    c354:	4bc1 	st	2(r7), r5
+    c356:	4dc0 	st	0(r7), r6
+    c358:	2dc0 	addi	r6, r7, 0
+  return OK;
+    c35a:	5200 	movi	r1, 0
+}
+    c35c:	3dc0 	ld	r6, 0(r7)
+    c35e:	3bc1 	ld	r5, 2(r7)
+    c360:	2fc4 	addi	r7, r7, 4
+    c362:	a143 	jmp	r5
+
+0000c364 <use_default_colors>:
+
+int use_default_colors(void)
+{
+    c364:	2ffc 	addi	r7, r7, -4
+    c366:	4bc1 	st	2(r7), r5
+    c368:	4dc0 	st	0(r7), r6
+    c36a:	2dc0 	addi	r6, r7, 0
+  return OK;
+    c36c:	5200 	movi	r1, 0
+}
+    c36e:	3dc0 	ld	r6, 0(r7)
+    c370:	3bc1 	ld	r5, 2(r7)
+    c372:	2fc4 	addi	r7, r7, 4
+    c374:	a143 	jmp	r5
+
+0000c376 <COLOR_PAIR>:
+
+int COLOR_PAIR(int n) 
+{
+    c376:	2ff0 	addi	r7, r7, -16
+    c378:	4bc7 	st	14(r7), r5
+    c37a:	4dc6 	st	12(r7), r6
+    c37c:	2dcc 	addi	r6, r7, 12
+    c37e:	41c3 	st	6(r7), r0
+    c380:	45c2 	st	4(r7), r2
+    c382:	47c1 	st	2(r7), r3
+    c384:	49c0 	st	0(r7), r4
+  int color_rgb;
+  color_rgb=COLOR_PAIRS_ARRAY[n];
+    c386:	3982 	ld	r4, 4(r6)
+    c388:	5220 	movi	r1, 32
+    c38a:	5380 	movhi	r1, -128
+    c38c:	43be 	st	-4(r6), r1
+    c38e:	520f 	movi	r1, 15
+    c390:	0258 	not	r1, r1
+    c392:	2241 	addi	r1, r1, 1
+    c394:	0731 	sha	r3, r4, r1
+    c396:	2300 	addi	r1, r4, 0
+    c398:	24c0 	addi	r2, r3, 0
+    c39a:	0661 	add	r3, r1, r1
+    c39c:	10e1 	cmpltu	r0, r3, r1
+    c39e:	08a2 	add	r4, r2, r2
+    c3a0:	0224 	add	r1, r0, r4
+    c3a2:	2840 	addi	r4, r1, 0
+    c3a4:	35be 	ld	r2, -4(r6)
+    c3a6:	02a3 	add	r1, r2, r3
+    c3a8:	3240 	ld	r1, 0(r1)
+    c3aa:	43bf 	st	-2(r6), r1
+  
+  return color_rgb;
+    c3ac:	33bf 	ld	r1, -2(r6)
+}
+    c3ae:	31c3 	ld	r0, 6(r7)
+    c3b0:	35c2 	ld	r2, 4(r7)
+    c3b2:	37c1 	ld	r3, 2(r7)
+    c3b4:	39c0 	ld	r4, 0(r7)
+    c3b6:	3dc6 	ld	r6, 12(r7)
+    c3b8:	3bc7 	ld	r5, 14(r7)
+    c3ba:	2fd0 	addi	r7, r7, 16
+    c3bc:	a143 	jmp	r5
+
+0000c3be <init_pair>:
+
+int init_pair(short pair, short f, short b)
+{
+    c3be:	2ff0 	addi	r7, r7, -16
+    c3c0:	4bc7 	st	14(r7), r5
+    c3c2:	4dc6 	st	12(r7), r6
+    c3c4:	2dcc 	addi	r6, r7, 12
+    c3c6:	41c3 	st	6(r7), r0
+    c3c8:	45c2 	st	4(r7), r2
+    c3ca:	47c1 	st	2(r7), r3
+    c3cc:	49c0 	st	0(r7), r4
+  COLOR_PAIRS_ARRAY[pair]=f;  /*solo se asigna el color para la letra. el fondo siempre es negro*/
+    c3ce:	d984 	ldb	r4, 4(r6)
+    c3d0:	d385 	ldb	r1, 5(r6)
+    c3d2:	43bf 	st	-2(r6), r1
+    c3d4:	5420 	movi	r2, 32
+    c3d6:	5580 	movhi	r2, -128
+    c3d8:	45be 	st	-4(r6), r2
+    c3da:	520f 	movi	r1, 15
+    c3dc:	0258 	not	r1, r1
+    c3de:	2241 	addi	r1, r1, 1
+    c3e0:	0731 	sha	r3, r4, r1
+    c3e2:	2300 	addi	r1, r4, 0
+    c3e4:	24c0 	addi	r2, r3, 0
+    c3e6:	0661 	add	r3, r1, r1
+    c3e8:	10e1 	cmpltu	r0, r3, r1
+    c3ea:	08a2 	add	r4, r2, r2
+    c3ec:	0224 	add	r1, r0, r4
+    c3ee:	2840 	addi	r4, r1, 0
+    c3f0:	35be 	ld	r2, -4(r6)
+    c3f2:	02a3 	add	r1, r2, r3
+    c3f4:	35bf 	ld	r2, -2(r6)
+    c3f6:	4440 	st	0(r1), r2
+  return OK;
+    c3f8:	5200 	movi	r1, 0
+}
+    c3fa:	31c3 	ld	r0, 6(r7)
+    c3fc:	35c2 	ld	r2, 4(r7)
+    c3fe:	37c1 	ld	r3, 2(r7)
+    c400:	39c0 	ld	r4, 0(r7)
+    c402:	3dc6 	ld	r6, 12(r7)
+    c404:	3bc7 	ld	r5, 14(r7)
+    c406:	2fd0 	addi	r7, r7, 16
+    c408:	a143 	jmp	r5
+
+0000c40a <erase>:
+
+int erase(void)
+{
+    c40a:	2ffc 	addi	r7, r7, -4
+    c40c:	4bc1 	st	2(r7), r5
+    c40e:	4dc0 	st	0(r7), r6
+    c410:	2dc0 	addi	r6, r7, 0
+  clear();
+    c412:	52f6 	movi	r1, -10
+    c414:	53c1 	movhi	r1, -63
+    c416:	aa44 	jal	r5, r1
+
+  return OK;
+    c418:	5200 	movi	r1, 0
+}
+    c41a:	3dc0 	ld	r6, 0(r7)
+    c41c:	3bc1 	ld	r5, 2(r7)
+    c41e:	2fc4 	addi	r7, r7, 4
+    c420:	a143 	jmp	r5
+
+0000c422 <refresh>:
+
+
+int refresh(void)
+{
+    c422:	2ffc 	addi	r7, r7, -4
+    c424:	4bc1 	st	2(r7), r5
+    c426:	4dc0 	st	0(r7), r6
+    c428:	2dc0 	addi	r6, r7, 0
+  return OK;
+    c42a:	5200 	movi	r1, 0
+}
+    c42c:	3dc0 	ld	r6, 0(r7)
+    c42e:	3bc1 	ld	r5, 2(r7)
+    c430:	2fc4 	addi	r7, r7, 4
+    c432:	a143 	jmp	r5
+
+0000c434 <mvaddch>:
+
+
+int mvaddch(int x, int y, const char ch)
+{
+    c434:	2ff8 	addi	r7, r7, -8
+    c436:	4bc3 	st	6(r7), r5
+    c438:	4dc2 	st	4(r7), r6
+    c43a:	2dc4 	addi	r6, r7, 4
+    c43c:	45c1 	st	2(r7), r2
+    c43e:	47c0 	st	0(r7), r3
+  write_one_char(x, y, ch, current_color);
+    c440:	5210 	movi	r1, 16
+    c442:	5380 	movhi	r1, -128
+    c444:	3240 	ld	r1, 0(r1)
+    c446:	2640 	addi	r3, r1, 0
+    c448:	2ffa 	addi	r7, r7, -6
+    c44a:	25c0 	addi	r2, r7, 0
+    c44c:	3382 	ld	r1, 4(r6)
+    c44e:	4280 	st	0(r2), r1
+    c450:	3383 	ld	r1, 6(r6)
+    c452:	4281 	st	2(r2), r1
+    c454:	d388 	ldb	r1, 8(r6)
+    c456:	e284 	stb	4(r2), r1
+    c458:	e685 	stb	5(r2), r3
+    c45a:	5254 	movi	r1, 84
+    c45c:	53c0 	movhi	r1, -64
+    c45e:	aa44 	jal	r5, r1
+    c460:	2fc6 	addi	r7, r7, 6
+
+  return OK;
+    c462:	5200 	movi	r1, 0
+}
+    c464:	35c1 	ld	r2, 2(r7)
+    c466:	37c0 	ld	r3, 0(r7)
+    c468:	3dc2 	ld	r6, 4(r7)
+    c46a:	3bc3 	ld	r5, 6(r7)
+    c46c:	2fc8 	addi	r7, r7, 8
+    c46e:	a143 	jmp	r5
+
+0000c470 <mvprintw1>:
+
+
+
+int mvprintw1(int x, int y, char *cadena)
+{
+    c470:	2ff6 	addi	r7, r7, -10
+    c472:	4bc4 	st	8(r7), r5
+    c474:	4dc3 	st	6(r7), r6
+    c476:	2dc6 	addi	r6, r7, 6
+    c478:	45c1 	st	2(r7), r2
+    c47a:	47c0 	st	0(r7), r3
+  int long_cadena;
+
+  long_cadena = strlen_s(cadena);
+    c47c:	2ffe 	addi	r7, r7, -2
+    c47e:	25c0 	addi	r2, r7, 0
+    c480:	3384 	ld	r1, 8(r6)
+    c482:	4280 	st	0(r2), r1
+    c484:	52be 	movi	r1, -66
+    c486:	53c1 	movhi	r1, -63
+    c488:	aa44 	jal	r5, r1
+    c48a:	2fc2 	addi	r7, r7, 2
+    c48c:	43bf 	st	-2(r6), r1
+
+  write(x, y, cadena, long_cadena, current_color);
+    c48e:	5210 	movi	r1, 16
+    c490:	5380 	movhi	r1, -128
+    c492:	3240 	ld	r1, 0(r1)
+    c494:	2640 	addi	r3, r1, 0
+    c496:	2ff6 	addi	r7, r7, -10
+    c498:	25c0 	addi	r2, r7, 0
+    c49a:	3382 	ld	r1, 4(r6)
+    c49c:	4280 	st	0(r2), r1
+    c49e:	3383 	ld	r1, 6(r6)
+    c4a0:	4281 	st	2(r2), r1
+    c4a2:	3384 	ld	r1, 8(r6)
+    c4a4:	4282 	st	4(r2), r1
+    c4a6:	33bf 	ld	r1, -2(r6)
+    c4a8:	4283 	st	6(r2), r1
+    c4aa:	e688 	stb	8(r2), r3
+    c4ac:	5290 	movi	r1, -112
+    c4ae:	53c0 	movhi	r1, -64
+    c4b0:	aa44 	jal	r5, r1
+    c4b2:	2fca 	addi	r7, r7, 10
+
+  return OK;
+    c4b4:	5200 	movi	r1, 0
+}
+    c4b6:	35c1 	ld	r2, 2(r7)
+    c4b8:	37c0 	ld	r3, 0(r7)
+    c4ba:	3dc3 	ld	r6, 6(r7)
+    c4bc:	3bc4 	ld	r5, 8(r7)
+    c4be:	2fca 	addi	r7, r7, 10
+    c4c0:	a143 	jmp	r5
+
+0000c4c2 <mvprintw2>:
+
+
+int mvprintw2(int x, int y, char *cadena, int valor)
+{
+    c4c2:	2fe0 	addi	r7, r7, -32
+    c4c4:	4bcf 	st	30(r7), r5
+    c4c6:	4dce 	st	28(r7), r6
+    c4c8:	2ddc 	addi	r6, r7, 28
+    c4ca:	2ffe 	addi	r7, r7, -2
+    c4cc:	45c2 	st	4(r7), r2
+    c4ce:	47c1 	st	2(r7), r3
+    c4d0:	49c0 	st	0(r7), r4
+  int long_cadena1;
+  int long_cadena2;
+  char str_aux[20];
+
+  // muestra por pantalla el texto
+  long_cadena1 = strlen_s(cadena);
+    c4d2:	2ffe 	addi	r7, r7, -2
+    c4d4:	25c0 	addi	r2, r7, 0
+    c4d6:	3384 	ld	r1, 8(r6)
+    c4d8:	4280 	st	0(r2), r1
+    c4da:	52be 	movi	r1, -66
+    c4dc:	53c1 	movhi	r1, -63
+    c4de:	aa44 	jal	r5, r1
+    c4e0:	2fc2 	addi	r7, r7, 2
+    c4e2:	43be 	st	-4(r6), r1
+  write(x, y, cadena, long_cadena1, current_color);
+    c4e4:	5210 	movi	r1, 16
+    c4e6:	5380 	movhi	r1, -128
+    c4e8:	3240 	ld	r1, 0(r1)
+    c4ea:	2640 	addi	r3, r1, 0
+    c4ec:	2ff6 	addi	r7, r7, -10
+    c4ee:	25c0 	addi	r2, r7, 0
+    c4f0:	3382 	ld	r1, 4(r6)
+    c4f2:	4280 	st	0(r2), r1
+    c4f4:	3383 	ld	r1, 6(r6)
+    c4f6:	4281 	st	2(r2), r1
+    c4f8:	3384 	ld	r1, 8(r6)
+    c4fa:	4282 	st	4(r2), r1
+    c4fc:	33be 	ld	r1, -4(r6)
+    c4fe:	4283 	st	6(r2), r1
+    c500:	e688 	stb	8(r2), r3
+    c502:	5290 	movi	r1, -112
+    c504:	53c0 	movhi	r1, -64
+    c506:	aa44 	jal	r5, r1
+    c508:	2fca 	addi	r7, r7, 10
+
+  //convierte el valor (int) en una cadena de caracterres y lo muestra por pantalla a continuacion del texto
+  long_cadena2= itoa(valor, str_aux);
+    c50a:	2ffc 	addi	r7, r7, -4
+    c50c:	25c0 	addi	r2, r7, 0
+    c50e:	3385 	ld	r1, 10(r6)
+    c510:	4280 	st	0(r2), r1
+    c512:	23a8 	addi	r1, r6, -24
+    c514:	4281 	st	2(r2), r1
+    c516:	522a 	movi	r1, 42
+    c518:	53c2 	movhi	r1, -62
+    c51a:	aa44 	jal	r5, r1
+    c51c:	2fc4 	addi	r7, r7, 4
+    c51e:	43bf 	st	-2(r6), r1
+  write(x, y+long_cadena1, str_aux, long_cadena2, current_color);
+    c520:	3583 	ld	r2, 6(r6)
+    c522:	33be 	ld	r1, -4(r6)
+    c524:	06a1 	add	r3, r2, r1
+    c526:	5210 	movi	r1, 16
+    c528:	5380 	movhi	r1, -128
+    c52a:	3240 	ld	r1, 0(r1)
+    c52c:	2840 	addi	r4, r1, 0
+    c52e:	2ff6 	addi	r7, r7, -10
+    c530:	25c0 	addi	r2, r7, 0
+    c532:	3382 	ld	r1, 4(r6)
+    c534:	4280 	st	0(r2), r1
+    c536:	4681 	st	2(r2), r3
+    c538:	23a8 	addi	r1, r6, -24
+    c53a:	4282 	st	4(r2), r1
+    c53c:	33bf 	ld	r1, -2(r6)
+    c53e:	4283 	st	6(r2), r1
+    c540:	e888 	stb	8(r2), r4
+    c542:	5290 	movi	r1, -112
+    c544:	53c0 	movhi	r1, -64
+    c546:	aa44 	jal	r5, r1
+    c548:	2fca 	addi	r7, r7, 10
+
+  return OK;
+    c54a:	5200 	movi	r1, 0
+}
+    c54c:	35c2 	ld	r2, 4(r7)
+    c54e:	37c1 	ld	r3, 2(r7)
+    c550:	39c0 	ld	r4, 0(r7)
+    c552:	2f80 	addi	r7, r6, 0
+    c554:	3dc0 	ld	r6, 0(r7)
+    c556:	3bc1 	ld	r5, 2(r7)
+    c558:	2fc4 	addi	r7, r7, 4
+    c55a:	a143 	jmp	r5
+
+0000c55c <mvprintw3>:
+
+
+int mvprintw3(int x, int y, char *cadena, char valor)
+{
+    c55c:	2ff4 	addi	r7, r7, -12
+    c55e:	4bc5 	st	10(r7), r5
+    c560:	4dc4 	st	8(r7), r6
+    c562:	2dc8 	addi	r6, r7, 8
+    c564:	45c2 	st	4(r7), r2
+    c566:	47c1 	st	2(r7), r3
+    c568:	49c0 	st	0(r7), r4
+  int long_cadena;
+
+  // muestra por pantalla el texto
+  long_cadena = strlen_s(cadena);
+    c56a:	2ffe 	addi	r7, r7, -2
+    c56c:	25c0 	addi	r2, r7, 0
+    c56e:	3384 	ld	r1, 8(r6)
+    c570:	4280 	st	0(r2), r1
+    c572:	52be 	movi	r1, -66
+    c574:	53c1 	movhi	r1, -63
+    c576:	aa44 	jal	r5, r1
+    c578:	2fc2 	addi	r7, r7, 2
+    c57a:	43bf 	st	-2(r6), r1
+  write(x, y, cadena, long_cadena, current_color);
+    c57c:	5210 	movi	r1, 16
+    c57e:	5380 	movhi	r1, -128
+    c580:	3240 	ld	r1, 0(r1)
+    c582:	2640 	addi	r3, r1, 0
+    c584:	2ff6 	addi	r7, r7, -10
+    c586:	25c0 	addi	r2, r7, 0
+    c588:	3382 	ld	r1, 4(r6)
+    c58a:	4280 	st	0(r2), r1
+    c58c:	3383 	ld	r1, 6(r6)
+    c58e:	4281 	st	2(r2), r1
+    c590:	3384 	ld	r1, 8(r6)
+    c592:	4282 	st	4(r2), r1
+    c594:	33bf 	ld	r1, -2(r6)
+    c596:	4283 	st	6(r2), r1
+    c598:	e688 	stb	8(r2), r3
+    c59a:	5290 	movi	r1, -112
+    c59c:	53c0 	movhi	r1, -64
+    c59e:	aa44 	jal	r5, r1
+    c5a0:	2fca 	addi	r7, r7, 10
+
+  // muestar el caracter a cointinuacion del texto
+  write_one_char(x, y+long_cadena, valor, current_color);
+    c5a2:	3583 	ld	r2, 6(r6)
+    c5a4:	33bf 	ld	r1, -2(r6)
+    c5a6:	06a1 	add	r3, r2, r1
+    c5a8:	5210 	movi	r1, 16
+    c5aa:	5380 	movhi	r1, -128
+    c5ac:	3240 	ld	r1, 0(r1)
+    c5ae:	2840 	addi	r4, r1, 0
+    c5b0:	2ffa 	addi	r7, r7, -6
+    c5b2:	25c0 	addi	r2, r7, 0
+    c5b4:	3382 	ld	r1, 4(r6)
+    c5b6:	4280 	st	0(r2), r1
+    c5b8:	4681 	st	2(r2), r3
+    c5ba:	d38a 	ldb	r1, 10(r6)
+    c5bc:	e284 	stb	4(r2), r1
+    c5be:	e885 	stb	5(r2), r4
+    c5c0:	5254 	movi	r1, 84
+    c5c2:	53c0 	movhi	r1, -64
+    c5c4:	aa44 	jal	r5, r1
+    c5c6:	2fc6 	addi	r7, r7, 6
+
+  return OK;
+    c5c8:	5200 	movi	r1, 0
+}
+    c5ca:	35c2 	ld	r2, 4(r7)
+    c5cc:	37c1 	ld	r3, 2(r7)
+    c5ce:	39c0 	ld	r4, 0(r7)
+    c5d0:	3dc4 	ld	r6, 8(r7)
+    c5d2:	3bc5 	ld	r5, 10(r7)
+    c5d4:	2fcc 	addi	r7, r7, 12
+    c5d6:	a143 	jmp	r5
+
+0000c5d8 <mvaddstr>:
+
+int mvaddstr(int x, int y, char *str)
+{
+    c5d8:	2ffa 	addi	r7, r7, -6
+    c5da:	4bc2 	st	4(r7), r5
+    c5dc:	4dc1 	st	2(r7), r6
+    c5de:	2dc2 	addi	r6, r7, 2
+    c5e0:	45c0 	st	0(r7), r2
+  mvprintw1(x, y, str);
+    c5e2:	2ffa 	addi	r7, r7, -6
+    c5e4:	25c0 	addi	r2, r7, 0
+    c5e6:	3382 	ld	r1, 4(r6)
+    c5e8:	4280 	st	0(r2), r1
+    c5ea:	3383 	ld	r1, 6(r6)
+    c5ec:	4281 	st	2(r2), r1
+    c5ee:	3384 	ld	r1, 8(r6)
+    c5f0:	4282 	st	4(r2), r1
+    c5f2:	5270 	movi	r1, 112
+    c5f4:	53c4 	movhi	r1, -60
+    c5f6:	aa44 	jal	r5, r1
+    c5f8:	2fc6 	addi	r7, r7, 6
+
+  return OK;
+    c5fa:	5200 	movi	r1, 0
+}
+    c5fc:	35c0 	ld	r2, 0(r7)
+    c5fe:	3dc1 	ld	r6, 2(r7)
+    c600:	3bc2 	ld	r5, 4(r7)
+    c602:	2fc6 	addi	r7, r7, 6
+    c604:	a143 	jmp	r5
+
+0000c606 <curs_set>:
+
+
+int curs_set(int visibility)
+{
+    c606:	2ffc 	addi	r7, r7, -4
+    c608:	4bc1 	st	2(r7), r5
+    c60a:	4dc0 	st	0(r7), r6
+    c60c:	2dc0 	addi	r6, r7, 0
+  return OK;
+    c60e:	5200 	movi	r1, 0
+}
+    c610:	3dc0 	ld	r6, 0(r7)
+    c612:	3bc1 	ld	r5, 2(r7)
+    c614:	2fc4 	addi	r7, r7, 4
+    c616:	a143 	jmp	r5
+
+0000c618 <has_colors>:
+
+int has_colors(void)
+{
+    c618:	2ffc 	addi	r7, r7, -4
+    c61a:	4bc1 	st	2(r7), r5
+    c61c:	4dc0 	st	0(r7), r6
+    c61e:	2dc0 	addi	r6, r7, 0
+  return TRUE;
+    c620:	5201 	movi	r1, 1
+}
+    c622:	3dc0 	ld	r6, 0(r7)
+    c624:	3bc1 	ld	r5, 2(r7)
+    c626:	2fc4 	addi	r7, r7, 4
+    c628:	a143 	jmp	r5
+
+0000c62a <attron>:
+
+
+int attron(int attrs)
+{
+    c62a:	2ffa 	addi	r7, r7, -6
+    c62c:	4bc2 	st	4(r7), r5
+    c62e:	4dc1 	st	2(r7), r6
+    c630:	2dc2 	addi	r6, r7, 2
+    c632:	45c0 	st	0(r7), r2
+  current_color=attrs;
+    c634:	5410 	movi	r2, 16
+    c636:	5580 	movhi	r2, -128
+    c638:	3382 	ld	r1, 4(r6)
+    c63a:	4280 	st	0(r2), r1
+  return OK;
+    c63c:	5200 	movi	r1, 0
+}
+    c63e:	35c0 	ld	r2, 0(r7)
+    c640:	3dc1 	ld	r6, 2(r7)
+    c642:	3bc2 	ld	r5, 4(r7)
+    c644:	2fc6 	addi	r7, r7, 6
+    c646:	a143 	jmp	r5
+
+0000c648 <nodelay>:
+
+
+
+int nodelay(int *win, int bf)
+{
+    c648:	2ffa 	addi	r7, r7, -6
+    c64a:	4bc2 	st	4(r7), r5
+    c64c:	4dc1 	st	2(r7), r6
+    c64e:	2dc2 	addi	r6, r7, 2
+    c650:	45c0 	st	0(r7), r2
+  //* "win" no se usa pero se mentiene para no modificar mucho el codigo fuente del snake
+  no_wait_keyboard=bf;
+    c652:	54a2 	movi	r2, -94
+    c654:	5580 	movhi	r2, -128
+    c656:	3383 	ld	r1, 6(r6)
+    c658:	4280 	st	0(r2), r1
+  
+  return OK;
+    c65a:	5200 	movi	r1, 0
+}
+    c65c:	35c0 	ld	r2, 0(r7)
+    c65e:	3dc1 	ld	r6, 2(r7)
+    c660:	3bc2 	ld	r5, 4(r7)
+    c662:	2fc6 	addi	r7, r7, 6
+    c664:	a143 	jmp	r5
+
+0000c666 <getch>:
+
+
+int getch(void)
+{
+    c666:	2ff8 	addi	r7, r7, -8
+    c668:	4bc3 	st	6(r7), r5
+    c66a:	4dc2 	st	4(r7), r6
+    c66c:	2dc4 	addi	r6, r7, 4
+    c66e:	45c0 	st	0(r7), r2
+  int res;
+
+  if (no_wait_keyboard==TRUE) {
+    c670:	52a2 	movi	r1, -94
+    c672:	5380 	movhi	r1, -128
+    c674:	3440 	ld	r2, 0(r1)
+    c676:	5201 	movi	r1, 1
+    c678:	1299 	cmpeq	r1, r2, r1
+    c67a:	6206 	bz	r1, 14
+	// mirar si hay tecla pulsada y si no devolver un 0
+	res=read_one_No_bloq();
+    c67c:	523c 	movi	r1, 60
+    c67e:	53c1 	movhi	r1, -63
+    c680:	aa44 	jal	r5, r1
+    c682:	43bf 	st	-2(r6), r1
+    c684:	5a00 	movi	r5, 0
+    c686:	6a04 	bz	r5, 10
+  
+  } else {
+	// si no hay tecla pulsada esperar mediante un bucle a que se pulse una tecla
+	res=read_one_bloq();
+    c688:	5258 	movi	r1, 88
+    c68a:	53c1 	movhi	r1, -63
+    c68c:	aa44 	jal	r5, r1
+    c68e:	43bf 	st	-2(r6), r1
+  }
+
+  return res;
+    c690:	33bf 	ld	r1, -2(r6)
+}
+    c692:	35c0 	ld	r2, 0(r7)
+    c694:	3dc2 	ld	r6, 4(r7)
+    c696:	3bc3 	ld	r5, 6(r7)
+    c698:	2fc8 	addi	r7, r7, 8
+    c69a:	a143 	jmp	r5
+
+0000c69c <usleep>:
+
+int usleep(int msec)
+{
+    c69c:	2ff8 	addi	r7, r7, -8
+    c69e:	4bc3 	st	6(r7), r5
+    c6a0:	4dc2 	st	4(r7), r6
+    c6a2:	2dc4 	addi	r6, r7, 4
+    c6a4:	45c0 	st	0(r7), r2
+  //rutina que se bloquea durante k MILISEGUNDOS. 
+  //debido a la implementacion hardware, la unidad de tiempo minima es de 1 milisegundo y 
+  //el tiempo maximo de bloqueo es de 2^16=65536milisegundos(65s)
+
+  int aux;
+  
+//write_7segments(msec, 0xF);
+  
+  //inicializa el puerto 21 con el numero de milisegundos a esperar y un bucle que se bloquea hasta que el registros ese valga cero.
+  __asm__ (
+    c6a6:	3582 	ld	r2, 4(r6)
+    c6a8:	33bf 	ld	r1, -2(r6)
+    c6aa:	7515 	out	21, r2
+
+0000c6ac <__esp_milisec>:
+    c6ac:	7215 	in	r1, 21
+    c6ae:	63fe 	bnz	r1, -2
+        "out %1,%0\n\t"
+        "__esp_milisec: in %2,%1\n\t"
+        "bnz %2, __esp_milisec\n\t"
+        : /* sin salidas*/
+        : "r" (msec),
+          "i" (21),       //puerto del contador de milisegundos
+          "r" (aux));  
+  
+  return OK;
+    c6b0:	5200 	movi	r1, 0
+}
+    c6b2:	35c0 	ld	r2, 0(r7)
+    c6b4:	3dc2 	ld	r6, 4(r7)
+    c6b6:	3bc3 	ld	r5, 6(r7)
+    c6b8:	2fc8 	addi	r7, r7, 8
+    c6ba:	a143 	jmp	r5
+
+0000c6bc <exit>:
+
+
+void exit(int status)
+{
+    c6bc:	2ffc 	addi	r7, r7, -4
+    c6be:	4bc1 	st	2(r7), r5
+    c6c0:	4dc0 	st	0(r7), r6
+    c6c2:	2dc0 	addi	r6, r7, 0
+}
+    c6c4:	3dc0 	ld	r6, 0(r7)
+    c6c6:	3bc1 	ld	r5, 2(r7)
+    c6c8:	2fc4 	addi	r7, r7, 4
+    c6ca:	a143 	jmp	r5
+
+0000c6cc <rand>:
+
+
+int rand(void)
+{
+    c6cc:	2ff4 	addi	r7, r7, -12
+    c6ce:	4bc5 	st	10(r7), r5
+    c6d0:	4dc4 	st	8(r7), r6
+    c6d2:	2dc8 	addi	r6, r7, 8
+    c6d4:	45c0 	st	0(r7), r2
+  // crear un puerto de entrada que se actualize a cada ciclo de reloj
+  // y devolver directamente su valor
+
+  int res,aux1,aux2;
+
+__asm__ (  
+    c6d6:	35be 	ld	r2, -4(r6)
+    c6d8:	33bf 	ld	r1, -2(r6)
+    c6da:	54ff 	movi	r2, -1
+    c6dc:	557f 	movhi	r2, 127
+    c6de:	7214 	in	r1, 20
+    c6e0:	0242 	and	r1, r1, r2
+    c6e2:	43bd 	st	-6(r6), r1
+        "movi  %1, lo(0x7FFF)\n\t" //0x7FFF para hacer una mascara
+        "movhi %1, hi(0x7FFF)\n\t"
+        "in    %2, %3\n\t"
+        "and   %0, %2, %1\n\t"    //devuelve un valor entre 0 y 32767
+        : "=r" (res)
+        : "r" (aux1),
+          "r" (aux2),
+          "i" (20));              // Puerto 20=Registro especial para numeros pseudoaleatorios
+
+  return res;
+    c6e4:	33bd 	ld	r1, -6(r6)
+}
+    c6e6:	35c0 	ld	r2, 0(r7)
+    c6e8:	3dc4 	ld	r6, 8(r7)
+    c6ea:	3bc5 	ld	r5, 10(r7)
+    c6ec:	2fcc 	addi	r7, r7, 12
+    c6ee:	a143 	jmp	r5
+
+0000c6f0 <fruit_update_bonus>:
+
+/**	Drops the bonus value of the fruit for each 'frame'
+ */
+void fruit_update_bonus ()
+{
+    c6f0:	2ff8 	addi	r7, r7, -8
+    c6f2:	4bc3 	st	6(r7), r5
+    c6f4:	4dc2 	st	4(r7), r6
+    c6f6:	2dc4 	addi	r6, r7, 4
+    c6f8:	45c1 	st	2(r7), r2
+    c6fa:	47c0 	st	0(r7), r3
+	if (fruit.bonus > 0)
+    c6fc:	5600 	movi	r3, 0
+    c6fe:	5780 	movhi	r3, -128
+    c700:	34c2 	ld	r2, 4(r3)
+    c702:	5200 	movi	r1, 0
+    c704:	1289 	cmple	r1, r2, r1
+    c706:	6302 	bnz	r1, 6
+		fruit.bonus--;
+    c708:	22bf 	addi	r1, r2, -1
+    c70a:	42c2 	st	4(r3), r1
+}
+    c70c:	35c1 	ld	r2, 2(r7)
+    c70e:	37c0 	ld	r3, 0(r7)
+    c710:	3dc2 	ld	r6, 4(r7)
+    c712:	3bc3 	ld	r5, 6(r7)
+    c714:	2fc8 	addi	r7, r7, 8
+    c716:	a143 	jmp	r5
+
+0000c718 <fruit_init>:
+    c718:	2fea 	addi	r7, r7, -22
+    c71a:	4bca 	st	20(r7), r5
+    c71c:	4dc9 	st	18(r7), r6
+    c71e:	2dd2 	addi	r6, r7, 18
+    c720:	41c3 	st	6(r7), r0
+    c722:	45c2 	st	4(r7), r2
+    c724:	47c1 	st	2(r7), r3
+    c726:	49c0 	st	0(r7), r4
+    c728:	54cc 	movi	r2, -52
+    c72a:	55c6 	movhi	r2, -58
+    c72c:	aa84 	jal	r5, r2
+    c72e:	54a4 	movi	r2, -92
+    c730:	5580 	movhi	r2, -128
+    c732:	3680 	ld	r3, 0(r2)
+    c734:	26fe 	addi	r3, r3, -2
+    c736:	8463 	div	r2, r1, r3
+    c738:	8483 	mul	r2, r2, r3
+    c73a:	026a 	sub	r1, r1, r2
+    c73c:	2241 	addi	r1, r1, 1
+    c73e:	5600 	movi	r3, 0
+    c740:	5780 	movhi	r3, -128
+    c742:	42c0 	st	0(r3), r1
+    c744:	54cc 	movi	r2, -52
+    c746:	55c6 	movhi	r2, -58
+    c748:	aa84 	jal	r5, r2
+    c74a:	54a4 	movi	r2, -92
+    c74c:	5580 	movhi	r2, -128
+    c74e:	3681 	ld	r3, 2(r2)
+    c750:	26fe 	addi	r3, r3, -2
+    c752:	8463 	div	r2, r1, r3
+    c754:	8483 	mul	r2, r2, r3
+    c756:	026a 	sub	r1, r1, r2
+    c758:	2242 	addi	r1, r1, 2
+    c75a:	5600 	movi	r3, 0
+    c75c:	5780 	movhi	r3, -128
+    c75e:	42c1 	st	2(r3), r1
+    c760:	30c2 	ld	r0, 4(r3)
+    c762:	54cc 	movi	r2, -52
+    c764:	55c6 	movhi	r2, -58
+    c766:	aa84 	jal	r5, r2
+    c768:	200a 	addi	r0, r0, 10
+    c76a:	5829 	movi	r4, 41
+    c76c:	8864 	div	r4, r1, r4
+    c76e:	5403 	movi	r2, 3
+    c770:	0532 	sha	r2, r4, r2
+    c772:	5602 	movi	r3, 2
+    c774:	06b3 	sha	r3, r2, r3
+    c776:	04a3 	add	r2, r2, r3
+    c778:	04a4 	add	r2, r2, r4
+    c77a:	026a 	sub	r1, r1, r2
+    c77c:	0021 	add	r0, r0, r1
+    c77e:	5600 	movi	r3, 0
+    c780:	5780 	movhi	r3, -128
+    c782:	40c2 	st	4(r3), r0
+    c784:	32c1 	ld	r1, 2(r3)
+    c786:	43bb 	st	-10(r6), r1
+    c788:	54a4 	movi	r2, -92
+    c78a:	5580 	movhi	r2, -128
+    c78c:	3481 	ld	r2, 2(r2)
+    c78e:	45bf 	st	-2(r6), r2
+    c790:	56c0 	movi	r3, -64
+    c792:	5780 	movhi	r3, -128
+    c794:	36c2 	ld	r3, 4(r3)
+    c796:	47bc 	st	-8(r6), r3
+    c798:	22ff 	addi	r1, r3, -1
+    c79a:	5400 	movi	r2, 0
+    c79c:	124a 	cmple	r1, r1, r2
+    c79e:	5aec 	movi	r5, -20
+    c7a0:	5bc7 	movhi	r5, -57
+    c7a2:	a341 	jnz	r1, r5
+    c7a4:	5200 	movi	r1, 0
+    c7a6:	5380 	movhi	r1, -128
+    c7a8:	3240 	ld	r1, 0(r1)
+    c7aa:	43bd 	st	-6(r6), r1
+    c7ac:	5201 	movi	r1, 1
+    c7ae:	43be 	st	-4(r6), r1
+    c7b0:	5a00 	movi	r5, 0
+    c7b2:	6a06 	bz	r5, 14
+    c7b4:	37be 	ld	r3, -4(r6)
+    c7b6:	26c1 	addi	r3, r3, 1
+    c7b8:	47be 	st	-4(r6), r3
+    c7ba:	35bc 	ld	r2, -8(r6)
+    c7bc:	12da 	cmpeq	r1, r3, r2
+    c7be:	6316 	bnz	r1, 46
+    c7c0:	35be 	ld	r2, -4(r6)
+    c7c2:	5002 	movi	r0, 2
+    c7c4:	02b0 	sha	r1, r2, r0
+    c7c6:	56c0 	movi	r3, -64
+    c7c8:	5780 	movhi	r3, -128
+    c7ca:	0463 	add	r2, r1, r3
+    c7cc:	3283 	ld	r1, 6(r2)
+    c7ce:	37bd 	ld	r3, -6(r6)
+    c7d0:	125b 	cmpeq	r1, r1, r3
+    c7d2:	62f0 	bz	r1, -30
+    c7d4:	3284 	ld	r1, 8(r2)
+    c7d6:	35bb 	ld	r2, -10(r6)
+    c7d8:	1299 	cmpeq	r1, r2, r1
+    c7da:	5a28 	movi	r5, 40
+    c7dc:	5bc7 	movhi	r5, -57
+    c7de:	a341 	jnz	r1, r5
+    c7e0:	37be 	ld	r3, -4(r6)
+    c7e2:	26c1 	addi	r3, r3, 1
+    c7e4:	47be 	st	-4(r6), r3
+    c7e6:	35bc 	ld	r2, -8(r6)
+    c7e8:	12da 	cmpeq	r1, r3, r2
+    c7ea:	62ea 	bz	r1, -42
+    c7ec:	37bf 	ld	r3, -2(r6)
+    c7ee:	22ff 	addi	r1, r3, -1
+    c7f0:	35bb 	ld	r2, -10(r6)
+    c7f2:	1299 	cmpeq	r1, r2, r1
+    c7f4:	5a28 	movi	r5, 40
+    c7f6:	5bc7 	movhi	r5, -57
+    c7f8:	a341 	jnz	r1, r5
+    c7fa:	31c3 	ld	r0, 6(r7)
+    c7fc:	35c2 	ld	r2, 4(r7)
+    c7fe:	37c1 	ld	r3, 2(r7)
+    c800:	39c0 	ld	r4, 0(r7)
+    c802:	3dc9 	ld	r6, 18(r7)
+    c804:	3bca 	ld	r5, 20(r7)
+    c806:	2fd6 	addi	r7, r7, 22
+    c808:	a143 	jmp	r5
+
+0000c80a <start_atrribute>:
+/** Wrapper to the attron() function, in case the current terminal
+ *  doesn't support colors.
+ */
+void start_atrribute (int attr)
+{
+    c80a:	2ffa 	addi	r7, r7, -6
+    c80c:	4bc2 	st	4(r7), r5
+    c80e:	4dc1 	st	2(r7), r6
+    c810:	2dc2 	addi	r6, r7, 2
+    c812:	45c0 	st	0(r7), r2
+	if (has_colors () == TRUE)
+    c814:	5218 	movi	r1, 24
+    c816:	53c6 	movhi	r1, -58
+    c818:	aa44 	jal	r5, r1
+    c81a:	5401 	movi	r2, 1
+    c81c:	125a 	cmpeq	r1, r1, r2
+    c81e:	6305 	bnz	r1, 12
+	{
+		attron (attr);
+	}
+}
+    c820:	35c0 	ld	r2, 0(r7)
+    c822:	3dc1 	ld	r6, 2(r7)
+    c824:	3bc2 	ld	r5, 4(r7)
+    c826:	2fc6 	addi	r7, r7, 6
+    c828:	a143 	jmp	r5
+    c82a:	2ffe 	addi	r7, r7, -2
+    c82c:	3382 	ld	r1, 4(r6)
+    c82e:	43c0 	st	0(r7), r1
+    c830:	522a 	movi	r1, 42
+    c832:	53c6 	movhi	r1, -58
+    c834:	aa44 	jal	r5, r1
+    c836:	2fc2 	addi	r7, r7, 2
+    c838:	35c0 	ld	r2, 0(r7)
+    c83a:	3dc1 	ld	r6, 2(r7)
+    c83c:	3bc2 	ld	r5, 4(r7)
+    c83e:	2fc6 	addi	r7, r7, 6
+    c840:	a143 	jmp	r5
+
+0000c842 <engine_clean_game_over>:
+    c842:	2ffc 	addi	r7, r7, -4
+    c844:	4bc1 	st	2(r7), r5
+    c846:	4dc0 	st	0(r7), r6
+    c848:	2dc0 	addi	r6, r7, 0
+    c84a:	2ffc 	addi	r7, r7, -4
+    c84c:	52aa 	movi	r1, -86
+    c84e:	5380 	movhi	r1, -128
+    c850:	3240 	ld	r1, 0(r1)
+    c852:	43c0 	st	0(r7), r1
+    c854:	5201 	movi	r1, 1
+    c856:	43c1 	st	2(r7), r1
+    c858:	5248 	movi	r1, 72
+    c85a:	53c6 	movhi	r1, -58
+    c85c:	aa44 	jal	r5, r1
+    c85e:	3dc2 	ld	r6, 4(r7)
+    c860:	3bc3 	ld	r5, 6(r7)
+    c862:	2fc8 	addi	r7, r7, 8
+    c864:	a143 	jmp	r5
+
+0000c866 <engine_clean_pause>:
+    c866:	2ffc 	addi	r7, r7, -4
+    c868:	4bc1 	st	2(r7), r5
+    c86a:	4dc0 	st	0(r7), r6
+    c86c:	2dc0 	addi	r6, r7, 0
+    c86e:	2ffc 	addi	r7, r7, -4
+    c870:	52aa 	movi	r1, -86
+    c872:	5380 	movhi	r1, -128
+    c874:	3240 	ld	r1, 0(r1)
+    c876:	43c0 	st	0(r7), r1
+    c878:	5201 	movi	r1, 1
+    c87a:	43c1 	st	2(r7), r1
+    c87c:	5248 	movi	r1, 72
+    c87e:	53c6 	movhi	r1, -58
+    c880:	aa44 	jal	r5, r1
+    c882:	2fc2 	addi	r7, r7, 2
+    c884:	5200 	movi	r1, 0
+    c886:	43c0 	st	0(r7), r1
+    c888:	5206 	movi	r1, 6
+    c88a:	53c6 	movhi	r1, -58
+    c88c:	aa44 	jal	r5, r1
+    c88e:	3dc1 	ld	r6, 2(r7)
+    c890:	3bc2 	ld	r5, 4(r7)
+    c892:	2fc6 	addi	r7, r7, 6
+    c894:	a143 	jmp	r5
+
+0000c896 <engine_get_game_input>:
+    c896:	2ffc 	addi	r7, r7, -4
+    c898:	4bc1 	st	2(r7), r5
+    c89a:	4dc0 	st	0(r7), r6
+    c89c:	2dc0 	addi	r6, r7, 0
+    c89e:	5266 	movi	r1, 102
+    c8a0:	53c6 	movhi	r1, -58
+    c8a2:	aa44 	jal	r5, r1
+    c8a4:	3dc0 	ld	r6, 0(r7)
+    c8a6:	3bc1 	ld	r5, 2(r7)
+    c8a8:	2fc4 	addi	r7, r7, 4
+    c8aa:	a143 	jmp	r5
+
+0000c8ac <engine_show_pause>:
+    c8ac:	2ff6 	addi	r7, r7, -10
+    c8ae:	4bc4 	st	8(r7), r5
+    c8b0:	4dc3 	st	6(r7), r6
+    c8b2:	2dc6 	addi	r6, r7, 6
+    c8b4:	45c2 	st	4(r7), r2
+    c8b6:	47c1 	st	2(r7), r3
+    c8b8:	49c0 	st	0(r7), r4
+    c8ba:	2ffe 	addi	r7, r7, -2
+    c8bc:	5201 	movi	r1, 1
+    c8be:	43c0 	st	0(r7), r1
+    c8c0:	5206 	movi	r1, 6
+    c8c2:	53c6 	movhi	r1, -58
+    c8c4:	aa44 	jal	r5, r1
+    c8c6:	2ffe 	addi	r7, r7, -2
+    c8c8:	52aa 	movi	r1, -86
+    c8ca:	5380 	movhi	r1, -128
+    c8cc:	3240 	ld	r1, 0(r1)
+    c8ce:	43c0 	st	0(r7), r1
+    c8d0:	5200 	movi	r1, 0
+    c8d2:	43c1 	st	2(r7), r1
+    c8d4:	5248 	movi	r1, 72
+    c8d6:	53c6 	movhi	r1, -58
+    c8d8:	aa44 	jal	r5, r1
+    c8da:	2fc2 	addi	r7, r7, 2
+    c8dc:	5206 	movi	r1, 6
+    c8de:	43c0 	st	0(r7), r1
+    c8e0:	5276 	movi	r1, 118
+    c8e2:	53c3 	movhi	r1, -61
+    c8e4:	aa44 	jal	r5, r1
+    c8e6:	43c0 	st	0(r7), r1
+    c8e8:	520a 	movi	r1, 10
+    c8ea:	53c8 	movhi	r1, -56
+    c8ec:	aa44 	jal	r5, r1
+    c8ee:	2ffc 	addi	r7, r7, -4
+    c8f0:	56a4 	movi	r3, -92
+    c8f2:	5780 	movhi	r3, -128
+    c8f4:	32c1 	ld	r1, 2(r3)
+    c8f6:	227f 	addi	r1, r1, -1
+    c8f8:	54ff 	movi	r2, -1
+    c8fa:	0272 	sha	r1, r1, r2
+    c8fc:	43c0 	st	0(r7), r1
+    c8fe:	32c0 	ld	r1, 0(r3)
+    c900:	0262 	add	r1, r1, r2
+    c902:	0272 	sha	r1, r1, r2
+    c904:	227b 	addi	r1, r1, -5
+    c906:	43c1 	st	2(r7), r1
+    c908:	527a 	movi	r1, 122
+    c90a:	53dd 	movhi	r1, -35
+    c90c:	43c2 	st	4(r7), r1
+    c90e:	5870 	movi	r4, 112
+    c910:	59c4 	movhi	r4, -60
+    c912:	ab04 	jal	r5, r4
+    c914:	32c1 	ld	r1, 2(r3)
+    c916:	0262 	add	r1, r1, r2
+    c918:	0272 	sha	r1, r1, r2
+    c91a:	2241 	addi	r1, r1, 1
+    c91c:	43c0 	st	0(r7), r1
+    c91e:	32c0 	ld	r1, 0(r3)
+    c920:	0262 	add	r1, r1, r2
+    c922:	0272 	sha	r1, r1, r2
+    c924:	2275 	addi	r1, r1, -11
+    c926:	43c1 	st	2(r7), r1
+    c928:	5287 	movi	r1, -121
+    c92a:	53dd 	movhi	r1, -35
+    c92c:	43c2 	st	4(r7), r1
+    c92e:	ab04 	jal	r5, r4
+    c930:	35c5 	ld	r2, 10(r7)
+    c932:	37c4 	ld	r3, 8(r7)
+    c934:	39c3 	ld	r4, 6(r7)
+    c936:	3dc6 	ld	r6, 12(r7)
+    c938:	3bc7 	ld	r5, 14(r7)
+    c93a:	2fd0 	addi	r7, r7, 16
+    c93c:	a143 	jmp	r5
+
+0000c93e <draw_player>:
+    c93e:	2ff2 	addi	r7, r7, -14
+    c940:	4bc6 	st	12(r7), r5
+    c942:	4dc5 	st	10(r7), r6
+    c944:	2dca 	addi	r6, r7, 10
+    c946:	41c3 	st	6(r7), r0
+    c948:	45c2 	st	4(r7), r2
+    c94a:	47c1 	st	2(r7), r3
+    c94c:	49c0 	st	0(r7), r4
+    c94e:	2ffe 	addi	r7, r7, -2
+    c950:	5205 	movi	r1, 5
+    c952:	43c0 	st	0(r7), r1
+    c954:	5276 	movi	r1, 118
+    c956:	53c3 	movhi	r1, -61
+    c958:	aa44 	jal	r5, r1
+    c95a:	43c0 	st	0(r7), r1
+    c95c:	520a 	movi	r1, 10
+    c95e:	53c8 	movhi	r1, -56
+    c960:	aa44 	jal	r5, r1
+    c962:	2ffc 	addi	r7, r7, -4
+    c964:	54c0 	movi	r2, -64
+    c966:	5580 	movhi	r2, -128
+    c968:	3286 	ld	r1, 12(r2)
+    c96a:	43c0 	st	0(r7), r1
+    c96c:	3285 	ld	r1, 10(r2)
+    c96e:	43c1 	st	2(r7), r1
+    c970:	5240 	movi	r1, 64
+    c972:	e3c4 	stb	4(r7), r1
+    c974:	5634 	movi	r3, 52
+    c976:	57c4 	movhi	r3, -60
+    c978:	aac4 	jal	r5, r3
+    c97a:	2fc6 	addi	r7, r7, 6
+    c97c:	3282 	ld	r1, 4(r2)
+    c97e:	5601 	movi	r3, 1
+    c980:	124b 	cmple	r1, r1, r3
+    c982:	631a 	bnz	r1, 54
+    c984:	47bf 	st	-2(r6), r3
+    c986:	33bf 	ld	r1, -2(r6)
+    c988:	5002 	movi	r0, 2
+    c98a:	0270 	sha	r1, r1, r0
+    c98c:	56c0 	movi	r3, -64
+    c98e:	5780 	movhi	r3, -128
+    c990:	0463 	add	r2, r1, r3
+    c992:	2ffa 	addi	r7, r7, -6
+    c994:	3286 	ld	r1, 12(r2)
+    c996:	43c0 	st	0(r7), r1
+    c998:	3285 	ld	r1, 10(r2)
+    c99a:	43c1 	st	2(r7), r1
+    c99c:	526f 	movi	r1, 111
+    c99e:	e3c4 	stb	4(r7), r1
+    c9a0:	5434 	movi	r2, 52
+    c9a2:	55c4 	movhi	r2, -60
+    c9a4:	aa84 	jal	r5, r2
+    c9a6:	37bf 	ld	r3, -2(r6)
+    c9a8:	26c1 	addi	r3, r3, 1
+    c9aa:	47bf 	st	-2(r6), r3
+    c9ac:	2fc6 	addi	r7, r7, 6
+    c9ae:	54c0 	movi	r2, -64
+    c9b0:	5580 	movhi	r2, -128
+    c9b2:	3282 	ld	r1, 4(r2)
+    c9b4:	124b 	cmple	r1, r1, r3
+    c9b6:	62e7 	bz	r1, -48
+    c9b8:	31c3 	ld	r0, 6(r7)
+    c9ba:	35c2 	ld	r2, 4(r7)
+    c9bc:	37c1 	ld	r3, 2(r7)
+    c9be:	39c0 	ld	r4, 0(r7)
+    c9c0:	3dc5 	ld	r6, 10(r7)
+    c9c2:	3bc6 	ld	r5, 12(r7)
+    c9c4:	2fce 	addi	r7, r7, 14
+    c9c6:	a143 	jmp	r5
+
+0000c9c8 <draw_fruit>:
+    c9c8:	2ffa 	addi	r7, r7, -6
+    c9ca:	4bc2 	st	4(r7), r5
+    c9cc:	4dc1 	st	2(r7), r6
+    c9ce:	2dc2 	addi	r6, r7, 2
+    c9d0:	45c0 	st	0(r7), r2
+    c9d2:	2ffe 	addi	r7, r7, -2
+    c9d4:	5202 	movi	r1, 2
+    c9d6:	43c0 	st	0(r7), r1
+    c9d8:	5276 	movi	r1, 118
+    c9da:	53c3 	movhi	r1, -61
+    c9dc:	aa44 	jal	r5, r1
+    c9de:	43c0 	st	0(r7), r1
+    c9e0:	520a 	movi	r1, 10
+    c9e2:	53c8 	movhi	r1, -56
+    c9e4:	aa44 	jal	r5, r1
+    c9e6:	2ffc 	addi	r7, r7, -4
+    c9e8:	5400 	movi	r2, 0
+    c9ea:	5580 	movhi	r2, -128
+    c9ec:	3281 	ld	r1, 2(r2)
+    c9ee:	43c0 	st	0(r7), r1
+    c9f0:	3280 	ld	r1, 0(r2)
+    c9f2:	43c1 	st	2(r7), r1
+    c9f4:	5224 	movi	r1, 36
+    c9f6:	e3c4 	stb	4(r7), r1
+    c9f8:	5234 	movi	r1, 52
+    c9fa:	53c4 	movhi	r1, -60
+    c9fc:	aa44 	jal	r5, r1
+    c9fe:	35c3 	ld	r2, 6(r7)
+    ca00:	3dc4 	ld	r6, 8(r7)
+    ca02:	3bc5 	ld	r5, 10(r7)
+    ca04:	2fcc 	addi	r7, r7, 12
+    ca06:	a143 	jmp	r5
+
+0000ca08 <draw_borders>:
+    ca08:	2ff4 	addi	r7, r7, -12
+    ca0a:	4bc5 	st	10(r7), r5
+    ca0c:	4dc4 	st	8(r7), r6
+    ca0e:	2dc8 	addi	r6, r7, 8
+    ca10:	41c3 	st	6(r7), r0
+    ca12:	45c2 	st	4(r7), r2
+    ca14:	47c1 	st	2(r7), r3
+    ca16:	49c0 	st	0(r7), r4
+    ca18:	2ffe 	addi	r7, r7, -2
+    ca1a:	5204 	movi	r1, 4
+    ca1c:	43c0 	st	0(r7), r1
+    ca1e:	5276 	movi	r1, 118
+    ca20:	53c3 	movhi	r1, -61
+    ca22:	aa44 	jal	r5, r1
+    ca24:	43c0 	st	0(r7), r1
+    ca26:	520a 	movi	r1, 10
+    ca28:	53c8 	movhi	r1, -56
+    ca2a:	aa44 	jal	r5, r1
+    ca2c:	52b0 	movi	r1, -80
+    ca2e:	5380 	movhi	r1, -128
+    ca30:	3440 	ld	r2, 0(r1)
+    ca32:	2fc2 	addi	r7, r7, 2
+    ca34:	5201 	movi	r1, 1
+    ca36:	1299 	cmpeq	r1, r2, r1
+    ca38:	5ad8 	movi	r5, -40
+    ca3a:	5bca 	movhi	r5, -54
+    ca3c:	a341 	jnz	r1, r5
+    ca3e:	5202 	movi	r1, 2
+    ca40:	1299 	cmpeq	r1, r2, r1
+    ca42:	6308 	bnz	r1, 18
+    ca44:	31c3 	ld	r0, 6(r7)
+    ca46:	35c2 	ld	r2, 4(r7)
+    ca48:	37c1 	ld	r3, 2(r7)
+    ca4a:	39c0 	ld	r4, 0(r7)
+    ca4c:	3dc4 	ld	r6, 8(r7)
+    ca4e:	3bc5 	ld	r5, 10(r7)
+    ca50:	2fcc 	addi	r7, r7, 12
+    ca52:	a143 	jmp	r5
+    ca54:	58a4 	movi	r4, -92
+    ca56:	5980 	movhi	r4, -128
+    ca58:	3300 	ld	r1, 0(r4)
+    ca5a:	227f 	addi	r1, r1, -1
+    ca5c:	5400 	movi	r2, 0
+    ca5e:	1242 	cmplt	r1, r1, r2
+    ca60:	6316 	bnz	r1, 46
+    ca62:	2680 	addi	r3, r2, 0
+    ca64:	5034 	movi	r0, 52
+    ca66:	51c4 	movhi	r0, -60
+    ca68:	2ffa 	addi	r7, r7, -6
+    ca6a:	5201 	movi	r1, 1
+    ca6c:	43c0 	st	0(r7), r1
+    ca6e:	47c1 	st	2(r7), r3
+    ca70:	542e 	movi	r2, 46
+    ca72:	e5c4 	stb	4(r7), r2
+    ca74:	aa04 	jal	r5, r0
+    ca76:	3301 	ld	r1, 2(r4)
+    ca78:	227f 	addi	r1, r1, -1
+    ca7a:	43c0 	st	0(r7), r1
+    ca7c:	47c1 	st	2(r7), r3
+    ca7e:	e5c4 	stb	4(r7), r2
+    ca80:	aa04 	jal	r5, r0
+    ca82:	26c1 	addi	r3, r3, 1
+    ca84:	3300 	ld	r1, 0(r4)
+    ca86:	227f 	addi	r1, r1, -1
+    ca88:	2fc6 	addi	r7, r7, 6
+    ca8a:	1243 	cmplt	r1, r1, r3
+    ca8c:	62ed 	bz	r1, -36
+    ca8e:	3301 	ld	r1, 2(r4)
+    ca90:	227f 	addi	r1, r1, -1
+    ca92:	5400 	movi	r2, 0
+    ca94:	124a 	cmple	r1, r1, r2
+    ca96:	5a44 	movi	r5, 68
+    ca98:	5bca 	movhi	r5, -54
+    ca9a:	a341 	jnz	r1, r5
+    ca9c:	5601 	movi	r3, 1
+    ca9e:	5034 	movi	r0, 52
+    caa0:	51c4 	movhi	r0, -60
+    caa2:	2ffa 	addi	r7, r7, -6
+    caa4:	47c0 	st	0(r7), r3
+    caa6:	5200 	movi	r1, 0
+    caa8:	43c1 	st	2(r7), r1
+    caaa:	542e 	movi	r2, 46
+    caac:	e5c4 	stb	4(r7), r2
+    caae:	aa04 	jal	r5, r0
+    cab0:	47c0 	st	0(r7), r3
+    cab2:	3300 	ld	r1, 0(r4)
+    cab4:	227f 	addi	r1, r1, -1
+    cab6:	43c1 	st	2(r7), r1
+    cab8:	e5c4 	stb	4(r7), r2
+    caba:	aa04 	jal	r5, r0
+    cabc:	26c1 	addi	r3, r3, 1
+    cabe:	3301 	ld	r1, 2(r4)
+    cac0:	227f 	addi	r1, r1, -1
+    cac2:	2fc6 	addi	r7, r7, 6
+    cac4:	1243 	cmplt	r1, r1, r3
+    cac6:	62ed 	bz	r1, -36
+    cac8:	31c3 	ld	r0, 6(r7)
+    caca:	35c2 	ld	r2, 4(r7)
+    cacc:	37c1 	ld	r3, 2(r7)
+    cace:	39c0 	ld	r4, 0(r7)
+    cad0:	3dc4 	ld	r6, 8(r7)
+    cad2:	3bc5 	ld	r5, 10(r7)
+    cad4:	2fcc 	addi	r7, r7, 12
+    cad6:	a143 	jmp	r5
+    cad8:	58a4 	movi	r4, -92
+    cada:	5980 	movhi	r4, -128
+    cadc:	3300 	ld	r1, 0(r4)
+    cade:	227f 	addi	r1, r1, -1
+    cae0:	5400 	movi	r2, 0
+    cae2:	1242 	cmplt	r1, r1, r2
+    cae4:	6316 	bnz	r1, 46
+    cae6:	2680 	addi	r3, r2, 0
+    cae8:	5034 	movi	r0, 52
+    caea:	51c4 	movhi	r0, -60
+    caec:	2ffa 	addi	r7, r7, -6
+    caee:	5201 	movi	r1, 1
+    caf0:	43c0 	st	0(r7), r1
+    caf2:	47c1 	st	2(r7), r3
+    caf4:	5423 	movi	r2, 35
+    caf6:	e5c4 	stb	4(r7), r2
+    caf8:	aa04 	jal	r5, r0
+    cafa:	3301 	ld	r1, 2(r4)
+    cafc:	227f 	addi	r1, r1, -1
+    cafe:	43c0 	st	0(r7), r1
+    cb00:	47c1 	st	2(r7), r3
+    cb02:	e5c4 	stb	4(r7), r2
+    cb04:	aa04 	jal	r5, r0
+    cb06:	26c1 	addi	r3, r3, 1
+    cb08:	3300 	ld	r1, 0(r4)
+    cb0a:	227f 	addi	r1, r1, -1
+    cb0c:	2fc6 	addi	r7, r7, 6
+    cb0e:	1243 	cmplt	r1, r1, r3
+    cb10:	62ed 	bz	r1, -36
+    cb12:	3301 	ld	r1, 2(r4)
+    cb14:	227f 	addi	r1, r1, -1
+    cb16:	5400 	movi	r2, 0
+    cb18:	124a 	cmple	r1, r1, r2
+    cb1a:	5a44 	movi	r5, 68
+    cb1c:	5bca 	movhi	r5, -54
+    cb1e:	a341 	jnz	r1, r5
+    cb20:	5601 	movi	r3, 1
+    cb22:	5034 	movi	r0, 52
+    cb24:	51c4 	movhi	r0, -60
+    cb26:	2ffa 	addi	r7, r7, -6
+    cb28:	47c0 	st	0(r7), r3
+    cb2a:	5200 	movi	r1, 0
+    cb2c:	43c1 	st	2(r7), r1
+    cb2e:	5423 	movi	r2, 35
+    cb30:	e5c4 	stb	4(r7), r2
+    cb32:	aa04 	jal	r5, r0
+    cb34:	47c0 	st	0(r7), r3
+    cb36:	3300 	ld	r1, 0(r4)
+    cb38:	227f 	addi	r1, r1, -1
+    cb3a:	43c1 	st	2(r7), r1
+    cb3c:	e5c4 	stb	4(r7), r2
+    cb3e:	aa04 	jal	r5, r0
+    cb40:	26c1 	addi	r3, r3, 1
+    cb42:	3301 	ld	r1, 2(r4)
+    cb44:	227f 	addi	r1, r1, -1
+    cb46:	2fc6 	addi	r7, r7, 6
+    cb48:	1243 	cmplt	r1, r1, r3
+    cb4a:	62ed 	bz	r1, -36
+    cb4c:	31c3 	ld	r0, 6(r7)
+    cb4e:	35c2 	ld	r2, 4(r7)
+    cb50:	37c1 	ld	r3, 2(r7)
+    cb52:	39c0 	ld	r4, 0(r7)
+    cb54:	3dc4 	ld	r6, 8(r7)
+    cb56:	3bc5 	ld	r5, 10(r7)
+    cb58:	2fcc 	addi	r7, r7, 12
+    cb5a:	a143 	jmp	r5
+
+0000cb5c <engine_init>:
+    cb5c:	2ff4 	addi	r7, r7, -12
+    cb5e:	4bc5 	st	10(r7), r5
+    cb60:	4dc4 	st	8(r7), r6
+    cb62:	2dc8 	addi	r6, r7, 8
+    cb64:	41c3 	st	6(r7), r0
+    cb66:	45c2 	st	4(r7), r2
+    cb68:	47c1 	st	2(r7), r3
+    cb6a:	49c0 	st	0(r7), r4
+    cb6c:	54a4 	movi	r2, -92
+    cb6e:	5580 	movhi	r2, -128
+    cb70:	5250 	movi	r1, 80
+    cb72:	4280 	st	0(r2), r1
+    cb74:	521e 	movi	r1, 30
+    cb76:	4281 	st	2(r2), r1
+    cb78:	5242 	movi	r1, 66
+    cb7a:	53c3 	movhi	r1, -61
+    cb7c:	aa44 	jal	r5, r1
+    cb7e:	5218 	movi	r1, 24
+    cb80:	53c6 	movhi	r1, -58
+    cb82:	aa44 	jal	r5, r1
+    cb84:	2040 	addi	r0, r1, 0
+    cb86:	5401 	movi	r2, 1
+    cb88:	125a 	cmpeq	r1, r1, r2
+    cb8a:	630c 	bnz	r1, 26
+    cb8c:	52b0 	movi	r1, -80
+    cb8e:	5380 	movhi	r1, -128
+    cb90:	5401 	movi	r2, 1
+    cb92:	4440 	st	0(r1), r2
+    cb94:	31c3 	ld	r0, 6(r7)
+    cb96:	35c2 	ld	r2, 4(r7)
+    cb98:	37c1 	ld	r3, 2(r7)
+    cb9a:	39c0 	ld	r4, 0(r7)
+    cb9c:	3dc4 	ld	r6, 8(r7)
+    cb9e:	3bc5 	ld	r5, 10(r7)
+    cba0:	2fcc 	addi	r7, r7, 12
+    cba2:	a143 	jmp	r5
+    cba4:	5252 	movi	r1, 82
+    cba6:	53c3 	movhi	r1, -61
+    cba8:	aa44 	jal	r5, r1
+    cbaa:	5264 	movi	r1, 100
+    cbac:	53c3 	movhi	r1, -61
+    cbae:	aa44 	jal	r5, r1
+    cbb0:	54ff 	movi	r2, -1
+    cbb2:	145a 	cmpeq	r2, r1, r2
+    cbb4:	0498 	not	r2, r2
+    cbb6:	2482 	addi	r2, r2, 2
+    cbb8:	0498 	not	r2, r2
+    cbba:	2481 	addi	r2, r2, 1
+    cbbc:	2ffc 	addi	r7, r7, -4
+    cbbe:	5205 	movi	r1, 5
+    cbc0:	e3c0 	stb	0(r7), r1
+    cbc2:	520c 	movi	r1, 12
+    cbc4:	e3c1 	stb	1(r7), r1
+    cbc6:	e5c2 	stb	2(r7), r2
+    cbc8:	58be 	movi	r4, -66
+    cbca:	59c3 	movhi	r4, -61
+    cbcc:	ab04 	jal	r5, r4
+    cbce:	5202 	movi	r1, 2
+    cbd0:	e3c0 	stb	0(r7), r1
+    cbd2:	523c 	movi	r1, 60
+    cbd4:	e3c1 	stb	1(r7), r1
+    cbd6:	e5c2 	stb	2(r7), r2
+    cbd8:	ab04 	jal	r5, r4
+    cbda:	5204 	movi	r1, 4
+    cbdc:	e3c0 	stb	0(r7), r1
+    cbde:	523f 	movi	r1, 63
+    cbe0:	e3c1 	stb	1(r7), r1
+    cbe2:	e5c2 	stb	2(r7), r2
+    cbe4:	ab04 	jal	r5, r4
+    cbe6:	5206 	movi	r1, 6
+    cbe8:	e3c0 	stb	0(r7), r1
+    cbea:	5603 	movi	r3, 3
+    cbec:	e7c1 	stb	1(r7), r3
+    cbee:	e5c2 	stb	2(r7), r2
+    cbf0:	ab04 	jal	r5, r4
+    cbf2:	e7c0 	stb	0(r7), r3
+    cbf4:	5230 	movi	r1, 48
+    cbf6:	e3c1 	stb	1(r7), r1
+    cbf8:	e5c2 	stb	2(r7), r2
+    cbfa:	ab04 	jal	r5, r4
+    cbfc:	e1c0 	stb	0(r7), r0
+    cbfe:	5200 	movi	r1, 0
+    cc00:	e3c1 	stb	1(r7), r1
+    cc02:	e5c2 	stb	2(r7), r2
+    cc04:	ab04 	jal	r5, r4
+    cc06:	2fc4 	addi	r7, r7, 4
+    cc08:	52b0 	movi	r1, -80
+    cc0a:	5380 	movhi	r1, -128
+    cc0c:	5401 	movi	r2, 1
+    cc0e:	4440 	st	0(r1), r2
+    cc10:	31c3 	ld	r0, 6(r7)
+    cc12:	35c2 	ld	r2, 4(r7)
+    cc14:	37c1 	ld	r3, 2(r7)
+    cc16:	39c0 	ld	r4, 0(r7)
+    cc18:	3dc4 	ld	r6, 8(r7)
+    cc1a:	3bc5 	ld	r5, 10(r7)
+    cc1c:	2fcc 	addi	r7, r7, 12
+    cc1e:	a143 	jmp	r5
+
+0000cc20 <engine_exit>:
+    cc20:	2ffc 	addi	r7, r7, -4
+    cc22:	4bc1 	st	2(r7), r5
+    cc24:	4dc0 	st	0(r7), r6
+    cc26:	2dc0 	addi	r6, r7, 0
+    cc28:	520a 	movi	r1, 10
+    cc2a:	53c4 	movhi	r1, -60
+    cc2c:	aa44 	jal	r5, r1
+    cc2e:	5222 	movi	r1, 34
+    cc30:	53c4 	movhi	r1, -60
+    cc32:	aa44 	jal	r5, r1
+    cc34:	3dc0 	ld	r6, 0(r7)
+    cc36:	3bc1 	ld	r5, 2(r7)
+    cc38:	2fc4 	addi	r7, r7, 4
+    cc3a:	a143 	jmp	r5
+
+0000cc3c <get_main_menu_input>:
+    cc3c:	2ff4 	addi	r7, r7, -12
+    cc3e:	4bc5 	st	10(r7), r5
+    cc40:	4dc4 	st	8(r7), r6
+    cc42:	2dc8 	addi	r6, r7, 8
+    cc44:	41c3 	st	6(r7), r0
+    cc46:	45c2 	st	4(r7), r2
+    cc48:	47c1 	st	2(r7), r3
+    cc4a:	49c0 	st	0(r7), r4
+    cc4c:	2ffc 	addi	r7, r7, -4
+    cc4e:	50aa 	movi	r0, -86
+    cc50:	5180 	movhi	r0, -128
+    cc52:	3200 	ld	r1, 0(r0)
+    cc54:	43c0 	st	0(r7), r1
+    cc56:	5200 	movi	r1, 0
+    cc58:	43c1 	st	2(r7), r1
+    cc5a:	5848 	movi	r4, 72
+    cc5c:	59c6 	movhi	r4, -58
+    cc5e:	ab04 	jal	r5, r4
+    cc60:	2fc4 	addi	r7, r7, 4
+    cc62:	5266 	movi	r1, 102
+    cc64:	53c6 	movhi	r1, -58
+    cc66:	aa44 	jal	r5, r1
+    cc68:	2640 	addi	r3, r1, 0
+    cc6a:	2476 	addi	r2, r1, -10
+    cc6c:	5289 	movi	r1, -119
+    cc6e:	5300 	movhi	r1, 0
+    cc70:	12a9 	cmpleu	r1, r2, r1
+    cc72:	6309 	bnz	r1, 20
+    cc74:	5201 	movi	r1, 1
+    cc76:	31c3 	ld	r0, 6(r7)
+    cc78:	35c2 	ld	r2, 4(r7)
+    cc7a:	37c1 	ld	r3, 2(r7)
+    cc7c:	39c0 	ld	r4, 0(r7)
+    cc7e:	3dc4 	ld	r6, 8(r7)
+    cc80:	3bc5 	ld	r5, 10(r7)
+    cc82:	2fcc 	addi	r7, r7, 12
+    cc84:	a143 	jmp	r5
+    cc86:	02a2 	add	r1, r2, r2
+    cc88:	54a0 	movi	r2, -96
+    cc8a:	55dd 	movhi	r2, -35
+    cc8c:	0262 	add	r1, r1, r2
+    cc8e:	3240 	ld	r1, 0(r1)
+    cc90:	a043 	jmp	r1
+    cc92:	3382 	ld	r1, 4(r6)
+    cc94:	3440 	ld	r2, 0(r1)
+    cc96:	5208 	movi	r1, 8
+    cc98:	1289 	cmple	r1, r2, r1
+    cc9a:	62ec 	bz	r1, -38
+    cc9c:	2281 	addi	r1, r2, 1
+    cc9e:	3582 	ld	r2, 4(r6)
+    cca0:	4280 	st	0(r2), r1
+    cca2:	5201 	movi	r1, 1
+    cca4:	5a00 	movi	r5, 0
+    cca6:	6ae7 	bz	r5, -48
+    cca8:	2ffc 	addi	r7, r7, -4
+    ccaa:	3200 	ld	r1, 0(r0)
+    ccac:	43c0 	st	0(r7), r1
+    ccae:	5201 	movi	r1, 1
+    ccb0:	43c1 	st	2(r7), r1
+    ccb2:	ab04 	jal	r5, r4
+    ccb4:	5200 	movi	r1, 0
+    ccb6:	2fc4 	addi	r7, r7, 4
+    ccb8:	31c3 	ld	r0, 6(r7)
+    ccba:	35c2 	ld	r2, 4(r7)
+    ccbc:	37c1 	ld	r3, 2(r7)
+    ccbe:	39c0 	ld	r4, 0(r7)
+    ccc0:	3dc4 	ld	r6, 8(r7)
+    ccc2:	3bc5 	ld	r5, 10(r7)
+    ccc4:	2fcc 	addi	r7, r7, 12
+    ccc6:	a143 	jmp	r5
+    ccc8:	54d0 	movi	r2, -48
+    ccca:	02e2 	add	r1, r3, r2
+    cccc:	3582 	ld	r2, 4(r6)
+    ccce:	4280 	st	0(r2), r1
+    ccd0:	5201 	movi	r1, 1
+    ccd2:	31c3 	ld	r0, 6(r7)
+    ccd4:	35c2 	ld	r2, 4(r7)
+    ccd6:	37c1 	ld	r3, 2(r7)
+    ccd8:	39c0 	ld	r4, 0(r7)
+    ccda:	3dc4 	ld	r6, 8(r7)
+    ccdc:	3bc5 	ld	r5, 10(r7)
+    ccde:	2fcc 	addi	r7, r7, 12
+    cce0:	a143 	jmp	r5
+    cce2:	5220 	movi	r1, 32
+    cce4:	53cc 	movhi	r1, -52
+    cce6:	aa44 	jal	r5, r1
+    cce8:	5248 	movi	r1, 72
+    ccea:	53d5 	movhi	r1, -43
+    ccec:	aa44 	jal	r5, r1
+    ccee:	5201 	movi	r1, 1
+    ccf0:	31c3 	ld	r0, 6(r7)
+    ccf2:	35c2 	ld	r2, 4(r7)
+    ccf4:	37c1 	ld	r3, 2(r7)
+    ccf6:	39c0 	ld	r4, 0(r7)
+    ccf8:	3dc4 	ld	r6, 8(r7)
+    ccfa:	3bc5 	ld	r5, 10(r7)
+    ccfc:	2fcc 	addi	r7, r7, 12
+    ccfe:	a143 	jmp	r5
+    cd00:	3382 	ld	r1, 4(r6)
+    cd02:	3440 	ld	r2, 0(r1)
+    cd04:	5601 	movi	r3, 1
+    cd06:	128b 	cmple	r1, r2, r3
+    cd08:	5a74 	movi	r5, 116
+    cd0a:	5bcc 	movhi	r5, -52
+    cd0c:	a341 	jnz	r1, r5
+    cd0e:	22bf 	addi	r1, r2, -1
+    cd10:	3582 	ld	r2, 4(r6)
+    cd12:	4280 	st	0(r2), r1
+    cd14:	22c0 	addi	r1, r3, 0
+    cd16:	31c3 	ld	r0, 6(r7)
+    cd18:	35c2 	ld	r2, 4(r7)
+    cd1a:	37c1 	ld	r3, 2(r7)
+    cd1c:	39c0 	ld	r4, 0(r7)
+    cd1e:	3dc4 	ld	r6, 8(r7)
+    cd20:	3bc5 	ld	r5, 10(r7)
+    cd22:	2fcc 	addi	r7, r7, 12
+    cd24:	a143 	jmp	r5
+    cd26:	56b0 	movi	r3, -80
+    cd28:	5780 	movhi	r3, -128
+    cd2a:	34c0 	ld	r2, 0(r3)
+    cd2c:	5201 	movi	r1, 1
+    cd2e:	1299 	cmpeq	r1, r2, r1
+    cd30:	5a74 	movi	r5, 116
+    cd32:	5bcc 	movhi	r5, -52
+    cd34:	a340 	jz	r1, r5
+    cd36:	5202 	movi	r1, 2
+    cd38:	42c0 	st	0(r3), r1
+    cd3a:	2280 	addi	r1, r2, 0
+    cd3c:	5a76 	movi	r5, 118
+    cd3e:	5bcc 	movhi	r5, -52
+    cd40:	a143 	jmp	r5
+    cd42:	56b0 	movi	r3, -80
+    cd44:	5780 	movhi	r3, -128
+    cd46:	32c0 	ld	r1, 0(r3)
+    cd48:	5402 	movi	r2, 2
+    cd4a:	125a 	cmpeq	r1, r1, r2
+    cd4c:	5a74 	movi	r5, 116
+    cd4e:	5bcc 	movhi	r5, -52
+    cd50:	a340 	jz	r1, r5
+    cd52:	5201 	movi	r1, 1
+    cd54:	42c0 	st	0(r3), r1
+    cd56:	5a76 	movi	r5, 118
+    cd58:	5bcc 	movhi	r5, -52
+    cd5a:	a143 	jmp	r5
+
+0000cd5c <engine_show_main_menu>:
+    cd5c:	2fe8 	addi	r7, r7, -24
+    cd5e:	4bcb 	st	22(r7), r5
+    cd60:	4dca 	st	20(r7), r6
+    cd62:	2dd4 	addi	r6, r7, 20
+    cd64:	41c3 	st	6(r7), r0
+    cd66:	45c2 	st	4(r7), r2
+    cd68:	47c1 	st	2(r7), r3
+    cd6a:	49c0 	st	0(r7), r4
+    cd6c:	5201 	movi	r1, 1
+    cd6e:	43bf 	st	-2(r6), r1
+    cd70:	5231 	movi	r1, 49
+    cd72:	e3b5 	stb	-11(r6), r1
+    cd74:	5232 	movi	r1, 50
+    cd76:	e3b6 	stb	-10(r6), r1
+    cd78:	5233 	movi	r1, 51
+    cd7a:	e3b7 	stb	-9(r6), r1
+    cd7c:	5234 	movi	r1, 52
+    cd7e:	e3b8 	stb	-8(r6), r1
+    cd80:	5235 	movi	r1, 53
+    cd82:	e3b9 	stb	-7(r6), r1
+    cd84:	5236 	movi	r1, 54
+    cd86:	e3ba 	stb	-6(r6), r1
+    cd88:	5237 	movi	r1, 55
+    cd8a:	e3bb 	stb	-5(r6), r1
+    cd8c:	5238 	movi	r1, 56
+    cd8e:	e3bc 	stb	-4(r6), r1
+    cd90:	5239 	movi	r1, 57
+    cd92:	e3bd 	stb	-3(r6), r1
+    cd94:	52f6 	movi	r1, -10
+    cd96:	53c1 	movhi	r1, -63
+    cd98:	aa44 	jal	r5, r1
+    cd9a:	5070 	movi	r0, 112
+    cd9c:	51c4 	movhi	r0, -60
+    cd9e:	2ffe 	addi	r7, r7, -2
+    cda0:	5204 	movi	r1, 4
+    cda2:	43c0 	st	0(r7), r1
+    cda4:	5476 	movi	r2, 118
+    cda6:	55c3 	movhi	r2, -61
+    cda8:	aa84 	jal	r5, r2
+    cdaa:	43c0 	st	0(r7), r1
+    cdac:	560a 	movi	r3, 10
+    cdae:	57c8 	movhi	r3, -56
+    cdb0:	aac4 	jal	r5, r3
+    cdb2:	2fc2 	addi	r7, r7, 2
+    cdb4:	58a4 	movi	r4, -92
+    cdb6:	5980 	movhi	r4, -128
+    cdb8:	3300 	ld	r1, 0(r4)
+    cdba:	5400 	movi	r2, 0
+    cdbc:	124a 	cmple	r1, r1, r2
+    cdbe:	6319 	bnz	r1, 52
+    cdc0:	2680 	addi	r3, r2, 0
+    cdc2:	2ffa 	addi	r7, r7, -6
+    cdc4:	5200 	movi	r1, 0
+    cdc6:	43c0 	st	0(r7), r1
+    cdc8:	47c1 	st	2(r7), r3
+    cdca:	542a 	movi	r2, 42
+    cdcc:	e5c4 	stb	4(r7), r2
+    cdce:	5834 	movi	r4, 52
+    cdd0:	59c4 	movhi	r4, -60
+    cdd2:	ab04 	jal	r5, r4
+    cdd4:	58a4 	movi	r4, -92
+    cdd6:	5980 	movhi	r4, -128
+    cdd8:	3301 	ld	r1, 2(r4)
+    cdda:	227f 	addi	r1, r1, -1
+    cddc:	43c0 	st	0(r7), r1
+    cdde:	47c1 	st	2(r7), r3
+    cde0:	e5c4 	stb	4(r7), r2
+    cde2:	5434 	movi	r2, 52
+    cde4:	55c4 	movhi	r2, -60
+    cde6:	aa84 	jal	r5, r2
+    cde8:	26c1 	addi	r3, r3, 1
+    cdea:	2fc6 	addi	r7, r7, 6
+    cdec:	3300 	ld	r1, 0(r4)
+    cdee:	124b 	cmple	r1, r1, r3
+    cdf0:	62e8 	bz	r1, -46
+    cdf2:	56a4 	movi	r3, -92
+    cdf4:	5780 	movhi	r3, -128
+    cdf6:	32c1 	ld	r1, 2(r3)
+    cdf8:	5400 	movi	r2, 0
+    cdfa:	124a 	cmple	r1, r1, r2
+    cdfc:	6319 	bnz	r1, 52
+    cdfe:	2680 	addi	r3, r2, 0
+    ce00:	2ffa 	addi	r7, r7, -6
+    ce02:	47c0 	st	0(r7), r3
+    ce04:	5200 	movi	r1, 0
+    ce06:	43c1 	st	2(r7), r1
+    ce08:	542a 	movi	r2, 42
+    ce0a:	e5c4 	stb	4(r7), r2
+    ce0c:	5834 	movi	r4, 52
+    ce0e:	59c4 	movhi	r4, -60
+    ce10:	ab04 	jal	r5, r4
+    ce12:	47c0 	st	0(r7), r3
+    ce14:	58a4 	movi	r4, -92
+    ce16:	5980 	movhi	r4, -128
+    ce18:	3300 	ld	r1, 0(r4)
+    ce1a:	227f 	addi	r1, r1, -1
+    ce1c:	43c1 	st	2(r7), r1
+    ce1e:	e5c4 	stb	4(r7), r2
+    ce20:	5434 	movi	r2, 52
+    ce22:	55c4 	movhi	r2, -60
+    ce24:	aa84 	jal	r5, r2
+    ce26:	26c1 	addi	r3, r3, 1
+    ce28:	2fc6 	addi	r7, r7, 6
+    ce2a:	3301 	ld	r1, 2(r4)
+    ce2c:	124b 	cmple	r1, r1, r3
+    ce2e:	62e8 	bz	r1, -46
+    ce30:	2ffe 	addi	r7, r7, -2
+    ce32:	5605 	movi	r3, 5
+    ce34:	47c0 	st	0(r7), r3
+    ce36:	5876 	movi	r4, 118
+    ce38:	59c3 	movhi	r4, -61
+    ce3a:	ab04 	jal	r5, r4
+    ce3c:	43c0 	st	0(r7), r1
+    ce3e:	520a 	movi	r1, 10
+    ce40:	53c8 	movhi	r1, -56
+    ce42:	aa44 	jal	r5, r1
+    ce44:	2ffc 	addi	r7, r7, -4
+    ce46:	5401 	movi	r2, 1
+    ce48:	45c0 	st	0(r7), r2
+    ce4a:	5803 	movi	r4, 3
+    ce4c:	49c1 	st	2(r7), r4
+    ce4e:	52b4 	movi	r1, -76
+    ce50:	53de 	movhi	r1, -34
+    ce52:	43c2 	st	4(r7), r1
+    ce54:	aa04 	jal	r5, r0
+    ce56:	5802 	movi	r4, 2
+    ce58:	49c0 	st	0(r7), r4
+    ce5a:	5403 	movi	r2, 3
+    ce5c:	45c1 	st	2(r7), r2
+    ce5e:	52de 	movi	r1, -34
+    ce60:	53de 	movhi	r1, -34
+    ce62:	43c2 	st	4(r7), r1
+    ce64:	aa04 	jal	r5, r0
+    ce66:	45c0 	st	0(r7), r2
+    ce68:	45c1 	st	2(r7), r2
+    ce6a:	5408 	movi	r2, 8
+    ce6c:	55df 	movhi	r2, -33
+    ce6e:	45c2 	st	4(r7), r2
+    ce70:	aa04 	jal	r5, r0
+    ce72:	5204 	movi	r1, 4
+    ce74:	43c0 	st	0(r7), r1
+    ce76:	5403 	movi	r2, 3
+    ce78:	45c1 	st	2(r7), r2
+    ce7a:	5232 	movi	r1, 50
+    ce7c:	53df 	movhi	r1, -33
+    ce7e:	43c2 	st	4(r7), r1
+    ce80:	aa04 	jal	r5, r0
+    ce82:	47c0 	st	0(r7), r3
+    ce84:	45c1 	st	2(r7), r2
+    ce86:	5469 	movi	r2, 105
+    ce88:	55df 	movhi	r2, -33
+    ce8a:	45c2 	st	4(r7), r2
+    ce8c:	aa04 	jal	r5, r0
+    ce8e:	5206 	movi	r1, 6
+    ce90:	43c0 	st	0(r7), r1
+    ce92:	5203 	movi	r1, 3
+    ce94:	43c1 	st	2(r7), r1
+    ce96:	54a1 	movi	r2, -95
+    ce98:	55df 	movhi	r2, -33
+    ce9a:	45c2 	st	4(r7), r2
+    ce9c:	aa04 	jal	r5, r0
+    ce9e:	5207 	movi	r1, 7
+    cea0:	43c0 	st	0(r7), r1
+    cea2:	5203 	movi	r1, 3
+    cea4:	43c1 	st	2(r7), r1
+    cea6:	54d9 	movi	r2, -39
+    cea8:	55df 	movhi	r2, -33
+    ceaa:	45c2 	st	4(r7), r2
+    ceac:	aa04 	jal	r5, r0
+    ceae:	5408 	movi	r2, 8
+    ceb0:	45c0 	st	0(r7), r2
+    ceb2:	5203 	movi	r1, 3
+    ceb4:	43c1 	st	2(r7), r1
+    ceb6:	520d 	movi	r1, 13
+    ceb8:	53e0 	movhi	r1, -32
+    ceba:	43c2 	st	4(r7), r1
+    cebc:	aa04 	jal	r5, r0
+    cebe:	2fc4 	addi	r7, r7, 4
+    cec0:	49c0 	st	0(r7), r4
+    cec2:	5876 	movi	r4, 118
+    cec4:	59c3 	movhi	r4, -61
+    cec6:	ab04 	jal	r5, r4
+    cec8:	43c0 	st	0(r7), r1
+    ceca:	520a 	movi	r1, 10
+    cecc:	53c8 	movhi	r1, -56
+    cece:	aa44 	jal	r5, r1
+    ced0:	2ffc 	addi	r7, r7, -4
+    ced2:	45c0 	st	0(r7), r2
+    ced4:	523b 	movi	r1, 59
+    ced6:	43c1 	st	2(r7), r1
+    ced8:	5276 	movi	r1, 118
+    ceda:	e3c4 	stb	4(r7), r1
+    cedc:	5834 	movi	r4, 52
+    cede:	59c4 	movhi	r4, -60
+    cee0:	ab04 	jal	r5, r4
+    cee2:	45c0 	st	0(r7), r2
+    cee4:	523c 	movi	r1, 60
+    cee6:	43c1 	st	2(r7), r1
+    cee8:	5244 	movi	r1, 68
+    ceea:	53e0 	movhi	r1, -32
+    ceec:	43c2 	st	4(r7), r1
+    ceee:	aa04 	jal	r5, r0
+    cef0:	2fc4 	addi	r7, r7, 4
+    cef2:	5403 	movi	r2, 3
+    cef4:	45c0 	st	0(r7), r2
+    cef6:	5876 	movi	r4, 118
+    cef8:	59c3 	movhi	r4, -61
+    cefa:	ab04 	jal	r5, r4
+    cefc:	43c0 	st	0(r7), r1
+    cefe:	520a 	movi	r1, 10
+    cf00:	53c8 	movhi	r1, -56
+    cf02:	aa44 	jal	r5, r1
+    cf04:	2ffc 	addi	r7, r7, -4
+    cf06:	520a 	movi	r1, 10
+    cf08:	43c0 	st	0(r7), r1
+    cf0a:	47c1 	st	2(r7), r3
+    cf0c:	5448 	movi	r2, 72
+    cf0e:	55e0 	movhi	r2, -32
+    cf10:	45c2 	st	4(r7), r2
+    cf12:	aa04 	jal	r5, r0
+    cf14:	520b 	movi	r1, 11
+    cf16:	43c0 	st	0(r7), r1
+    cf18:	47c1 	st	2(r7), r3
+    cf1a:	587e 	movi	r4, 126
+    cf1c:	59e0 	movhi	r4, -32
+    cf1e:	49c2 	st	4(r7), r4
+    cf20:	aa04 	jal	r5, r0
+    cf22:	580c 	movi	r4, 12
+    cf24:	49c0 	st	0(r7), r4
+    cf26:	47c1 	st	2(r7), r3
+    cf28:	527e 	movi	r1, 126
+    cf2a:	53e0 	movhi	r1, -32
+    cf2c:	43c2 	st	4(r7), r1
+    cf2e:	aa04 	jal	r5, r0
+    cf30:	540d 	movi	r2, 13
+    cf32:	45c0 	st	0(r7), r2
+    cf34:	47c1 	st	2(r7), r3
+    cf36:	527e 	movi	r1, 126
+    cf38:	53e0 	movhi	r1, -32
+    cf3a:	43c2 	st	4(r7), r1
+    cf3c:	aa04 	jal	r5, r0
+    cf3e:	520e 	movi	r1, 14
+    cf40:	43c0 	st	0(r7), r1
+    cf42:	47c1 	st	2(r7), r3
+    cf44:	527e 	movi	r1, 126
+    cf46:	53e0 	movhi	r1, -32
+    cf48:	43c2 	st	4(r7), r1
+    cf4a:	aa04 	jal	r5, r0
+    cf4c:	520f 	movi	r1, 15
+    cf4e:	43c0 	st	0(r7), r1
+    cf50:	47c1 	st	2(r7), r3
+    cf52:	527e 	movi	r1, 126
+    cf54:	53e0 	movhi	r1, -32
+    cf56:	43c2 	st	4(r7), r1
+    cf58:	aa04 	jal	r5, r0
+    cf5a:	5210 	movi	r1, 16
+    cf5c:	43c0 	st	0(r7), r1
+    cf5e:	47c1 	st	2(r7), r3
+    cf60:	527e 	movi	r1, 126
+    cf62:	53e0 	movhi	r1, -32
+    cf64:	43c2 	st	4(r7), r1
+    cf66:	aa04 	jal	r5, r0
+    cf68:	5211 	movi	r1, 17
+    cf6a:	43c0 	st	0(r7), r1
+    cf6c:	47c1 	st	2(r7), r3
+    cf6e:	527e 	movi	r1, 126
+    cf70:	53e0 	movhi	r1, -32
+    cf72:	43c2 	st	4(r7), r1
+    cf74:	aa04 	jal	r5, r0
+    cf76:	5212 	movi	r1, 18
+    cf78:	43c0 	st	0(r7), r1
+    cf7a:	47c1 	st	2(r7), r3
+    cf7c:	527e 	movi	r1, 126
+    cf7e:	53e0 	movhi	r1, -32
+    cf80:	43c2 	st	4(r7), r1
+    cf82:	aa04 	jal	r5, r0
+    cf84:	5213 	movi	r1, 19
+    cf86:	43c0 	st	0(r7), r1
+    cf88:	47c1 	st	2(r7), r3
+    cf8a:	56b4 	movi	r3, -76
+    cf8c:	57e0 	movhi	r3, -32
+    cf8e:	47c2 	st	4(r7), r3
+    cf90:	aa04 	jal	r5, r0
+    cf92:	49c0 	st	0(r7), r4
+    cf94:	45c1 	st	2(r7), r2
+    cf96:	58ea 	movi	r4, -22
+    cf98:	59e0 	movhi	r4, -32
+    cf9a:	49c2 	st	4(r7), r4
+    cf9c:	aa04 	jal	r5, r0
+    cf9e:	45c0 	st	0(r7), r2
+    cfa0:	45c1 	st	2(r7), r2
+    cfa2:	5211 	movi	r1, 17
+    cfa4:	53e1 	movhi	r1, -31
+    cfa6:	43c2 	st	4(r7), r1
+    cfa8:	aa04 	jal	r5, r0
+    cfaa:	560f 	movi	r3, 15
+    cfac:	47c0 	st	0(r7), r3
+    cfae:	45c1 	st	2(r7), r2
+    cfb0:	5828 	movi	r4, 40
+    cfb2:	59e1 	movhi	r4, -31
+    cfb4:	49c2 	st	4(r7), r4
+    cfb6:	aa04 	jal	r5, r0
+    cfb8:	2fc6 	addi	r7, r7, 6
+    cfba:	54b0 	movi	r2, -80
+    cfbc:	5580 	movhi	r2, -128
+    cfbe:	3280 	ld	r1, 0(r2)
+    cfc0:	5601 	movi	r3, 1
+    cfc2:	125b 	cmpeq	r1, r1, r3
+    cfc4:	5afc 	movi	r5, -4
+    cfc6:	5bd0 	movhi	r5, -48
+    cfc8:	a341 	jnz	r1, r5
+    cfca:	2ffe 	addi	r7, r7, -2
+    cfcc:	5803 	movi	r4, 3
+    cfce:	49c0 	st	0(r7), r4
+    cfd0:	5476 	movi	r2, 118
+    cfd2:	55c3 	movhi	r2, -61
+    cfd4:	aa84 	jal	r5, r2
+    cfd6:	43c0 	st	0(r7), r1
+    cfd8:	560a 	movi	r3, 10
+    cfda:	57c8 	movhi	r3, -56
+    cfdc:	aac4 	jal	r5, r3
+    cfde:	2ffc 	addi	r7, r7, -4
+    cfe0:	580f 	movi	r4, 15
+    cfe2:	49c0 	st	0(r7), r4
+    cfe4:	541e 	movi	r2, 30
+    cfe6:	45c1 	st	2(r7), r2
+    cfe8:	5233 	movi	r1, 51
+    cfea:	53e1 	movhi	r1, -31
+    cfec:	43c2 	st	4(r7), r1
+    cfee:	5670 	movi	r3, 112
+    cff0:	57c4 	movhi	r3, -60
+    cff2:	aac4 	jal	r5, r3
+    cff4:	2fc4 	addi	r7, r7, 4
+    cff6:	5804 	movi	r4, 4
+    cff8:	49c0 	st	0(r7), r4
+    cffa:	5676 	movi	r3, 118
+    cffc:	57c3 	movhi	r3, -61
+    cffe:	aac4 	jal	r5, r3
+    d000:	43c0 	st	0(r7), r1
+    d002:	580a 	movi	r4, 10
+    d004:	59c8 	movhi	r4, -56
+    d006:	ab04 	jal	r5, r4
+    d008:	2ffc 	addi	r7, r7, -4
+    d00a:	5210 	movi	r1, 16
+    d00c:	43c0 	st	0(r7), r1
+    d00e:	45c1 	st	2(r7), r2
+    d010:	543e 	movi	r2, 62
+    d012:	55e1 	movhi	r2, -31
+    d014:	45c2 	st	4(r7), r2
+    d016:	5670 	movi	r3, 112
+    d018:	57c4 	movhi	r3, -60
+    d01a:	aac4 	jal	r5, r3
+    d01c:	2fc4 	addi	r7, r7, 4
+    d01e:	5203 	movi	r1, 3
+    d020:	43c0 	st	0(r7), r1
+    d022:	5876 	movi	r4, 118
+    d024:	59c3 	movhi	r4, -61
+    d026:	ab04 	jal	r5, r4
+    d028:	43c0 	st	0(r7), r1
+    d02a:	520a 	movi	r1, 10
+    d02c:	53c8 	movhi	r1, -56
+    d02e:	aa44 	jal	r5, r1
+    d030:	2ffc 	addi	r7, r7, -4
+    d032:	5212 	movi	r1, 18
+    d034:	43c0 	st	0(r7), r1
+    d036:	520d 	movi	r1, 13
+    d038:	43c1 	st	2(r7), r1
+    d03a:	544a 	movi	r2, 74
+    d03c:	55e1 	movhi	r2, -31
+    d03e:	45c2 	st	4(r7), r2
+    d040:	aa04 	jal	r5, r0
+    d042:	5800 	movi	r4, 0
+    d044:	2fc6 	addi	r7, r7, 6
+    d046:	5a00 	movi	r5, 0
+    d048:	6a20 	bz	r5, 66
+    d04a:	2ffe 	addi	r7, r7, -2
+    d04c:	5203 	movi	r1, 3
+    d04e:	43c0 	st	0(r7), r1
+    d050:	5476 	movi	r2, 118
+    d052:	55c3 	movhi	r2, -61
+    d054:	aa84 	jal	r5, r2
+    d056:	43c0 	st	0(r7), r1
+    d058:	560a 	movi	r3, 10
+    d05a:	57c8 	movhi	r3, -56
+    d05c:	aac4 	jal	r5, r3
+    d05e:	2fc2 	addi	r7, r7, 2
+    d060:	2ff8 	addi	r7, r7, -8
+    d062:	5212 	movi	r1, 18
+    d064:	43c0 	st	0(r7), r1
+    d066:	0324 	add	r1, r4, r4
+    d068:	225e 	addi	r1, r1, 30
+    d06a:	43c1 	st	2(r7), r1
+    d06c:	525a 	movi	r1, 90
+    d06e:	53e1 	movhi	r1, -31
+    d070:	43c2 	st	4(r7), r1
+    d072:	27b5 	addi	r3, r6, -11
+    d074:	02e4 	add	r1, r3, r4
+    d076:	d240 	ldb	r1, 0(r1)
+    d078:	e3c6 	stb	6(r7), r1
+    d07a:	545c 	movi	r2, 92
+    d07c:	55c5 	movhi	r2, -59
+    d07e:	aa84 	jal	r5, r2
+    d080:	2901 	addi	r4, r4, 1
+    d082:	2fc8 	addi	r7, r7, 8
+    d084:	5209 	movi	r1, 9
+    d086:	1319 	cmpeq	r1, r4, r1
+    d088:	6314 	bnz	r1, 42
+    d08a:	33bf 	ld	r1, -2(r6)
+    d08c:	227f 	addi	r1, r1, -1
+    d08e:	125c 	cmpeq	r1, r1, r4
+    d090:	5a4a 	movi	r5, 74
+    d092:	5bd0 	movhi	r5, -48
+    d094:	a340 	jz	r1, r5
+    d096:	2ffe 	addi	r7, r7, -2
+    d098:	5204 	movi	r1, 4
+    d09a:	43c0 	st	0(r7), r1
+    d09c:	5676 	movi	r3, 118
+    d09e:	57c3 	movhi	r3, -61
+    d0a0:	aac4 	jal	r5, r3
+    d0a2:	43c0 	st	0(r7), r1
+    d0a4:	520a 	movi	r1, 10
+    d0a6:	53c8 	movhi	r1, -56
+    d0a8:	aa44 	jal	r5, r1
+    d0aa:	2fc2 	addi	r7, r7, 2
+    d0ac:	5a60 	movi	r5, 96
+    d0ae:	5bd0 	movhi	r5, -48
+    d0b0:	a143 	jmp	r5
+    d0b2:	2ffe 	addi	r7, r7, -2
+    d0b4:	5204 	movi	r1, 4
+    d0b6:	43c0 	st	0(r7), r1
+    d0b8:	5676 	movi	r3, 118
+    d0ba:	57c3 	movhi	r3, -61
+    d0bc:	aac4 	jal	r5, r3
+    d0be:	43c0 	st	0(r7), r1
+    d0c0:	580a 	movi	r4, 10
+    d0c2:	59c8 	movhi	r4, -56
+    d0c4:	ab04 	jal	r5, r4
+    d0c6:	23be 	addi	r1, r6, -2
+    d0c8:	43c0 	st	0(r7), r1
+    d0ca:	543c 	movi	r2, 60
+    d0cc:	55cc 	movhi	r2, -52
+    d0ce:	aa84 	jal	r5, r2
+    d0d0:	2440 	addi	r2, r1, 0
+    d0d2:	2fc2 	addi	r7, r7, 2
+    d0d4:	5622 	movi	r3, 34
+    d0d6:	57c4 	movhi	r3, -60
+    d0d8:	aac4 	jal	r5, r3
+    d0da:	5201 	movi	r1, 1
+    d0dc:	1299 	cmpeq	r1, r2, r1
+    d0de:	5a9e 	movi	r5, -98
+    d0e0:	5bcd 	movhi	r5, -51
+    d0e2:	a341 	jnz	r1, r5
+    d0e4:	33bf 	ld	r1, -2(r6)
+    d0e6:	58b0 	movi	r4, -80
+    d0e8:	5980 	movhi	r4, -128
+    d0ea:	4301 	st	2(r4), r1
+    d0ec:	31c3 	ld	r0, 6(r7)
+    d0ee:	35c2 	ld	r2, 4(r7)
+    d0f0:	37c1 	ld	r3, 2(r7)
+    d0f2:	39c0 	ld	r4, 0(r7)
+    d0f4:	3dca 	ld	r6, 20(r7)
+    d0f6:	3bcb 	ld	r5, 22(r7)
+    d0f8:	2fd8 	addi	r7, r7, 24
+    d0fa:	a143 	jmp	r5
+    d0fc:	2ffe 	addi	r7, r7, -2
+    d0fe:	5804 	movi	r4, 4
+    d100:	49c0 	st	0(r7), r4
+    d102:	5476 	movi	r2, 118
+    d104:	55c3 	movhi	r2, -61
+    d106:	aa84 	jal	r5, r2
+    d108:	43c0 	st	0(r7), r1
+    d10a:	560a 	movi	r3, 10
+    d10c:	57c8 	movhi	r3, -56
+    d10e:	aac4 	jal	r5, r3
+    d110:	2ffc 	addi	r7, r7, -4
+    d112:	580f 	movi	r4, 15
+    d114:	49c0 	st	0(r7), r4
+    d116:	541e 	movi	r2, 30
+    d118:	45c1 	st	2(r7), r2
+    d11a:	5233 	movi	r1, 51
+    d11c:	53e1 	movhi	r1, -31
+    d11e:	43c2 	st	4(r7), r1
+    d120:	5670 	movi	r3, 112
+    d122:	57c4 	movhi	r3, -60
+    d124:	aac4 	jal	r5, r3
+    d126:	2fc4 	addi	r7, r7, 4
+    d128:	5803 	movi	r4, 3
+    d12a:	5af8 	movi	r5, -8
+    d12c:	5bcf 	movhi	r5, -49
+    d12e:	a143 	jmp	r5
+
+0000d130 <get_game_over_input>:
+    d130:	2ff4 	addi	r7, r7, -12
+    d132:	4bc5 	st	10(r7), r5
+    d134:	4dc4 	st	8(r7), r6
+    d136:	2dc8 	addi	r6, r7, 8
+    d138:	41c3 	st	6(r7), r0
+    d13a:	45c2 	st	4(r7), r2
+    d13c:	47c1 	st	2(r7), r3
+    d13e:	49c0 	st	0(r7), r4
+    d140:	2ffc 	addi	r7, r7, -4
+    d142:	54aa 	movi	r2, -86
+    d144:	5580 	movhi	r2, -128
+    d146:	3280 	ld	r1, 0(r2)
+    d148:	43c0 	st	0(r7), r1
+    d14a:	5200 	movi	r1, 0
+    d14c:	43c1 	st	2(r7), r1
+    d14e:	5048 	movi	r0, 72
+    d150:	51c6 	movhi	r0, -58
+    d152:	aa04 	jal	r5, r0
+    d154:	2fc4 	addi	r7, r7, 4
+    d156:	5866 	movi	r4, 102
+    d158:	59c6 	movhi	r4, -58
+    d15a:	ab04 	jal	r5, r4
+    d15c:	2440 	addi	r2, r1, 0
+    d15e:	564d 	movi	r3, 77
+    d160:	125b 	cmpeq	r1, r1, r3
+    d162:	5ace 	movi	r5, -50
+    d164:	5bd1 	movhi	r5, -47
+    d166:	a341 	jnz	r1, r5
+    d168:	128b 	cmple	r1, r2, r3
+    d16a:	6219 	bz	r1, 52
+    d16c:	520d 	movi	r1, 13
+    d16e:	1299 	cmpeq	r1, r2, r1
+    d170:	6306 	bnz	r1, 14
+    d172:	5220 	movi	r1, 32
+    d174:	1299 	cmpeq	r1, r2, r1
+    d176:	6303 	bnz	r1, 8
+    d178:	520a 	movi	r1, 10
+    d17a:	1299 	cmpeq	r1, r2, r1
+    d17c:	62ee 	bz	r1, -34
+    d17e:	2ffc 	addi	r7, r7, -4
+    d180:	54aa 	movi	r2, -86
+    d182:	5580 	movhi	r2, -128
+    d184:	3280 	ld	r1, 0(r2)
+    d186:	43c0 	st	0(r7), r1
+    d188:	5201 	movi	r1, 1
+    d18a:	43c1 	st	2(r7), r1
+    d18c:	aa04 	jal	r5, r0
+    d18e:	31c5 	ld	r0, 10(r7)
+    d190:	35c4 	ld	r2, 8(r7)
+    d192:	37c3 	ld	r3, 6(r7)
+    d194:	39c2 	ld	r4, 4(r7)
+    d196:	3dc6 	ld	r6, 12(r7)
+    d198:	3bc7 	ld	r5, 14(r7)
+    d19a:	2fd0 	addi	r7, r7, 16
+    d19c:	a143 	jmp	r5
+    d19e:	526d 	movi	r1, 109
+    d1a0:	1299 	cmpeq	r1, r2, r1
+    d1a2:	6315 	bnz	r1, 44
+    d1a4:	5271 	movi	r1, 113
+    d1a6:	1299 	cmpeq	r1, r2, r1
+    d1a8:	6305 	bnz	r1, 12
+    d1aa:	5251 	movi	r1, 81
+    d1ac:	1299 	cmpeq	r1, r2, r1
+    d1ae:	5a5a 	movi	r5, 90
+    d1b0:	5bd1 	movhi	r5, -47
+    d1b2:	a340 	jz	r1, r5
+    d1b4:	5220 	movi	r1, 32
+    d1b6:	53cc 	movhi	r1, -52
+    d1b8:	aa44 	jal	r5, r1
+    d1ba:	5248 	movi	r1, 72
+    d1bc:	53d5 	movhi	r1, -43
+    d1be:	aa44 	jal	r5, r1
+    d1c0:	ab04 	jal	r5, r4
+    d1c2:	2440 	addi	r2, r1, 0
+    d1c4:	564d 	movi	r3, 77
+    d1c6:	125b 	cmpeq	r1, r1, r3
+    d1c8:	5a68 	movi	r5, 104
+    d1ca:	5bd1 	movhi	r5, -47
+    d1cc:	a340 	jz	r1, r5
+    d1ce:	525c 	movi	r1, 92
+    d1d0:	53cd 	movhi	r1, -51
+    d1d2:	aa44 	jal	r5, r1
+    d1d4:	2ffc 	addi	r7, r7, -4
+    d1d6:	54aa 	movi	r2, -86
+    d1d8:	5580 	movhi	r2, -128
+    d1da:	3280 	ld	r1, 0(r2)
+    d1dc:	43c0 	st	0(r7), r1
+    d1de:	5201 	movi	r1, 1
+    d1e0:	43c1 	st	2(r7), r1
+    d1e2:	aa04 	jal	r5, r0
+    d1e4:	31c5 	ld	r0, 10(r7)
+    d1e6:	35c4 	ld	r2, 8(r7)
+    d1e8:	37c3 	ld	r3, 6(r7)
+    d1ea:	39c2 	ld	r4, 4(r7)
+    d1ec:	3dc6 	ld	r6, 12(r7)
+    d1ee:	3bc7 	ld	r5, 14(r7)
+    d1f0:	2fd0 	addi	r7, r7, 16
+    d1f2:	a143 	jmp	r5
+
+0000d1f4 <draw_background>:
+    d1f4:	2ffc 	addi	r7, r7, -4
+    d1f6:	4bc1 	st	2(r7), r5
+    d1f8:	4dc0 	st	0(r7), r6
+    d1fa:	2dc0 	addi	r6, r7, 0
+    d1fc:	520a 	movi	r1, 10
+    d1fe:	53c4 	movhi	r1, -60
+    d200:	aa44 	jal	r5, r1
+    d202:	3dc0 	ld	r6, 0(r7)
+    d204:	3bc1 	ld	r5, 2(r7)
+    d206:	2fc4 	addi	r7, r7, 4
+    d208:	a143 	jmp	r5
+
+0000d20a <draw_score>:
+    d20a:	2ff4 	addi	r7, r7, -12
+    d20c:	4bc5 	st	10(r7), r5
+    d20e:	4dc4 	st	8(r7), r6
+    d210:	2dc8 	addi	r6, r7, 8
+    d212:	41c3 	st	6(r7), r0
+    d214:	45c2 	st	4(r7), r2
+    d216:	47c1 	st	2(r7), r3
+    d218:	49c0 	st	0(r7), r4
+    d21a:	2ffe 	addi	r7, r7, -2
+    d21c:	5202 	movi	r1, 2
+    d21e:	43c0 	st	0(r7), r1
+    d220:	5876 	movi	r4, 118
+    d222:	59c3 	movhi	r4, -61
+    d224:	ab04 	jal	r5, r4
+    d226:	43c0 	st	0(r7), r1
+    d228:	560a 	movi	r3, 10
+    d22a:	57c8 	movhi	r3, -56
+    d22c:	aac4 	jal	r5, r3
+    d22e:	2ffc 	addi	r7, r7, -4
+    d230:	5000 	movi	r0, 0
+    d232:	41c0 	st	0(r7), r0
+    d234:	41c1 	st	2(r7), r0
+    d236:	525b 	movi	r1, 91
+    d238:	53e1 	movhi	r1, -31
+    d23a:	43c2 	st	4(r7), r1
+    d23c:	5470 	movi	r2, 112
+    d23e:	55c4 	movhi	r2, -60
+    d240:	aa84 	jal	r5, r2
+    d242:	41c0 	st	0(r7), r0
+    d244:	5209 	movi	r1, 9
+    d246:	43c1 	st	2(r7), r1
+    d248:	5244 	movi	r1, 68
+    d24a:	53e0 	movhi	r1, -32
+    d24c:	43c2 	st	4(r7), r1
+    d24e:	aa84 	jal	r5, r2
+    d250:	2fc4 	addi	r7, r7, 4
+    d252:	5204 	movi	r1, 4
+    d254:	43c0 	st	0(r7), r1
+    d256:	ab04 	jal	r5, r4
+    d258:	43c0 	st	0(r7), r1
+    d25a:	aac4 	jal	r5, r3
+    d25c:	2ffa 	addi	r7, r7, -6
+    d25e:	41c0 	st	0(r7), r0
+    d260:	5211 	movi	r1, 17
+    d262:	43c1 	st	2(r7), r1
+    d264:	5264 	movi	r1, 100
+    d266:	53e1 	movhi	r1, -31
+    d268:	43c2 	st	4(r7), r1
+    d26a:	54b0 	movi	r2, -80
+    d26c:	5580 	movhi	r2, -128
+    d26e:	3281 	ld	r1, 2(r2)
+    d270:	43c3 	st	6(r7), r1
+    d272:	56c2 	movi	r3, -62
+    d274:	57c4 	movhi	r3, -60
+    d276:	aac4 	jal	r5, r3
+    d278:	41c0 	st	0(r7), r0
+    d27a:	5217 	movi	r1, 23
+    d27c:	43c1 	st	2(r7), r1
+    d27e:	5267 	movi	r1, 103
+    d280:	53e1 	movhi	r1, -31
+    d282:	43c2 	st	4(r7), r1
+    d284:	52c0 	movi	r1, -64
+    d286:	5380 	movhi	r1, -128
+    d288:	3243 	ld	r1, 6(r1)
+    d28a:	43c3 	st	6(r7), r1
+    d28c:	aac4 	jal	r5, r3
+    d28e:	3480 	ld	r2, 0(r2)
+    d290:	2fc8 	addi	r7, r7, 8
+    d292:	5201 	movi	r1, 1
+    d294:	1299 	cmpeq	r1, r2, r1
+    d296:	6320 	bnz	r1, 66
+    d298:	5802 	movi	r4, 2
+    d29a:	129c 	cmpeq	r1, r2, r4
+    d29c:	6308 	bnz	r1, 18
+    d29e:	31c3 	ld	r0, 6(r7)
+    d2a0:	35c2 	ld	r2, 4(r7)
+    d2a2:	37c1 	ld	r3, 2(r7)
+    d2a4:	39c0 	ld	r4, 0(r7)
+    d2a6:	3dc4 	ld	r6, 8(r7)
+    d2a8:	3bc5 	ld	r5, 10(r7)
+    d2aa:	2fcc 	addi	r7, r7, 12
+    d2ac:	a143 	jmp	r5
+    d2ae:	2ff8 	addi	r7, r7, -8
+    d2b0:	41c0 	st	0(r7), r0
+    d2b2:	523c 	movi	r1, 60
+    d2b4:	43c1 	st	2(r7), r1
+    d2b6:	526f 	movi	r1, 111
+    d2b8:	53e1 	movhi	r1, -31
+    d2ba:	43c2 	st	4(r7), r1
+    d2bc:	5208 	movi	r1, 8
+    d2be:	5380 	movhi	r1, -128
+    d2c0:	3240 	ld	r1, 0(r1)
+    d2c2:	43c3 	st	6(r7), r1
+    d2c4:	aac4 	jal	r5, r3
+    d2c6:	2fc8 	addi	r7, r7, 8
+    d2c8:	31c3 	ld	r0, 6(r7)
+    d2ca:	35c2 	ld	r2, 4(r7)
+    d2cc:	37c1 	ld	r3, 2(r7)
+    d2ce:	39c0 	ld	r4, 0(r7)
+    d2d0:	3dc4 	ld	r6, 8(r7)
+    d2d2:	3bc5 	ld	r5, 10(r7)
+    d2d4:	2fcc 	addi	r7, r7, 12
+    d2d6:	a143 	jmp	r5
+    d2d8:	2ff8 	addi	r7, r7, -8
+    d2da:	41c0 	st	0(r7), r0
+    d2dc:	523c 	movi	r1, 60
+    d2de:	43c1 	st	2(r7), r1
+    d2e0:	526f 	movi	r1, 111
+    d2e2:	53e1 	movhi	r1, -31
+    d2e4:	43c2 	st	4(r7), r1
+    d2e6:	5206 	movi	r1, 6
+    d2e8:	5380 	movhi	r1, -128
+    d2ea:	3240 	ld	r1, 0(r1)
+    d2ec:	43c3 	st	6(r7), r1
+    d2ee:	aac4 	jal	r5, r3
+    d2f0:	2fc8 	addi	r7, r7, 8
+    d2f2:	31c3 	ld	r0, 6(r7)
+    d2f4:	35c2 	ld	r2, 4(r7)
+    d2f6:	37c1 	ld	r3, 2(r7)
+    d2f8:	39c0 	ld	r4, 0(r7)
+    d2fa:	3dc4 	ld	r6, 8(r7)
+    d2fc:	3bc5 	ld	r5, 10(r7)
+    d2fe:	2fcc 	addi	r7, r7, 12
+    d300:	a143 	jmp	r5
+
+0000d302 <engine_show_game_over>:
+    d302:	2ff6 	addi	r7, r7, -10
+    d304:	4bc4 	st	8(r7), r5
+    d306:	4dc3 	st	6(r7), r6
+    d308:	2dc6 	addi	r6, r7, 6
+    d30a:	45c2 	st	4(r7), r2
+    d30c:	47c1 	st	2(r7), r3
+    d30e:	49c0 	st	0(r7), r4
+    d310:	2ffe 	addi	r7, r7, -2
+    d312:	5806 	movi	r4, 6
+    d314:	49c0 	st	0(r7), r4
+    d316:	5276 	movi	r1, 118
+    d318:	53c3 	movhi	r1, -61
+    d31a:	aa44 	jal	r5, r1
+    d31c:	43c0 	st	0(r7), r1
+    d31e:	520a 	movi	r1, 10
+    d320:	53c8 	movhi	r1, -56
+    d322:	aa44 	jal	r5, r1
+    d324:	2ffc 	addi	r7, r7, -4
+    d326:	54c0 	movi	r2, -64
+    d328:	5580 	movhi	r2, -128
+    d32a:	3286 	ld	r1, 12(r2)
+    d32c:	43c0 	st	0(r7), r1
+    d32e:	3285 	ld	r1, 10(r2)
+    d330:	43c1 	st	2(r7), r1
+    d332:	5278 	movi	r1, 120
+    d334:	e3c4 	stb	4(r7), r1
+    d336:	5234 	movi	r1, 52
+    d338:	53c4 	movhi	r1, -60
+    d33a:	aa44 	jal	r5, r1
+    d33c:	5203 	movi	r1, 3
+    d33e:	43c0 	st	0(r7), r1
+    d340:	5616 	movi	r3, 22
+    d342:	47c1 	st	2(r7), r3
+    d344:	527c 	movi	r1, 124
+    d346:	53e1 	movhi	r1, -31
+    d348:	43c2 	st	4(r7), r1
+    d34a:	5470 	movi	r2, 112
+    d34c:	55c4 	movhi	r2, -60
+    d34e:	aa84 	jal	r5, r2
+    d350:	5204 	movi	r1, 4
+    d352:	43c0 	st	0(r7), r1
+    d354:	47c1 	st	2(r7), r3
+    d356:	52a1 	movi	r1, -95
+    d358:	53e1 	movhi	r1, -31
+    d35a:	43c2 	st	4(r7), r1
+    d35c:	aa84 	jal	r5, r2
+    d35e:	5205 	movi	r1, 5
+    d360:	43c0 	st	0(r7), r1
+    d362:	47c1 	st	2(r7), r3
+    d364:	52c6 	movi	r1, -58
+    d366:	53e1 	movhi	r1, -31
+    d368:	43c2 	st	4(r7), r1
+    d36a:	aa84 	jal	r5, r2
+    d36c:	49c0 	st	0(r7), r4
+    d36e:	47c1 	st	2(r7), r3
+    d370:	52eb 	movi	r1, -21
+    d372:	53e1 	movhi	r1, -31
+    d374:	43c2 	st	4(r7), r1
+    d376:	aa84 	jal	r5, r2
+    d378:	5207 	movi	r1, 7
+    d37a:	43c0 	st	0(r7), r1
+    d37c:	47c1 	st	2(r7), r3
+    d37e:	5210 	movi	r1, 16
+    d380:	53e2 	movhi	r1, -30
+    d382:	43c2 	st	4(r7), r1
+    d384:	aa84 	jal	r5, r2
+    d386:	5208 	movi	r1, 8
+    d388:	43c0 	st	0(r7), r1
+    d38a:	47c1 	st	2(r7), r3
+    d38c:	5235 	movi	r1, 53
+    d38e:	53e2 	movhi	r1, -30
+    d390:	43c2 	st	4(r7), r1
+    d392:	aa84 	jal	r5, r2
+    d394:	5209 	movi	r1, 9
+    d396:	43c0 	st	0(r7), r1
+    d398:	47c1 	st	2(r7), r3
+    d39a:	525a 	movi	r1, 90
+    d39c:	53e2 	movhi	r1, -30
+    d39e:	43c2 	st	4(r7), r1
+    d3a0:	aa84 	jal	r5, r2
+    d3a2:	520a 	movi	r1, 10
+    d3a4:	43c0 	st	0(r7), r1
+    d3a6:	47c1 	st	2(r7), r3
+    d3a8:	527f 	movi	r1, 127
+    d3aa:	53e2 	movhi	r1, -30
+    d3ac:	43c2 	st	4(r7), r1
+    d3ae:	aa84 	jal	r5, r2
+    d3b0:	520b 	movi	r1, 11
+    d3b2:	43c0 	st	0(r7), r1
+    d3b4:	47c1 	st	2(r7), r3
+    d3b6:	52a4 	movi	r1, -92
+    d3b8:	53e2 	movhi	r1, -30
+    d3ba:	43c2 	st	4(r7), r1
+    d3bc:	aa84 	jal	r5, r2
+    d3be:	520c 	movi	r1, 12
+    d3c0:	43c0 	st	0(r7), r1
+    d3c2:	47c1 	st	2(r7), r3
+    d3c4:	52c9 	movi	r1, -55
+    d3c6:	53e2 	movhi	r1, -30
+    d3c8:	43c2 	st	4(r7), r1
+    d3ca:	aa84 	jal	r5, r2
+    d3cc:	520d 	movi	r1, 13
+    d3ce:	43c0 	st	0(r7), r1
+    d3d0:	47c1 	st	2(r7), r3
+    d3d2:	52ee 	movi	r1, -18
+    d3d4:	53e2 	movhi	r1, -30
+    d3d6:	43c2 	st	4(r7), r1
+    d3d8:	aa84 	jal	r5, r2
+    d3da:	520e 	movi	r1, 14
+    d3dc:	43c0 	st	0(r7), r1
+    d3de:	47c1 	st	2(r7), r3
+    d3e0:	5213 	movi	r1, 19
+    d3e2:	53e3 	movhi	r1, -29
+    d3e4:	43c2 	st	4(r7), r1
+    d3e6:	aa84 	jal	r5, r2
+    d3e8:	520f 	movi	r1, 15
+    d3ea:	43c0 	st	0(r7), r1
+    d3ec:	47c1 	st	2(r7), r3
+    d3ee:	5238 	movi	r1, 56
+    d3f0:	53e3 	movhi	r1, -29
+    d3f2:	43c2 	st	4(r7), r1
+    d3f4:	aa84 	jal	r5, r2
+    d3f6:	5210 	movi	r1, 16
+    d3f8:	43c0 	st	0(r7), r1
+    d3fa:	47c1 	st	2(r7), r3
+    d3fc:	525d 	movi	r1, 93
+    d3fe:	53e3 	movhi	r1, -29
+    d400:	43c2 	st	4(r7), r1
+    d402:	aa84 	jal	r5, r2
+    d404:	5211 	movi	r1, 17
+    d406:	43c0 	st	0(r7), r1
+    d408:	47c1 	st	2(r7), r3
+    d40a:	5282 	movi	r1, -126
+    d40c:	53e3 	movhi	r1, -29
+    d40e:	43c2 	st	4(r7), r1
+    d410:	aa84 	jal	r5, r2
+    d412:	5212 	movi	r1, 18
+    d414:	43c0 	st	0(r7), r1
+    d416:	47c1 	st	2(r7), r3
+    d418:	52a5 	movi	r1, -91
+    d41a:	53e3 	movhi	r1, -29
+    d41c:	43c2 	st	4(r7), r1
+    d41e:	aa84 	jal	r5, r2
+    d420:	0fe4 	add	r7, r7, r4
+    d422:	520a 	movi	r1, 10
+    d424:	53d2 	movhi	r1, -46
+    d426:	aa44 	jal	r5, r1
+    d428:	5222 	movi	r1, 34
+    d42a:	53c4 	movhi	r1, -60
+    d42c:	aa44 	jal	r5, r1
+    d42e:	2ffc 	addi	r7, r7, -4
+    d430:	52aa 	movi	r1, -86
+    d432:	5380 	movhi	r1, -128
+    d434:	3240 	ld	r1, 0(r1)
+    d436:	43c0 	st	0(r7), r1
+    d438:	5200 	movi	r1, 0
+    d43a:	43c1 	st	2(r7), r1
+    d43c:	5248 	movi	r1, 72
+    d43e:	53c6 	movhi	r1, -58
+    d440:	aa44 	jal	r5, r1
+    d442:	35c4 	ld	r2, 8(r7)
+    d444:	37c3 	ld	r3, 6(r7)
+    d446:	39c2 	ld	r4, 4(r7)
+    d448:	3dc5 	ld	r6, 10(r7)
+    d44a:	3bc6 	ld	r5, 12(r7)
+    d44c:	2fce 	addi	r7, r7, 14
+    d44e:	a143 	jmp	r5
+
+0000d450 <draw_fruit_bonus>:
+    d450:	2ffa 	addi	r7, r7, -6
+    d452:	4bc2 	st	4(r7), r5
+    d454:	4dc1 	st	2(r7), r6
+    d456:	2dc2 	addi	r6, r7, 2
+    d458:	45c0 	st	0(r7), r2
+    d45a:	2ffe 	addi	r7, r7, -2
+    d45c:	5204 	movi	r1, 4
+    d45e:	43c0 	st	0(r7), r1
+    d460:	5276 	movi	r1, 118
+    d462:	53c3 	movhi	r1, -61
+    d464:	aa44 	jal	r5, r1
+    d466:	43c0 	st	0(r7), r1
+    d468:	520a 	movi	r1, 10
+    d46a:	53c8 	movhi	r1, -56
+    d46c:	aa44 	jal	r5, r1
+    d46e:	2ffa 	addi	r7, r7, -6
+    d470:	5200 	movi	r1, 0
+    d472:	43c0 	st	0(r7), r1
+    d474:	52a4 	movi	r1, -92
+    d476:	5380 	movhi	r1, -128
+    d478:	3240 	ld	r1, 0(r1)
+    d47a:	227f 	addi	r1, r1, -1
+    d47c:	54ff 	movi	r2, -1
+    d47e:	0272 	sha	r1, r1, r2
+    d480:	43c1 	st	2(r7), r1
+    d482:	52c0 	movi	r1, -64
+    d484:	53e3 	movhi	r1, -29
+    d486:	43c2 	st	4(r7), r1
+    d488:	5200 	movi	r1, 0
+    d48a:	5380 	movhi	r1, -128
+    d48c:	3242 	ld	r1, 4(r1)
+    d48e:	43c3 	st	6(r7), r1
+    d490:	52c2 	movi	r1, -62
+    d492:	53c4 	movhi	r1, -60
+    d494:	aa44 	jal	r5, r1
+    d496:	35c4 	ld	r2, 8(r7)
+    d498:	3dc5 	ld	r6, 10(r7)
+    d49a:	3bc6 	ld	r5, 12(r7)
+    d49c:	2fce 	addi	r7, r7, 14
+    d49e:	a143 	jmp	r5
+
+0000d4a0 <engine_show_screen>:
+    d4a0:	2ff8 	addi	r7, r7, -8
+    d4a2:	4bc3 	st	6(r7), r5
+    d4a4:	4dc2 	st	4(r7), r6
+    d4a6:	2dc4 	addi	r6, r7, 4
+    d4a8:	45c1 	st	2(r7), r2
+    d4aa:	47c0 	st	0(r7), r3
+    d4ac:	52f4 	movi	r1, -12
+    d4ae:	53d1 	movhi	r1, -47
+    d4b0:	aa44 	jal	r5, r1
+    d4b2:	5208 	movi	r1, 8
+    d4b4:	53ca 	movhi	r1, -54
+    d4b6:	aa44 	jal	r5, r1
+    d4b8:	52c8 	movi	r1, -56
+    d4ba:	53c9 	movhi	r1, -55
+    d4bc:	aa44 	jal	r5, r1
+    d4be:	523e 	movi	r1, 62
+    d4c0:	53c9 	movhi	r1, -55
+    d4c2:	aa44 	jal	r5, r1
+    d4c4:	5250 	movi	r1, 80
+    d4c6:	53d4 	movhi	r1, -44
+    d4c8:	aa44 	jal	r5, r1
+    d4ca:	520a 	movi	r1, 10
+    d4cc:	53d2 	movhi	r1, -46
+    d4ce:	aa44 	jal	r5, r1
+    d4d0:	2ffe 	addi	r7, r7, -2
+    d4d2:	52b0 	movi	r1, -80
+    d4d4:	5380 	movhi	r1, -128
+    d4d6:	3241 	ld	r1, 2(r1)
+    d4d8:	5409 	movi	r2, 9
+    d4da:	04a9 	sub	r2, r2, r1
+    d4dc:	02a2 	add	r1, r2, r2
+    d4de:	0262 	add	r1, r1, r2
+    d4e0:	5603 	movi	r3, 3
+    d4e2:	0273 	sha	r1, r1, r3
+    d4e4:	0262 	add	r1, r1, r2
+    d4e6:	2254 	addi	r1, r1, 20
+    d4e8:	43c0 	st	0(r7), r1
+    d4ea:	529c 	movi	r1, -100
+    d4ec:	53c6 	movhi	r1, -58
+    d4ee:	aa44 	jal	r5, r1
+    d4f0:	2fc2 	addi	r7, r7, 2
+    d4f2:	5222 	movi	r1, 34
+    d4f4:	53c4 	movhi	r1, -60
+    d4f6:	aa44 	jal	r5, r1
+    d4f8:	35c1 	ld	r2, 2(r7)
+    d4fa:	37c0 	ld	r3, 0(r7)
+    d4fc:	3dc2 	ld	r6, 4(r7)
+    d4fe:	3bc3 	ld	r5, 6(r7)
+    d500:	2fc8 	addi	r7, r7, 8
+    d502:	a143 	jmp	r5
+
+0000d504 <nsnake_pause>:
+
+/**	It, umm, pauses the game, i guess
+ */
+void nsnake_pause ()
+{
+    d504:	2ffc 	addi	r7, r7, -4
+    d506:	4bc1 	st	2(r7), r5
+    d508:	4dc0 	st	0(r7), r6
+    d50a:	2dc0 	addi	r6, r7, 0
+	engine_show_pause ();
+    d50c:	52ac 	movi	r1, -84
+    d50e:	53c8 	movhi	r1, -56
+    d510:	aa44 	jal	r5, r1
+}
+    d512:	3dc0 	ld	r6, 0(r7)
+    d514:	3bc1 	ld	r5, 2(r7)
+    d516:	2fc4 	addi	r7, r7, 4
+    d518:	a143 	jmp	r5
+
+0000d51a <nsnake_init>:
+    d51a:	2ffa 	addi	r7, r7, -6
+    d51c:	4bc2 	st	4(r7), r5
+    d51e:	4dc1 	st	2(r7), r6
+    d520:	2dc2 	addi	r6, r7, 2
+    d522:	45c0 	st	0(r7), r2
+    d524:	5280 	movi	r1, -128
+    d526:	53d7 	movhi	r1, -41
+    d528:	aa44 	jal	r5, r1
+    d52a:	5405 	movi	r2, 5
+    d52c:	5200 	movi	r1, 0
+    d52e:	5380 	movhi	r1, -128
+    d530:	4442 	st	4(r1), r2
+    d532:	5218 	movi	r1, 24
+    d534:	53c7 	movhi	r1, -57
+    d536:	aa44 	jal	r5, r1
+    d538:	52a0 	movi	r1, -96
+    d53a:	53d4 	movhi	r1, -44
+    d53c:	aa44 	jal	r5, r1
+    d53e:	35c0 	ld	r2, 0(r7)
+    d540:	3dc1 	ld	r6, 2(r7)
+    d542:	3bc2 	ld	r5, 4(r7)
+    d544:	2fc6 	addi	r7, r7, 6
+    d546:	a143 	jmp	r5
+
+0000d548 <nsnake_exit>:
+    d548:	2ffc 	addi	r7, r7, -4
+    d54a:	4bc1 	st	2(r7), r5
+    d54c:	4dc0 	st	0(r7), r6
+    d54e:	2dc0 	addi	r6, r7, 0
+    d550:	2ffe 	addi	r7, r7, -2
+    d552:	5200 	movi	r1, 0
+    d554:	43c0 	st	0(r7), r1
+    d556:	52bc 	movi	r1, -68
+    d558:	53c6 	movhi	r1, -58
+    d55a:	aa44 	jal	r5, r1
+
+0000d55c <nsnake_abort>:
+    d55c:	2ffc 	addi	r7, r7, -4
+    d55e:	4bc1 	st	2(r7), r5
+    d560:	4dc0 	st	0(r7), r6
+    d562:	2dc0 	addi	r6, r7, 0
+    d564:	5220 	movi	r1, 32
+    d566:	53cc 	movhi	r1, -52
+    d568:	aa44 	jal	r5, r1
+    d56a:	2ffa 	addi	r7, r7, -6
+    d56c:	5200 	movi	r1, 0
+    d56e:	43c0 	st	0(r7), r1
+    d570:	43c1 	st	2(r7), r1
+    d572:	3382 	ld	r1, 4(r6)
+    d574:	43c2 	st	4(r7), r1
+    d576:	5270 	movi	r1, 112
+    d578:	53c4 	movhi	r1, -60
+    d57a:	aa44 	jal	r5, r1
+    d57c:	2fc4 	addi	r7, r7, 4
+    d57e:	52ff 	movi	r1, -1
+    d580:	43c0 	st	0(r7), r1
+    d582:	52bc 	movi	r1, -68
+    d584:	53c6 	movhi	r1, -58
+    d586:	aa44 	jal	r5, r1
+
+0000d588 <player_change_direction>:
+
+/**	Changes the snake direction based on the input received
+ */
+void player_change_direction (int new_direction)
+{
+    d588:	2ff6 	addi	r7, r7, -10
+    d58a:	4bc4 	st	8(r7), r5
+    d58c:	4dc3 	st	6(r7), r6
+    d58e:	2dc6 	addi	r6, r7, 6
+    d590:	45c2 	st	4(r7), r2
+    d592:	47c1 	st	2(r7), r3
+    d594:	49c0 	st	0(r7), r4
+    d596:	3782 	ld	r3, 4(r6)
+	if      ((new_direction == UP) && (snake.direction != DOWN) &&
+    d598:	670f 	bnz	r3, 32
+    d59a:	58c0 	movi	r4, -64
+    d59c:	5980 	movhi	r4, -128
+    d59e:	3504 	ld	r2, 8(r4)
+    d5a0:	5202 	movi	r1, 2
+    d5a2:	1299 	cmpeq	r1, r2, r1
+    d5a4:	6309 	bnz	r1, 20
+    d5a6:	6401 	bz	r2, 4
+	                                  (snake.direction != UP)        )
+		snake.direction = UP;
+
+
+	else if ((new_direction == LEFT) && (snake.direction != RIGHT) &&
+	                                    (snake.direction != LEFT)    )
+		snake.direction = LEFT;
+
+	else if ((new_direction == DOWN) && (snake.direction != UP) &&
+	                                    (snake.direction != DOWN)    )
+		snake.direction = DOWN;
+
+	else if ((new_direction == RIGHT) && (snake.direction != LEFT) &&
+                                             (snake.direction != RIGHT)   )
+		snake.direction = RIGHT;
+    d5a8:	4704 	st	8(r4), r3
+}
+    d5aa:	35c2 	ld	r2, 4(r7)
+    d5ac:	37c1 	ld	r3, 2(r7)
+    d5ae:	39c0 	ld	r4, 0(r7)
+    d5b0:	3dc3 	ld	r6, 6(r7)
+    d5b2:	3bc4 	ld	r5, 8(r7)
+    d5b4:	2fca 	addi	r7, r7, 10
+    d5b6:	a143 	jmp	r5
+    d5b8:	5201 	movi	r1, 1
+    d5ba:	12d9 	cmpeq	r1, r3, r1
+    d5bc:	631c 	bnz	r1, 58
+    d5be:	5202 	movi	r1, 2
+    d5c0:	12d9 	cmpeq	r1, r3, r1
+    d5c2:	630d 	bnz	r1, 28
+    d5c4:	5203 	movi	r1, 3
+    d5c6:	12d9 	cmpeq	r1, r3, r1
+    d5c8:	62f0 	bz	r1, -30
+    d5ca:	58c0 	movi	r4, -64
+    d5cc:	5980 	movhi	r4, -128
+    d5ce:	3504 	ld	r2, 8(r4)
+    d5d0:	5201 	movi	r1, 1
+    d5d2:	1299 	cmpeq	r1, r2, r1
+    d5d4:	63ea 	bnz	r1, -42
+    d5d6:	129b 	cmpeq	r1, r2, r3
+    d5d8:	62e7 	bz	r1, -48
+    d5da:	5a00 	movi	r5, 0
+    d5dc:	6ae6 	bz	r5, -50
+    d5de:	54c0 	movi	r2, -64
+    d5e0:	5580 	movhi	r2, -128
+    d5e2:	3284 	ld	r1, 8(r2)
+    d5e4:	62e2 	bz	r1, -58
+    d5e6:	125b 	cmpeq	r1, r1, r3
+    d5e8:	5aaa 	movi	r5, -86
+    d5ea:	5bd5 	movhi	r5, -43
+    d5ec:	a341 	jnz	r1, r5
+    d5ee:	4684 	st	8(r2), r3
+    d5f0:	5aaa 	movi	r5, -86
+    d5f2:	5bd5 	movhi	r5, -43
+    d5f4:	a143 	jmp	r5
+    d5f6:	58c0 	movi	r4, -64
+    d5f8:	5980 	movhi	r4, -128
+    d5fa:	3504 	ld	r2, 8(r4)
+    d5fc:	5203 	movi	r1, 3
+    d5fe:	1299 	cmpeq	r1, r2, r1
+    d600:	63e1 	bnz	r1, -60
+    d602:	129b 	cmpeq	r1, r2, r3
+    d604:	5aa8 	movi	r5, -88
+    d606:	5bd5 	movhi	r5, -43
+    d608:	a340 	jz	r1, r5
+    d60a:	5aaa 	movi	r5, -86
+    d60c:	5bd5 	movhi	r5, -43
+    d60e:	a143 	jmp	r5
+
+0000d610 <player_exit>:
+
+
+/**	Depending on the game mode, the player may be able to hit borders
+ *  or not. If it is possible, we call player_hit_borders().
+ *
+ *  @see player_hit_borders()
+ *  @return FALSE, if the player didn't hit the borders, and
+ *          TRUE if it did.
+ */
+int player_collided_with_borders ()
+{
+	if (game.mode == BORDERS_ON)
+		return player_hit_borders ();
+
+	else if (game.mode == BORDERS_OFF)
+		player_teleport_borders ();
+
+	else if (game.mode == FREE_MODE)	//secret debugging-mode
+	{}
+
+	return FALSE;
+}
+
+
+/** Free all memory associated with the player.
+ */
+void player_exit ()
+{
+    d610:	2ffc 	addi	r7, r7, -4
+    d612:	4bc1 	st	2(r7), r5
+    d614:	4dc0 	st	0(r7), r6
+    d616:	2dc0 	addi	r6, r7, 0
+}
+    d618:	3dc0 	ld	r6, 0(r7)
+    d61a:	3bc1 	ld	r5, 2(r7)
+    d61c:	2fc4 	addi	r7, r7, 4
+    d61e:	a143 	jmp	r5
+
+0000d620 <player_hit_borders>:
+
+
+/**	Checks collision between the snake and the walls.
+ *
+ * 	@warning	Behind you!
+ */
+int player_hit_borders ()
+{
+    d620:	2ff6 	addi	r7, r7, -10
+    d622:	4bc4 	st	8(r7), r5
+    d624:	4dc3 	st	6(r7), r6
+    d626:	2dc6 	addi	r6, r7, 6
+    d628:	45c2 	st	4(r7), r2
+    d62a:	47c1 	st	2(r7), r3
+    d62c:	49c0 	st	0(r7), r4
+	if ((snake.body[0].x < 1) || (snake.body[0].x > (screen.width-2)) ||
+    d62e:	56c0 	movi	r3, -64
+    d630:	5780 	movhi	r3, -128
+    d632:	34c5 	ld	r2, 10(r3)
+    d634:	5200 	movi	r1, 0
+    d636:	1289 	cmple	r1, r2, r1
+    d638:	6306 	bnz	r1, 14
+    d63a:	58a4 	movi	r4, -92
+    d63c:	5980 	movhi	r4, -128
+    d63e:	3300 	ld	r1, 0(r4)
+    d640:	227e 	addi	r1, r1, -2
+    d642:	1289 	cmple	r1, r2, r1
+    d644:	6308 	bnz	r1, 18
+    d646:	5201 	movi	r1, 1
+	    (snake.body[0].y < 2) || (snake.body[0].y > (screen.height-2)))
+	{
+		return TRUE;
+	}
+	return FALSE;
+}
+    d648:	35c2 	ld	r2, 4(r7)
+    d64a:	37c1 	ld	r3, 2(r7)
+    d64c:	39c0 	ld	r4, 0(r7)
+    d64e:	3dc3 	ld	r6, 6(r7)
+    d650:	3bc4 	ld	r5, 8(r7)
+    d652:	2fca 	addi	r7, r7, 10
+    d654:	a143 	jmp	r5
+    d656:	34c6 	ld	r2, 12(r3)
+    d658:	5201 	movi	r1, 1
+    d65a:	1289 	cmple	r1, r2, r1
+    d65c:	63f4 	bnz	r1, -22
+    d65e:	3301 	ld	r1, 2(r4)
+    d660:	227e 	addi	r1, r1, -2
+    d662:	1242 	cmplt	r1, r1, r2
+    d664:	35c2 	ld	r2, 4(r7)
+    d666:	37c1 	ld	r3, 2(r7)
+    d668:	39c0 	ld	r4, 0(r7)
+    d66a:	3dc3 	ld	r6, 6(r7)
+    d66c:	3bc4 	ld	r5, 8(r7)
+    d66e:	2fca 	addi	r7, r7, 10
+    d670:	a143 	jmp	r5
+
+0000d672 <player_hit_fruit>:
+
+
+/**	Checks if the snake has eaten the fruit.
+ *
+ *  @return 1 if yes, 0 if no.
+ */
+int player_hit_fruit ()
+{
+    d672:	2ff6 	addi	r7, r7, -10
+    d674:	4bc4 	st	8(r7), r5
+    d676:	4dc3 	st	6(r7), r6
+    d678:	2dc6 	addi	r6, r7, 6
+    d67a:	45c2 	st	4(r7), r2
+    d67c:	47c1 	st	2(r7), r3
+    d67e:	49c0 	st	0(r7), r4
+	if ((snake.body[0].x == fruit.x) && (snake.body[0].y == fruit.y))
+    d680:	56c0 	movi	r3, -64
+    d682:	5780 	movhi	r3, -128
+    d684:	5800 	movi	r4, 0
+    d686:	5980 	movhi	r4, -128
+    d688:	32c5 	ld	r1, 10(r3)
+    d68a:	3500 	ld	r2, 0(r4)
+    d68c:	125a 	cmpeq	r1, r1, r2
+    d68e:	6203 	bz	r1, 8
+    d690:	34c6 	ld	r2, 12(r3)
+    d692:	3301 	ld	r1, 2(r4)
+    d694:	1299 	cmpeq	r1, r2, r1
+		return TRUE;
+	else
+		return FALSE;
+}
+    d696:	35c2 	ld	r2, 4(r7)
+    d698:	37c1 	ld	r3, 2(r7)
+    d69a:	39c0 	ld	r4, 0(r7)
+    d69c:	3dc3 	ld	r6, 6(r7)
+    d69e:	3bc4 	ld	r5, 8(r7)
+    d6a0:	2fca 	addi	r7, r7, 10
+    d6a2:	a143 	jmp	r5
+
+0000d6a4 <player_hit_self>:
+
+
+/**	Checks if the snake have collided with itself
+ */
+int player_hit_self ()
+{
+    d6a4:	2fe4 	addi	r7, r7, -28
+    d6a6:	4bcd 	st	26(r7), r5
+    d6a8:	4dcc 	st	24(r7), r6
+    d6aa:	2dd8 	addi	r6, r7, 24
+    d6ac:	41c3 	st	6(r7), r0
+    d6ae:	45c2 	st	4(r7), r2
+    d6b0:	47c1 	st	2(r7), r3
+    d6b2:	49c0 	st	0(r7), r4
+	int i;
+	for (i = (snake.size-1); i > 1; i--)
+    d6b4:	56c0 	movi	r3, -64
+    d6b6:	5780 	movhi	r3, -128
+    d6b8:	32c2 	ld	r1, 4(r3)
+    d6ba:	227f 	addi	r1, r1, -1
+    d6bc:	43b8 	st	-16(r6), r1
+    d6be:	5201 	movi	r1, 1
+    d6c0:	31b8 	ld	r0, -16(r6)
+    d6c2:	1209 	cmple	r1, r0, r1
+    d6c4:	5a4a 	movi	r5, 74
+    d6c6:	5bd7 	movhi	r5, -41
+    d6c8:	a341 	jnz	r1, r5
+    d6ca:	32c5 	ld	r1, 10(r3)
+    d6cc:	43bf 	st	-2(r6), r1
+	{
+		if ((snake.body[0].x == snake.body[i].x) &&
+    d6ce:	36c6 	ld	r3, 12(r3)
+    d6d0:	47be 	st	-4(r6), r3
+    d6d2:	5a00 	movi	r5, 0
+    d6d4:	6a08 	bz	r5, 18
+    d6d6:	37b8 	ld	r3, -16(r6)
+    d6d8:	26ff 	addi	r3, r3, -1
+    d6da:	47b8 	st	-16(r6), r3
+    d6dc:	5201 	movi	r1, 1
+    d6de:	12d9 	cmpeq	r1, r3, r1
+    d6e0:	5a4a 	movi	r5, 74
+    d6e2:	5bd7 	movhi	r5, -41
+    d6e4:	a341 	jnz	r1, r5
+    d6e6:	52f1 	movi	r1, -15
+    d6e8:	35b8 	ld	r2, -16(r6)
+    d6ea:	02b1 	sha	r1, r2, r1
+    d6ec:	43bd 	st	-6(r6), r1
+    d6ee:	2280 	addi	r1, r2, 0
+    d6f0:	39bd 	ld	r4, -6(r6)
+    d6f2:	5002 	movi	r0, 2
+    d6f4:	0130 	sha	r0, r4, r0
+    d6f6:	41bc 	st	-8(r6), r0
+    d6f8:	5602 	movi	r3, 2
+    d6fa:	0273 	sha	r1, r1, r3
+    d6fc:	43bb 	st	-10(r6), r1
+    d6fe:	560a 	movi	r3, 10
+    d700:	0263 	add	r1, r1, r3
+    d702:	50c0 	movi	r0, -64
+    d704:	5180 	movhi	r0, -128
+    d706:	0260 	add	r1, r1, r0
+    d708:	3240 	ld	r1, 0(r1)
+    d70a:	35bf 	ld	r2, -2(r6)
+    d70c:	1299 	cmpeq	r1, r2, r1
+    d70e:	62e3 	bz	r1, -56
+    d710:	37b8 	ld	r3, -16(r6)
+    d712:	22c0 	addi	r1, r3, 0
+    d714:	39bd 	ld	r4, -6(r6)
+    d716:	5002 	movi	r0, 2
+    d718:	0130 	sha	r0, r4, r0
+    d71a:	41ba 	st	-12(r6), r0
+    d71c:	5602 	movi	r3, 2
+    d71e:	0273 	sha	r1, r1, r3
+    d720:	43b9 	st	-14(r6), r1
+    d722:	560c 	movi	r3, 12
+    d724:	0263 	add	r1, r1, r3
+    d726:	50c0 	movi	r0, -64
+    d728:	5180 	movhi	r0, -128
+    d72a:	0260 	add	r1, r1, r0
+    d72c:	3240 	ld	r1, 0(r1)
+    d72e:	35be 	ld	r2, -4(r6)
+    d730:	1299 	cmpeq	r1, r2, r1
+    d732:	5ad6 	movi	r5, -42
+    d734:	5bd6 	movhi	r5, -42
+    d736:	a340 	jz	r1, r5
+    d738:	5201 	movi	r1, 1
+		    (snake.body[0].y == snake.body[i].y))
+		{
+			return TRUE;
+		}
+	}
+	return FALSE;
+}
+    d73a:	31c3 	ld	r0, 6(r7)
+    d73c:	35c2 	ld	r2, 4(r7)
+    d73e:	37c1 	ld	r3, 2(r7)
+    d740:	39c0 	ld	r4, 0(r7)
+    d742:	3dcc 	ld	r6, 24(r7)
+    d744:	3bcd 	ld	r5, 26(r7)
+    d746:	2fdc 	addi	r7, r7, 28
+    d748:	a143 	jmp	r5
+    d74a:	5200 	movi	r1, 0
+    d74c:	31c3 	ld	r0, 6(r7)
+    d74e:	35c2 	ld	r2, 4(r7)
+    d750:	37c1 	ld	r3, 2(r7)
+    d752:	39c0 	ld	r4, 0(r7)
+    d754:	3dcc 	ld	r6, 24(r7)
+    d756:	3bcd 	ld	r5, 26(r7)
+    d758:	2fdc 	addi	r7, r7, 28
+    d75a:	a143 	jmp	r5
+
+0000d75c <player_increase_score>:
+
+
+/**	Simply increases the score by the value sent as the parameter.
+ */
+void player_increase_score (int add)
+{
+    d75c:	2ff8 	addi	r7, r7, -8
+    d75e:	4bc3 	st	6(r7), r5
+    d760:	4dc2 	st	4(r7), r6
+    d762:	2dc4 	addi	r6, r7, 4
+    d764:	45c1 	st	2(r7), r2
+    d766:	47c0 	st	0(r7), r3
+	snake.score += add;
+    d768:	56c0 	movi	r3, -64
+    d76a:	5780 	movhi	r3, -128
+    d76c:	34c3 	ld	r2, 6(r3)
+    d76e:	3382 	ld	r1, 4(r6)
+    d770:	0262 	add	r1, r1, r2
+    d772:	42c3 	st	6(r3), r1
+}
+    d774:	35c1 	ld	r2, 2(r7)
+    d776:	37c0 	ld	r3, 0(r7)
+    d778:	3dc2 	ld	r6, 4(r7)
+    d77a:	3bc3 	ld	r5, 6(r7)
+    d77c:	2fc8 	addi	r7, r7, 8
+    d77e:	a143 	jmp	r5
+
+0000d780 <player_init>:
+
+
+/**	Increases the snake size.
+ *
+ * 	Here we have the core function of this file. Each time the snake
+ * 	increases its size, we expand the array that represents its body.
+ *
+ * 	@note This is the main function of this file, because it shows
+ *        how i've implemented the snake. In the future, we could
+ *        use a linked list instead of an array.
+ */
+void player_increase_size (int size)
+{
+        int i;
+
+	snake.size += size;
+
+	if (snake.size >= LONGITUD_MAXIMA_SERPIENTE)
+		nsnake_abort ("Longitud maxima superada!\nDeja ya de jugar y sigue haciendo el proyecto!");
+
+	else {
+		for(i=1;i<=size;i++) {
+			snake.body[snake.size-i].x = snake.body[snake.size-size-1].x;
+			snake.body[snake.size-i].y = snake.body[snake.size-size-1].y;
+		}
+	}
+}
+
+
+/**	Starts the player-related variables.
+ */
+void player_init ()
+{
+    d780:	2ff2 	addi	r7, r7, -14
+    d782:	4bc6 	st	12(r7), r5
+    d784:	4dc5 	st	10(r7), r6
+    d786:	2dca 	addi	r6, r7, 10
+    d788:	41c3 	st	6(r7), r0
+    d78a:	45c2 	st	4(r7), r2
+    d78c:	47c1 	st	2(r7), r3
+    d78e:	49c0 	st	0(r7), r4
+	snake.is_alive  = TRUE;
+    d790:	52c0 	movi	r1, -64
+    d792:	5380 	movhi	r1, -128
+    d794:	5801 	movi	r4, 1
+    d796:	4840 	st	0(r1), r4
+	snake.speed	    = 1;
+    d798:	4841 	st	2(r1), r4
+	snake.score	    = 0;
+    d79a:	5600 	movi	r3, 0
+    d79c:	4643 	st	6(r1), r3
+	snake.direction = RIGHT;
+    d79e:	5403 	movi	r2, 3
+    d7a0:	4444 	st	8(r1), r2
+
+	snake.size = 3;
+    d7a2:	4442 	st	4(r1), r2
+
+	int i;
+	for (i = 0; i <=LONGITUD_MAXIMA_SERPIENTE; i++)
+	{
+		snake.body[i].x = 0;
+    d7a4:	4645 	st	10(r1), r3
+		snake.body[i].y = 0;
+    d7a6:	4646 	st	12(r1), r3
+    d7a8:	49bf 	st	-2(r6), r4
+    d7aa:	33bf 	ld	r1, -2(r6)
+    d7ac:	5002 	movi	r0, 2
+    d7ae:	0270 	sha	r1, r1, r0
+    d7b0:	56c0 	movi	r3, -64
+    d7b2:	5780 	movhi	r3, -128
+    d7b4:	0463 	add	r2, r1, r3
+    d7b6:	5200 	movi	r1, 0
+    d7b8:	4285 	st	10(r2), r1
+    d7ba:	4286 	st	12(r2), r1
+    d7bc:	33bf 	ld	r1, -2(r6)
+    d7be:	2241 	addi	r1, r1, 1
+    d7c0:	43bf 	st	-2(r6), r1
+    d7c2:	5233 	movi	r1, 51
+    d7c4:	35bf 	ld	r2, -2(r6)
+    d7c6:	1299 	cmpeq	r1, r2, r1
+    d7c8:	62f0 	bz	r1, -30
+    d7ca:	52a4 	movi	r1, -92
+    d7cc:	5380 	movhi	r1, -128
+    d7ce:	3440 	ld	r2, 0(r1)
+    d7d0:	56ff 	movi	r3, -1
+    d7d2:	04b3 	sha	r2, r2, r3
+    d7d4:	3241 	ld	r1, 2(r1)
+    d7d6:	0273 	sha	r1, r1, r3
+	}
+
+	for (i = 0; i < snake.size; i++)
+	{
+		snake.body[i].x = screen.width/2;
+    d7d8:	56c0 	movi	r3, -64
+    d7da:	5780 	movhi	r3, -128
+    d7dc:	44c5 	st	10(r3), r2
+		snake.body[i].y = screen.height/2;
+    d7de:	42c6 	st	12(r3), r1
+    d7e0:	44c7 	st	14(r3), r2
+    d7e2:	42c8 	st	16(r3), r1
+    d7e4:	44c9 	st	18(r3), r2
+    d7e6:	42ca 	st	20(r3), r1
+	}
+}
+    d7e8:	31c3 	ld	r0, 6(r7)
+    d7ea:	35c2 	ld	r2, 4(r7)
+    d7ec:	37c1 	ld	r3, 2(r7)
+    d7ee:	39c0 	ld	r4, 0(r7)
+    d7f0:	3dc5 	ld	r6, 10(r7)
+    d7f2:	3bc6 	ld	r5, 12(r7)
+    d7f4:	2fce 	addi	r7, r7, 14
+    d7f6:	a143 	jmp	r5
+
+0000d7f8 <player_teleport_borders>:
+
+
+/**	Teleports the player around the borders.
+ */
+void player_teleport_borders ()
+{
+    d7f8:	2ff4 	addi	r7, r7, -12
+    d7fa:	4bc5 	st	10(r7), r5
+    d7fc:	4dc4 	st	8(r7), r6
+    d7fe:	2dc8 	addi	r6, r7, 8
+    d800:	41c3 	st	6(r7), r0
+    d802:	45c2 	st	4(r7), r2
+    d804:	47c1 	st	2(r7), r3
+    d806:	49c0 	st	0(r7), r4
+	if (snake.body[0].x < 1)
+    d808:	50c0 	movi	r0, -64
+    d80a:	5180 	movhi	r0, -128
+    d80c:	3205 	ld	r1, 10(r0)
+    d80e:	5400 	movi	r2, 0
+    d810:	124a 	cmple	r1, r1, r2
+    d812:	631e 	bnz	r1, 62
+    d814:	56a4 	movi	r3, -92
+    d816:	5780 	movhi	r3, -128
+    d818:	32c0 	ld	r1, 0(r3)
+    d81a:	287e 	addi	r4, r1, -2
+		snake.body[0].x = screen.width-2;
+
+	if (snake.body[0].y < 2)
+    d81c:	3206 	ld	r1, 12(r0)
+    d81e:	5401 	movi	r2, 1
+    d820:	124a 	cmple	r1, r1, r2
+    d822:	631f 	bnz	r1, 64
+    d824:	32c1 	ld	r1, 2(r3)
+    d826:	247e 	addi	r2, r1, -2
+		snake.body[0].y = screen.height-2;
+
+	if (snake.body[0].x > (screen.width-2))
+    d828:	56c0 	movi	r3, -64
+    d82a:	5780 	movhi	r3, -128
+    d82c:	3205 	ld	r1, 10(r0)
+    d82e:	124c 	cmple	r1, r1, r4
+    d830:	6302 	bnz	r1, 6
+		snake.body[0].x = 1;
+    d832:	5201 	movi	r1, 1
+    d834:	42c5 	st	10(r3), r1
+
+	if (snake.body[0].y > (screen.height-2))
+    d836:	32c6 	ld	r1, 12(r3)
+    d838:	124a 	cmple	r1, r1, r2
+    d83a:	6302 	bnz	r1, 6
+		snake.body[0].y = 2;
+    d83c:	5202 	movi	r1, 2
+    d83e:	42c6 	st	12(r3), r1
+}
+    d840:	31c3 	ld	r0, 6(r7)
+    d842:	35c2 	ld	r2, 4(r7)
+    d844:	37c1 	ld	r3, 2(r7)
+    d846:	39c0 	ld	r4, 0(r7)
+    d848:	3dc4 	ld	r6, 8(r7)
+    d84a:	3bc5 	ld	r5, 10(r7)
+    d84c:	2fcc 	addi	r7, r7, 12
+    d84e:	a143 	jmp	r5
+    d850:	56a4 	movi	r3, -92
+    d852:	5780 	movhi	r3, -128
+    d854:	32c0 	ld	r1, 0(r3)
+    d856:	287e 	addi	r4, r1, -2
+    d858:	4805 	st	10(r0), r4
+    d85a:	3206 	ld	r1, 12(r0)
+    d85c:	5401 	movi	r2, 1
+    d85e:	124a 	cmple	r1, r1, r2
+    d860:	62e1 	bz	r1, -60
+    d862:	32c1 	ld	r1, 2(r3)
+    d864:	247e 	addi	r2, r1, -2
+    d866:	52c0 	movi	r1, -64
+    d868:	5380 	movhi	r1, -128
+    d86a:	4446 	st	12(r1), r2
+    d86c:	5a28 	movi	r5, 40
+    d86e:	5bd8 	movhi	r5, -40
+    d870:	a143 	jmp	r5
+
+0000d872 <player_collided_with_borders>:
+    d872:	2ffa 	addi	r7, r7, -6
+    d874:	4bc2 	st	4(r7), r5
+    d876:	4dc1 	st	2(r7), r6
+    d878:	2dc2 	addi	r6, r7, 2
+    d87a:	45c0 	st	0(r7), r2
+    d87c:	52b0 	movi	r1, -80
+    d87e:	5380 	movhi	r1, -128
+    d880:	3440 	ld	r2, 0(r1)
+    d882:	5201 	movi	r1, 1
+    d884:	1299 	cmpeq	r1, r2, r1
+    d886:	6311 	bnz	r1, 36
+    d888:	5202 	movi	r1, 2
+    d88a:	1299 	cmpeq	r1, r2, r1
+    d88c:	6305 	bnz	r1, 12
+    d88e:	35c0 	ld	r2, 0(r7)
+    d890:	3dc1 	ld	r6, 2(r7)
+    d892:	3bc2 	ld	r5, 4(r7)
+    d894:	2fc6 	addi	r7, r7, 6
+    d896:	a143 	jmp	r5
+    d898:	52f8 	movi	r1, -8
+    d89a:	53d7 	movhi	r1, -41
+    d89c:	aa44 	jal	r5, r1
+    d89e:	5200 	movi	r1, 0
+    d8a0:	35c0 	ld	r2, 0(r7)
+    d8a2:	3dc1 	ld	r6, 2(r7)
+    d8a4:	3bc2 	ld	r5, 4(r7)
+    d8a6:	2fc6 	addi	r7, r7, 6
+    d8a8:	a143 	jmp	r5
+    d8aa:	5220 	movi	r1, 32
+    d8ac:	53d6 	movhi	r1, -42
+    d8ae:	aa44 	jal	r5, r1
+    d8b0:	35c0 	ld	r2, 0(r7)
+    d8b2:	3dc1 	ld	r6, 2(r7)
+    d8b4:	3bc2 	ld	r5, 4(r7)
+    d8b6:	2fc6 	addi	r7, r7, 6
+    d8b8:	a143 	jmp	r5
+
+0000d8ba <player_update>:
+
+
+/**	Updates the player position, one piece at a time
+ *
+ *	Start by moving the snake pieces one at a time from the last to the
+ *	first, and then moves the head according to its direction.
+ */
+void player_update ()
+{
+    d8ba:	2fe0 	addi	r7, r7, -32
+    d8bc:	4bcf 	st	30(r7), r5
+    d8be:	4dce 	st	28(r7), r6
+    d8c0:	2ddc 	addi	r6, r7, 28
+    d8c2:	2ff8 	addi	r7, r7, -8
+    d8c4:	41c3 	st	6(r7), r0
+    d8c6:	45c2 	st	4(r7), r2
+    d8c8:	47c1 	st	2(r7), r3
+    d8ca:	49c0 	st	0(r7), r4
+// body
+	int i;
+	for (i = (snake.size-1); i > 0; i--)
+    d8cc:	50c0 	movi	r0, -64
+    d8ce:	5180 	movhi	r0, -128
+    d8d0:	3202 	ld	r1, 4(r0)
+    d8d2:	227f 	addi	r1, r1, -1
+    d8d4:	43b2 	st	-28(r6), r1
+    d8d6:	5200 	movi	r1, 0
+    d8d8:	35b2 	ld	r2, -28(r6)
+    d8da:	1289 	cmple	r1, r2, r1
+    d8dc:	6204 	bz	r1, 10
+    d8de:	5a82 	movi	r5, -126
+    d8e0:	5bd9 	movhi	r5, -39
+    d8e2:	a143 	jmp	r5
+    d8e4:	47b2 	st	-28(r6), r3
+	{
+		snake.body[i].x = snake.body[i-1].x;
+    d8e6:	37b2 	ld	r3, -28(r6)
+    d8e8:	26ff 	addi	r3, r3, -1
+    d8ea:	47bf 	st	-2(r6), r3
+    d8ec:	39b2 	ld	r4, -28(r6)
+    d8ee:	50f1 	movi	r0, -15
+    d8f0:	0930 	sha	r4, r4, r0
+    d8f2:	49be 	st	-4(r6), r4
+    d8f4:	37b2 	ld	r3, -28(r6)
+    d8f6:	2500 	addi	r2, r4, 0
+    d8f8:	5802 	movi	r4, 2
+    d8fa:	08b4 	sha	r4, r2, r4
+    d8fc:	49bd 	st	-6(r6), r4
+    d8fe:	5002 	movi	r0, 2
+    d900:	02f0 	sha	r1, r3, r0
+    d902:	43bc 	st	-8(r6), r1
+    d904:	560a 	movi	r3, 10
+    d906:	0263 	add	r1, r1, r3
+    d908:	50c0 	movi	r0, -64
+    d90a:	5180 	movhi	r0, -128
+    d90c:	0060 	add	r0, r1, r0
+    d90e:	41bb 	st	-10(r6), r0
+    d910:	33bf 	ld	r1, -2(r6)
+    d912:	54f1 	movi	r2, -15
+    d914:	0272 	sha	r1, r1, r2
+    d916:	43ba 	st	-12(r6), r1
+    d918:	37bf 	ld	r3, -2(r6)
+    d91a:	22c0 	addi	r1, r3, 0
+    d91c:	39ba 	ld	r4, -12(r6)
+    d91e:	5002 	movi	r0, 2
+    d920:	0130 	sha	r0, r4, r0
+    d922:	41b9 	st	-14(r6), r0
+    d924:	5602 	movi	r3, 2
+    d926:	0273 	sha	r1, r1, r3
+    d928:	43b8 	st	-16(r6), r1
+    d92a:	560a 	movi	r3, 10
+    d92c:	0263 	add	r1, r1, r3
+    d92e:	50c0 	movi	r0, -64
+    d930:	5180 	movhi	r0, -128
+    d932:	0260 	add	r1, r1, r0
+    d934:	3240 	ld	r1, 0(r1)
+    d936:	35bb 	ld	r2, -10(r6)
+    d938:	4280 	st	0(r2), r1
+		snake.body[i].y = snake.body[i-1].y;
+    d93a:	37b2 	ld	r3, -28(r6)
+    d93c:	22c0 	addi	r1, r3, 0
+    d93e:	39be 	ld	r4, -4(r6)
+    d940:	5002 	movi	r0, 2
+    d942:	0130 	sha	r0, r4, r0
+    d944:	41b7 	st	-18(r6), r0
+    d946:	5602 	movi	r3, 2
+    d948:	0273 	sha	r1, r1, r3
+    d94a:	43b6 	st	-20(r6), r1
+    d94c:	560c 	movi	r3, 12
+    d94e:	0263 	add	r1, r1, r3
+    d950:	50c0 	movi	r0, -64
+    d952:	5180 	movhi	r0, -128
+    d954:	0060 	add	r0, r1, r0
+    d956:	41b5 	st	-22(r6), r0
+    d958:	37bf 	ld	r3, -2(r6)
+    d95a:	22c0 	addi	r1, r3, 0
+    d95c:	39ba 	ld	r4, -12(r6)
+    d95e:	5002 	movi	r0, 2
+    d960:	0130 	sha	r0, r4, r0
+    d962:	41b4 	st	-24(r6), r0
+    d964:	5602 	movi	r3, 2
+    d966:	0273 	sha	r1, r1, r3
+    d968:	43b3 	st	-26(r6), r1
+    d96a:	560c 	movi	r3, 12
+    d96c:	0263 	add	r1, r1, r3
+    d96e:	50c0 	movi	r0, -64
+    d970:	5180 	movhi	r0, -128
+    d972:	0260 	add	r1, r1, r0
+    d974:	3240 	ld	r1, 0(r1)
+    d976:	35b5 	ld	r2, -22(r6)
+    d978:	4280 	st	0(r2), r1
+    d97a:	37bf 	ld	r3, -2(r6)
+    d97c:	5ae4 	movi	r5, -28
+    d97e:	5bd8 	movhi	r5, -40
+    d980:	a741 	jnz	r3, r5
+	}
+
+// head
+	if      (snake.direction == UP)
+    d982:	56c0 	movi	r3, -64
+    d984:	5780 	movhi	r3, -128
+    d986:	34c4 	ld	r2, 8(r3)
+    d988:	650d 	bnz	r2, 28
+		snake.body[0].y -= snake.speed;
+    d98a:	32c6 	ld	r1, 12(r3)
+    d98c:	34c1 	ld	r2, 2(r3)
+    d98e:	026a 	sub	r1, r1, r2
+    d990:	42c6 	st	12(r3), r1
+
+	else if (snake.direction == LEFT)
+		snake.body[0].x -= snake.speed;
+
+	else if (snake.direction == DOWN)
+		snake.body[0].y += snake.speed;
+
+	else if (snake.direction == RIGHT)
+		snake.body[0].x += snake.speed;
+}
+    d992:	31c3 	ld	r0, 6(r7)
+    d994:	35c2 	ld	r2, 4(r7)
+    d996:	37c1 	ld	r3, 2(r7)
+    d998:	39c0 	ld	r4, 0(r7)
+    d99a:	2f80 	addi	r7, r6, 0
+    d99c:	3dc0 	ld	r6, 0(r7)
+    d99e:	3bc1 	ld	r5, 2(r7)
+    d9a0:	2fc4 	addi	r7, r7, 4
+    d9a2:	a143 	jmp	r5
+    d9a4:	5201 	movi	r1, 1
+    d9a6:	1299 	cmpeq	r1, r2, r1
+    d9a8:	6313 	bnz	r1, 40
+    d9aa:	5202 	movi	r1, 2
+    d9ac:	1299 	cmpeq	r1, r2, r1
+    d9ae:	631d 	bnz	r1, 60
+    d9b0:	5203 	movi	r1, 3
+    d9b2:	1299 	cmpeq	r1, r2, r1
+    d9b4:	62ee 	bz	r1, -34
+    d9b6:	32c1 	ld	r1, 2(r3)
+    d9b8:	34c5 	ld	r2, 10(r3)
+    d9ba:	0262 	add	r1, r1, r2
+    d9bc:	42c5 	st	10(r3), r1
+    d9be:	31c3 	ld	r0, 6(r7)
+    d9c0:	35c2 	ld	r2, 4(r7)
+    d9c2:	37c1 	ld	r3, 2(r7)
+    d9c4:	39c0 	ld	r4, 0(r7)
+    d9c6:	2f80 	addi	r7, r6, 0
+    d9c8:	3dc0 	ld	r6, 0(r7)
+    d9ca:	3bc1 	ld	r5, 2(r7)
+    d9cc:	2fc4 	addi	r7, r7, 4
+    d9ce:	a143 	jmp	r5
+    d9d0:	32c5 	ld	r1, 10(r3)
+    d9d2:	34c1 	ld	r2, 2(r3)
+    d9d4:	026a 	sub	r1, r1, r2
+    d9d6:	42c5 	st	10(r3), r1
+    d9d8:	31c3 	ld	r0, 6(r7)
+    d9da:	35c2 	ld	r2, 4(r7)
+    d9dc:	37c1 	ld	r3, 2(r7)
+    d9de:	39c0 	ld	r4, 0(r7)
+    d9e0:	2f80 	addi	r7, r6, 0
+    d9e2:	3dc0 	ld	r6, 0(r7)
+    d9e4:	3bc1 	ld	r5, 2(r7)
+    d9e6:	2fc4 	addi	r7, r7, 4
+    d9e8:	a143 	jmp	r5
+    d9ea:	32c1 	ld	r1, 2(r3)
+    d9ec:	34c6 	ld	r2, 12(r3)
+    d9ee:	0262 	add	r1, r1, r2
+    d9f0:	42c6 	st	12(r3), r1
+    d9f2:	31c3 	ld	r0, 6(r7)
+    d9f4:	35c2 	ld	r2, 4(r7)
+    d9f6:	37c1 	ld	r3, 2(r7)
+    d9f8:	39c0 	ld	r4, 0(r7)
+    d9fa:	2f80 	addi	r7, r6, 0
+    d9fc:	3dc0 	ld	r6, 0(r7)
+    d9fe:	3bc1 	ld	r5, 2(r7)
+    da00:	2fc4 	addi	r7, r7, 4
+    da02:	a143 	jmp	r5
+
+0000da04 <player_increase_size>:
+    da04:	2fe0 	addi	r7, r7, -32
+    da06:	4bcf 	st	30(r7), r5
+    da08:	4dce 	st	28(r7), r6
+    da0a:	2ddc 	addi	r6, r7, 28
+    da0c:	2fee 	addi	r7, r7, -18
+    da0e:	41c3 	st	6(r7), r0
+    da10:	45c2 	st	4(r7), r2
+    da12:	47c1 	st	2(r7), r3
+    da14:	49c0 	st	0(r7), r4
+    da16:	3782 	ld	r3, 4(r6)
+    da18:	54c0 	movi	r2, -64
+    da1a:	5580 	movhi	r2, -128
+    da1c:	3282 	ld	r1, 4(r2)
+    da1e:	02e1 	add	r1, r3, r1
+    da20:	43bc 	st	-8(r6), r1
+    da22:	4282 	st	4(r2), r1
+    da24:	5231 	movi	r1, 49
+    da26:	31bc 	ld	r0, -8(r6)
+    da28:	1209 	cmple	r1, r0, r1
+    da2a:	5af8 	movi	r5, -8
+    da2c:	5bda 	movhi	r5, -38
+    da2e:	a340 	jz	r1, r5
+    da30:	5200 	movi	r1, 0
+    da32:	12c9 	cmple	r1, r3, r1
+    da34:	5ae6 	movi	r5, -26
+    da36:	5bda 	movhi	r5, -38
+    da38:	a341 	jnz	r1, r5
+    da3a:	35bc 	ld	r2, -8(r6)
+    da3c:	02ab 	sub	r1, r2, r3
+    da3e:	227f 	addi	r1, r1, -1
+    da40:	43bf 	st	-2(r6), r1
+    da42:	5801 	movi	r4, 1
+    da44:	49be 	st	-4(r6), r4
+    da46:	06e4 	add	r3, r3, r4
+    da48:	47af 	st	-34(r6), r3
+    da4a:	31bc 	ld	r0, -8(r6)
+    da4c:	33be 	ld	r1, -4(r6)
+    da4e:	0029 	sub	r0, r0, r1
+    da50:	41bd 	st	-6(r6), r0
+    da52:	54f1 	movi	r2, -15
+    da54:	0432 	sha	r2, r0, r2
+    da56:	45bb 	st	-10(r6), r2
+    da58:	2200 	addi	r1, r0, 0
+    da5a:	5002 	movi	r0, 2
+    da5c:	08b0 	sha	r4, r2, r0
+    da5e:	49ba 	st	-12(r6), r4
+    da60:	0270 	sha	r1, r1, r0
+    da62:	43b9 	st	-14(r6), r1
+    da64:	520a 	movi	r1, 10
+    da66:	5400 	movi	r2, 0
+    da68:	45ae 	st	-36(r6), r2
+    da6a:	37b9 	ld	r3, -14(r6)
+    da6c:	02e1 	add	r1, r3, r1
+    da6e:	56c0 	movi	r3, -64
+    da70:	5780 	movhi	r3, -128
+    da72:	0663 	add	r3, r1, r3
+    da74:	47b8 	st	-16(r6), r3
+    da76:	39bf 	ld	r4, -2(r6)
+    da78:	52f1 	movi	r1, -15
+    da7a:	0931 	sha	r4, r4, r1
+    da7c:	49b7 	st	-18(r6), r4
+    da7e:	37bf 	ld	r3, -2(r6)
+    da80:	0930 	sha	r4, r4, r0
+    da82:	49b6 	st	-20(r6), r4
+    da84:	02f0 	sha	r1, r3, r0
+    da86:	43b5 	st	-22(r6), r1
+    da88:	520a 	movi	r1, 10
+    da8a:	37b5 	ld	r3, -22(r6)
+    da8c:	02e1 	add	r1, r3, r1
+    da8e:	56c0 	movi	r3, -64
+    da90:	5780 	movhi	r3, -128
+    da92:	0263 	add	r1, r1, r3
+    da94:	3240 	ld	r1, 0(r1)
+    da96:	39b8 	ld	r4, -16(r6)
+    da98:	4300 	st	0(r4), r1
+    da9a:	37bd 	ld	r3, -6(r6)
+    da9c:	22c0 	addi	r1, r3, 0
+    da9e:	39bb 	ld	r4, -10(r6)
+    daa0:	0730 	sha	r3, r4, r0
+    daa2:	47b4 	st	-24(r6), r3
+    daa4:	0270 	sha	r1, r1, r0
+    daa6:	43b3 	st	-26(r6), r1
+    daa8:	580c 	movi	r4, 12
+    daaa:	49ad 	st	-38(r6), r4
+    daac:	37b3 	ld	r3, -26(r6)
+    daae:	02e4 	add	r1, r3, r4
+    dab0:	56c0 	movi	r3, -64
+    dab2:	5780 	movhi	r3, -128
+    dab4:	0663 	add	r3, r1, r3
+    dab6:	47b2 	st	-28(r6), r3
+    dab8:	39bf 	ld	r4, -2(r6)
+    daba:	2300 	addi	r1, r4, 0
+    dabc:	37b7 	ld	r3, -18(r6)
+    dabe:	08f0 	sha	r4, r3, r0
+    dac0:	49b1 	st	-30(r6), r4
+    dac2:	0270 	sha	r1, r1, r0
+    dac4:	43b0 	st	-32(r6), r1
+    dac6:	560c 	movi	r3, 12
+    dac8:	0263 	add	r1, r1, r3
+    daca:	50c0 	movi	r0, -64
+    dacc:	5180 	movhi	r0, -128
+    dace:	0260 	add	r1, r1, r0
+    dad0:	3240 	ld	r1, 0(r1)
+    dad2:	35b2 	ld	r2, -28(r6)
+    dad4:	4280 	st	0(r2), r1
+    dad6:	37be 	ld	r3, -4(r6)
+    dad8:	26c1 	addi	r3, r3, 1
+    dada:	47be 	st	-4(r6), r3
+    dadc:	39af 	ld	r4, -34(r6)
+    dade:	12dc 	cmpeq	r1, r3, r4
+    dae0:	5a4a 	movi	r5, 74
+    dae2:	5bda 	movhi	r5, -38
+    dae4:	a340 	jz	r1, r5
+    dae6:	31c3 	ld	r0, 6(r7)
+    dae8:	35c2 	ld	r2, 4(r7)
+    daea:	37c1 	ld	r3, 2(r7)
+    daec:	39c0 	ld	r4, 0(r7)
+    daee:	2f80 	addi	r7, r6, 0
+    daf0:	3dc0 	ld	r6, 0(r7)
+    daf2:	3bc1 	ld	r5, 2(r7)
+    daf4:	2fc4 	addi	r7, r7, 4
+    daf6:	a143 	jmp	r5
+    daf8:	2ffe 	addi	r7, r7, -2
+    dafa:	52c8 	movi	r1, -56
+    dafc:	53e3 	movhi	r1, -29
+    dafe:	43c0 	st	0(r7), r1
+    db00:	525c 	movi	r1, 92
+    db02:	53d5 	movhi	r1, -43
+    db04:	aa44 	jal	r5, r1
+    db06:	2fc2 	addi	r7, r7, 2
+    db08:	31c3 	ld	r0, 6(r7)
+    db0a:	35c2 	ld	r2, 4(r7)
+    db0c:	37c1 	ld	r3, 2(r7)
+    db0e:	39c0 	ld	r4, 0(r7)
+    db10:	2f80 	addi	r7, r6, 0
+    db12:	3dc0 	ld	r6, 0(r7)
+    db14:	3bc1 	ld	r5, 2(r7)
+    db16:	2fc4 	addi	r7, r7, 4
+    db18:	a143 	jmp	r5
+
+0000db1a <main>:
+ *        could understaing the whole game logic starting by here. @n
+ *        Have fun with the source code!
+ */
+ int main (void)
+{
+    db1a:	2ff2 	addi	r7, r7, -14
+    db1c:	4bc6 	st	12(r7), r5
+    db1e:	4dc5 	st	10(r7), r6
+    db20:	2dca 	addi	r6, r7, 10
+    db22:	41c3 	st	6(r7), r0
+    db24:	45c2 	st	4(r7), r2
+    db26:	47c1 	st	2(r7), r3
+    db28:	49c0 	st	0(r7), r4
+	int c      = 0;
+	int wait   = FALSE;
+
+	engine_init ();
+    db2a:	525c 	movi	r1, 92
+    db2c:	53cb 	movhi	r1, -53
+    db2e:	aa44 	jal	r5, r1
+	game.state = MAIN_MENU;
+    db30:	58b0 	movi	r4, -80
+    db32:	5980 	movhi	r4, -128
+    db34:	5200 	movi	r1, 0
+    db36:	4302 	st	4(r4), r1
+    db38:	5096 	movi	r0, -106
+    db3a:	51c8 	movhi	r0, -56
+
+	while (TRUE == TRUE)
+	{
+		switch (game.state)
+		{
+		case MAIN_MENU:
+			engine_show_main_menu ();
+    db3c:	565c 	movi	r3, 92
+    db3e:	57cd 	movhi	r3, -51
+    db40:	aac4 	jal	r5, r3
+			game.state = GAME_INIT;
+    db42:	5201 	movi	r1, 1
+    db44:	4302 	st	4(r4), r1
+			break;
+
+		case GAME_INIT:
+			nsnake_init ();
+    db46:	521a 	movi	r1, 26
+    db48:	53d5 	movhi	r1, -43
+    db4a:	aa44 	jal	r5, r1
+			game.state = GAME;
+    db4c:	5202 	movi	r1, 2
+    db4e:	4302 	st	4(r4), r1
+			break;
+
+		case GAME:
+			if (snake.is_alive == FALSE)
+    db50:	54c0 	movi	r2, -64
+    db52:	5580 	movhi	r2, -128
+    db54:	3280 	ld	r1, 0(r2)
+    db56:	5a4e 	movi	r5, 78
+    db58:	5bdc 	movhi	r5, -36
+    db5a:	a341 	jnz	r1, r5
+			{
+				game.state = GAME_OVER;
+    db5c:	5204 	movi	r1, 4
+    db5e:	4302 	st	4(r4), r1
+    db60:	3502 	ld	r2, 4(r4)
+    db62:	5205 	movi	r1, 5
+    db64:	12a9 	cmpleu	r1, r2, r1
+    db66:	62fc 	bz	r1, -6
+    db68:	02a2 	add	r1, r2, r2
+    db6a:	5412 	movi	r2, 18
+    db6c:	55e4 	movhi	r2, -28
+    db6e:	0262 	add	r1, r1, r2
+    db70:	3240 	ld	r1, 0(r1)
+    db72:	a043 	jmp	r1
+				break;
+			}
+
+			switch (c = engine_get_game_input ())
+			{
+			case ERR:
+				// If we get no input
+				break;
+
+			case KEY_UP:    case 'w': case 'W': case 'k':
+				player_change_direction (UP);
+				break;
+
+			case KEY_LEFT:  case 'a': case 'A': case 'h':
+				player_change_direction (LEFT);
+				break;
+
+			case KEY_DOWN:  case 's': case 'S': case 'j':
+				player_change_direction (DOWN);
+				break;
+
+			case KEY_RIGHT: case 'd': case 'D': case 'l':
+				player_change_direction (RIGHT);
+				break;
+
+			case 'q':	case 'Q':
+				game.state = EXIT;
+				break;
+
+		#ifdef DEBUG //debug key to increase score and size (gcc -DDEBUG)
+			case 'e':	case 'E':
+				player_increase_score (100);
+				player_increase_size (2);
+				break;
+		#endif
+			case 'p':	case 'P':
+				game.state = PAUSED;
+				break;
+
+			default:
+				break;
+			}
+
+			player_update ();
+			fruit_update_bonus ();
+
+			if (player_hit_fruit () == TRUE)
+			{
+				// Is this score arbitrary?
+				player_increase_score (game.level*3 + fruit.bonus);
+				player_increase_size (2);
+				fruit_init ();
+			}
+
+			if (player_hit_self () == TRUE)
+				snake.is_alive = FALSE;
+
+			if (player_collided_with_borders () == TRUE)
+				snake.is_alive = FALSE;
+
+			engine_show_screen ();
+			break;
+
+		case PAUSED:
+			engine_show_pause ();
+
+			wait = TRUE;
+			while (wait == TRUE)
+			{
+				int input = engine_get_game_input ();
+
+				switch (input)
+				{
+				case 'p':	case 'P':
+					wait = FALSE;
+					game.state = GAME;
+					break;
+
+				case 'q':	case 'Q':
+					wait = FALSE;
+					game.state = EXIT;
+					break;
+
+				default:
+					break;
+				}
+
+				engine_clean_pause ();
+			}
+			break;
+
+		case GAME_OVER:
+			engine_show_game_over ();
+
+			wait = TRUE;
+			while (wait == TRUE)
+			{
+				switch (c = engine_get_game_input())
+				{
+				case 'q':	case 'Q':
+					wait = FALSE;
+					game.state = EXIT;
+					break;
+
+				case 'm':	case 'M':
+					wait = FALSE;
+					game.state = MAIN_MENU;
+					break;
+
+				case ' ':
+					wait = FALSE;
+					game.state = GAME_INIT;
+					break;
+
+				case '\n':
+					wait = FALSE;
+					game.state = GAME_INIT;
+					break;
+
+				default:
+					break;
+				}
+			}
+
+			engine_clean_game_over();
+			break;
+
+		case EXIT:
+			engine_exit ();
+    db74:	5420 	movi	r2, 32
+    db76:	55cc 	movhi	r2, -52
+    db78:	aa84 	jal	r5, r2
+			nsnake_exit ();
+    db7a:	5648 	movi	r3, 72
+    db7c:	57d5 	movhi	r3, -43
+    db7e:	aac4 	jal	r5, r3
+    db80:	5a00 	movi	r5, 0
+    db82:	6aee 	bz	r5, -34
+    db84:	5202 	movi	r1, 2
+    db86:	53d3 	movhi	r1, -45
+    db88:	aa44 	jal	r5, r1
+    db8a:	aa04 	jal	r5, r0
+    db8c:	2440 	addi	r2, r1, 0
+    db8e:	5651 	movi	r3, 81
+    db90:	125b 	cmpeq	r1, r1, r3
+    db92:	5a1c 	movi	r5, 28
+    db94:	5bdc 	movhi	r5, -36
+    db96:	a341 	jnz	r1, r5
+    db98:	128b 	cmple	r1, r2, r3
+    db9a:	5a0c 	movi	r5, 12
+    db9c:	5bdc 	movhi	r5, -36
+    db9e:	a340 	jz	r1, r5
+    dba0:	564d 	movi	r3, 77
+    dba2:	129b 	cmpeq	r1, r2, r3
+    dba4:	5a44 	movi	r5, 68
+    dba6:	5bdc 	movhi	r5, -36
+    dba8:	a341 	jnz	r1, r5
+    dbaa:	128b 	cmple	r1, r2, r3
+    dbac:	62ee 	bz	r1, -34
+    dbae:	520a 	movi	r1, 10
+    dbb0:	1299 	cmpeq	r1, r2, r1
+    dbb2:	6303 	bnz	r1, 8
+    dbb4:	5220 	movi	r1, 32
+    dbb6:	1299 	cmpeq	r1, r2, r1
+    dbb8:	62e8 	bz	r1, -46
+    dbba:	5201 	movi	r1, 1
+    dbbc:	4302 	st	4(r4), r1
+    dbbe:	5442 	movi	r2, 66
+    dbc0:	55c8 	movhi	r2, -56
+    dbc2:	aa84 	jal	r5, r2
+    dbc4:	5a60 	movi	r5, 96
+    dbc6:	5bdb 	movhi	r5, -37
+    dbc8:	a143 	jmp	r5
+    dbca:	54ac 	movi	r2, -84
+    dbcc:	55c8 	movhi	r2, -56
+    dbce:	aa84 	jal	r5, r2
+    dbd0:	aa04 	jal	r5, r0
+    dbd2:	2440 	addi	r2, r1, 0
+    dbd4:	5651 	movi	r3, 81
+    dbd6:	125b 	cmpeq	r1, r1, r3
+    dbd8:	6311 	bnz	r1, 36
+    dbda:	128b 	cmple	r1, r2, r3
+    dbdc:	5a26 	movi	r5, 38
+    dbde:	5bdc 	movhi	r5, -36
+    dbe0:	a340 	jz	r1, r5
+    dbe2:	5250 	movi	r1, 80
+    dbe4:	1299 	cmpeq	r1, r2, r1
+    dbe6:	5a3a 	movi	r5, 58
+    dbe8:	5bdc 	movhi	r5, -36
+    dbea:	a341 	jnz	r1, r5
+    dbec:	5666 	movi	r3, 102
+    dbee:	57c8 	movhi	r3, -56
+    dbf0:	aac4 	jal	r5, r3
+    dbf2:	aa04 	jal	r5, r0
+    dbf4:	2440 	addi	r2, r1, 0
+    dbf6:	5651 	movi	r3, 81
+    dbf8:	125b 	cmpeq	r1, r1, r3
+    dbfa:	62ef 	bz	r1, -32
+    dbfc:	5205 	movi	r1, 5
+    dbfe:	4302 	st	4(r4), r1
+    dc00:	5266 	movi	r1, 102
+    dc02:	53c8 	movhi	r1, -56
+    dc04:	aa44 	jal	r5, r1
+    dc06:	5a60 	movi	r5, 96
+    dc08:	5bdb 	movhi	r5, -37
+    dc0a:	a143 	jmp	r5
+    dc0c:	526d 	movi	r1, 109
+    dc0e:	1299 	cmpeq	r1, r2, r1
+    dc10:	6319 	bnz	r1, 52
+    dc12:	5271 	movi	r1, 113
+    dc14:	1299 	cmpeq	r1, r2, r1
+    dc16:	5a8a 	movi	r5, -118
+    dc18:	5bdb 	movhi	r5, -37
+    dc1a:	a340 	jz	r1, r5
+    dc1c:	5205 	movi	r1, 5
+    dc1e:	4302 	st	4(r4), r1
+    dc20:	5abe 	movi	r5, -66
+    dc22:	5bdb 	movhi	r5, -37
+    dc24:	a143 	jmp	r5
+    dc26:	5270 	movi	r1, 112
+    dc28:	1299 	cmpeq	r1, r2, r1
+    dc2a:	6307 	bnz	r1, 16
+    dc2c:	5271 	movi	r1, 113
+    dc2e:	1299 	cmpeq	r1, r2, r1
+    dc30:	5aec 	movi	r5, -20
+    dc32:	5bdb 	movhi	r5, -37
+    dc34:	a340 	jz	r1, r5
+    dc36:	5a00 	movi	r5, 0
+    dc38:	6ae1 	bz	r5, -60
+    dc3a:	5202 	movi	r1, 2
+    dc3c:	4302 	st	4(r4), r1
+    dc3e:	5a00 	movi	r5, 0
+    dc40:	5bdc 	movhi	r5, -36
+    dc42:	a143 	jmp	r5
+    dc44:	5200 	movi	r1, 0
+    dc46:	4302 	st	4(r4), r1
+    dc48:	5abe 	movi	r5, -66
+    dc4a:	5bdb 	movhi	r5, -37
+    dc4c:	a143 	jmp	r5
+    dc4e:	aa04 	jal	r5, r0
+    dc50:	56bf 	movi	r3, -65
+    dc52:	0463 	add	r2, r1, r3
+    dc54:	5252 	movi	r1, 82
+    dc56:	12a9 	cmpleu	r1, r2, r1
+    dc58:	6208 	bz	r1, 18
+    dc5a:	02a2 	add	r1, r2, r2
+    dc5c:	541e 	movi	r2, 30
+    dc5e:	55e4 	movhi	r2, -28
+    dc60:	0262 	add	r1, r1, r2
+    dc62:	3240 	ld	r1, 0(r1)
+    dc64:	a043 	jmp	r1
+    dc66:	5203 	movi	r1, 3
+    dc68:	4302 	st	4(r4), r1
+    dc6a:	52ba 	movi	r1, -70
+    dc6c:	53d8 	movhi	r1, -40
+    dc6e:	aa44 	jal	r5, r1
+    dc70:	54f0 	movi	r2, -16
+    dc72:	55c6 	movhi	r2, -58
+    dc74:	aa84 	jal	r5, r2
+    dc76:	5672 	movi	r3, 114
+    dc78:	57d6 	movhi	r3, -42
+    dc7a:	aac4 	jal	r5, r3
+    dc7c:	5601 	movi	r3, 1
+    dc7e:	125b 	cmpeq	r1, r1, r3
+    dc80:	5ad8 	movi	r5, -40
+    dc82:	5bdc 	movhi	r5, -36
+    dc84:	a341 	jnz	r1, r5
+    dc86:	54a4 	movi	r2, -92
+    dc88:	55d6 	movhi	r2, -42
+    dc8a:	aa84 	jal	r5, r2
+    dc8c:	125b 	cmpeq	r1, r1, r3
+    dc8e:	5a10 	movi	r5, 16
+    dc90:	5bdd 	movhi	r5, -35
+    dc92:	a341 	jnz	r1, r5
+    dc94:	5472 	movi	r2, 114
+    dc96:	55d8 	movhi	r2, -40
+    dc98:	aa84 	jal	r5, r2
+    dc9a:	125b 	cmpeq	r1, r1, r3
+    dc9c:	5a26 	movi	r5, 38
+    dc9e:	5bdd 	movhi	r5, -35
+    dca0:	a341 	jnz	r1, r5
+    dca2:	52a0 	movi	r1, -96
+    dca4:	53d4 	movhi	r1, -44
+    dca6:	aa44 	jal	r5, r1
+    dca8:	5a60 	movi	r5, 96
+    dcaa:	5bdb 	movhi	r5, -37
+    dcac:	a143 	jmp	r5
+    dcae:	2ffe 	addi	r7, r7, -2
+    dcb0:	5200 	movi	r1, 0
+    dcb2:	43c0 	st	0(r7), r1
+    dcb4:	5688 	movi	r3, -120
+    dcb6:	57d5 	movhi	r3, -43
+    dcb8:	aac4 	jal	r5, r3
+    dcba:	2fc2 	addi	r7, r7, 2
+    dcbc:	52ba 	movi	r1, -70
+    dcbe:	53d8 	movhi	r1, -40
+    dcc0:	aa44 	jal	r5, r1
+    dcc2:	54f0 	movi	r2, -16
+    dcc4:	55c6 	movhi	r2, -58
+    dcc6:	aa84 	jal	r5, r2
+    dcc8:	5672 	movi	r3, 114
+    dcca:	57d6 	movhi	r3, -42
+    dccc:	aac4 	jal	r5, r3
+    dcce:	5601 	movi	r3, 1
+    dcd0:	125b 	cmpeq	r1, r1, r3
+    dcd2:	5a86 	movi	r5, -122
+    dcd4:	5bdc 	movhi	r5, -36
+    dcd6:	a340 	jz	r1, r5
+    dcd8:	2ffe 	addi	r7, r7, -2
+    dcda:	3301 	ld	r1, 2(r4)
+    dcdc:	0461 	add	r2, r1, r1
+    dcde:	04a1 	add	r2, r2, r1
+    dce0:	5200 	movi	r1, 0
+    dce2:	5380 	movhi	r1, -128
+    dce4:	3242 	ld	r1, 4(r1)
+    dce6:	04a1 	add	r2, r2, r1
+    dce8:	45c0 	st	0(r7), r2
+    dcea:	545c 	movi	r2, 92
+    dcec:	55d7 	movhi	r2, -41
+    dcee:	aa84 	jal	r5, r2
+    dcf0:	5202 	movi	r1, 2
+    dcf2:	43c0 	st	0(r7), r1
+    dcf4:	5204 	movi	r1, 4
+    dcf6:	53da 	movhi	r1, -38
+    dcf8:	aa44 	jal	r5, r1
+    dcfa:	2fc2 	addi	r7, r7, 2
+    dcfc:	5418 	movi	r2, 24
+    dcfe:	55c7 	movhi	r2, -57
+    dd00:	aa84 	jal	r5, r2
+    dd02:	54a4 	movi	r2, -92
+    dd04:	55d6 	movhi	r2, -42
+    dd06:	aa84 	jal	r5, r2
+    dd08:	125b 	cmpeq	r1, r1, r3
+    dd0a:	5a94 	movi	r5, -108
+    dd0c:	5bdc 	movhi	r5, -36
+    dd0e:	a340 	jz	r1, r5
+    dd10:	5200 	movi	r1, 0
+    dd12:	54c0 	movi	r2, -64
+    dd14:	5580 	movhi	r2, -128
+    dd16:	4280 	st	0(r2), r1
+    dd18:	5472 	movi	r2, 114
+    dd1a:	55d8 	movhi	r2, -40
+    dd1c:	aa84 	jal	r5, r2
+    dd1e:	125b 	cmpeq	r1, r1, r3
+    dd20:	5aa2 	movi	r5, -94
+    dd22:	5bdc 	movhi	r5, -36
+    dd24:	a340 	jz	r1, r5
+    dd26:	5200 	movi	r1, 0
+    dd28:	56c0 	movi	r3, -64
+    dd2a:	5780 	movhi	r3, -128
+    dd2c:	42c0 	st	0(r3), r1
+    dd2e:	5aa2 	movi	r5, -94
+    dd30:	5bdc 	movhi	r5, -36
+    dd32:	a143 	jmp	r5
+    dd34:	2ffe 	addi	r7, r7, -2
+    dd36:	5202 	movi	r1, 2
+    dd38:	43c0 	st	0(r7), r1
+    dd3a:	5488 	movi	r2, -120
+    dd3c:	55d5 	movhi	r2, -43
+    dd3e:	aa84 	jal	r5, r2
+    dd40:	2fc2 	addi	r7, r7, 2
+    dd42:	5a6a 	movi	r5, 106
+    dd44:	5bdc 	movhi	r5, -36
+    dd46:	a143 	jmp	r5
+    dd48:	5205 	movi	r1, 5
+    dd4a:	4302 	st	4(r4), r1
+    dd4c:	5a6a 	movi	r5, 106
+    dd4e:	5bdc 	movhi	r5, -36
+    dd50:	a143 	jmp	r5
+    dd52:	2ffe 	addi	r7, r7, -2
+    dd54:	5203 	movi	r1, 3
+    dd56:	43c0 	st	0(r7), r1
+    dd58:	5688 	movi	r3, -120
+    dd5a:	57d5 	movhi	r3, -43
+    dd5c:	aac4 	jal	r5, r3
+    dd5e:	2fc2 	addi	r7, r7, 2
+    dd60:	5a6a 	movi	r5, 106
+    dd62:	5bdc 	movhi	r5, -36
+    dd64:	a143 	jmp	r5
+    dd66:	2ffe 	addi	r7, r7, -2
+    dd68:	5201 	movi	r1, 1
+    dd6a:	43c0 	st	0(r7), r1
+    dd6c:	5288 	movi	r1, -120
+    dd6e:	53d5 	movhi	r1, -43
+    dd70:	aa44 	jal	r5, r1
+    dd72:	2fc2 	addi	r7, r7, 2
+    dd74:	5a6a 	movi	r5, 106
+    dd76:	5bdc 	movhi	r5, -36
+    dd78:	a143 	jmp	r5
+    dd7a:	6147 	bnz	r0, 144
+    dd7c:	656d 	bnz	r2, 220
+    dd7e:	5020 	movi	r0, 32
+    dd80:	7561 	out	97, r2
+    dd82:	6573 	bnz	r2, 232
+    dd84:	2064 	addi	r0, r1, -28
+    dd86:	5000 	movi	r0, 0
+    dd88:	6572 	bnz	r2, 230
+    dd8a:	7373 	out	115, r1
+    dd8c:	3c20 	ld	r6, -64(r0)
+    dd8e:	3e70 	ld	r7, -32(r1)
+    dd90:	7420 	in	r2, 32
+    dd92:	206f 	addi	r0, r1, -17
+    dd94:	6f43 	bnz	r7, 136
+    dd96:	746e 	in	r2, 110
+    dd98:	6e69 	bz	r7, 212
+    dd9a:	6575 	bnz	r2, 236
+    dd9c:	2e2e 	addi	r7, r0, -18
+    dd9e:	002e 	sub	r0, r0, r6
+    dda0:	cca8 	stf	-48(r2), f6
+    dda2:	cc74 	stf	-24(r1), f6
+    dda4:	cc74 	stf	-24(r1), f6
+    dda6:	cca8 	stf	-48(r2), f6
+    dda8:	cc74 	stf	-24(r1), f6
+    ddaa:	cc74 	stf	-24(r1), f6
+    ddac:	cc74 	stf	-24(r1), f6
+    ddae:	cc74 	stf	-24(r1), f6
+    ddb0:	cc74 	stf	-24(r1), f6
+    ddb2:	cc74 	stf	-24(r1), f6
+    ddb4:	cc74 	stf	-24(r1), f6
+    ddb6:	cc74 	stf	-24(r1), f6
+    ddb8:	cc74 	stf	-24(r1), f6
+    ddba:	cc74 	stf	-24(r1), f6
+    ddbc:	cc74 	stf	-24(r1), f6
+    ddbe:	cc74 	stf	-24(r1), f6
+    ddc0:	cc74 	stf	-24(r1), f6
+    ddc2:	cc74 	stf	-24(r1), f6
+    ddc4:	cc74 	stf	-24(r1), f6
+    ddc6:	cc74 	stf	-24(r1), f6
+    ddc8:	cc74 	stf	-24(r1), f6
+    ddca:	cc74 	stf	-24(r1), f6
+    ddcc:	cca8 	stf	-48(r2), f6
+    ddce:	cc74 	stf	-24(r1), f6
+    ddd0:	cc74 	stf	-24(r1), f6
+    ddd2:	cc74 	stf	-24(r1), f6
+    ddd4:	cc74 	stf	-24(r1), f6
+    ddd6:	cc74 	stf	-24(r1), f6
+    ddd8:	cc74 	stf	-24(r1), f6
+    ddda:	cc74 	stf	-24(r1), f6
+    dddc:	cc74 	stf	-24(r1), f6
+    ddde:	cc74 	stf	-24(r1), f6
+    dde0:	cc74 	stf	-24(r1), f6
+    dde2:	cc74 	stf	-24(r1), f6
+    dde4:	cc74 	stf	-24(r1), f6
+    dde6:	cc74 	stf	-24(r1), f6
+    dde8:	cc74 	stf	-24(r1), f6
+    ddea:	cc74 	stf	-24(r1), f6
+    ddec:	cc74 	stf	-24(r1), f6
+    ddee:	ccc8 	stf	16(r3), f6
+    ddf0:	ccc8 	stf	16(r3), f6
+    ddf2:	ccc8 	stf	16(r3), f6
+    ddf4:	ccc8 	stf	16(r3), f6
+    ddf6:	ccc8 	stf	16(r3), f6
+    ddf8:	ccc8 	stf	16(r3), f6
+    ddfa:	ccc8 	stf	16(r3), f6
+    ddfc:	ccc8 	stf	16(r3), f6
+    ddfe:	ccc8 	stf	16(r3), f6
+    de00:	cc74 	stf	-24(r1), f6
+    de02:	cc74 	stf	-24(r1), f6
+    de04:	cc74 	stf	-24(r1), f6
+    de06:	cc74 	stf	-24(r1), f6
+    de08:	cc74 	stf	-24(r1), f6
+    de0a:	cc74 	stf	-24(r1), f6
+    de0c:	cc74 	stf	-24(r1), f6
+    de0e:	cc74 	stf	-24(r1), f6
+    de10:	cc74 	stf	-24(r1), f6
+    de12:	cc74 	stf	-24(r1), f6
+    de14:	cc74 	stf	-24(r1), f6
+    de16:	cc74 	stf	-24(r1), f6
+    de18:	cc74 	stf	-24(r1), f6
+    de1a:	cc74 	stf	-24(r1), f6
+    de1c:	cc74 	stf	-24(r1), f6
+    de1e:	cc74 	stf	-24(r1), f6
+    de20:	cc74 	stf	-24(r1), f6
+    de22:	cc74 	stf	-24(r1), f6
+    de24:	cc74 	stf	-24(r1), f6
+    de26:	cc74 	stf	-24(r1), f6
+    de28:	cc74 	stf	-24(r1), f6
+    de2a:	cc74 	stf	-24(r1), f6
+    de2c:	cc74 	stf	-24(r1), f6
+    de2e:	cce2 	stf	-60(r3), f6
+    de30:	cc74 	stf	-24(r1), f6
+    de32:	cc74 	stf	-24(r1), f6
+    de34:	cc74 	stf	-24(r1), f6
+    de36:	cc74 	stf	-24(r1), f6
+    de38:	cc74 	stf	-24(r1), f6
+    de3a:	cc74 	stf	-24(r1), f6
+    de3c:	cc74 	stf	-24(r1), f6
+    de3e:	cc74 	stf	-24(r1), f6
+    de40:	cc74 	stf	-24(r1), f6
+    de42:	cc74 	stf	-24(r1), f6
+    de44:	cc74 	stf	-24(r1), f6
+    de46:	cc74 	stf	-24(r1), f6
+    de48:	cc74 	stf	-24(r1), f6
+    de4a:	cc74 	stf	-24(r1), f6
+    de4c:	cc74 	stf	-24(r1), f6
+    de4e:	cc74 	stf	-24(r1), f6
+    de50:	cc74 	stf	-24(r1), f6
+    de52:	cc74 	stf	-24(r1), f6
+    de54:	cc74 	stf	-24(r1), f6
+    de56:	cc74 	stf	-24(r1), f6
+    de58:	cc74 	stf	-24(r1), f6
+    de5a:	cc74 	stf	-24(r1), f6
+    de5c:	cd00 	stf	0(r4), f6
+    de5e:	cc74 	stf	-24(r1), f6
+    de60:	cd26 	stf	-52(r4), f6
+    de62:	cd42 	stf	4(r5), f6
+    de64:	cc92 	stf	36(r2), f6
+    de66:	cc74 	stf	-24(r1), f6
+    de68:	cc74 	stf	-24(r1), f6
+    de6a:	cc74 	stf	-24(r1), f6
+    de6c:	cc74 	stf	-24(r1), f6
+    de6e:	cce2 	stf	-60(r3), f6
+    de70:	cc74 	stf	-24(r1), f6
+    de72:	cc74 	stf	-24(r1), f6
+    de74:	cc74 	stf	-24(r1), f6
+    de76:	cc74 	stf	-24(r1), f6
+    de78:	cc74 	stf	-24(r1), f6
+    de7a:	cc74 	stf	-24(r1), f6
+    de7c:	cc74 	stf	-24(r1), f6
+    de7e:	cc74 	stf	-24(r1), f6
+    de80:	cc74 	stf	-24(r1), f6
+    de82:	cc74 	stf	-24(r1), f6
+    de84:	cc74 	stf	-24(r1), f6
+    de86:	cc74 	stf	-24(r1), f6
+    de88:	cc74 	stf	-24(r1), f6
+    de8a:	cc74 	stf	-24(r1), f6
+    de8c:	cc74 	stf	-24(r1), f6
+    de8e:	cc74 	stf	-24(r1), f6
+    de90:	cc74 	stf	-24(r1), f6
+    de92:	cc74 	stf	-24(r1), f6
+    de94:	cc74 	stf	-24(r1), f6
+    de96:	cc74 	stf	-24(r1), f6
+    de98:	cc74 	stf	-24(r1), f6
+    de9a:	cc74 	stf	-24(r1), f6
+    de9c:	cc74 	stf	-24(r1), f6
+    de9e:	cc74 	stf	-24(r1), f6
+    dea0:	cc74 	stf	-24(r1), f6
+    dea2:	cc74 	stf	-24(r1), f6
+    dea4:	cc74 	stf	-24(r1), f6
+    dea6:	cc74 	stf	-24(r1), f6
+    dea8:	cc74 	stf	-24(r1), f6
+    deaa:	cc74 	stf	-24(r1), f6
+    deac:	cd42 	stf	4(r5), f6
+    deae:	cd26 	stf	-52(r4), f6
+    deb0:	cd00 	stf	0(r4), f6
+    deb2:	cc92 	stf	36(r2), f6
+    deb4:	2020 	addi	r0, r0, -32
+    deb6:	2020 	addi	r0, r0, -32
+    deb8:	2020 	addi	r0, r0, -32
+    deba:	2020 	addi	r0, r0, -32
+    debc:	2c20 	addi	r6, r0, -32
+    debe:	3864 	ld	r4, -56(r1)
+    dec0:	3838 	ld	r4, -16(r0)
+    dec2:	6238 	bz	r1, 114
+    dec4:	202e 	addi	r0, r0, -18
+    dec6:	2020 	addi	r0, r0, -32
+    dec8:	2020 	addi	r0, r0, -32
+    deca:	2020 	addi	r0, r0, -32
+    decc:	2020 	addi	r0, r0, -32
+    dece:	2020 	addi	r0, r0, -32
+    ded0:	2020 	addi	r0, r0, -32
+    ded2:	2020 	addi	r0, r0, -32
+    ded4:	2020 	addi	r0, r0, -32
+    ded6:	2020 	addi	r0, r0, -32
+    ded8:	2020 	addi	r0, r0, -32
+    deda:	3838 	ld	r4, -16(r0)
+    dedc:	0038 	shl	r0, r0, r0
+    dede:	2020 	addi	r0, r0, -32
+    dee0:	2020 	addi	r0, r0, -32
+    dee2:	2020 	addi	r0, r0, -32
+    dee4:	2020 	addi	r0, r0, -32
+    dee6:	3864 	ld	r4, -56(r1)
+    dee8:	5038 	movi	r0, 56
+    deea:	2020 	addi	r0, r0, -32
+    deec:	3859 	ld	r4, 50(r1)
+    deee:	6238 	bz	r1, 114
+    def0:	2020 	addi	r0, r0, -32
+    def2:	2020 	addi	r0, r0, -32
+    def4:	2020 	addi	r0, r0, -32
+    def6:	2020 	addi	r0, r0, -32
+    def8:	2020 	addi	r0, r0, -32
+    defa:	2020 	addi	r0, r0, -32
+    defc:	2020 	addi	r0, r0, -32
+    defe:	2020 	addi	r0, r0, -32
+    df00:	2020 	addi	r0, r0, -32
+    df02:	2020 	addi	r0, r0, -32
+    df04:	3838 	ld	r4, -16(r0)
+    df06:	0038 	shl	r0, r0, r0
+    df08:	2020 	addi	r0, r0, -32
+    df0a:	2020 	addi	r0, r0, -32
+    df0c:	2020 	addi	r0, r0, -32
+    df0e:	2020 	addi	r0, r0, -32
+    df10:	5920 	movhi	r4, 32
+    df12:	3838 	ld	r4, -16(r0)
+    df14:	2e62 	addi	r7, r1, -30
+    df16:	2020 	addi	r0, r0, -32
+    df18:	2020 	addi	r0, r0, -32
+    df1a:	2020 	addi	r0, r0, -32
+    df1c:	2020 	addi	r0, r0, -32
+    df1e:	2020 	addi	r0, r0, -32
+    df20:	2020 	addi	r0, r0, -32
+    df22:	2020 	addi	r0, r0, -32
+    df24:	2020 	addi	r0, r0, -32
+    df26:	2020 	addi	r0, r0, -32
+    df28:	2020 	addi	r0, r0, -32
+    df2a:	2020 	addi	r0, r0, -32
+    df2c:	2020 	addi	r0, r0, -32
+    df2e:	3838 	ld	r4, -16(r0)
+    df30:	0038 	shl	r0, r0, r0
+    df32:	3838 	ld	r4, -16(r0)
+    df34:	3838 	ld	r4, -16(r0)
+    df36:	6238 	bz	r1, 114
+    df38:	202e 	addi	r0, r0, -18
+    df3a:	2020 	addi	r0, r0, -32
+    df3c:	3859 	ld	r4, 50(r1)
+    df3e:	3838 	ld	r4, -16(r0)
+    df40:	2e62 	addi	r7, r1, -30
+    df42:	2020 	addi	r0, r0, -32
+    df44:	2020 	addi	r0, r0, -32
+    df46:	3838 	ld	r4, -16(r0)
+    df48:	3838 	ld	r4, -16(r0)
+    df4a:	6238 	bz	r1, 114
+    df4c:	202e 	addi	r0, r0, -18
+    df4e:	2020 	addi	r0, r0, -32
+    df50:	3820 	ld	r4, -64(r0)
+    df52:	3838 	ld	r4, -16(r0)
+    df54:	6238 	bz	r1, 114
+    df56:	202e 	addi	r0, r0, -18
+    df58:	3838 	ld	r4, -16(r0)
+    df5a:	2038 	addi	r0, r0, -8
+    df5c:	3820 	ld	r4, -64(r0)
+    df5e:	3838 	ld	r4, -16(r0)
+    df60:	2020 	addi	r0, r0, -32
+    df62:	642e 	bz	r2, 94
+    df64:	3838 	ld	r4, -16(r0)
+    df66:	2e62 	addi	r7, r1, -30
+    df68:	3800 	ld	r4, 0(r0)
+    df6a:	3838 	ld	r4, -16(r0)
+    df6c:	2020 	addi	r0, r0, -32
+    df6e:	3838 	ld	r4, -16(r0)
+    df70:	2062 	addi	r0, r1, -30
+    df72:	2020 	addi	r0, r0, -32
+    df74:	2020 	addi	r0, r0, -32
+    df76:	5938 	movhi	r4, 56
+    df78:	3838 	ld	r4, -16(r0)
+    df7a:	2e62 	addi	r7, r1, -30
+    df7c:	3820 	ld	r4, -64(r0)
+    df7e:	3838 	ld	r4, -16(r0)
+    df80:	2020 	addi	r0, r0, -32
+    df82:	3838 	ld	r4, -16(r0)
+    df84:	2062 	addi	r0, r1, -30
+    df86:	2020 	addi	r0, r0, -32
+    df88:	2020 	addi	r0, r0, -32
+    df8a:	3820 	ld	r4, -64(r0)
+    df8c:	6238 	bz	r1, 114
+    df8e:	3820 	ld	r4, -64(r0)
+    df90:	3838 	ld	r4, -16(r0)
+    df92:	2e20 	addi	r7, r0, -32
+    df94:	3838 	ld	r4, -16(r0)
+    df96:	2050 	addi	r0, r1, 16
+    df98:	3864 	ld	r4, -56(r1)
+    df9a:	2050 	addi	r0, r1, 16
+    df9c:	5920 	movhi	r4, 32
+    df9e:	6238 	bz	r1, 114
+    dfa0:	3800 	ld	r4, 0(r0)
+    dfa2:	3838 	ld	r4, -16(r0)
+    dfa4:	2020 	addi	r0, r0, -32
+    dfa6:	3838 	ld	r4, -16(r0)
+    dfa8:	2038 	addi	r0, r0, -8
+    dfaa:	2020 	addi	r0, r0, -32
+    dfac:	2020 	addi	r0, r0, -32
+    dfae:	2020 	addi	r0, r0, -32
+    dfb0:	3838 	ld	r4, -16(r0)
+    dfb2:	6238 	bz	r1, 114
+    dfb4:	3820 	ld	r4, -64(r0)
+    dfb6:	3838 	ld	r4, -16(r0)
+    dfb8:	2020 	addi	r0, r0, -32
+    dfba:	3838 	ld	r4, -16(r0)
+    dfbc:	2038 	addi	r0, r0, -8
+    dfbe:	642e 	bz	r2, 94
+    dfc0:	3838 	ld	r4, -16(r0)
+    dfc2:	3838 	ld	r4, -16(r0)
+    dfc4:	3838 	ld	r4, -16(r0)
+    dfc6:	3820 	ld	r4, -64(r0)
+    dfc8:	3838 	ld	r4, -16(r0)
+    dfca:	3838 	ld	r4, -16(r0)
+    dfcc:	4b38 	st	-16(r4), r5
+    dfce:	2020 	addi	r0, r0, -32
+    dfd0:	3838 	ld	r4, -16(r0)
+    dfd2:	3838 	ld	r4, -16(r0)
+    dfd4:	3838 	ld	r4, -16(r0)
+    dfd6:	3838 	ld	r4, -16(r0)
+    dfd8:	3800 	ld	r4, 0(r0)
+    dfda:	3838 	ld	r4, -16(r0)
+    dfdc:	2020 	addi	r0, r0, -32
+    dfde:	3838 	ld	r4, -16(r0)
+    dfe0:	2038 	addi	r0, r0, -8
+    dfe2:	3859 	ld	r4, 50(r1)
+    dfe4:	6238 	bz	r1, 114
+    dfe6:	2020 	addi	r0, r0, -32
+    dfe8:	3864 	ld	r4, -56(r1)
+    dfea:	5038 	movi	r0, 56
+    dfec:	3820 	ld	r4, -64(r0)
+    dfee:	3838 	ld	r4, -16(r0)
+    dff0:	2020 	addi	r0, r0, -32
+    dff2:	3838 	ld	r4, -16(r0)
+    dff4:	2038 	addi	r0, r0, -8
+    dff6:	3838 	ld	r4, -16(r0)
+    dff8:	2038 	addi	r0, r0, -8
+    dffa:	3820 	ld	r4, -64(r0)
+    dffc:	3838 	ld	r4, -16(r0)
+    dffe:	3820 	ld	r4, -64(r0)
+    e000:	3838 	ld	r4, -16(r0)
+    e002:	2020 	addi	r0, r0, -32
+    e004:	3838 	ld	r4, -16(r0)
+    e006:	2062 	addi	r0, r1, -30
+    e008:	3859 	ld	r4, 50(r1)
+    e00a:	2e62 	addi	r7, r1, -30
+    e00c:	3800 	ld	r4, 0(r0)
+    e00e:	3838 	ld	r4, -16(r0)
+    e010:	2020 	addi	r0, r0, -32
+    e012:	3838 	ld	r4, -16(r0)
+    e014:	2038 	addi	r0, r0, -8
+    e016:	2020 	addi	r0, r0, -32
+    e018:	3859 	ld	r4, 50(r1)
+    e01a:	3838 	ld	r4, -16(r0)
+    e01c:	5038 	movi	r0, 56
+    e01e:	2020 	addi	r0, r0, -32
+    e020:	3820 	ld	r4, -64(r0)
+    e022:	3838 	ld	r4, -16(r0)
+    e024:	2020 	addi	r0, r0, -32
+    e026:	3838 	ld	r4, -16(r0)
+    e028:	2038 	addi	r0, r0, -8
+    e02a:	5920 	movhi	r4, 32
+    e02c:	3838 	ld	r4, -16(r0)
+    e02e:	3838 	ld	r4, -16(r0)
+    e030:	3838 	ld	r4, -16(r0)
+    e032:	3820 	ld	r4, -64(r0)
+    e034:	3838 	ld	r4, -16(r0)
+    e036:	2020 	addi	r0, r0, -32
+    e038:	3838 	ld	r4, -16(r0)
+    e03a:	2038 	addi	r0, r0, -8
+    e03c:	5920 	movhi	r4, 32
+    e03e:	3838 	ld	r4, -16(r0)
+    e040:	3838 	ld	r4, -16(r0)
+    e042:	0038 	shl	r0, r0, r0
+    e044:	2e31 	addi	r7, r0, -15
+    e046:	0037 	sha	r0, r0, r7
+    e048:	5f20 	movhi	r7, 32
+    e04a:	5f5f 	movhi	r7, 95
+    e04c:	5f5f 	movhi	r7, 95
+    e04e:	5f5f 	movhi	r7, 95
+    e050:	5f5f 	movhi	r7, 95
+    e052:	5f5f 	movhi	r7, 95
+    e054:	5f5f 	movhi	r7, 95
+    e056:	5f5f 	movhi	r7, 95
+    e058:	5f5f 	movhi	r7, 95
+    e05a:	5f5f 	movhi	r7, 95
+    e05c:	5f5f 	movhi	r7, 95
+    e05e:	5f5f 	movhi	r7, 95
+    e060:	5f5f 	movhi	r7, 95
+    e062:	5f5f 	movhi	r7, 95
+    e064:	5f5f 	movhi	r7, 95
+    e066:	5f5f 	movhi	r7, 95
+    e068:	5f5f 	movhi	r7, 95
+    e06a:	5f5f 	movhi	r7, 95
+    e06c:	5f5f 	movhi	r7, 95
+    e06e:	5f5f 	movhi	r7, 95
+    e070:	5f5f 	movhi	r7, 95
+    e072:	5f5f 	movhi	r7, 95
+    e074:	5f5f 	movhi	r7, 95
+    e076:	5f5f 	movhi	r7, 95
+    e078:	5f5f 	movhi	r7, 95
+    e07a:	5f5f 	movhi	r7, 95
+    e07c:	0020 	add	r0, r0, r0
+    e07e:	207c 	addi	r0, r1, -4
+    e080:	2020 	addi	r0, r0, -32
+    e082:	2020 	addi	r0, r0, -32
+    e084:	2020 	addi	r0, r0, -32
+    e086:	2020 	addi	r0, r0, -32
+    e088:	2020 	addi	r0, r0, -32
+    e08a:	2020 	addi	r0, r0, -32
+    e08c:	2020 	addi	r0, r0, -32
+    e08e:	2020 	addi	r0, r0, -32
+    e090:	2020 	addi	r0, r0, -32
+    e092:	2020 	addi	r0, r0, -32
+    e094:	2020 	addi	r0, r0, -32
+    e096:	2020 	addi	r0, r0, -32
+    e098:	2020 	addi	r0, r0, -32
+    e09a:	2020 	addi	r0, r0, -32
+    e09c:	2020 	addi	r0, r0, -32
+    e09e:	2020 	addi	r0, r0, -32
+    e0a0:	2020 	addi	r0, r0, -32
+    e0a2:	2020 	addi	r0, r0, -32
+    e0a4:	2020 	addi	r0, r0, -32
+    e0a6:	2020 	addi	r0, r0, -32
+    e0a8:	2020 	addi	r0, r0, -32
+    e0aa:	2020 	addi	r0, r0, -32
+    e0ac:	2020 	addi	r0, r0, -32
+    e0ae:	2020 	addi	r0, r0, -32
+    e0b0:	2020 	addi	r0, r0, -32
+    e0b2:	007c 	shl	r0, r1, r4
+    e0b4:	5f7c 	movhi	r7, 124
+    e0b6:	5f5f 	movhi	r7, 95
+    e0b8:	5f5f 	movhi	r7, 95
+    e0ba:	5f5f 	movhi	r7, 95
+    e0bc:	5f5f 	movhi	r7, 95
+    e0be:	5f5f 	movhi	r7, 95
+    e0c0:	5f5f 	movhi	r7, 95
+    e0c2:	5f5f 	movhi	r7, 95
+    e0c4:	5f5f 	movhi	r7, 95
+    e0c6:	5f5f 	movhi	r7, 95
+    e0c8:	5f5f 	movhi	r7, 95
+    e0ca:	5f5f 	movhi	r7, 95
+    e0cc:	5f5f 	movhi	r7, 95
+    e0ce:	5f5f 	movhi	r7, 95
+    e0d0:	5f5f 	movhi	r7, 95
+    e0d2:	5f5f 	movhi	r7, 95
+    e0d4:	5f5f 	movhi	r7, 95
+    e0d6:	5f5f 	movhi	r7, 95
+    e0d8:	5f5f 	movhi	r7, 95
+    e0da:	5f5f 	movhi	r7, 95
+    e0dc:	5f5f 	movhi	r7, 95
+    e0de:	5f5f 	movhi	r7, 95
+    e0e0:	5f5f 	movhi	r7, 95
+    e0e2:	5f5f 	movhi	r7, 95
+    e0e4:	5f5f 	movhi	r7, 95
+    e0e6:	5f5f 	movhi	r7, 95
+    e0e8:	007c 	shl	r0, r1, r4
+    e0ea:	7250 	in	r1, 80
+    e0ec:	7365 	out	101, r1
+    e0ee:	2073 	addi	r0, r1, -13
+    e0f0:	653c 	bnz	r2, 122
+    e0f2:	746e 	in	r2, 110
+    e0f4:	7265 	in	r1, 101
+    e0f6:	203e 	addi	r0, r0, -2
+    e0f8:	726f 	in	r1, 111
+    e0fa:	3c20 	ld	r6, -64(r0)
+    e0fc:	7073 	in	r0, 115
+    e0fe:	6361 	bnz	r1, 196
+    e100:	3e65 	ld	r7, -54(r1)
+    e102:	7420 	in	r2, 32
+    e104:	206f 	addi	r0, r1, -17
+    e106:	7473 	in	r2, 115
+    e108:	7261 	in	r1, 97
+    e10a:	2074 	addi	r0, r1, -12
+    e10c:	6167 	bnz	r0, 208
+    e10e:	656d 	bnz	r2, 220
+    e110:	5000 	movi	r0, 0
+    e112:	6572 	bnz	r2, 230
+    e114:	7373 	out	115, r1
+    e116:	3c20 	ld	r6, -64(r0)
+    e118:	3e71 	ld	r7, -30(r1)
+    e11a:	7420 	in	r2, 32
+    e11c:	206f 	addi	r0, r1, -17
+    e11e:	7571 	out	113, r2
+    e120:	7469 	in	r2, 105
+    e122:	6720 	bnz	r3, 66
+    e124:	6d61 	bnz	r6, 196
+    e126:	0065 	add	r0, r1, r5
+    e128:	6147 	bnz	r0, 144
+    e12a:	656d 	bnz	r2, 220
+    e12c:	4d20 	st	-64(r4), r6
+    e12e:	646f 	bz	r2, 224
+    e130:	3a65 	ld	r5, -54(r1)
+    e132:	4200 	st	0(r0), r1
+    e134:	726f 	in	r1, 111
+    e136:	6564 	bnz	r2, 202
+    e138:	7372 	out	114, r1
+    e13a:	4f20 	st	-64(r4), r7
+    e13c:	006e 	sub	r0, r1, r6
+    e13e:	6f42 	bnz	r7, 134
+    e140:	6472 	bz	r2, 230
+    e142:	7265 	in	r1, 101
+    e144:	2073 	addi	r0, r1, -13
+    e146:	664f 	bz	r3, 160
+    e148:	0066 	add	r0, r1, r6
+    e14a:	7453 	in	r2, 83
+    e14c:	7261 	in	r1, 97
+    e14e:	6974 	bnz	r4, 234
+    e150:	676e 	bnz	r3, 222
+    e152:	7320 	out	32, r1
+    e154:	6570 	bnz	r2, 226
+    e156:	6465 	bz	r2, 204
+    e158:	003a 	shl	r0, r0, r2
+    e15a:	6e00 	bz	r7, 2
+    e15c:	6e53 	bz	r7, 168
+    e15e:	6b61 	bnz	r5, 196
+    e160:	2065 	addi	r0, r1, -27
+    e162:	0076 	sha	r0, r1, r6
+    e164:	764c 	in	r3, 76
+    e166:	5300 	movhi	r1, 0
+    e168:	6f63 	bnz	r7, 200
+    e16a:	6572 	bnz	r2, 230
+    e16c:	203a 	addi	r0, r0, -6
+    e16e:	4800 	st	0(r0), r4
+    e170:	6769 	bnz	r3, 212
+    e172:	2068 	addi	r0, r1, -24
+    e174:	6353 	bnz	r1, 168
+    e176:	726f 	in	r1, 111
+    e178:	3a65 	ld	r5, -54(r1)
+    e17a:	0020 	add	r0, r0, r0
+    e17c:	5f20 	movhi	r7, 32
+    e17e:	5f5f 	movhi	r7, 95
+    e180:	5f5f 	movhi	r7, 95
+    e182:	5f5f 	movhi	r7, 95
+    e184:	2020 	addi	r0, r0, -32
+    e186:	5f5f 	movhi	r7, 95
+    e188:	5f5f 	movhi	r7, 95
+    e18a:	5f5f 	movhi	r7, 95
+    e18c:	205f 	addi	r0, r1, 31
+    e18e:	5f20 	movhi	r7, 32
+    e190:	205f 	addi	r0, r1, 31
+    e192:	2020 	addi	r0, r0, -32
+    e194:	5f5f 	movhi	r7, 95
+    e196:	2020 	addi	r0, r0, -32
+    e198:	5f5f 	movhi	r7, 95
+    e19a:	5f5f 	movhi	r7, 95
+    e19c:	5f5f 	movhi	r7, 95
+    e19e:	205f 	addi	r0, r1, 31
+    e1a0:	7c00 	in	r6, 0
+    e1a2:	2020 	addi	r0, r0, -32
+    e1a4:	2020 	addi	r0, r0, -32
+    e1a6:	2020 	addi	r0, r0, -32
+    e1a8:	7c20 	in	r6, 32
+    e1aa:	207c 	addi	r0, r1, -4
+    e1ac:	2020 	addi	r0, r0, -32
+    e1ae:	205f 	addi	r0, r1, 31
+    e1b0:	2020 	addi	r0, r0, -32
+    e1b2:	7c7c 	in	r6, 124
+    e1b4:	2020 	addi	r0, r0, -32
+    e1b6:	5f7c 	movhi	r7, 124
+    e1b8:	207c 	addi	r0, r1, -4
+    e1ba:	7c20 	in	r6, 32
+    e1bc:	207c 	addi	r0, r1, -4
+    e1be:	2020 	addi	r0, r0, -32
+    e1c0:	2020 	addi	r0, r0, -32
+    e1c2:	2020 	addi	r0, r0, -32
+    e1c4:	007c 	shl	r0, r1, r4
+    e1c6:	207c 	addi	r0, r1, -4
+    e1c8:	2020 	addi	r0, r0, -32
+    e1ca:	5f20 	movhi	r7, 32
+    e1cc:	5f5f 	movhi	r7, 95
+    e1ce:	7c7c 	in	r6, 124
+    e1d0:	2020 	addi	r0, r0, -32
+    e1d2:	5f7c 	movhi	r7, 124
+    e1d4:	207c 	addi	r0, r1, -4
+    e1d6:	7c20 	in	r6, 32
+    e1d8:	207c 	addi	r0, r1, -4
+    e1da:	2020 	addi	r0, r0, -32
+    e1dc:	2020 	addi	r0, r0, -32
+    e1de:	2020 	addi	r0, r0, -32
+    e1e0:	7c7c 	in	r6, 124
+    e1e2:	2020 	addi	r0, r0, -32
+    e1e4:	2020 	addi	r0, r0, -32
+    e1e6:	5f5f 	movhi	r7, 95
+    e1e8:	7c5f 	in	r6, 95
+    e1ea:	7c00 	in	r6, 0
+    e1ec:	2020 	addi	r0, r0, -32
+    e1ee:	7c20 	in	r6, 32
+    e1f0:	5f20 	movhi	r7, 32
+    e1f2:	205f 	addi	r0, r1, 31
+    e1f4:	207c 	addi	r0, r1, -4
+    e1f6:	2020 	addi	r0, r0, -32
+    e1f8:	2020 	addi	r0, r0, -32
+    e1fa:	2020 	addi	r0, r0, -32
+    e1fc:	7c7c 	in	r6, 124
+    e1fe:	2020 	addi	r0, r0, -32
+    e200:	2020 	addi	r0, r0, -32
+    e202:	2020 	addi	r0, r0, -32
+    e204:	7c20 	in	r6, 32
+    e206:	207c 	addi	r0, r1, -4
+    e208:	2020 	addi	r0, r0, -32
+    e20a:	5f7c 	movhi	r7, 124
+    e20c:	5f5f 	movhi	r7, 95
+    e20e:	0020 	add	r0, r0, r0
+    e210:	207c 	addi	r0, r1, -4
+    e212:	2020 	addi	r0, r0, -32
+    e214:	7c7c 	in	r6, 124
+    e216:	2020 	addi	r0, r0, -32
+    e218:	7c7c 	in	r6, 124
+    e21a:	2020 	addi	r0, r0, -32
+    e21c:	2020 	addi	r0, r0, -32
+    e21e:	2020 	addi	r0, r0, -32
+    e220:	7c20 	in	r6, 32
+    e222:	207c 	addi	r0, r1, -4
+    e224:	2020 	addi	r0, r0, -32
+    e226:	2020 	addi	r0, r0, -32
+    e228:	2020 	addi	r0, r0, -32
+    e22a:	7c7c 	in	r6, 124
+    e22c:	2020 	addi	r0, r0, -32
+    e22e:	2020 	addi	r0, r0, -32
+    e230:	5f5f 	movhi	r7, 95
+    e232:	7c5f 	in	r6, 95
+    e234:	7c00 	in	r6, 0
+    e236:	2020 	addi	r0, r0, -32
+    e238:	7c20 	in	r6, 32
+    e23a:	7c5f 	in	r6, 95
+    e23c:	7c20 	in	r6, 32
+    e23e:	207c 	addi	r0, r1, -4
+    e240:	2020 	addi	r0, r0, -32
+    e242:	205f 	addi	r0, r1, 31
+    e244:	2020 	addi	r0, r0, -32
+    e246:	7c7c 	in	r6, 124
+    e248:	7c20 	in	r6, 32
+    e24a:	5f7c 	movhi	r7, 124
+    e24c:	7c7c 	in	r6, 124
+    e24e:	7c20 	in	r6, 32
+    e250:	207c 	addi	r0, r1, -4
+    e252:	2020 	addi	r0, r0, -32
+    e254:	5f7c 	movhi	r7, 124
+    e256:	5f5f 	movhi	r7, 95
+    e258:	0020 	add	r0, r0, r0
+    e25a:	5f7c 	movhi	r7, 124
+    e25c:	5f5f 	movhi	r7, 95
+    e25e:	5f5f 	movhi	r7, 95
+    e260:	5f5f 	movhi	r7, 95
+    e262:	7c7c 	in	r6, 124
+    e264:	5f5f 	movhi	r7, 95
+    e266:	207c 	addi	r0, r1, -4
+    e268:	5f7c 	movhi	r7, 124
+    e26a:	7c5f 	in	r6, 95
+    e26c:	5f7c 	movhi	r7, 124
+    e26e:	207c 	addi	r0, r1, -4
+    e270:	2020 	addi	r0, r0, -32
+    e272:	5f7c 	movhi	r7, 124
+    e274:	7c7c 	in	r6, 124
+    e276:	5f5f 	movhi	r7, 95
+    e278:	5f5f 	movhi	r7, 95
+    e27a:	5f5f 	movhi	r7, 95
+    e27c:	7c5f 	in	r6, 95
+    e27e:	2000 	addi	r0, r0, 0
+    e280:	5f5f 	movhi	r7, 95
+    e282:	5f5f 	movhi	r7, 95
+    e284:	5f5f 	movhi	r7, 95
+    e286:	205f 	addi	r0, r1, 31
+    e288:	5f20 	movhi	r7, 32
+    e28a:	205f 	addi	r0, r1, 31
+    e28c:	2020 	addi	r0, r0, -32
+    e28e:	5f5f 	movhi	r7, 95
+    e290:	2020 	addi	r0, r0, -32
+    e292:	5f5f 	movhi	r7, 95
+    e294:	5f5f 	movhi	r7, 95
+    e296:	5f5f 	movhi	r7, 95
+    e298:	205f 	addi	r0, r1, 31
+    e29a:	5f20 	movhi	r7, 32
+    e29c:	5f5f 	movhi	r7, 95
+    e29e:	5f5f 	movhi	r7, 95
+    e2a0:	205f 	addi	r0, r1, 31
+    e2a2:	0020 	add	r0, r0, r0
+    e2a4:	207c 	addi	r0, r1, -4
+    e2a6:	2020 	addi	r0, r0, -32
+    e2a8:	2020 	addi	r0, r0, -32
+    e2aa:	2020 	addi	r0, r0, -32
+    e2ac:	7c7c 	in	r6, 124
+    e2ae:	2020 	addi	r0, r0, -32
+    e2b0:	207c 	addi	r0, r1, -4
+    e2b2:	207c 	addi	r0, r1, -4
+    e2b4:	7c20 	in	r6, 32
+    e2b6:	207c 	addi	r0, r1, -4
+    e2b8:	2020 	addi	r0, r0, -32
+    e2ba:	2020 	addi	r0, r0, -32
+    e2bc:	2020 	addi	r0, r0, -32
+    e2be:	7c7c 	in	r6, 124
+    e2c0:	2020 	addi	r0, r0, -32
+    e2c2:	2020 	addi	r0, r0, -32
+    e2c4:	205f 	addi	r0, r1, 31
+    e2c6:	207c 	addi	r0, r1, -4
+    e2c8:	7c00 	in	r6, 0
+    e2ca:	2020 	addi	r0, r0, -32
+    e2cc:	5f20 	movhi	r7, 32
+    e2ce:	2020 	addi	r0, r0, -32
+    e2d0:	7c20 	in	r6, 32
+    e2d2:	207c 	addi	r0, r1, -4
+    e2d4:	7c20 	in	r6, 32
+    e2d6:	7c5f 	in	r6, 95
+    e2d8:	2020 	addi	r0, r0, -32
+    e2da:	7c7c 	in	r6, 124
+    e2dc:	2020 	addi	r0, r0, -32
+    e2de:	2020 	addi	r0, r0, -32
+    e2e0:	5f5f 	movhi	r7, 95
+    e2e2:	7c5f 	in	r6, 95
+    e2e4:	207c 	addi	r0, r1, -4
+    e2e6:	2020 	addi	r0, r0, -32
+    e2e8:	207c 	addi	r0, r1, -4
+    e2ea:	7c7c 	in	r6, 124
+    e2ec:	0020 	add	r0, r0, r0
+    e2ee:	207c 	addi	r0, r1, -4
+    e2f0:	7c20 	in	r6, 32
+    e2f2:	7c20 	in	r6, 32
+    e2f4:	2020 	addi	r0, r0, -32
+    e2f6:	7c7c 	in	r6, 124
+    e2f8:	2020 	addi	r0, r0, -32
+    e2fa:	2020 	addi	r0, r0, -32
+    e2fc:	2020 	addi	r0, r0, -32
+    e2fe:	7c20 	in	r6, 32
+    e300:	207c 	addi	r0, r1, -4
+    e302:	2020 	addi	r0, r0, -32
+    e304:	5f7c 	movhi	r7, 124
+    e306:	5f5f 	movhi	r7, 95
+    e308:	7c20 	in	r6, 32
+    e30a:	2020 	addi	r0, r0, -32
+    e30c:	7c20 	in	r6, 32
+    e30e:	7c5f 	in	r6, 95
+    e310:	207c 	addi	r0, r1, -4
+    e312:	7c00 	in	r6, 0
+    e314:	2020 	addi	r0, r0, -32
+    e316:	5f7c 	movhi	r7, 124
+    e318:	207c 	addi	r0, r1, -4
+    e31a:	7c20 	in	r6, 32
+    e31c:	207c 	addi	r0, r1, -4
+    e31e:	2020 	addi	r0, r0, -32
+    e320:	2020 	addi	r0, r0, -32
+    e322:	2020 	addi	r0, r0, -32
+    e324:	7c7c 	in	r6, 124
+    e326:	2020 	addi	r0, r0, -32
+    e328:	2020 	addi	r0, r0, -32
+    e32a:	5f5f 	movhi	r7, 95
+    e32c:	7c5f 	in	r6, 95
+    e32e:	207c 	addi	r0, r1, -4
+    e330:	2020 	addi	r0, r0, -32
+    e332:	5f20 	movhi	r7, 32
+    e334:	205f 	addi	r0, r1, 31
+    e336:	007c 	shl	r0, r1, r4
+    e338:	207c 	addi	r0, r1, -4
+    e33a:	2020 	addi	r0, r0, -32
+    e33c:	2020 	addi	r0, r0, -32
+    e33e:	2020 	addi	r0, r0, -32
+    e340:	207c 	addi	r0, r1, -4
+    e342:	207c 	addi	r0, r1, -4
+    e344:	2020 	addi	r0, r0, -32
+    e346:	2020 	addi	r0, r0, -32
+    e348:	207c 	addi	r0, r1, -4
+    e34a:	207c 	addi	r0, r1, -4
+    e34c:	2020 	addi	r0, r0, -32
+    e34e:	5f7c 	movhi	r7, 124
+    e350:	5f5f 	movhi	r7, 95
+    e352:	7c20 	in	r6, 32
+    e354:	2020 	addi	r0, r0, -32
+    e356:	7c20 	in	r6, 32
+    e358:	2020 	addi	r0, r0, -32
+    e35a:	7c7c 	in	r6, 124
+    e35c:	7c00 	in	r6, 0
+    e35e:	5f5f 	movhi	r7, 95
+    e360:	5f5f 	movhi	r7, 95
+    e362:	5f5f 	movhi	r7, 95
+    e364:	7c5f 	in	r6, 95
+    e366:	2020 	addi	r0, r0, -32
+    e368:	5f7c 	movhi	r7, 124
+    e36a:	5f5f 	movhi	r7, 95
+    e36c:	207c 	addi	r0, r1, -4
+    e36e:	7c20 	in	r6, 32
+    e370:	5f5f 	movhi	r7, 95
+    e372:	5f5f 	movhi	r7, 95
+    e374:	5f5f 	movhi	r7, 95
+    e376:	7c5f 	in	r6, 95
+    e378:	5f7c 	movhi	r7, 124
+    e37a:	5f5f 	movhi	r7, 95
+    e37c:	207c 	addi	r0, r1, -4
+    e37e:	7c20 	in	r6, 32
+    e380:	007c 	shl	r0, r1, r4
+    e382:	5020 	movi	r0, 32
+    e384:	6572 	bnz	r2, 230
+    e386:	7373 	out	115, r1
+    e388:	3c20 	ld	r6, -64(r0)
+    e38a:	7073 	in	r0, 115
+    e38c:	6361 	bnz	r1, 196
+    e38e:	3e65 	ld	r7, -54(r1)
+    e390:	6f20 	bnz	r7, 66
+    e392:	2072 	addi	r0, r1, -14
+    e394:	653c 	bnz	r2, 122
+    e396:	746e 	in	r2, 110
+    e398:	7265 	in	r1, 101
+    e39a:	203e 	addi	r0, r0, -2
+    e39c:	6f74 	bnz	r7, 234
+    e39e:	7220 	in	r1, 32
+    e3a0:	7465 	in	r2, 101
+    e3a2:	7972 	out	114, r4
+    e3a4:	2000 	addi	r0, r0, 0
+    e3a6:	2020 	addi	r0, r0, -32
+    e3a8:	2020 	addi	r0, r0, -32
+    e3aa:	2020 	addi	r0, r0, -32
+    e3ac:	2020 	addi	r0, r0, -32
+    e3ae:	3c20 	ld	r6, -64(r0)
+    e3b0:	3e6d 	ld	r7, -38(r1)
+    e3b2:	7420 	in	r2, 32
+    e3b4:	206f 	addi	r0, r1, -17
+    e3b6:	614d 	bnz	r0, 156
+    e3b8:	6e69 	bz	r7, 212
+    e3ba:	4d20 	st	-64(r4), r6
+    e3bc:	6e65 	bz	r7, 204
+    e3be:	0075 	sha	r0, r1, r5
+    e3c0:	6f42 	bnz	r7, 134
+    e3c2:	756e 	out	110, r2
+    e3c4:	3a73 	ld	r5, -26(r1)
+    e3c6:	0020 	add	r0, r0, r0
+    e3c8:	6f4c 	bnz	r7, 154
+    e3ca:	676e 	bnz	r3, 222
+    e3cc:	7469 	in	r2, 105
+    e3ce:	6475 	bz	r2, 236
+    e3d0:	6d20 	bnz	r6, 66
+    e3d2:	7861 	in	r4, 97
+    e3d4:	6d69 	bnz	r6, 212
+    e3d6:	2061 	addi	r0, r1, -31
+    e3d8:	7573 	out	115, r2
+    e3da:	6570 	bnz	r2, 226
+    e3dc:	6172 	bnz	r0, 230
+    e3de:	6164 	bnz	r0, 202
+    e3e0:	0a21 	add	r5, r0, r1
+    e3e2:	6544 	bnz	r2, 138
+    e3e4:	616a 	bnz	r0, 214
+    e3e6:	7920 	out	32, r4
+    e3e8:	2061 	addi	r0, r1, -31
+    e3ea:	6564 	bnz	r2, 202
+    e3ec:	6a20 	bz	r5, 66
+    e3ee:	6775 	bnz	r3, 236
+    e3f0:	7261 	in	r1, 97
+    e3f2:	7920 	out	32, r4
+    e3f4:	7320 	out	32, r1
+    e3f6:	6769 	bnz	r3, 212
+    e3f8:	6575 	bnz	r2, 236
+    e3fa:	6820 	bz	r4, 66
+    e3fc:	6361 	bnz	r1, 196
+    e3fe:	6569 	bnz	r2, 212
+    e400:	646e 	bz	r2, 222
+    e402:	206f 	addi	r0, r1, -17
+    e404:	6c65 	bz	r6, 204
+    e406:	7020 	in	r0, 32
+    e408:	6f72 	bnz	r7, 230
+    e40a:	6579 	bnz	r2, 244
+    e40c:	7463 	in	r2, 99
+    e40e:	216f 	addi	r0, r5, -17
+    e410:	0000 	and	r0, r0, r0
+    e412:	db3c 	ldb	r5, -4(r4)
+    e414:	db46 	ldb	r5, 6(r5)
+    e416:	db50 	ldb	r5, 16(r5)
+    e418:	dbca 	ldb	r5, 10(r7)
+    e41a:	db84 	ldb	r5, 4(r6)
+    e41c:	db74 	ldb	r5, -12(r5)
+    e41e:	dd66 	ldb	r6, -26(r5)
+    e420:	dc6a 	ldb	r6, -22(r1)
+    e422:	dc6a 	ldb	r6, -22(r1)
+    e424:	dd52 	ldb	r6, 18(r5)
+    e426:	dc6a 	ldb	r6, -22(r1)
+    e428:	dc6a 	ldb	r6, -22(r1)
+    e42a:	dc6a 	ldb	r6, -22(r1)
+    e42c:	dc6a 	ldb	r6, -22(r1)
+    e42e:	dc6a 	ldb	r6, -22(r1)
+    e430:	dc6a 	ldb	r6, -22(r1)
+    e432:	dc6a 	ldb	r6, -22(r1)
+    e434:	dc6a 	ldb	r6, -22(r1)
+    e436:	dc6a 	ldb	r6, -22(r1)
+    e438:	dc6a 	ldb	r6, -22(r1)
+    e43a:	dc6a 	ldb	r6, -22(r1)
+    e43c:	dc66 	ldb	r6, -26(r1)
+    e43e:	dd48 	ldb	r6, 8(r5)
+    e440:	dc6a 	ldb	r6, -22(r1)
+    e442:	dd34 	ldb	r6, -12(r4)
+    e444:	dc6a 	ldb	r6, -22(r1)
+    e446:	dc6a 	ldb	r6, -22(r1)
+    e448:	dc6a 	ldb	r6, -22(r1)
+    e44a:	dcae 	ldb	r6, -18(r2)
+    e44c:	dc6a 	ldb	r6, -22(r1)
+    e44e:	dc6a 	ldb	r6, -22(r1)
+    e450:	dc6a 	ldb	r6, -22(r1)
+    e452:	dc6a 	ldb	r6, -22(r1)
+    e454:	dc6a 	ldb	r6, -22(r1)
+    e456:	dc6a 	ldb	r6, -22(r1)
+    e458:	dc6a 	ldb	r6, -22(r1)
+    e45a:	dc6a 	ldb	r6, -22(r1)
+    e45c:	dc6a 	ldb	r6, -22(r1)
+    e45e:	dd66 	ldb	r6, -26(r5)
+    e460:	dc6a 	ldb	r6, -22(r1)
+    e462:	dc6a 	ldb	r6, -22(r1)
+    e464:	dd52 	ldb	r6, 18(r5)
+    e466:	dc6a 	ldb	r6, -22(r1)
+    e468:	dc6a 	ldb	r6, -22(r1)
+    e46a:	dc6a 	ldb	r6, -22(r1)
+    e46c:	dd66 	ldb	r6, -26(r5)
+    e46e:	dc6a 	ldb	r6, -22(r1)
+    e470:	dd34 	ldb	r6, -12(r4)
+    e472:	dcae 	ldb	r6, -18(r2)
+    e474:	dd52 	ldb	r6, 18(r5)
+    e476:	dc6a 	ldb	r6, -22(r1)
+    e478:	dc6a 	ldb	r6, -22(r1)
+    e47a:	dc6a 	ldb	r6, -22(r1)
+    e47c:	dc66 	ldb	r6, -26(r1)
+    e47e:	dd48 	ldb	r6, 8(r5)
+    e480:	dc6a 	ldb	r6, -22(r1)
+    e482:	dd34 	ldb	r6, -12(r4)
+    e484:	dc6a 	ldb	r6, -22(r1)
+    e486:	dc6a 	ldb	r6, -22(r1)
+    e488:	dc6a 	ldb	r6, -22(r1)
+    e48a:	dcae 	ldb	r6, -18(r2)
+    e48c:	dc6a 	ldb	r6, -22(r1)
+    e48e:	dc6a 	ldb	r6, -22(r1)
+    e490:	dc6a 	ldb	r6, -22(r1)
+    e492:	dc6a 	ldb	r6, -22(r1)
+    e494:	dc6a 	ldb	r6, -22(r1)
+    e496:	dc6a 	ldb	r6, -22(r1)
+    e498:	dc6a 	ldb	r6, -22(r1)
+    e49a:	dc6a 	ldb	r6, -22(r1)
+    e49c:	dc6a 	ldb	r6, -22(r1)
+    e49e:	dc6a 	ldb	r6, -22(r1)
+    e4a0:	dc6a 	ldb	r6, -22(r1)
+    e4a2:	dc6a 	ldb	r6, -22(r1)
+    e4a4:	dc6a 	ldb	r6, -22(r1)
+    e4a6:	dc6a 	ldb	r6, -22(r1)
+    e4a8:	dc6a 	ldb	r6, -22(r1)
+    e4aa:	dc6a 	ldb	r6, -22(r1)
+    e4ac:	dc6a 	ldb	r6, -22(r1)
+    e4ae:	dc6a 	ldb	r6, -22(r1)
+    e4b0:	dc6a 	ldb	r6, -22(r1)
+    e4b2:	dc6a 	ldb	r6, -22(r1)
+    e4b4:	dc6a 	ldb	r6, -22(r1)
+    e4b6:	dc6a 	ldb	r6, -22(r1)
+    e4b8:	dc6a 	ldb	r6, -22(r1)
+    e4ba:	dc6a 	ldb	r6, -22(r1)
+    e4bc:	dcae 	ldb	r6, -18(r2)
+    e4be:	dd34 	ldb	r6, -12(r4)
+    e4c0:	dd66 	ldb	r6, -26(r5)
+    e4c2:	dd52 	ldb	r6, 18(r5)
+
+temp_nsnake.o:     file format elf32-sisa
+temp_nsnake.o
+architecture: sisa:3, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00000000
+
+Program Header:
+    LOAD off    0x00000000 vaddr 0x00007f6c paddr 0x00007f6c align 2**0
+         filesz 0x0000009e memsz 0x0000009e flags rw-
+    LOAD off    0x00000090 vaddr 0x00008010 paddr 0x00008010 align 2**0
+         filesz 0x00000000 memsz 0x00000196 flags rw-
+    LOAD off    0x0000009e vaddr 0x0000c000 paddr 0x0000c000 align 2**0
+         filesz 0x000024c4 memsz 0x000024c4 flags r-x
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn  Flags
+  0 .sistema      000024c4  0000c000  0000c000  0000009e  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .sysdata      0000000a  00008000  00008000  00000094  2**1  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000196  00008010  00008010  0000009e  2**4  ALLOC
+  3 .stab         00003114  000081a8  000081a8  00002564  2**2  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      000011ca  0000b2bc  0000b2bc  00005678  2**0  CONTENTS, READONLY, DEBUGGING
+SYMBOL TABLE:
+00008000 l    d  .sysdata	00000000 .sysdata
+00008008 g     O .sysdata	00000002 HIGH_SCORE_BORDERS_OFF
+00008000 g     O .sysdata	00000006 fruit
+00008006 g     O .sysdata	00000002 HIGH_SCORE_BORDERS
+
+
+Disassembly of section .sysdata:
+
+00008000 <fruit>:
+    8000:	00 00 00 00 05 00                                   ......
+
+00008006 <HIGH_SCORE_BORDERS>:
+    8006:	88 13                                               ..
+
+00008008 <HIGH_SCORE_BORDERS_OFF>:
+    8008:	88 13                                               ..
