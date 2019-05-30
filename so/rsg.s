@@ -7,7 +7,7 @@
 	.balign 2                    
 	; por si acaso, pero no debería ser necesario
 	interrupts_vector: 
-		.word RSI_default_resume ; 0 Interval Timer
+		.word RSI_Timer ; 0
 		.word RSI_default_resume ; 1 Pulsadores (KEY) 
 		.word RSI_default_resume ; 2 Interruptores (SWITCH)
 		.word RSI_default_resume ; 3 Teclado PS/2 
@@ -72,7 +72,9 @@
 	; Rutinas de servicio por defecto 
 	; *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=* 
 		    RSE_default_halt:   HALT 
+		    RSI_default_halt:   HALT 
 		    RSE_default_resume: JMP R6 
+		    RSI_default_resume: JMP R6 
 		    RSE_excepcion_TLB:   
 		; fragmento de código
 		; falta el código de la tarea a hacer 
@@ -140,4 +142,6 @@
 		 wrs   S1, R2 
 		 wrs   S0, R1 
 		 $pop  R6, R5, R4, R3, R2, R1, R0 
-		 reti 
+		 reti
+
+		

@@ -12,8 +12,8 @@ SECTIONS
   /* text space */
   .sistema :
   {
-    system.o(.text)
-    system.o(.rodata)
+    entrada.o(.text) rsg.o(.text) system.o(.text)
+    entrada.o(.rodata) rsg.o(.rodata) system.o(.rodata)
     . = ALIGN(2);
   }
   __entry_point = LOADADDR(.sistema);
@@ -29,5 +29,5 @@ SECTIONS
    /* Ens situem en la part de sistema */
   . = 0x8000 ;
 
-  .sysdata : { system.o(.data)}
+  .sysdata : { entrada.o(.data) rsg.o(.data) system.o(.data)}
 }

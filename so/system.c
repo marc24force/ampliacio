@@ -6,7 +6,7 @@ struct task_struct * task1;
 struct task_struct * task_run; // punter a la tasca que sesta executant
 
 void init_sys_regs (struct task_struct * task) {
-    *(task->kernel_esp - 2) = 0; // s(7)
+    *(task->kernel_esp - 2) = 2; // s(7)
     *(task->kernel_esp - 6) = 0; // s(3)
     *(task->kernel_esp - 7) = 0; // s(2)
     *(task->kernel_esp - 8) = *(task->kernel_esp - 1); // s(1)
@@ -37,20 +37,30 @@ void init_task1 () {
 void return_user () {
     // jal al codi de task0
     int reg;
+    int s7 = *(task0->kernel_esp - 2); // s(7)
+    int reg7 = 7;
     __asm__ (
+
+	"wrs s7, %2\n\t"
 	"movi %0, lo(0x1000)\n\t"
 	"movhi %0, hi(0x1000)\n\t"
 	"jmp %0"
 	: // sense sortida
-	: "r" (reg)
+	: "r" (reg), "r" (7), "r" (s7)  
 	);
 }
 
+int count;
+void RSI_Timer () {
+	count++;
+//	if (count == task_run->quantum)
+}
 int main () {
     // activar el bit de mode system, harcodejarlo en el boot
     init_task0();
     init_task1();
     task_run = task0;
+    return_user();
     while (1);
     return 0;
 }
