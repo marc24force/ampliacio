@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for sisa
-Mon May 27 10:57:29 2019
+Thu May 30 09:58:55 2019
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -230,11 +230,11 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Property                        ; Setup ; Hold  ;
 +---------------------------------+-------+-------+
 ; Illegal Clocks                  ; 0     ; 0     ;
-; Unconstrained Clocks            ; 6     ; 6     ;
+; Unconstrained Clocks            ; 5     ; 5     ;
 ; Unconstrained Input Ports       ; 31    ; 31    ;
-; Unconstrained Input Port Paths  ; 2209  ; 2209  ;
+; Unconstrained Input Port Paths  ; 2219  ; 2219  ;
 ; Unconstrained Output Ports      ; 93    ; 93    ;
-; Unconstrained Output Port Paths ; 13183 ; 13183 ;
+; Unconstrained Output Port Paths ; 13217 ; 13217 ;
 +---------------------------------+-------+-------+
 
 
@@ -244,13 +244,13 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon May 27 10:57:27 2019
+    Info: Processing started: Thu May 30 09:58:52 2019
 Info: Command: quartus_sta sisa -c sisa
 Info: qsta_default_script.tcl version: #1
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning (335093): TimeQuest Timing Analyzer is analyzing 31 combinational loops as latches.
+Warning (335093): TimeQuest Timing Analyzer is analyzing 15 combinational loops as latches.
 Info (332164): Evaluating HDL-embedded SDC commands
     Info (332165): Entity sld_jtag_hub
         Info (332166): create_clock -name altera_reserved_tck [get_ports {altera_reserved_tck}] -period 10MHz   
@@ -259,9 +259,8 @@ Critical Warning (332012): Synopsys Design Constraints File file not found: 'sis
 Warning (332060): Node: genericClock:clock|outClock was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: CLOCK_50 was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: vga_controller:vga|clk_25mhz was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: proc:processador|unidad_control:c0|multi:multi_0|state.SYSTEM was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: SW[9] was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: proc:processador|unidad_control:c0|previous_ir[0] was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: proc:processador|unidad_control:c0|previous_ir[3] was determined to be a clock but was found without an associated clock assignment.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
 Info (332140): No fmax paths to report
@@ -278,9 +277,8 @@ Info: Analyzing Fast Model
 Warning (332060): Node: genericClock:clock|outClock was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: CLOCK_50 was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: vga_controller:vga|clk_25mhz was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: proc:processador|unidad_control:c0|multi:multi_0|state.SYSTEM was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: SW[9] was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: proc:processador|unidad_control:c0|previous_ir[0] was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: proc:processador|unidad_control:c0|previous_ir[3] was determined to be a clock but was found without an associated clock assignment.
 Info (332140): No Setup paths to report
 Info (332140): No Hold paths to report
 Info (332140): No Recovery paths to report
@@ -292,10 +290,10 @@ Info (332146): Worst-case minimum pulse width slack is 97.778
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 551 megabytes
-    Info: Processing ended: Mon May 27 10:57:29 2019
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 633 megabytes
+    Info: Processing ended: Thu May 30 09:58:55 2019
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 

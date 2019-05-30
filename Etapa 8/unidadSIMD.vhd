@@ -10,6 +10,7 @@ ENTITY unidadSIMD IS
           addr_d : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
 			 reg_16 : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
 			 boot   : IN  STD_LOGIC;
+			 in_d   : IN STD_LOGIC_VECTOR(1 DOWNTO 0); --nuevo
 			 op_simd: IN STD_LOGIC_VECTor(2 DOWNTO 0);
 			 out_simd: OUT STD_LOGIC_VECTOR(15 DOWNTO 0)); -- indica la op
 END unidadSIMD;
@@ -28,18 +29,31 @@ component regfileSIMD IS
           a      : OUT STD_LOGIC_VECTOR(127 DOWNTO 0);
 			 b      : OUT STD_LOGIC_VECTOR(127 DOWNTO 0));
 END component;
+
+component aluSIMD IS
+    PORT (x  		: IN  STD_LOGIC_VECTOR(127 DOWNTO 0);
+          y  		: IN  STD_LOGIC_VECTOR(127 DOWNTO 0);
+			 op 		: IN STD_LOGIC_VECTOR(2 DOWNTO 0); 
+			 w  		: OUT STD_LOGIC_VECTOR(127 DOWNTO 0)); 
+END component;
+
 signal s_input_REG : STD_LOGIC_VECTOR(127 DOWNTO 0);
 signal s_16b : STD_LOGIC;
 signal s_output_a : STD_LOGIC_VECTOR(127 DOWNTO 0);
 signal s_output_b : STD_LOGIC_VECTOR(127 DOWNTO 0);
-
+signal s_alu_w  : STD_LOGIC_VECTOR(127 DOWNTO 0);
 BEGIN
 
 		s_16b <= '1' when op_simd = "110" or op_simd = "111" else 
 					'0';
 		out_simd <= s_output_a(15 downto 0);-- en movsr sacamos por a 16 bits
 		
-		s_input_REG(15 downto 0) <= reg_16 when op_simd = "110";
+		with in_d select
+		s_input_REG(15 downto 0) <= reg_16 					 when "01",
+											 s_alu_w(15 downto 0) when "00",
+											 X"DEAD" 				 when others;
+										
+		s_input_REG(127 downto 16) <= s_alu_w(127 downto 16);
 					
 	   banco_SIMD: regfileSIMD
 		PORT map (clk    => clk,
@@ -52,5 +66,11 @@ BEGIN
 					 b16   => s_16b,
 					 a      => s_output_a,
 					 b      => s_output_b);
+					 
+		alu_SIMD: aluSIMD
+		Port map(x => s_output_a,
+					y => s_output_b,
+					op => op_simd,
+					w => s_alu_w);
 
 END Structure;

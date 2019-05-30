@@ -60,6 +60,12 @@ constant IO   : STD_LOGIC_VECTor(3 downto 0):="0111";
 	constant OUTPUT : STD_LOGIC := '1';
 constant EX_AL: STD_LOGIC_VECTor(3 downto 0):="1000";
 constant AL_SIMD: STD_LOGIC_VECTor(3 downto 0):="1001";
+	constant ADDS: STD_LOGIC_VECTOR := "000";
+	constant SUBS : STD_LOGIC_VECTOR := "001";
+	constant ANDS: STD_LOGIC_VECTOR := "010";
+	constant ORS: STD_LOGIC_VECTOR := "011";
+	constant XORS : STD_LOGIC_VECTOR := "100";
+	constant NOTS : STD_LOGIC_VECTOR := "101";
 	constant MOVRS: STD_LOGIC_VECTor(2 downto 0):="110";
 	constant MOVSR: STD_LOGIC_VECTor(2 downto 0):="111";
 constant JXX  : STD_LOGIC_VECTor(3 downto 0):="1010";
@@ -170,7 +176,7 @@ BEGIN
 					  '1'; --Puede escribir en el banco de registros
 					  
 	-- Controlamos cuando se puede escribir en el banco simd
-	 wrd_simd   <= '1' when (codigo_op = AL_SIMD and s_op_simd = MOVRS) else 
+	 wrd_simd   <= '1' when (codigo_op = AL_SIMD and s_op_simd /= MOVSR) else 
 						'0';
 		
 	 addr_a    <= ir(11 downto 9) when codigo_op=MOV else

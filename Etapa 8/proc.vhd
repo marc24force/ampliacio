@@ -81,6 +81,7 @@ component unidadSIMD IS
           addr_d : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
 			 reg_16 : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
 			 boot   : IN  STD_LOGIC;
+			 in_d   : IN STD_LOGIC_VECTOR(1 DOWNTO 0); --nou
 			 op_simd: IN  STD_LOGIC_VECTOR(2 DOWNTO 0); -- indica la operacion
 			 out_simd: OUT STD_LOGIC_VECTOR(15 DOWNTO 0)); --de momento solo saca los movsr (16b)
 END component;
@@ -345,6 +346,7 @@ BEGIN
 				 reg_16 => s_reg_a,
 				 boot => boot,
 				 op_simd => s_op_simd,
+				 in_d => s_in_d_simd,
 				 out_simd => s_out_simd_16);
 	
 	-- En los esquemas de la documentacion a la instancia del DATAPATH le hemos llamado e0
