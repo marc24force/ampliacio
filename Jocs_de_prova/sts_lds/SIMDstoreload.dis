@@ -1,0 +1,88 @@
+
+SIMDstoreload.exe:     file format elf32-sisa
+SIMDstoreload.exe
+architecture: sisa:3, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x0000c000
+
+Program Header:
+    LOAD off    0x00000000 vaddr 0x0000bfac paddr 0x0000bfac align 2**0
+         filesz 0x000000a0 memsz 0x000000a0 flags r-x
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn  Flags
+  0 .text         0000004c  0000c000  0000c000  00000054  2**0  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .stab         000001d4  00000000  00000000  000000a0  2**2  CONTENTS, READONLY, DEBUGGING
+  2 .stabstr      00000031  00000000  00000000  00000274  2**0  CONTENTS, READONLY, DEBUGGING
+SYMBOL TABLE:
+0000c000 l    d  .text	00000000 .text
+00000000 l    d  .stab	00000000 .stab
+00000000 l    d  .stabstr	00000000 .stabstr
+00000000 l    d  *ABS*	00000000 .shstrtab
+00000000 l    d  *ABS*	00000000 .symtab
+00000000 l    d  *ABS*	00000000 .strtab
+0000c018 l       .text	00000000 RSG
+0000c01a l       .text	00000000 inici
+0000c000 g       .text	00000000 __entry_point
+0000c04c g       .text	00000000 _etext
+0000c04c g       *ABS*	00000000 __data_load_end
+0000c04c g       *ABS*	00000000 __data_load_start
+0000c04c g       .text	00000000 __dtors_end
+0000c04c g       .text	00000000 __ctors_start
+0000c04c g       .text	00000000 __dtors_start
+0000c04c g       .text	00000000 __ctors_end
+0000c04c g       *ABS*	00000000 _edata
+0000c04c g       *ABS*	00000000 _end
+
+
+
+SIMDstoreload.exe:     file format elf32-sisa
+
+
+SIMDstoreload.exe:     file format elf32-sisa
+
+Disassembly of section .text:
+
+0000c000 <__entry_point>:
+    c000:	5218 	movi	r1, 24
+    c002:	53c0 	movhi	r1, -64
+    c004:	fa70 	wrs	s5, r1
+    c006:	520f 	movi	r1, 15
+    c008:	7309 	out	9, r1
+    c00a:	52ff 	movi	r1, -1
+    c00c:	730a 	out	10, r1
+    c00e:	5c1a 	movi	r6, 26
+    c010:	5dc0 	movhi	r6, -64
+    c012:	5202 	movi	r1, 2
+    c014:	fe70 	wrs	s7, r1
+    c016:	a183 	jmp	r6
+
+0000c018 <RSG>:
+    c018:	f024 	reti	
+
+0000c01a <inici>:
+    c01a:	5000 	movi	r0, 0
+    c01c:	5100 	movhi	r0, 0
+    c01e:	5200 	movi	r1, 0
+    c020:	ffff 	halt	
+    c022:	5201 	movi	r1, 1
+    c024:	ffff 	halt	
+    c026:	5202 	movi	r1, 2
+    c028:	ffff 	halt	
+    c02a:	5203 	movi	r1, 3
+    c02c:	ffff 	halt	
+    c02e:	5204 	movi	r1, 4
+    c030:	ffff 	halt	
+    c032:	5205 	movi	r1, 5
+    c034:	ffff 	halt	
+    c036:	5206 	movi	r1, 6
+    c038:	ffff 	halt	
+    c03a:	5207 	movi	r1, 7
+    c03c:	ffff 	halt	
+    c03e:	ffff 	halt	
+    c040:	ffff 	halt	
+    c042:	ffff 	halt	
+    c044:	ffff 	halt	
+    c046:	ffff 	halt	
+    c048:	ffff 	halt	
+    c04a:	ffff 	halt	

@@ -10,8 +10,10 @@ ENTITY unidadSIMD IS
           addr_d : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
 			 reg_16 : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
 			 boot   : IN  STD_LOGIC;
-			 in_d   : IN STD_LOGIC_VECTOR(1 DOWNTO 0); --nuevo
+			 in_d   : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
 			 op_simd: IN STD_LOGIC_VECTor(2 DOWNTO 0);
+			 simd_readed: IN STD_LOGIC_VECTOR(127 DOWNTO 0); -- este si que es nuevo (MARC)
+			 simd_toWrite: OUT STD_LOGIC_VECTOR(127 DOWNTO 0); -- este tambien
 			 out_simd: OUT STD_LOGIC_VECTOR(15 DOWNTO 0)); -- indica la op
 END unidadSIMD;
 
@@ -49,12 +51,16 @@ BEGIN
 		out_simd <= s_output_a(15 downto 0);-- en movsr sacamos por a 16 bits
 		
 		with in_d select
-		s_input_REG(15 downto 0) <= reg_16 					 when "01",
-											 s_alu_w(15 downto 0) when "00",
-											 X"DEAD" 				 when others;
+		s_input_REG(15 downto 0) <= reg_16 					     when "01",
+											 s_alu_w(15 downto 0)     when "00",
+											 simd_readed(15 downto 0) when "10",
+											 X"DEAD" 				     when others;
 										
-		s_input_REG(127 downto 16) <= s_alu_w(127 downto 16);
+		s_input_REG(127 downto 16) <= simd_readed(127 downto 16) when in_d = "10" else
+												s_alu_w(127 downto 16);
 					
+		simd_toWrite <= s_output_b;
+		
 	   banco_SIMD: regfileSIMD
 		PORT map (clk    => clk,
 					 wrd    => wrd,

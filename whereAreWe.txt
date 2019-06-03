@@ -1,1 +1,1 @@
-alu working
+no funciona del tot la sram

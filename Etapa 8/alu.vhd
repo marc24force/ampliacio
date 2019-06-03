@@ -48,6 +48,8 @@ ARCHITECTURE Structure OF alu IS
 	--operaciones de memoria
 	constant LD   : STD_LOGIC_VECTOR :="0011";
 	constant ST   : STD_LOGIC_VECTOR :="0100";
+	constant LDS  : STD_LOGIC_VECTor :="1011";
+	constant STS  : STD_LOGIC_VECTor :="1100";
 	constant LDB  : STD_LOGIC_VECTOR :="1101";
 	constant STB  : STD_LOGIC_VECTOR :="1110";
 	--jump
@@ -136,6 +138,8 @@ BEGIN
 				pos_mem when LDB,
 				pos_mem when ST,
 				pos_mem when STB,
+				pos_mem when STS,
+				pos_mem when LDS,
 				x when JXX,
 				esp_res when ESP,
 		      X"DEAD"  when others;

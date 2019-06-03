@@ -8,6 +8,8 @@ ENTITY proc IS
 			 rd_io 	  : IN std_logic_vector(15 downto 0); 
 			 inter     : IN  STD_LOGIC; 
 			 code_excep	: IN STD_LOGIC_VECTOR(3 DOWNTO 0); 
+			 simd_readed: IN STD_LOGIC_VECTOR(127 DOWNTO 0); -- este si que es nuevo (MARC)
+			 simd_toWrite: OUT STD_LOGIC_VECTOR(127 DOWNTO 0); -- este tambien
 			 inst_prohibida : OUT STD_LOGIC; 
 			 is_calls  : OUT STd_logic;
 			 miss_tlbd : OUT STd_logic; --n
@@ -20,6 +22,7 @@ ENTITY proc IS
           intr_enabled :OUT  STD_LOGIC; 
 			 no_impl   : OUT STD_LOGIC;
 			 acces_mem : OUT STD_LOGIC; 
+			 simd_mem  : OUT STD_LOGIC; -- oussama dice que es new
 			 mem_ld_st : OUT STD_LOGIC; 
 			 intr_ack  : OUT  STD_LOGIC;
           addr_m    : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -83,6 +86,8 @@ component unidadSIMD IS
 			 boot   : IN  STD_LOGIC;
 			 in_d   : IN STD_LOGIC_VECTOR(1 DOWNTO 0); --nou
 			 op_simd: IN  STD_LOGIC_VECTOR(2 DOWNTO 0); -- indica la operacion
+			 simd_readed: IN STD_LOGIC_VECTOR(127 DOWNTO 0); -- este si que es nuevo (MARC)
+			 simd_toWrite: OUT STD_LOGIC_VECTOR(127 DOWNTO 0); -- este tambien
 			 out_simd: OUT STD_LOGIC_VECTOR(15 DOWNTO 0)); --de momento solo saca los movsr (16b)
 END component;
 
@@ -102,6 +107,7 @@ component unidad_control is
 			 flush     : OUT std_logic;-- indica si hay que hacer flush
 			 is_tlb_data: out std_LOGIC; --1 if it is tlb data
 			 acces_mem : OUT STD_LOGIC;
+			 simd_mem  : OUT STD_LOGIC; -- oussama dice que es new
 			 mem_ld_st : OUT STD_LOGIC; 
 			 sys_state : OUT STD_Logic; 
 			 intr_ack  : OUT STD_LOGIC; 
@@ -310,6 +316,7 @@ BEGIN
 			    flush    => s_flush,
 			    is_tlb_data => s_is_tlb_data,
 				 acces_mem => acces_mem,
+				 simd_mem => simd_mem,
 				 mem_ld_st => s_mem_ld_st,
 				 sys_state => s_sys_state,
 				 intr_ack => intr_ack,
@@ -347,6 +354,8 @@ BEGIN
 				 boot => boot,
 				 op_simd => s_op_simd,
 				 in_d => s_in_d_simd,
+				 simd_readed => simd_readed,
+				 simd_toWrite=> simd_toWrite,
 				 out_simd => s_out_simd_16);
 	
 	-- En los esquemas de la documentacion a la instancia del DATAPATH le hemos llamado e0

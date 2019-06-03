@@ -19,6 +19,7 @@ ENTITY unidad_control IS
 			 flush     : OUT std_logic;-- indica si hay que hacer flush
 			 is_tlb_data: out std_LOGIC; --1 if it is tlb data
 			 acces_mem : OUT STD_LOGIC;
+			 simd_mem  : OUT STD_LOGIC; -- oussama dice que es new
 			 mem_ld_st : OUT STD_LOGIC;
 			 sys_state : OUT STD_Logic; 
 			 intr_ack  : OUT STD_LOGIC; 
@@ -69,6 +70,7 @@ component control_l IS
 			 flush     : OUT std_logic;-- indica si hay que hacer flush
 			 is_tlb_data: out std_LOGIC; --1 if it is tlb data
 			 acces_mem : OUT STD_LOGIC; 
+			 simd_mem  : OUT STD_LOGIC; -- oussama dice que es new
           ldpc      : OUT STD_LOGIC;
           wrd       : OUT STD_LOGIC;
 			 wrd_simd  : OUT STD_LOGIC; -- new indica permiso escritura en br simd
@@ -150,6 +152,7 @@ BEGIN
 				 flush    => flush,
 				 is_tlb_data => is_tlb_data,
 				 acces_mem => s_acces_mem,
+				 simd_mem  => simd_mem,
 				 ldpc   => ldpc_m,
 				 wrd    => wrd_m,
 				 wrd_simd => wrd_simd_m,

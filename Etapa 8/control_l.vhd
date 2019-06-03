@@ -22,7 +22,8 @@ ENTITY control_l IS
 			 wr_phy    : OUT std_logic;							-- indica si escritura fisica (1) o virtual (0)
 			 flush     : OUT std_logic; 							-- indica si hay que hacer flush
 			 is_tlb_data: out std_LOGIC; --1 if it is tlb data
-			 acces_mem : OUT STD_LOGIC; 
+			 acces_mem : OUT STD_LOGIC;
+			 simd_mem  : OUT STD_LOGIC; -- oussama dice que es new
           ldpc      : OUT STD_LOGIC;
           wrd       : OUT STD_LOGIC;
 			 wrd_simd  : OUT STD_LOGIC; -- new indica permiso escritura en br simd
@@ -74,8 +75,8 @@ constant JXX  : STD_LOGIC_VECTor(3 downto 0):="1010";
 	constant JMP  : STD_LOGIC_VECTor(2 downto 0):="011";
 	constant JAL  : STD_LOGIC_VECTor(2 downto 0):="100";
 	constant CALLS: STD_LOGIC_VECTor(2 downto 0):="111";
-constant EMPTY_2: STD_LOGIC_VECTor(3 downto 0):="1011";
-constant EMPTY_3: STD_LOGIC_VECTor(3 downto 0):="1100";
+constant LDS: STD_LOGIC_VECTor(3 downto 0):="1011";
+constant STS: STD_LOGIC_VECTor(3 downto 0):="1100";
 constant LDB  : STD_LOGIC_VECTor(3 downto 0):="1101";
 constant STB  : STD_LOGIC_VECTor(3 downto 0):="1110";
 constant ESP  : STD_LOGIC_VECTOR(3 downto 0):="1111";
@@ -115,8 +116,8 @@ BEGIN
 	 br_func <= ir(8);
 	 io_func <= ir(8);
 	 
-	 no_impl <= '1' when codigo_op = EMPTY_2 or codigo_op = EMPTY_3 else
-				   '0';
+	 no_impl <= '0'; --'1' when codigo_op = EMPTY_2 or codigo_op = EMPTY_3 else
+		--		   '0';
 	
 	 inst_prohibida <= '1' when (codigo_op = ESP and esp_func /= HALT) else  --canviar a todas las esp_func
 							 '0';
@@ -172,11 +173,12 @@ BEGIN
 								  (codigo_op = JXX and (jxx_func = JZ or jxx_func = JNZ or jxx_func = JMP)) or
 								  codigo_op = BR or 
 								  (codigo_op = AL_SIMD and s_op_simd /= MOVSR) or --En el caso move de simd a reg permiso wrd 
+								  codigo_op = LDS or codigo_op = STS or
 								  (codigo_op = IO and io_func = OUTPUT) else
 					  '1'; --Puede escribir en el banco de registros
 					  
 	-- Controlamos cuando se puede escribir en el banco simd
-	 wrd_simd   <= '1' when (codigo_op = AL_SIMD and s_op_simd /= MOVSR) else 
+	 wrd_simd   <= '1' when (codigo_op = AL_SIMD and s_op_simd /= MOVSR) or codigo_op = LDS else 
 						'0';
 		
 	 addr_a    <= ir(11 downto 9) when codigo_op=MOV else
@@ -194,12 +196,15 @@ BEGIN
 																												codigo_op = IO  else
 					  std_logic_vector(resize(signed(ir(5 downto 0)),immed'length));
 						
-	 wr_m 	  <= '1' when codigo_op=ST or codigo_op=STB else
+	 wr_m 	  <= '1' when codigo_op=ST or codigo_op=STB or codigo_op = STS else
 					  '0';
 					  
 	 acces_mem <= '1' when codigo_op=ST or codigo_op = LD or
+								  codigo_op = LDS or codigo_op = STS or
 								  codigo_op=STB or codigo_op=LDB else
 					  '0';
+					  
+	 simd_mem <= '1' when codigo_op = LDS or codigo_op = STS else '0';
 					  
 	 in_d 	  <= "001" when codigo_op=LD or codigo_op=LDB else
 					  "010" when codigo_op = JXX and jxx_func = JAL else
@@ -208,8 +213,8 @@ BEGIN
 					  "000";
 					  
 	 in_d_simd <= "01" when codigo_op = AL_SIMD and s_op_simd = MOVRS else --registro d(simd) viene de br normal
-					  --"10" when op_simd = Registro d viene de memoria
-						"00"; -- registro d viene de la alu (simd)
+					  "10" when codigo_op = LDS else --Registro d viene de memoria
+					  "00"; -- registro d viene de la alu (simd)
 				
 	 tknbr <= "10" when (codigo_op = JXX and jxx_func = JZ  and z = '1') or
 							  (codigo_op = JXX and jxx_func = JNZ and z = '0') or
@@ -222,8 +227,8 @@ BEGIN
 							 
 				 "00";
 
-   immed_x2 	  <= '1' when 	codigo_op = LD or 
-										codigo_op = ST or
+   immed_x2 	  <= '1' when 	codigo_op = LD or codigo_op = ST or
+										codigo_op = LDS or codigo_op = STS or
 										codigo_op = BR else
 						  '0';
 						  
