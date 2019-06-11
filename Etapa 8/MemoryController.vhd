@@ -22,6 +22,7 @@ entity MemoryController is
 			 --SIMD
 			 simd_readed: OUT STD_LOGIC_VECTOR(127 DOWNTO 0); -- este si que es nuevo (MARC)
 			 simd_toWrite: IN STD_LOGIC_VECTOR(127 DOWNTO 0); -- este tambien
+ 			 second_acces: in    std_logic;
 			 --VGA
 			 vga_addr          : out std_logic_vector(12 downto 0);
           vga_we            : out std_logic;
@@ -62,6 +63,7 @@ component SRAM_SIMDController is
           SRAM_OE_N   : out   std_logic := '1';
           SRAM_WE_N   : out   std_logic := '1';
           -- señales internas del procesador
+ 			 second_acces: in    std_logic;
           address     : in    std_logic_vector(15 downto 0) := "0000000000000000";
           dataReaded  : out   std_logic_vector(127 downto 0);
           dataToWrite : in    std_logic_vector(127 downto 0);
@@ -121,6 +123,7 @@ begin
 				 SRAM_OE_N  => simd_SRAM_OE_N,
 				 SRAM_WE_N  => simd_SRAM_WE_N,
 				 -- señales internas del procesador
+				 second_acces => second_acces,
 				 address    => addr,
 				 dataReaded => simd_readed,
 				 dataToWrite=> simd_toWrite,

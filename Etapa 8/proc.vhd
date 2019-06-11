@@ -10,6 +10,7 @@ ENTITY proc IS
 			 code_excep	: IN STD_LOGIC_VECTOR(3 DOWNTO 0); 
 			 simd_readed: IN STD_LOGIC_VECTOR(127 DOWNTO 0); -- este si que es nuevo (MARC)
 			 simd_toWrite: OUT STD_LOGIC_VECTOR(127 DOWNTO 0); -- este tambien
+ 			 second_acces: out    std_logic;
 			 inst_prohibida : OUT STD_LOGIC; 
 			 is_calls  : OUT STd_logic;
 			 miss_tlbd : OUT STd_logic; --n
@@ -108,6 +109,7 @@ component unidad_control is
 			 is_tlb_data: out std_LOGIC; --1 if it is tlb data
 			 acces_mem : OUT STD_LOGIC;
 			 simd_mem  : OUT STD_LOGIC; -- oussama dice que es new
+ 			 second_acces: out    std_logic; -- es new
 			 mem_ld_st : OUT STD_LOGIC; 
 			 sys_state : OUT STD_Logic; 
 			 intr_ack  : OUT STD_LOGIC; 
@@ -317,6 +319,7 @@ BEGIN
 			    is_tlb_data => s_is_tlb_data,
 				 acces_mem => acces_mem,
 				 simd_mem => simd_mem,
+				 second_acces => second_acces,
 				 mem_ld_st => s_mem_ld_st,
 				 sys_state => s_sys_state,
 				 intr_ack => intr_ack,

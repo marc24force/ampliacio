@@ -50,6 +50,7 @@ component MemoryController is
 			 --SIMD
 			 simd_readed: OUT STD_LOGIC_VECTOR(127 DOWNTO 0); -- este si que es nuevo (MARC)
 			 simd_toWrite: IN STD_LOGIC_VECTOR(127 DOWNTO 0); -- este tambien
+ 			 second_acces: in    std_logic;
 			 --VGA
 			 vga_addr          : out std_logic_vector(12 downto 0);
           vga_we            : out std_logic;
@@ -68,6 +69,7 @@ component proc IS
 			-- SIMD
 			 simd_readed: IN STD_LOGIC_VECTOR(127 DOWNTO 0); -- este si que es nuevo (MARC)
 			 simd_toWrite: OUT STD_LOGIC_VECTOR(127 DOWNTO 0); -- este tambien
+ 			 second_acces: out    std_logic;
 		   --end simd	
 		 	 inst_prohibida : OUT STD_LOGIC; 
 			 is_calls  : OUT STd_logic; 
@@ -196,6 +198,7 @@ signal s_inta: STD_LOGIC :='0';
 signal s_simd_mem  : STD_LOGIC; -- oussama dice que es new
 signal s_simd_readed: STD_LOGIC_VECTOR(127 DOWNTO 0); -- este si que es nuevo (MARC)
 signal s_simd_toWrite: STD_LOGIC_VECTOR(127 DOWNTO 0); -- este tambien
+signal s_second_acces: std_logic;
 
 
 signal s_intr_enabled  :  STD_LOGIC;
@@ -235,6 +238,7 @@ clock : genericClock
 				 code_excep	=> s_code_excep,
 				 simd_readed => s_simd_readed,   --new
 				 simd_toWrite => s_simd_toWrite, --nou
+				 second_acces => s_second_acces, --nw
 				 inst_prohibida => s_inst_prohibida, 
 				 is_calls  => s_is_calls, 
 				 miss_tlbd => s_miss_tlbd,
@@ -281,6 +285,7 @@ port map (CLOCK_50  => CLOCK_50,
 			 mem_protegida => s_mem_protegida, 
 		    simd_readed => s_simd_readed,  --now
 			 simd_toWrite => s_simd_toWrite,--neu
+			 second_acces => s_second_acces, --nw
 			 vga_addr => s_addr_vga,      
 			 vga_we    =>   s_we,       
 			 vga_wr_data =>  s_wr_data ,    

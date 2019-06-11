@@ -1,1 +1,1 @@
-no funciona del tot la sram
+simd acabada

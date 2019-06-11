@@ -17,6 +17,17 @@ m1_state.m1_tx_done_recovery 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1
 m1_state.m1_tx_error_no_keyboard_ack 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
 m1_state.m1_tx_rising_edge_marker 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
+State Machine - |sisa|MemoryController:control_mem|SRAM_SIMDController:simd_sram|estat
+Name estat.e7 estat.e6 estat.e5 estat.e4 estat.e3 estat.e2 estat.e1 estat.e0 
+estat.e0 0 0 0 0 0 0 0 0 
+estat.e1 0 0 0 0 0 0 1 1 
+estat.e2 0 0 0 0 0 1 0 1 
+estat.e3 0 0 0 0 1 0 0 1 
+estat.e4 0 0 0 1 0 0 0 1 
+estat.e5 0 0 1 0 0 0 0 1 
+estat.e6 0 1 0 0 0 0 0 1 
+estat.e7 1 0 0 0 0 0 0 1 
+
 State Machine - |sisa|MemoryController:control_mem|SRAMController:sram_ctrl|estat
 Name estat.e7 estat.e6 estat.e5 estat.e4 estat.e3 estat.e2 estat.e1 estat.e0 
 estat.e0 0 0 0 0 0 0 0 0 
@@ -29,7 +40,8 @@ estat.e6 0 1 0 0 0 0 0 1
 estat.e7 1 0 0 0 0 0 0 1 
 
 State Machine - |sisa|proc:processador|unidad_control:c0|multi:multi_0|state
-Name state.SYSTEM state.DEMW state.F 
-state.F 0 0 0 
-state.DEMW 0 1 1 
-state.SYSTEM 1 0 1 
+Name state.SIMD_SEC_ACCS state.SYSTEM state.DEMW state.F 
+state.F 0 0 0 0 
+state.DEMW 0 0 1 1 
+state.SYSTEM 0 1 0 1 
+state.SIMD_SEC_ACCS 1 0 0 1 

@@ -20,6 +20,7 @@ ENTITY unidad_control IS
 			 is_tlb_data: out std_LOGIC; --1 if it is tlb data
 			 acces_mem : OUT STD_LOGIC;
 			 simd_mem  : OUT STD_LOGIC; -- oussama dice que es new
+ 			 second_acces: out    std_logic; --es new
 			 mem_ld_st : OUT STD_LOGIC;
 			 sys_state : OUT STD_Logic; 
 			 intr_ack  : OUT STD_LOGIC; 
@@ -95,6 +96,7 @@ component multi is
          ldpc_l    : IN  STD_LOGIC;
          wrd_l     : IN  STD_LOGIC;
 			wrd_simd_l: IN  STD_LOGIC;
+			simd_mem_l: IN  STD_LOGIC;
          wr_m_l    : IN  STD_LOGIC;
          w_b       : IN  STD_LOGIC;
 			intr_enabled :IN  STD_LOGIC;
@@ -105,6 +107,8 @@ component multi is
          ldpc      : OUT STD_LOGIC;
          wrd       : OUT STD_LOGIC;
 			wrd_simd  : OUT STD_LOGIC;
+			simd_mem  : OUT STD_LOGIC;
+ 			second_acces: out    std_logic; --es new
          wr_m      : OUT STD_LOGIC;
          ldir      : OUT STD_LOGIC;
          ins_dad   : OUT STD_LOGIC;
@@ -121,6 +125,7 @@ signal immed_m       : STD_LOGIC_VECTOR(15 DOWNTO 0); -- immed salido de control
 signal ldpc_m      : STD_LOGIC;
 signal wrd_m       : STD_LOGIC;
 signal wrd_simd_m  : STD_LOGIC;
+signal simd_mem_m  : STD_LOGIC;
 signal wr_m_m      : STD_LOGIC;
 signal w_b_m       : STD_LOGIC;
 signal ldir_m_out  : std_LOGIC;
@@ -152,7 +157,7 @@ BEGIN
 				 flush    => flush,
 				 is_tlb_data => is_tlb_data,
 				 acces_mem => s_acces_mem,
-				 simd_mem  => simd_mem,
+				 simd_mem  => simd_mem_m,
 				 ldpc   => ldpc_m,
 				 wrd    => wrd_m,
 				 wrd_simd => wrd_simd_m,
@@ -176,6 +181,7 @@ BEGIN
 				 ldpc_l => ldpc_m,
 				 wrd_l  => wrd_m,
 				 wrd_simd_l => wrd_simd_m,
+				 simd_mem_l => simd_mem_m,
 				 wr_m_l => wr_m_m,
 				 w_b    => w_b_m,
 				 intr_enabled => intr_enabled, 
@@ -186,6 +192,8 @@ BEGIN
 				 ldpc   => ld_pc,
 				 wrd    => wrd,
 				 wrd_simd => wrd_simd,
+				 simd_mem => simd_mem,
+				 second_acces => second_acces,
 				 wr_m   => wr_m,
 				 ldir   => ldir_m_out,
 				 ins_dad  => ins_dad,
