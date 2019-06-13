@@ -10,7 +10,7 @@
 	; por si acaso, pero no debería ser necesario
 	interrupts_vector: 
 		.word C_RSI_Timer ; 0 Timer
-		.word C_RSI_Timer ; 1 Pulsadores (KEY) 
+		.word RSI_default_resume ; 1 Pulsadores (KEY) 
 		.word RSI_default_resume ; 2 Interruptores (SWITCH)
 		.word RSI_default_resume ; 3 Teclado PS/2 
 	exceptions_vector: 
@@ -75,8 +75,8 @@
 	; *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=* 
 		    RSE_default_halt:   HALT 
 		    RSI_default_halt:   HALT 
-		    RSE_default_resume: JMP R6 
-		    RSI_default_resume: JMP R6 
+		    RSE_default_resume: JMP R5 ;aixo era un r6 
+		    RSI_default_resume: JMP R5 ;aixo era un r6
 		    RSE_excepcion_TLB:   
 		; fragmento de código
 		; falta el código de la tarea a hacer 
@@ -89,6 +89,9 @@
 	; Rutina de servicio de interrupción 
 	; *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=* 
 	RSG: 
+		; canvi de pila a pila de sistema
+		ld r7, 4(PCB_task0)
+
 		; Salvar el estado
 		 $push  R0, R1, R2, R3, R4, R5, R6 
 		 rds    R1, S0 

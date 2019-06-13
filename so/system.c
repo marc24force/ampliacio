@@ -22,7 +22,8 @@ extern void RSG();
 
 void init_task0() {
 	*(PCB_task0) = 0; //PID
-	*(PCB_task0+1) = (uint16_t)(PCB_task0 + PCB_SIZE); //kernel esp
+	*(PCB_task0+1) = (uint16_t)(PCB_task0 + PCB_SIZE); //kernel ebp
+	*(PCB_task0+2) = (uint16_t)(PCB_task0 + PCB_SIZE); //kernel esp
 
 }
 void init_task1() {
@@ -31,6 +32,7 @@ void init_task1() {
 	//kernel ebp, el 12 surt de la llibreta
 	uint16_t * kernel_ebp = (uint16_t *)(PCB_task1 + PCB_SIZE - 12);
 	*(PCB_task1+1) = (uint16_t)(kernel_ebp) - 6; 
+	//*(PCB_task1+2) = (uint16_t)(kernel_ebp) - 6; 
 	
 	//Return from first task switch
 	*(kernel_ebp+1) = ((uint16_t)&RSG + 92); //92 instruccions fins a __finRSG 
@@ -77,7 +79,7 @@ void return_user () {
 	"movi r4, 4\n\t"
 	"movi r5, 5\n\t"
 	"movi r6, 6\n\t"
-	"movi r7, lo(0x8500)\n\t"
+	"movi r7, lo(0x8500)\n\t" //aixo amb el entry.s no cal en realitat
 	"movhi r7, hi(0x8500)\n\t"
 	"jmp %0"
 	: // sense sortida

@@ -70,10 +70,10 @@ Disassembly of section .sistema:
     a024:	ffff 	halt	
 
 0000a026 <RSE_default_resume>:
-    a026:	a183 	jmp	r6
+    a026:	a143 	jmp	r5
 
 0000a028 <RSI_default_resume>:
-    a028:	a183 	jmp	r6
+    a028:	a143 	jmp	r5
 
 0000a02a <RSE_excepcion_TLB>:
     a02a:	f46c 	rds	r2, s1
@@ -444,7 +444,7 @@ Disassembly of section .sysdata:
 
 00009000 <interrupts_vector>:
     9000:	a1aa 	.word	0xa1aa
-    9002:	a1aa 	.word	0xa1aa
+    9002:	a028 	.word	0xa028
     9004:	a028 	.word	0xa028
     9006:	a028 	.word	0xa028
 
