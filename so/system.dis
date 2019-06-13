@@ -6,283 +6,343 @@ EXEC_P, HAS_SYMS, D_PAGED
 start address 0x00000000
 
 Program Header:
-    LOAD off    0x00000000 vaddr 0x00008f8c paddr 0x00008f8c align 2**0
-         filesz 0x000000ac memsz 0x000000b2 flags rw-
-    LOAD off    0x000000ac vaddr 0x0000a000 paddr 0x0000a000 align 2**0
-         filesz 0x000001f8 memsz 0x000001f8 flags r-x
+    LOAD off    0x00000000 vaddr 0x00003f8c paddr 0x00003f8c align 2**0
+         filesz 0x000002e0 memsz 0x000002e0 flags r-x
+    LOAD off    0x000002e0 vaddr 0x00009000 paddr 0x00009000 align 2**0
+         filesz 0x0000003c memsz 0x00000040 flags rw-
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn  Flags
-  0 .sistema      000001f8  0000a000  0000a000  000000ac  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .sysdata      00000038  00009000  00009000  00000074  2**1  CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000006  00009038  00009038  000000ac  2**1  ALLOC
-  3 .stab         000003d8  00009040  00009040  000002a4  2**2  CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      000003e7  00009418  00009418  0000067c  2**0  CONTENTS, READONLY, DEBUGGING
+  0 .sistema      0000026c  00004000  00004000  00000074  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .sysdata      0000003c  00009000  00009000  000002e0  2**1  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000004  0000903c  0000903c  0000031c  2**1  ALLOC
+  3 .stab         000003fc  00009040  00009040  0000031c  2**2  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      000003da  0000943c  0000943c  00000718  2**0  CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
-0000a000 l    d  .sistema	00000000 .sistema
-0000a010 l       .sistema	00000000 __exit
-0000a028 l       .sistema	00000000 RSI_default_resume
-0000a022 l       .sistema	00000000 RSE_default_halt
-0000a026 l       .sistema	00000000 RSE_default_resume
-0000a02a l       .sistema	00000000 RSE_excepcion_TLB
-0000a024 l       .sistema	00000000 RSI_default_halt
-0000a06c l       .sistema	00000000 __call_sistema
-0000a080 l       .sistema	00000000 __interrupcion
-0000a05e l       .sistema	00000000 __excepcion
-0000a08e l       .sistema	00000000 __finRSG
-0000a000 g       .sistema	00000000 __entry_point
-0000a0ae g     F .sistema	0000002a init_task0
-0000a1aa g     F .sistema	00000016 C_RSI_Timer
-0000a0d8 g     F .sistema	00000066 init_task1
-0000a1c0 g     F .sistema	00000038 main
-0000a032 g     F .sistema	00000000 RSG
-0000a16e g     F .sistema	0000003c return_user
-0000a13e g     F .sistema	00000030 task_switch
+00004000 l    d  .sistema	00000000 .sistema
+00004010 l       .sistema	00000000 __exit
+000040c6 l       .sistema	00000000 RSI__interrup_timer
+00004028 l       .sistema	00000000 RSI_default_resume
+000040de l       .sistema	00000000 RSI__interrup_keyboard
+00004022 l       .sistema	00000000 RSE_default_halt
+00004026 l       .sistema	00000000 RSE_default_resume
+0000402a l       .sistema	00000000 RSE_excepcion_TLB
+000040e8 l       .sistema	00000000 SYS_getticks
+000040f2 l       .sistema	00000000 SYS_getkeyboard
+00004024 l       .sistema	00000000 RSI_default_halt
+00004078 l       .sistema	00000000 __call_sistema
+0000408c l       .sistema	00000000 __interrupcion
+0000406a l       .sistema	00000000 __excepcion
+0000409a l       .sistema	00000000 __finRSG
+00004000 g       .sistema	00000000 __entry_point
+000040fc g     F .sistema	0000002a init_task0
+00004202 g     F .sistema	00000032 C_RSI_Timer
+00004126 g     F .sistema	00000070 init_task1
+00004234 g     F .sistema	00000038 main
+00004032 g     F .sistema	00000000 RSG
+000041c6 g     F .sistema	0000003c return_user
+00004196 g     F .sistema	00000030 task_switch
 
 
 Disassembly of section .sistema:
 
-0000a000 <__entry_point>:
-    a000:	5e00 	movi	r7, 0
-    a002:	5f95 	movhi	r7, -107
-    a004:	fdf0 	wrs	s6, r7
-    a006:	5a10 	movi	r5, 16
-    a008:	5ba0 	movhi	r5, -96
-    a00a:	5cc0 	movi	r6, -64
-    a00c:	5da1 	movhi	r6, -95
-    a00e:	a183 	jmp	r6
+00004000 <__entry_point>:
+    4000:	5e00 	movi	r7, 0
+    4002:	5f95 	movhi	r7, -107
+    4004:	fdf0 	wrs	s6, r7
+    4006:	5a10 	movi	r5, 16
+    4008:	5b40 	movhi	r5, 64
+    400a:	5c34 	movi	r6, 52
+    400c:	5d42 	movhi	r6, 66
+    400e:	a183 	jmp	r6
 
-0000a010 <__exit>:
-    a010:	ffff 	halt	
-    a012:	5232 	movi	r1, 50
-    a014:	53a0 	movhi	r1, -96
-    a016:	fa70 	wrs	s5, r1
-    a018:	5e00 	movi	r7, 0
-    a01a:	5f95 	movhi	r7, -107
-    a01c:	5c00 	movi	r6, 0
-    a01e:	5da0 	movhi	r6, -96
-    a020:	a183 	jmp	r6
+00004010 <__exit>:
+    4010:	ffff 	halt	
+    4012:	5232 	movi	r1, 50
+    4014:	5340 	movhi	r1, 64
+    4016:	fa70 	wrs	s5, r1
+    4018:	5e00 	movi	r7, 0
+    401a:	5f95 	movhi	r7, -107
+    401c:	5c00 	movi	r6, 0
+    401e:	5da0 	movhi	r6, -96
+    4020:	a183 	jmp	r6
 
-0000a022 <RSE_default_halt>:
-    a022:	ffff 	halt	
+00004022 <RSE_default_halt>:
+    4022:	ffff 	halt	
 
-0000a024 <RSI_default_halt>:
-    a024:	ffff 	halt	
+00004024 <RSI_default_halt>:
+    4024:	ffff 	halt	
 
-0000a026 <RSE_default_resume>:
-    a026:	a143 	jmp	r5
+00004026 <RSE_default_resume>:
+    4026:	a143 	jmp	r5
 
-0000a028 <RSI_default_resume>:
-    a028:	a143 	jmp	r5
+00004028 <RSI_default_resume>:
+    4028:	a143 	jmp	r5
 
-0000a02a <RSE_excepcion_TLB>:
-    a02a:	f46c 	rds	r2, s1
-    a02c:	24be 	addi	r2, r2, -2
-    a02e:	f2b0 	wrs	s1, r2
-    a030:	a183 	jmp	r6
+0000402a <RSE_excepcion_TLB>:
+    402a:	f46c 	rds	r2, s1
+    402c:	24be 	addi	r2, r2, -2
+    402e:	f2b0 	wrs	s1, r2
+    4030:	a183 	jmp	r6
 
-0000a032 <RSG>:
-    a032:	2ff2 	addi	r7, r7, -14
-    a034:	41c6 	st	12(r7), r0
-    a036:	43c5 	st	10(r7), r1
-    a038:	45c4 	st	8(r7), r2
-    a03a:	47c3 	st	6(r7), r3
-    a03c:	49c2 	st	4(r7), r4
-    a03e:	4bc1 	st	2(r7), r5
-    a040:	4dc0 	st	0(r7), r6
-    a042:	f22c 	rds	r1, s0
-    a044:	f46c 	rds	r2, s1
-    a046:	f6ec 	rds	r3, s3
-    a048:	2ffa 	addi	r7, r7, -6
-    a04a:	43c2 	st	4(r7), r1
-    a04c:	45c1 	st	2(r7), r2
-    a04e:	47c0 	st	0(r7), r3
-    a050:	f2ac 	rds	r1, s2
-    a052:	540e 	movi	r2, 14
-    a054:	165a 	cmpeq	r3, r1, r2
-    a056:	670a 	bnz	r3, 22
-    a058:	540f 	movi	r2, 15
-    a05a:	165a 	cmpeq	r3, r1, r2
-    a05c:	6711 	bnz	r3, 36
+00004032 <RSG>:
+    4032:	f9f0 	wrs	s4, r7
+    4034:	ffac 	rds	r7, s6
+    4036:	2ff2 	addi	r7, r7, -14
+    4038:	41c6 	st	12(r7), r0
+    403a:	43c5 	st	10(r7), r1
+    403c:	45c4 	st	8(r7), r2
+    403e:	47c3 	st	6(r7), r3
+    4040:	49c2 	st	4(r7), r4
+    4042:	4bc1 	st	2(r7), r5
+    4044:	4dc0 	st	0(r7), r6
+    4046:	f22c 	rds	r1, s0
+    4048:	f46c 	rds	r2, s1
+    404a:	f6ec 	rds	r3, s3
+    404c:	f92c 	rds	r4, s4
+    404e:	fdac 	rds	r6, s6
+    4050:	2ff6 	addi	r7, r7, -10
+    4052:	43c4 	st	8(r7), r1
+    4054:	45c3 	st	6(r7), r2
+    4056:	47c2 	st	4(r7), r3
+    4058:	49c1 	st	2(r7), r4
+    405a:	4dc0 	st	0(r7), r6
+    405c:	f2ac 	rds	r1, s2
+    405e:	540e 	movi	r2, 14
+    4060:	165a 	cmpeq	r3, r1, r2
+    4062:	670a 	bnz	r3, 22
+    4064:	540f 	movi	r2, 15
+    4066:	165a 	cmpeq	r3, r1, r2
+    4068:	6711 	bnz	r3, 36
 
-0000a05e <__excepcion>:
-    a05e:	5408 	movi	r2, 8
-    a060:	5590 	movhi	r2, -112
-    a062:	0261 	add	r1, r1, r1
-    a064:	04a1 	add	r2, r2, r1
-    a066:	3480 	ld	r2, 0(r2)
-    a068:	ac84 	jal	r6, r2
-    a06a:	6611 	bz	r3, 36
+0000406a <__excepcion>:
+    406a:	5408 	movi	r2, 8
+    406c:	5590 	movhi	r2, -112
+    406e:	0261 	add	r1, r1, r1
+    4070:	04a1 	add	r2, r2, r1
+    4072:	3480 	ld	r2, 0(r2)
+    4074:	ac84 	jal	r6, r2
+    4076:	6611 	bz	r3, 36
 
-0000a06c <__call_sistema>:
-    a06c:	f2ec 	rds	r1, s3
-    a06e:	5407 	movi	r2, 7
-    a070:	0242 	and	r1, r1, r2
-    a072:	0261 	add	r1, r1, r1
-    a074:	5424 	movi	r2, 36
-    a076:	5590 	movhi	r2, -112
-    a078:	04a1 	add	r2, r2, r1
-    a07a:	3480 	ld	r2, 0(r2)
-    a07c:	ac84 	jal	r6, r2
-    a07e:	6707 	bnz	r3, 16
+00004078 <__call_sistema>:
+    4078:	f2ec 	rds	r1, s3
+    407a:	5407 	movi	r2, 7
+    407c:	0242 	and	r1, r1, r2
+    407e:	0261 	add	r1, r1, r1
+    4080:	5424 	movi	r2, 36
+    4082:	5590 	movhi	r2, -112
+    4084:	04a1 	add	r2, r2, r1
+    4086:	3480 	ld	r2, 0(r2)
+    4088:	aa84 	jal	r5, r2
+    408a:	6707 	bnz	r3, 16
 
-0000a080 <__interrupcion>:
-    a080:	f228 	getiid	r1
-    a082:	0261 	add	r1, r1, r1
-    a084:	5400 	movi	r2, 0
-    a086:	5590 	movhi	r2, -112
-    a088:	04a1 	add	r2, r2, r1
-    a08a:	3480 	ld	r2, 0(r2)
-    a08c:	aa84 	jal	r5, r2
+0000408c <__interrupcion>:
+    408c:	f228 	getiid	r1
+    408e:	0261 	add	r1, r1, r1
+    4090:	5400 	movi	r2, 0
+    4092:	5590 	movhi	r2, -112
+    4094:	04a1 	add	r2, r2, r1
+    4096:	3480 	ld	r2, 0(r2)
+    4098:	aa84 	jal	r5, r2
 
-0000a08e <__finRSG>:
-    a08e:	37c0 	ld	r3, 0(r7)
-    a090:	35c1 	ld	r2, 2(r7)
-    a092:	33c2 	ld	r1, 4(r7)
-    a094:	2fc6 	addi	r7, r7, 6
-    a096:	f6f0 	wrs	s3, r3
-    a098:	f2b0 	wrs	s1, r2
-    a09a:	f070 	wrs	s0, r1
-    a09c:	3dc0 	ld	r6, 0(r7)
-    a09e:	3bc1 	ld	r5, 2(r7)
-    a0a0:	39c2 	ld	r4, 4(r7)
-    a0a2:	37c3 	ld	r3, 6(r7)
-    a0a4:	35c4 	ld	r2, 8(r7)
-    a0a6:	33c5 	ld	r1, 10(r7)
-    a0a8:	31c6 	ld	r0, 12(r7)
-    a0aa:	2fce 	addi	r7, r7, 14
-    a0ac:	f024 	reti	
+0000409a <__finRSG>:
+    409a:	3dc0 	ld	r6, 0(r7)
+    409c:	39c1 	ld	r4, 2(r7)
+    409e:	37c2 	ld	r3, 4(r7)
+    40a0:	35c3 	ld	r2, 6(r7)
+    40a2:	33c4 	ld	r1, 8(r7)
+    40a4:	2fca 	addi	r7, r7, 10
+    40a6:	fdb0 	wrs	s6, r6
+    40a8:	f930 	wrs	s4, r4
+    40aa:	f6f0 	wrs	s3, r3
+    40ac:	f2b0 	wrs	s1, r2
+    40ae:	f070 	wrs	s0, r1
+    40b0:	3dc0 	ld	r6, 0(r7)
+    40b2:	3bc1 	ld	r5, 2(r7)
+    40b4:	39c2 	ld	r4, 4(r7)
+    40b6:	37c3 	ld	r3, 6(r7)
+    40b8:	35c4 	ld	r2, 8(r7)
+    40ba:	33c5 	ld	r1, 10(r7)
+    40bc:	31c6 	ld	r0, 12(r7)
+    40be:	2fce 	addi	r7, r7, 14
+    40c0:	fdf0 	wrs	s6, r7
+    40c2:	ff2c 	rds	r7, s4
+    40c4:	f024 	reti	
 
-0000a0ae <init_task0>:
+000040c6 <RSI__interrup_timer>:
+    40c6:	5836 	movi	r4, 54
+    40c8:	5990 	movhi	r4, -112
+    40ca:	3700 	ld	r3, 0(r4)
+    40cc:	26c1 	addi	r3, r3, 1
+    40ce:	4700 	st	0(r4), r3
+    40d0:	7706 	out	6, r3
+    40d2:	2d40 	addi	r6, r5, 0
+    40d4:	5402 	movi	r2, 2
+    40d6:	5542 	movhi	r2, 66
+    40d8:	aa84 	jal	r5, r2
+    40da:	2b80 	addi	r5, r6, 0
+    40dc:	a143 	jmp	r5
 
+000040de <RSI__interrup_keyboard>:
+    40de:	760f 	in	r3, 15
+    40e0:	5834 	movi	r4, 52
+    40e2:	5990 	movhi	r4, -112
+    40e4:	4700 	st	0(r4), r3
+    40e6:	a143 	jmp	r5
+
+000040e8 <SYS_getticks>:
+    40e8:	5236 	movi	r1, 54
+    40ea:	5390 	movhi	r1, -112
+    40ec:	3240 	ld	r1, 0(r1)
+    40ee:	43ca 	st	20(r7), r1
+    40f0:	a143 	jmp	r5
+
+000040f2 <SYS_getkeyboard>:
+    40f2:	5234 	movi	r1, 52
+    40f4:	5390 	movhi	r1, -112
+    40f6:	3240 	ld	r1, 0(r1)
+    40f8:	43ca 	st	20(r7), r1
+    40fa:	a143 	jmp	r5
+
+000040fc <init_task0>:
 extern void RSG();
-
+extern int tics_timer;
+extern int tecla_pulsada;
 
 void init_task0() {
-    a0ae:	2ff8 	addi	r7, r7, -8
-    a0b0:	4bc3 	st	6(r7), r5
-    a0b2:	4dc2 	st	4(r7), r6
-    a0b4:	2dc4 	addi	r6, r7, 4
-    a0b6:	45c1 	st	2(r7), r2
-    a0b8:	47c0 	st	0(r7), r3
+    40fc:	2ff8 	addi	r7, r7, -8
+    40fe:	4bc3 	st	6(r7), r5
+    4100:	4dc2 	st	4(r7), r6
+    4102:	2dc4 	addi	r6, r7, 4
+    4104:	45c1 	st	2(r7), r2
+    4106:	47c0 	st	0(r7), r3
 	*(PCB_task0) = 0; //PID
-    a0ba:	5234 	movi	r1, 52
-    a0bc:	5390 	movhi	r1, -112
-    a0be:	3240 	ld	r1, 0(r1)
-    a0c0:	5400 	movi	r2, 0
-    a0c2:	4440 	st	0(r1), r2
-	*(PCB_task0+1) = (uint16_t)(PCB_task0 + PCB_SIZE); //kernel esp
-    a0c4:	5600 	movi	r3, 0
-    a0c6:	5705 	movhi	r3, 5
-    a0c8:	0463 	add	r2, r1, r3
-    a0ca:	4441 	st	2(r1), r2
+    4108:	5238 	movi	r1, 56
+    410a:	5390 	movhi	r1, -112
+    410c:	3240 	ld	r1, 0(r1)
+    410e:	5400 	movi	r2, 0
+    4110:	4440 	st	0(r1), r2
+	*(PCB_task0+1) = (uint16_t)(PCB_task0 + PCB_SIZE); //kernel ebp
+    4112:	5600 	movi	r3, 0
+    4114:	5705 	movhi	r3, 5
+    4116:	0463 	add	r2, r1, r3
+    4118:	4441 	st	2(r1), r2
+	//*(PCB_task0+2) = (uint16_t)(PCB_task0 + PCB_SIZE); //kernel esp
 
 }
-    a0cc:	35c1 	ld	r2, 2(r7)
-    a0ce:	37c0 	ld	r3, 0(r7)
-    a0d0:	3dc2 	ld	r6, 4(r7)
-    a0d2:	3bc3 	ld	r5, 6(r7)
-    a0d4:	2fc8 	addi	r7, r7, 8
-    a0d6:	a143 	jmp	r5
+    411a:	35c1 	ld	r2, 2(r7)
+    411c:	37c0 	ld	r3, 0(r7)
+    411e:	3dc2 	ld	r6, 4(r7)
+    4120:	3bc3 	ld	r5, 6(r7)
+    4122:	2fc8 	addi	r7, r7, 8
+    4124:	a143 	jmp	r5
 
-0000a0d8 <init_task1>:
+00004126 <init_task1>:
 void init_task1() {
-    a0d8:	2ff4 	addi	r7, r7, -12
-    a0da:	4bc5 	st	10(r7), r5
-    a0dc:	4dc4 	st	8(r7), r6
-    a0de:	2dc8 	addi	r6, r7, 8
-    a0e0:	41c3 	st	6(r7), r0
-    a0e2:	45c2 	st	4(r7), r2
-    a0e4:	47c1 	st	2(r7), r3
-    a0e6:	49c0 	st	0(r7), r4
+    4126:	2ff4 	addi	r7, r7, -12
+    4128:	4bc5 	st	10(r7), r5
+    412a:	4dc4 	st	8(r7), r6
+    412c:	2dc8 	addi	r6, r7, 8
+    412e:	41c3 	st	6(r7), r0
+    4130:	45c2 	st	4(r7), r2
+    4132:	47c1 	st	2(r7), r3
+    4134:	49c0 	st	0(r7), r4
 
 	*(PCB_task1) = 1; //PID
-    a0e8:	5236 	movi	r1, 54
-    a0ea:	5390 	movhi	r1, -112
-    a0ec:	3240 	ld	r1, 0(r1)
-    a0ee:	5001 	movi	r0, 1
-    a0f0:	4040 	st	0(r1), r0
-	//kernel ebp, el 12 surt de la llibreta
-	uint16_t * kernel_ebp = (uint16_t *)(PCB_task1 + PCB_SIZE - 12);
-    a0f2:	54e8 	movi	r2, -24
-    a0f4:	5504 	movhi	r2, 4
-    a0f6:	0662 	add	r3, r1, r2
-	*(PCB_task1+1) = (uint16_t)(kernel_ebp) - 6; 
-    a0f8:	58e2 	movi	r4, -30
-    a0fa:	5904 	movhi	r4, 4
-    a0fc:	0464 	add	r2, r1, r4
-    a0fe:	4441 	st	2(r1), r2
+    4136:	523a 	movi	r1, 58
+    4138:	5390 	movhi	r1, -112
+    413a:	3440 	ld	r2, 0(r1)
+    413c:	5001 	movi	r0, 1
+    413e:	4080 	st	0(r2), r0
+	//kernel ebp, el 12+2 surt de la llibreta
+	uint16_t * kernel_ebp = (uint16_t *)(PCB_task1 + PCB_SIZE - 14);
+    4140:	52e4 	movi	r1, -28
+    4142:	5304 	movhi	r1, 4
+    4144:	06a1 	add	r3, r2, r1
+	*(PCB_task1+1) = (uint16_t)(kernel_ebp) - 6; //kernel ebp
+    4146:	58de 	movi	r4, -34
+    4148:	5904 	movhi	r4, 4
+    414a:	02a4 	add	r1, r2, r4
+    414c:	4281 	st	2(r2), r1
+	//*(PCB_task1+2) = (uint16_t)(kernel_ebp) - 6; //kernel esp
 	
 	//Return from first task switch
-	*(kernel_ebp+1) = ((uint16_t)&RSG + 92); //92 instruccions fins a __finRSG 
-    a100:	5232 	movi	r1, 50
-    a102:	53a0 	movhi	r1, -96
-    a104:	545c 	movi	r2, 92
-    a106:	0262 	add	r1, r1, r2
-    a108:	42c1 	st	2(r3), r1
-	*(kernel_ebp+2) = 0; //s3
-    a10a:	5800 	movi	r4, 0
-    a10c:	48c2 	st	4(r3), r4
-	*(kernel_ebp+3) = task1_code; //s1
-    a10e:	5200 	movi	r1, 0
-    a110:	5330 	movhi	r1, 48
-    a112:	42c3 	st	6(r3), r1
-	*(kernel_ebp+4) = 2; //s0
-    a114:	5402 	movi	r2, 2
-    a116:	44c4 	st	8(r3), r2
+	*(kernel_ebp+1) = ((uint16_t)&RSG + 104); //92 instruccions fins a __finRSG 
+    414e:	5232 	movi	r1, 50
+    4150:	5340 	movhi	r1, 64
+    4152:	5868 	movi	r4, 104
+    4154:	0264 	add	r1, r1, r4
+    4156:	42c1 	st	2(r3), r1
+	*(kernel_ebp+2) = (uint16_t)(PCB_task1 + PCB_SIZE); //s6 pila sist 
+    4158:	5200 	movi	r1, 0
+    415a:	5305 	movhi	r1, 5
+    415c:	04a1 	add	r2, r2, r1
+    415e:	44c2 	st	4(r3), r2
+	*(kernel_ebp+3) = task1_code; //s4 pila user
+    4160:	5200 	movi	r1, 0
+    4162:	5330 	movhi	r1, 48
+    4164:	42c3 	st	6(r3), r1
+	*(kernel_ebp+4) = 0; //s3
+    4166:	5800 	movi	r4, 0
+    4168:	48c4 	st	8(r3), r4
+	*(kernel_ebp+5) = task1_code; //s1
+    416a:	42c5 	st	10(r3), r1
+	*(kernel_ebp+6) = 2; //s0
+    416c:	5402 	movi	r2, 2
+    416e:	44c6 	st	12(r3), r2
 	//Regs
-	*(kernel_ebp+5) = 6; 
-    a118:	5206 	movi	r1, 6
-    a11a:	42c5 	st	10(r3), r1
-	*(kernel_ebp+6) = 5;
-    a11c:	5205 	movi	r1, 5
-    a11e:	42c6 	st	12(r3), r1
-	*(kernel_ebp+7) = 4;
-    a120:	5204 	movi	r1, 4
-    a122:	42c7 	st	14(r3), r1
-	*(kernel_ebp+8) = 3;
-    a124:	5203 	movi	r1, 3
-    a126:	42c8 	st	16(r3), r1
-	*(kernel_ebp+9) = 2;
-    a128:	44c9 	st	18(r3), r2
-	*(kernel_ebp+10) = 1;
-    a12a:	40ca 	st	20(r3), r0
-	*(kernel_ebp+11) = 0;
-    a12c:	48cb 	st	22(r3), r4
+	*(kernel_ebp+7) = 6; 
+    4170:	5206 	movi	r1, 6
+    4172:	42c7 	st	14(r3), r1
+	*(kernel_ebp+8) = 5;
+    4174:	5205 	movi	r1, 5
+    4176:	42c8 	st	16(r3), r1
+	*(kernel_ebp+9) = 4;
+    4178:	5204 	movi	r1, 4
+    417a:	42c9 	st	18(r3), r1
+	*(kernel_ebp+10) = 3;
+    417c:	5203 	movi	r1, 3
+    417e:	42ca 	st	20(r3), r1
+	*(kernel_ebp+11) = 2;
+    4180:	44cb 	st	22(r3), r2
+	*(kernel_ebp+12) = 1;
+    4182:	40cc 	st	24(r3), r0
+	*(kernel_ebp+13) = 0;
+    4184:	48cd 	st	26(r3), r4
 }
-    a12e:	31c3 	ld	r0, 6(r7)
-    a130:	35c2 	ld	r2, 4(r7)
-    a132:	37c1 	ld	r3, 2(r7)
-    a134:	39c0 	ld	r4, 0(r7)
-    a136:	3dc4 	ld	r6, 8(r7)
-    a138:	3bc5 	ld	r5, 10(r7)
-    a13a:	2fcc 	addi	r7, r7, 12
-    a13c:	a143 	jmp	r5
+    4186:	31c3 	ld	r0, 6(r7)
+    4188:	35c2 	ld	r2, 4(r7)
+    418a:	37c1 	ld	r3, 2(r7)
+    418c:	39c0 	ld	r4, 0(r7)
+    418e:	3dc4 	ld	r6, 8(r7)
+    4190:	3bc5 	ld	r5, 10(r7)
+    4192:	2fcc 	addi	r7, r7, 12
+    4194:	a143 	jmp	r5
 
-0000a13e <task_switch>:
+00004196 <task_switch>:
 void task_switch() {
-    a13e:	2ff6 	addi	r7, r7, -10
-    a140:	4bc4 	st	8(r7), r5
-    a142:	4dc3 	st	6(r7), r6
-    a144:	2dc6 	addi	r6, r7, 6
-    a146:	45c2 	st	4(r7), r2
-    a148:	47c1 	st	2(r7), r3
-    a14a:	49c0 	st	0(r7), r4
+    4196:	2ff6 	addi	r7, r7, -10
+    4198:	4bc4 	st	8(r7), r5
+    419a:	4dc3 	st	6(r7), r6
+    419c:	2dc6 	addi	r6, r7, 6
+    419e:	45c2 	st	4(r7), r2
+    41a0:	47c1 	st	2(r7), r3
+    41a2:	49c0 	st	0(r7), r4
 
 	uint16_t * tmp_task = ready_task;
-    a14c:	583a 	movi	r4, 58
-    a14e:	5990 	movhi	r4, -112
-    a150:	3500 	ld	r2, 0(r4)
+    41a4:	583c 	movi	r4, 60
+    41a6:	5990 	movhi	r4, -112
+    41a8:	3500 	ld	r2, 0(r4)
 	ready_task = run_task;
-    a152:	563c 	movi	r3, 60
-    a154:	5790 	movhi	r3, -112
-    a156:	32c0 	ld	r1, 0(r3)
-    a158:	4300 	st	0(r4), r1
+    41aa:	563e 	movi	r3, 62
+    41ac:	5790 	movhi	r3, -112
+    41ae:	32c0 	ld	r1, 0(r3)
+    41b0:	4300 	st	0(r4), r1
 	run_task = tmp_task;
-    a15a:	44c0 	st	0(r3), r2
+    41b2:	44c0 	st	0(r3), r2
 	__asm__(
-    a15c:	4e41 	st	2(r1), r7
-    a15e:	3e81 	ld	r7, 2(r2)
+    41b4:	4e41 	st	2(r1), r7
+    41b6:	3e81 	ld	r7, 2(r2)
 		"st 2(%1), r7\n\t"
 		"ld r7, 2(%0)\n\t"
 		//"addi r7, r7, -6"
@@ -291,49 +351,50 @@ void task_switch() {
 	);
 	//change return address
 }
-    a160:	35c2 	ld	r2, 4(r7)
-    a162:	37c1 	ld	r3, 2(r7)
-    a164:	39c0 	ld	r4, 0(r7)
-    a166:	3dc3 	ld	r6, 6(r7)
-    a168:	3bc4 	ld	r5, 8(r7)
-    a16a:	2fca 	addi	r7, r7, 10
-    a16c:	a143 	jmp	r5
+    41b8:	35c2 	ld	r2, 4(r7)
+    41ba:	37c1 	ld	r3, 2(r7)
+    41bc:	39c0 	ld	r4, 0(r7)
+    41be:	3dc3 	ld	r6, 6(r7)
+    41c0:	3bc4 	ld	r5, 8(r7)
+    41c2:	2fca 	addi	r7, r7, 10
+    41c4:	a143 	jmp	r5
 
-0000a16e <return_user>:
+000041c6 <return_user>:
 
 void return_user () {
-    a16e:	2ff8 	addi	r7, r7, -8
-    a170:	4bc3 	st	6(r7), r5
-    a172:	4dc2 	st	4(r7), r6
-    a174:	2dc4 	addi	r6, r7, 4
-    a176:	45c1 	st	2(r7), r2
-    a178:	47c0 	st	0(r7), r3
-    int reg_jump = 0; //ini pq no es queixi el compilador
+    41c6:	2ffa 	addi	r7, r7, -6
+    41c8:	4bc2 	st	4(r7), r5
+    41ca:	4dc1 	st	2(r7), r6
+    41cc:	2dc2 	addi	r6, r7, 2
+    41ce:	45c0 	st	0(r7), r2
     int s7_content = 2;//*(kernel_esp - 3); // s(7)
     int s5_content = (int)&RSG;//*(kernel_esp - 5); // s(7)
-    a17a:	5632 	movi	r3, 50
-    a17c:	57a0 	movhi	r3, -96
+    41d0:	5432 	movi	r2, 50
+    41d2:	5540 	movhi	r2, 64
     __asm__ (
-    a17e:	5400 	movi	r2, 0
-    a180:	5202 	movi	r1, 2
-    a182:	fe70 	wrs	s7, r1
-    a184:	faf0 	wrs	s5, r3
-    a186:	5400 	movi	r2, 0
-    a188:	5510 	movhi	r2, 16
-    a18a:	5000 	movi	r0, 0
-    a18c:	5201 	movi	r1, 1
-    a18e:	5402 	movi	r2, 2
-    a190:	5603 	movi	r3, 3
-    a192:	5804 	movi	r4, 4
-    a194:	5a05 	movi	r5, 5
-    a196:	5c06 	movi	r6, 6
-    a198:	5e00 	movi	r7, 0
-    a19a:	5f85 	movhi	r7, -123
-    a19c:	a083 	jmp	r2
-	"wrs s7, %1\n\t"
-	"wrs s5, %2\n\t"
-	"movi %0, lo(0x1000)\n\t"
-	"movhi %0, hi(0x1000)\n\t"
+    41d4:	5202 	movi	r1, 2
+    41d6:	5000 	movi	r0, 0
+    41d8:	5185 	movhi	r0, -123
+    41da:	fc30 	wrs	s6, r0
+    41dc:	fe70 	wrs	s7, r1
+    41de:	fab0 	wrs	s5, r2
+    41e0:	5000 	movi	r0, 0
+    41e2:	5201 	movi	r1, 1
+    41e4:	5402 	movi	r2, 2
+    41e6:	5603 	movi	r3, 3
+    41e8:	5804 	movi	r4, 4
+    41ea:	5a05 	movi	r5, 5
+    41ec:	5c06 	movi	r6, 6
+    41ee:	5c00 	movi	r6, 0
+    41f0:	5d10 	movhi	r6, 16
+    41f2:	5e00 	movi	r7, 0
+    41f4:	5f10 	movhi	r7, 16
+    41f6:	a183 	jmp	r6
+	"movi r0, lo(0x8500)\n\t"
+	"movhi r0, hi(0x8500)\n\t"
+	"wrs s6, r0\n\t"
+	"wrs s7, %0\n\t"
+	"wrs s5, %1\n\t"
 	"movi r0, 0\n\t"
 	"movi r1, 1\n\t"
 	"movi r2, 2\n\t"
@@ -341,76 +402,91 @@ void return_user () {
 	"movi r4, 4\n\t"
 	"movi r5, 5\n\t"
 	"movi r6, 6\n\t"
-	"movi r7, lo(0x8500)\n\t"
-	"movhi r7, hi(0x8500)\n\t"
-	"jmp %0"
+	"movi r6, lo(0x1000)\n\t"
+	"movhi r6, hi(0x1000)\n\t"
+	"movi r7, lo(0x1000)\n\t" //aixo amb el entry.s no cal en realitat
+	"movhi r7, hi(0x1000)\n\t"
+	"jmp r6"
 	: // sense sortida
-	: "r" (reg_jump), "r" (s7_content), "r" (s5_content)  
+	: "r" (s7_content), "r" (s5_content)  
 	);
 }
-    a19e:	35c1 	ld	r2, 2(r7)
-    a1a0:	37c0 	ld	r3, 0(r7)
-    a1a2:	3dc2 	ld	r6, 4(r7)
-    a1a4:	3bc3 	ld	r5, 6(r7)
-    a1a6:	2fc8 	addi	r7, r7, 8
-    a1a8:	a143 	jmp	r5
+    41f8:	35c0 	ld	r2, 0(r7)
+    41fa:	3dc1 	ld	r6, 2(r7)
+    41fc:	3bc2 	ld	r5, 4(r7)
+    41fe:	2fc6 	addi	r7, r7, 6
+    4200:	a143 	jmp	r5
 
-0000a1aa <C_RSI_Timer>:
+00004202 <C_RSI_Timer>:
 
-int count;
+extern int tics_timer;
 void C_RSI_Timer () {
-    a1aa:	2ffc 	addi	r7, r7, -4
-    a1ac:	4bc1 	st	2(r7), r5
-    a1ae:	4dc0 	st	0(r7), r6
-    a1b0:	2dc0 	addi	r6, r7, 0
-	task_switch();
-    a1b2:	523e 	movi	r1, 62
-    a1b4:	53a1 	movhi	r1, -95
-    a1b6:	aa44 	jal	r5, r1
+    4202:	2ffa 	addi	r7, r7, -6
+    4204:	4bc2 	st	4(r7), r5
+    4206:	4dc1 	st	2(r7), r6
+    4208:	2dc2 	addi	r6, r7, 2
+    420a:	45c0 	st	0(r7), r2
+	if(tics_timer==0x6666) task_switch();
+    420c:	5236 	movi	r1, 54
+    420e:	5390 	movhi	r1, -112
+    4210:	3240 	ld	r1, 0(r1)
+    4212:	5466 	movi	r2, 102
+    4214:	5566 	movhi	r2, 102
+    4216:	125a 	cmpeq	r1, r1, r2
+    4218:	6305 	bnz	r1, 12
 	//count++;
 //	if (count == task_run->quantum)
 }
-    a1b8:	3dc0 	ld	r6, 0(r7)
-    a1ba:	3bc1 	ld	r5, 2(r7)
-    a1bc:	2fc4 	addi	r7, r7, 4
-    a1be:	a143 	jmp	r5
+    421a:	35c0 	ld	r2, 0(r7)
+    421c:	3dc1 	ld	r6, 2(r7)
+    421e:	3bc2 	ld	r5, 4(r7)
+    4220:	2fc6 	addi	r7, r7, 6
+    4222:	a143 	jmp	r5
+    4224:	5296 	movi	r1, -106
+    4226:	5341 	movhi	r1, 65
+    4228:	aa44 	jal	r5, r1
+    422a:	35c0 	ld	r2, 0(r7)
+    422c:	3dc1 	ld	r6, 2(r7)
+    422e:	3bc2 	ld	r5, 4(r7)
+    4230:	2fc6 	addi	r7, r7, 6
+    4232:	a143 	jmp	r5
 
-0000a1c0 <main>:
+00004234 <main>:
 int main () {
-    a1c0:	2ffa 	addi	r7, r7, -6
-    a1c2:	4bc2 	st	4(r7), r5
-    a1c4:	4dc1 	st	2(r7), r6
-    a1c6:	2dc2 	addi	r6, r7, 2
-    a1c8:	45c0 	st	0(r7), r2
+    4234:	2ffa 	addi	r7, r7, -6
+    4236:	4bc2 	st	4(r7), r5
+    4238:	4dc1 	st	2(r7), r6
+    423a:	2dc2 	addi	r6, r7, 2
+    423c:	45c0 	st	0(r7), r2
     // activar el bit de mode system, harcodejarlo en el boot
     init_task0();
-    a1ca:	52ae 	movi	r1, -82
-    a1cc:	53a0 	movhi	r1, -96
-    a1ce:	aa44 	jal	r5, r1
+    423e:	52fc 	movi	r1, -4
+    4240:	5340 	movhi	r1, 64
+    4242:	aa44 	jal	r5, r1
     init_task1();
-    a1d0:	52d8 	movi	r1, -40
-    a1d2:	53a0 	movhi	r1, -96
-    a1d4:	aa44 	jal	r5, r1
+    4244:	5226 	movi	r1, 38
+    4246:	5341 	movhi	r1, 65
+    4248:	aa44 	jal	r5, r1
     run_task = PCB_task0; 
-    a1d6:	5234 	movi	r1, 52
-    a1d8:	5390 	movhi	r1, -112
-    a1da:	3440 	ld	r2, 0(r1)
-    a1dc:	523c 	movi	r1, 60
-    a1de:	5390 	movhi	r1, -112
-    a1e0:	4440 	st	0(r1), r2
+    424a:	5238 	movi	r1, 56
+    424c:	5390 	movhi	r1, -112
+    424e:	3440 	ld	r2, 0(r1)
+    4250:	523e 	movi	r1, 62
+    4252:	5390 	movhi	r1, -112
+    4254:	4440 	st	0(r1), r2
     ready_task = PCB_task1;
-    a1e2:	5236 	movi	r1, 54
-    a1e4:	5390 	movhi	r1, -112
-    a1e6:	3440 	ld	r2, 0(r1)
-    a1e8:	523a 	movi	r1, 58
-    a1ea:	5390 	movhi	r1, -112
-    a1ec:	4440 	st	0(r1), r2
+    4256:	523a 	movi	r1, 58
+    4258:	5390 	movhi	r1, -112
+    425a:	3440 	ld	r2, 0(r1)
+    425c:	523c 	movi	r1, 60
+    425e:	5390 	movhi	r1, -112
+    4260:	4440 	st	0(r1), r2
     return_user();
-    a1ee:	526e 	movi	r1, 110
-    a1f0:	53a1 	movhi	r1, -95
-    a1f2:	aa44 	jal	r5, r1
-    a1f4:	5a00 	movi	r5, 0
-    a1f6:	6afe 	bz	r5, -2
+    4262:	52c6 	movi	r1, -58
+    4264:	5341 	movhi	r1, 65
+    4266:	aa44 	jal	r5, r1
+    4268:	5a00 	movi	r5, 0
+    426a:	6afe 	bz	r5, -2
 
 tmp_system.o:     file format elf32-sisa
 tmp_system.o
@@ -419,63 +495,76 @@ EXEC_P, HAS_SYMS, D_PAGED
 start address 0x00000000
 
 Program Header:
-    LOAD off    0x00000000 vaddr 0x00008f8c paddr 0x00008f8c align 2**0
-         filesz 0x000000ac memsz 0x000000b2 flags rw-
-    LOAD off    0x000000ac vaddr 0x0000a000 paddr 0x0000a000 align 2**0
-         filesz 0x000001f8 memsz 0x000001f8 flags r-x
+    LOAD off    0x00000000 vaddr 0x00003f8c paddr 0x00003f8c align 2**0
+         filesz 0x000002e0 memsz 0x000002e0 flags r-x
+    LOAD off    0x000002e0 vaddr 0x00009000 paddr 0x00009000 align 2**0
+         filesz 0x0000003c memsz 0x00000040 flags rw-
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn  Flags
-  0 .sistema      000001f8  0000a000  0000a000  000000ac  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .sysdata      00000038  00009000  00009000  00000074  2**1  CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000006  00009038  00009038  000000ac  2**1  ALLOC
-  3 .stab         000003d8  00009040  00009040  000002a4  2**2  CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      000003e7  00009418  00009418  0000067c  2**0  CONTENTS, READONLY, DEBUGGING
+  0 .sistema      0000026c  00004000  00004000  00000074  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .sysdata      0000003c  00009000  00009000  000002e0  2**1  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000004  0000903c  0000903c  0000031c  2**1  ALLOC
+  3 .stab         000003fc  00009040  00009040  0000031c  2**2  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      000003da  0000943c  0000943c  00000718  2**0  CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
 00009000 l    d  .sysdata	00000000 .sysdata
 00009000 l       .sysdata	00000000 interrupts_vector
 00009008 l       .sysdata	00000000 exceptions_vector
 00009024 l       .sysdata	00000000 call_sys_vector
-00009036 g     O .sysdata	00000002 PCB_task1
-00009034 g     O .sysdata	00000002 PCB_task0
+00009034 g       .sysdata	00000000 tecla_pulsada
+00009036 g       .sysdata	00000000 tics_timer
+0000903a g     O .sysdata	00000002 PCB_task1
+00009038 g     O .sysdata	00000002 PCB_task0
 
 
 Disassembly of section .sysdata:
 
 00009000 <interrupts_vector>:
-    9000:	a1aa 	.word	0xa1aa
-    9002:	a028 	.word	0xa028
-    9004:	a028 	.word	0xa028
-    9006:	a028 	.word	0xa028
+    init_task0();
+    init_task1();
+    run_task = PCB_task0; 
+    ready_task = PCB_task1;
+    return_user();
+    9000:	4202 	st	4(r0), r1
+    9002:	40c6 	st	12(r3), r0
+    9004:	4028 	st	-48(r0), r0
+    9006:	40de 	st	60(r3), r0
 
 00009008 <exceptions_vector>:
-    9008:	a022 	.word	0xa022
-    900a:	a022 	.word	0xa022
-    900c:	a026 	.word	0xa026
-    900e:	a026 	.word	0xa026
-    9010:	a022 	.word	0xa022
-    9012:	a022 	.word	0xa022
-    9014:	a02a 	.word	0xa02a
-    9016:	a02a 	.word	0xa02a
-    9018:	a02a 	.word	0xa02a
-    901a:	a02a 	.word	0xa02a
-    901c:	a022 	.word	0xa022
-    901e:	a022 	.word	0xa022
-    9020:	a022 	.word	0xa022
-    9022:	a022 	.word	0xa022
+    9008:	4022 	st	-60(r0), r0
+    900a:	4022 	st	-60(r0), r0
+    900c:	4026 	st	-52(r0), r0
+    900e:	4026 	st	-52(r0), r0
+    9010:	4022 	st	-60(r0), r0
+    9012:	4022 	st	-60(r0), r0
+    9014:	402a 	st	-44(r0), r0
+    9016:	402a 	st	-44(r0), r0
+    9018:	402a 	st	-44(r0), r0
+    901a:	402a 	st	-44(r0), r0
+    901c:	4022 	st	-60(r0), r0
+    901e:	4022 	st	-60(r0), r0
+    9020:	4022 	st	-60(r0), r0
+    9022:	4022 	st	-60(r0), r0
 
 00009024 <call_sys_vector>:
-    9024:	a026 	.word	0xa026
-    9026:	a026 	.word	0xa026
-    9028:	a026 	.word	0xa026
-    902a:	a026 	.word	0xa026
-    902c:	a026 	.word	0xa026
-    902e:	a026 	.word	0xa026
-    9030:	a026 	.word	0xa026
-    9032:	a026 	.word	0xa026
+    9024:	40e8 	st	-48(r3), r0
+    9026:	40f2 	st	-28(r3), r0
+    9028:	4026 	st	-52(r0), r0
+    902a:	4026 	st	-52(r0), r0
+    902c:	4026 	st	-52(r0), r0
+    902e:	4026 	st	-52(r0), r0
+    9030:	4026 	st	-52(r0), r0
+    9032:	4026 	st	-52(r0), r0
 
-00009034 <PCB_task0>:
-    9034:	8000                                        ..
+00009034 <tecla_pulsada>:
+	...
 
-00009036 <PCB_task1>:
-    9036:	8500                                        ..
+00009036 <tics_timer>:
+    9036:	6666 	bz	r3, 206
+
+00009038 <PCB_task0>:
+    9038:	8000                                        ..
+
+0000903a <PCB_task1>:
+    903a:	8500                                        ..

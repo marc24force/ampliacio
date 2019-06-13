@@ -7,7 +7,7 @@ OUTPUT_ARCH(sisa)
 SECTIONS
 {
   /* Ens situem a la part de flash */
-  . = 0xA000 ;
+  . = 0x4000 ;
 
   /* text space */
   .sistema :

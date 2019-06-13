@@ -3,4 +3,32 @@ cuidado que 0x500 + 0x500 != 0x1000 bueno jo m'entenc, que la PCB del dos esta a
 si es canvia el codi del task0 al define, s'ha de canviar tb al return_user!
 	tambe la seva pila..no se fer servir defines al assembler inline :p
 
-NO TOCAR EL TASK SWITCH SI AIXO AFEGEIX VARIABLES LOCALS. ESTAN HARDCODED AL TASK1 PER FER EL PRIMER SWITCH!!!!
+NO TOCAR EL TASK SWITCH SI AIXO AFEGEIX VARIABLES LOCALS. ESTAN HARDCODED AL TASK1 PER FER EL PRIMER SWITCH!!!
+
+
+HE HAGUT DE LIAR L'ENTRADA I SORTIDA A SISTEMA (RSG) PER A UTILTIZAR S6 I S4, CANVI DE PILA! potser r6 no caldria guardarlo pero bueno mas vale prevenir que curar
+
+
+return user optimitzable
+
+
+fibonacci:
+	canviat el entry.s
+	tb he canviat el system-lds, les direccions
+
+corre letras
+	canviat el entry.s -> el que hi ha es per standalone (amb el seu S.O i tot). Copio el del fibonacci i del de corre letras em quedo nomes amb les dues RSI (canviant els jmp a r5)
+	tb he canviat el system.lds, les direccions
+
+	per testing, he posat el kernel a 0x4000 (pantalla hardcoded a 0xA000)
+		aixo implica canviar sistem.lds i ./execute.sh
+
+	He afegit al sistema operatiu les globals ticks_timer i tecla_pulsada
+
+	Afegeixo dos syscalls, getticks i getkey
+		les syscalls retornaran valors per r1.
+
+	a la rsg de syscalls tb he canviat el jal a r5
+
+	corre_letras -> comentaris //meu 
+ 

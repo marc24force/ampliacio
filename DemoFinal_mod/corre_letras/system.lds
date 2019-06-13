@@ -7,13 +7,13 @@ OUTPUT_ARCH(sisa)
 SECTIONS
 {
   /* Ens situem a la part de flash */
-  . = 0xc000 ;
+  . = 0x3000 ;
 
   /* text space */
   .sistema :
   {
-    entrada.o(.text) corre_letras.o(.text)
-    entrada.o(.rodata) corre_letras.o(.rodata)
+    entrada.o(.text) corre_letras.o(.text) lib_sisa.o(.text)
+    entrada.o(.rodata) corre_letras.o(.rodata) lib_sisa.o(.rodata)
     . = ALIGN(2);
   }
   __entry_point = LOADADDR(.sistema);
@@ -27,7 +27,7 @@ SECTIONS
   __user_end = __user_start + SIZEOF(.user);
   
    /* Ens situem en la part de sistema */
-  . = 0x8000 ;
+  . = 0x2000 ;
 
   .sysdata : {  entrada.o(.data) corre_letras.o(.data)  }
 }

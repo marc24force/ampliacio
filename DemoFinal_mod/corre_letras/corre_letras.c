@@ -1,3 +1,4 @@
+#include "lib_sisa.h"
 /**************************************************************
 * Borra la pantalla: Escribe 80x30 caracteres (espacios con   *
 * fondo negro) en la memoria de la pantalla (0xA000)          *
@@ -156,6 +157,11 @@ void reset_corre_letras(void)
 
 
 int main (void) {
+    int k=0;
+    while(1){
+	k = lib_getkeyboard();
+    }
+
 
     unsigned int tics_anterior=0;
     int pause=0;
@@ -165,6 +171,7 @@ int main (void) {
         reset_corre_letras();
 
         while (1) {
+	    tecla_pulsada = lib_getkeyboard();
             switch (tecla_pulsada)
             {
             case 'r':    case 'R':
@@ -182,15 +189,18 @@ int main (void) {
             }
 
             if (pause==0) {
-                // para DEBUG: mostramos los valores del timer por los leds verdes
+		
+		/********************************/    
+		tics_timer = lib_getticks(); //meu
+                /********************************/
+
+		// para DEBUG: mostramos los valores del timer por los leds verdes
                 __asm__ ( "out %0, %1" 
                         : /* sin salidas*/
                         : "i" (5), "r" (tics_timer));
                 // fin DEBUG
-
                 if (tics_timer!=tics_anterior) {
                     tics_anterior=tics_timer;
-
                     int fila;
                     for (fila=0; fila<NUMERO_LETRAS; fila++) {
                         if (tics_timer%divisores[fila]==0) {
