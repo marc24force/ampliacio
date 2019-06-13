@@ -27,7 +27,7 @@ SECTIONS
   __user_end = __user_start + SIZEOF(.user);
   
    /* Ens situem en la part de sistema */
-  . = 0x8000 ;
+  . = 0x9000 ;
 
   .sysdata : { entrada.o(.data) rsg.o(.data) system.o(.data)}
 }

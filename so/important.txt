@@ -1,0 +1,6 @@
+cuidado que 0x500 + 0x500 != 0x1000 bueno jo m'entenc, que la PCB del dos esta acabant a 0x8A00 i no 0x9000
+
+si es canvia el codi del task0 al define, s'ha de canviar tb al return_user!
+	tambe la seva pila..no se fer servir defines al assembler inline :p
+
+NO TOCAR EL TASK SWITCH SI AIXO AFEGEIX VARIABLES LOCALS. ESTAN HARDCODED AL TASK1 PER FER EL PRIMER SWITCH!!!!

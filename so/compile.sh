@@ -1,5 +1,5 @@
 #!/bin/bash
-
+export PATH=$HOME/eines-sisa/bin:$PATH
 
 echo "Ensamblando ..."
 #compila el ensamblador

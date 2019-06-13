@@ -1,14 +1,16 @@
 .include "macros.s" 
 .set PILA, 0x9500     
 .set INICI, 0xA000
+.globl RSG
+.type RSG, @function
 ; una posición de memoria de una zona no ocupada para usarse como PILA 
 ; seccion de datos 
 .data 
 	.balign 2                    
 	; por si acaso, pero no debería ser necesario
 	interrupts_vector: 
-		.word RSI_Timer ; 0
-		.word RSI_default_resume ; 1 Pulsadores (KEY) 
+		.word C_RSI_Timer ; 0 Timer
+		.word C_RSI_Timer ; 1 Pulsadores (KEY) 
 		.word RSI_default_resume ; 2 Interruptores (SWITCH)
 		.word RSI_default_resume ; 3 Teclado PS/2 
 	exceptions_vector: 
@@ -134,7 +136,7 @@
 		 movhi  R2, hi(interrupts_vector) 
 		 add    R2, R2, R1 
 		 ld     R2, 0(R2) 
-		 jal    R6, R2 
+		 jal    R5, R2 ;aquest r5 era un r6 
 	__finRSG: 
 	;Restaurar el estado
 		 $pop  R3, R2, R1 
@@ -143,5 +145,4 @@
 		 wrs   S0, R1 
 		 $pop  R6, R5, R4, R3, R2, R1, R0 
 		 reti
-
 		
