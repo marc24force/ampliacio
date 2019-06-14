@@ -11,8 +11,8 @@
 	.balign 2                    
 	; por si acaso, pero no debería ser necesario
 	interrupts_vector: 
-		.word C_RSI_Timer ; 0 Timer
-		.word RSI__interrup_timer ; 1 Pulsadores (KEY) 
+		.word RSI__RSI_Timer ; 0 Timer
+		.word RSI_default_resume ; 1 Pulsadores (KEY) 
 		.word RSI_default_resume ; 2 Interruptores (SWITCH)
 		.word RSI__interrup_keyboard ; 3 teclado PS2
 	exceptions_vector: 
