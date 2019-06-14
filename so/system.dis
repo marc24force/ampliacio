@@ -7,17 +7,17 @@ start address 0x00000000
 
 Program Header:
     LOAD off    0x00000000 vaddr 0x00003f8c paddr 0x00003f8c align 2**0
-         filesz 0x000002e0 memsz 0x000002e0 flags r-x
-    LOAD off    0x000002e0 vaddr 0x00009000 paddr 0x00009000 align 2**0
-         filesz 0x0000003c memsz 0x00000040 flags rw-
+         filesz 0x000002ec memsz 0x000002ec flags r-x
+    LOAD off    0x000002ec vaddr 0x00009000 paddr 0x00009000 align 2**0
+         filesz 0x0000003c memsz 0x00000042 flags rw-
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn  Flags
-  0 .sistema      0000026c  00004000  00004000  00000074  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .sysdata      0000003c  00009000  00009000  000002e0  2**1  CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000004  0000903c  0000903c  0000031c  2**1  ALLOC
-  3 .stab         000003fc  00009040  00009040  0000031c  2**2  CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      000003da  0000943c  0000943c  00000718  2**0  CONTENTS, READONLY, DEBUGGING
+  0 .sistema      00000278  00004000  00004000  00000074  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .sysdata      0000003c  00009000  00009000  000002ec  2**1  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000006  0000903c  0000903c  00000328  2**1  ALLOC
+  3 .stab         00000420  00009044  00009044  00000328  2**2  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      000003e7  00009464  00009464  00000748  2**0  CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
 00004000 l    d  .sistema	00000000 .sistema
 00004010 l       .sistema	00000000 __exit
@@ -36,9 +36,9 @@ SYMBOL TABLE:
 0000409a l       .sistema	00000000 __finRSG
 00004000 g       .sistema	00000000 __entry_point
 000040fc g     F .sistema	0000002a init_task0
-00004202 g     F .sistema	00000032 C_RSI_Timer
+00004202 g     F .sistema	0000003e C_RSI_Timer
 00004126 g     F .sistema	00000070 init_task1
-00004234 g     F .sistema	00000038 main
+00004240 g     F .sistema	00000038 main
 00004032 g     F .sistema	00000000 RSG
 000041c6 g     F .sistema	0000003c return_user
 00004196 g     F .sistema	00000030 task_switch
@@ -52,7 +52,7 @@ Disassembly of section .sistema:
     4004:	fdf0 	wrs	s6, r7
     4006:	5a10 	movi	r5, 16
     4008:	5b40 	movhi	r5, 64
-    400a:	5c34 	movi	r6, 52
+    400a:	5c40 	movi	r6, 64
     400c:	5d42 	movhi	r6, 66
     400e:	a183 	jmp	r6
 
@@ -330,11 +330,11 @@ void task_switch() {
     41a2:	49c0 	st	0(r7), r4
 
 	uint16_t * tmp_task = ready_task;
-    41a4:	583c 	movi	r4, 60
+    41a4:	583e 	movi	r4, 62
     41a6:	5990 	movhi	r4, -112
     41a8:	3500 	ld	r2, 0(r4)
 	ready_task = run_task;
-    41aa:	563e 	movi	r3, 62
+    41aa:	5640 	movi	r3, 64
     41ac:	5790 	movhi	r3, -112
     41ae:	32c0 	ld	r1, 0(r3)
     41b0:	4300 	st	0(r4), r1
@@ -419,74 +419,84 @@ void return_user () {
 
 00004202 <C_RSI_Timer>:
 
-extern int tics_timer;
+int count=0; //FALTA TOT LO DEL QUANTUM
 void C_RSI_Timer () {
-    4202:	2ffa 	addi	r7, r7, -6
-    4204:	4bc2 	st	4(r7), r5
-    4206:	4dc1 	st	2(r7), r6
-    4208:	2dc2 	addi	r6, r7, 2
-    420a:	45c0 	st	0(r7), r2
-	if(tics_timer==0x6666) task_switch();
-    420c:	5236 	movi	r1, 54
-    420e:	5390 	movhi	r1, -112
-    4210:	3240 	ld	r1, 0(r1)
-    4212:	5466 	movi	r2, 102
-    4214:	5566 	movhi	r2, 102
-    4216:	125a 	cmpeq	r1, r1, r2
-    4218:	6305 	bnz	r1, 12
+    4202:	2ff8 	addi	r7, r7, -8
+    4204:	4bc3 	st	6(r7), r5
+    4206:	4dc2 	st	4(r7), r6
+    4208:	2dc4 	addi	r6, r7, 4
+    420a:	45c1 	st	2(r7), r2
+    420c:	47c0 	st	0(r7), r3
+	++count;
+    420e:	563c 	movi	r3, 60
+    4210:	5790 	movhi	r3, -112
+    4212:	32c0 	ld	r1, 0(r3)
+    4214:	2241 	addi	r1, r1, 1
+    4216:	42c0 	st	0(r3), r1
+	if(count==10) {
+    4218:	540a 	movi	r2, 10
+    421a:	125a 	cmpeq	r1, r1, r2
+    421c:	6306 	bnz	r1, 14
+		count = 0;
+		task_switch();
+	}
 	//count++;
 //	if (count == task_run->quantum)
 }
-    421a:	35c0 	ld	r2, 0(r7)
-    421c:	3dc1 	ld	r6, 2(r7)
-    421e:	3bc2 	ld	r5, 4(r7)
-    4220:	2fc6 	addi	r7, r7, 6
-    4222:	a143 	jmp	r5
-    4224:	5296 	movi	r1, -106
-    4226:	5341 	movhi	r1, 65
-    4228:	aa44 	jal	r5, r1
-    422a:	35c0 	ld	r2, 0(r7)
-    422c:	3dc1 	ld	r6, 2(r7)
-    422e:	3bc2 	ld	r5, 4(r7)
-    4230:	2fc6 	addi	r7, r7, 6
-    4232:	a143 	jmp	r5
+    421e:	35c1 	ld	r2, 2(r7)
+    4220:	37c0 	ld	r3, 0(r7)
+    4222:	3dc2 	ld	r6, 4(r7)
+    4224:	3bc3 	ld	r5, 6(r7)
+    4226:	2fc8 	addi	r7, r7, 8
+    4228:	a143 	jmp	r5
+    422a:	5200 	movi	r1, 0
+    422c:	42c0 	st	0(r3), r1
+    422e:	5296 	movi	r1, -106
+    4230:	5341 	movhi	r1, 65
+    4232:	aa44 	jal	r5, r1
+    4234:	35c1 	ld	r2, 2(r7)
+    4236:	37c0 	ld	r3, 0(r7)
+    4238:	3dc2 	ld	r6, 4(r7)
+    423a:	3bc3 	ld	r5, 6(r7)
+    423c:	2fc8 	addi	r7, r7, 8
+    423e:	a143 	jmp	r5
 
-00004234 <main>:
+00004240 <main>:
 int main () {
-    4234:	2ffa 	addi	r7, r7, -6
-    4236:	4bc2 	st	4(r7), r5
-    4238:	4dc1 	st	2(r7), r6
-    423a:	2dc2 	addi	r6, r7, 2
-    423c:	45c0 	st	0(r7), r2
+    4240:	2ffa 	addi	r7, r7, -6
+    4242:	4bc2 	st	4(r7), r5
+    4244:	4dc1 	st	2(r7), r6
+    4246:	2dc2 	addi	r6, r7, 2
+    4248:	45c0 	st	0(r7), r2
     // activar el bit de mode system, harcodejarlo en el boot
     init_task0();
-    423e:	52fc 	movi	r1, -4
-    4240:	5340 	movhi	r1, 64
-    4242:	aa44 	jal	r5, r1
+    424a:	52fc 	movi	r1, -4
+    424c:	5340 	movhi	r1, 64
+    424e:	aa44 	jal	r5, r1
     init_task1();
-    4244:	5226 	movi	r1, 38
-    4246:	5341 	movhi	r1, 65
-    4248:	aa44 	jal	r5, r1
+    4250:	5226 	movi	r1, 38
+    4252:	5341 	movhi	r1, 65
+    4254:	aa44 	jal	r5, r1
     run_task = PCB_task0; 
-    424a:	5238 	movi	r1, 56
-    424c:	5390 	movhi	r1, -112
-    424e:	3440 	ld	r2, 0(r1)
-    4250:	523e 	movi	r1, 62
-    4252:	5390 	movhi	r1, -112
-    4254:	4440 	st	0(r1), r2
-    ready_task = PCB_task1;
-    4256:	523a 	movi	r1, 58
+    4256:	5238 	movi	r1, 56
     4258:	5390 	movhi	r1, -112
     425a:	3440 	ld	r2, 0(r1)
-    425c:	523c 	movi	r1, 60
+    425c:	5240 	movi	r1, 64
     425e:	5390 	movhi	r1, -112
     4260:	4440 	st	0(r1), r2
+    ready_task = PCB_task1;
+    4262:	523a 	movi	r1, 58
+    4264:	5390 	movhi	r1, -112
+    4266:	3440 	ld	r2, 0(r1)
+    4268:	523e 	movi	r1, 62
+    426a:	5390 	movhi	r1, -112
+    426c:	4440 	st	0(r1), r2
     return_user();
-    4262:	52c6 	movi	r1, -58
-    4264:	5341 	movhi	r1, 65
-    4266:	aa44 	jal	r5, r1
-    4268:	5a00 	movi	r5, 0
-    426a:	6afe 	bz	r5, -2
+    426e:	52c6 	movi	r1, -58
+    4270:	5341 	movhi	r1, 65
+    4272:	aa44 	jal	r5, r1
+    4274:	5a00 	movi	r5, 0
+    4276:	6afe 	bz	r5, -2
 
 tmp_system.o:     file format elf32-sisa
 tmp_system.o
@@ -496,17 +506,17 @@ start address 0x00000000
 
 Program Header:
     LOAD off    0x00000000 vaddr 0x00003f8c paddr 0x00003f8c align 2**0
-         filesz 0x000002e0 memsz 0x000002e0 flags r-x
-    LOAD off    0x000002e0 vaddr 0x00009000 paddr 0x00009000 align 2**0
-         filesz 0x0000003c memsz 0x00000040 flags rw-
+         filesz 0x000002ec memsz 0x000002ec flags r-x
+    LOAD off    0x000002ec vaddr 0x00009000 paddr 0x00009000 align 2**0
+         filesz 0x0000003c memsz 0x00000042 flags rw-
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn  Flags
-  0 .sistema      0000026c  00004000  00004000  00000074  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .sysdata      0000003c  00009000  00009000  000002e0  2**1  CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000004  0000903c  0000903c  0000031c  2**1  ALLOC
-  3 .stab         000003fc  00009040  00009040  0000031c  2**2  CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      000003da  0000943c  0000943c  00000718  2**0  CONTENTS, READONLY, DEBUGGING
+  0 .sistema      00000278  00004000  00004000  00000074  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .sysdata      0000003c  00009000  00009000  000002ec  2**1  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000006  0000903c  0000903c  00000328  2**1  ALLOC
+  3 .stab         00000420  00009044  00009044  00000328  2**2  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      000003e7  00009464  00009464  00000748  2**0  CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
 00009000 l    d  .sysdata	00000000 .sysdata
 00009000 l       .sysdata	00000000 interrupts_vector
