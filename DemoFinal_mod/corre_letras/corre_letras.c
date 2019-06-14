@@ -1,15 +1,15 @@
 #include "lib_sisa.h"
 /**************************************************************
 * Borra la pantalla: Escribe 80x30 caracteres (espacios con   *
-* fondo negro) en la memoria de la pantalla (0xA000)          *
+* fondo negro) en la memoria de la pantalla (0x4000)          *
 **************************************************************/ 
 void clear_screen(void)
 {
     int aux1, aux2, aux3;
 
     __asm__ (  
-            "movi  %0, lo(0xA000)\n\t"   //0xA000 direccion de inicio de la memoria de video
-            "movhi %0, hi(0xA000)\n\t"
+            "movi  %0, lo(0x4000)\n\t"   //0x4000 direccion de inicio de la memoria de video
+            "movhi %0, hi(0x4000)\n\t"
             "movi  %1, lo(2400)\n\t"     //(80*30=2400=0x0960) numero caracteres de la pantalla
             "movhi %1, hi(2400)\n\t"
             "movi  %2, lo(0x0020)\n\t"
@@ -36,7 +36,7 @@ void borrar_letra(int fila, int col)
 
     valor=0x0020;               //un espacio en color negro
     pos=(80*fila+col)*2;        // cada caracter ocupa 2 bytes de memoria de video
-    pos=pos + 0xA000;           // la memoria de video empieza en la direccion 0xA000 (40960)
+    pos=pos + 0x4000;           // la memoria de video empieza en la direccion 0x4000 (40960)
 
     __asm__ (
             "st 0(%0), %1"      // %0 corresponde a la variable "pos" que habra sido cargada en un registro
@@ -58,7 +58,7 @@ void mostrar_nueva_posicion(int fila, int col, char c, char color)
 
     caracter_compuesto=color*256+c;
     pos=(80*fila+col)*2;           // cada caracter ocupa 2 bytes de memoria de video
-    pos=pos + 0xA000;              // la memoria de video empieza en la direccion 0xA000 (40960)
+    pos=pos + 0x4000;              // la memoria de video empieza en la direccion 0x4000 (40960)
 
     __asm__ (
             "st 0(%0), %1"         // %0 corresponde a la variable "pos" que habra sido cargada en un registro

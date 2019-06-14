@@ -50,7 +50,7 @@ Disassembly of section .sistema:
 
 00003010 <clear_screen>:
 * Borra la pantalla: Escribe 80x30 caracteres (espacios con   *
-* fondo negro) en la memoria de la pantalla (0xA000)          *
+* fondo negro) en la memoria de la pantalla (0x4000)          *
 **************************************************************/ 
 void clear_screen(void)
 {
@@ -67,7 +67,7 @@ void clear_screen(void)
     301e:	35be 	ld	r2, -4(r6)
     3020:	33bf 	ld	r1, -2(r6)
     3022:	5600 	movi	r3, 0
-    3024:	57a0 	movhi	r3, -96
+    3024:	5740 	movhi	r3, 64
     3026:	5460 	movi	r2, 96
     3028:	5509 	movhi	r2, 9
     302a:	5220 	movi	r1, 32
@@ -78,8 +78,8 @@ void clear_screen(void)
     3030:	26c2 	addi	r3, r3, 2
     3032:	24bf 	addi	r2, r2, -1
     3034:	65fc 	bnz	r2, -6
-            "movi  %0, lo(0xA000)\n\t"   //0xA000 direccion de inicio de la memoria de video
-            "movhi %0, hi(0xA000)\n\t"
+            "movi  %0, lo(0x4000)\n\t"   //0x4000 direccion de inicio de la memoria de video
+            "movhi %0, hi(0x4000)\n\t"
             "movi  %1, lo(2400)\n\t"     //(80*30=2400=0x0960) numero caracteres de la pantalla
             "movhi %1, hi(2400)\n\t"
             "movi  %2, lo(0x0020)\n\t"
@@ -133,10 +133,10 @@ void borrar_letra(int fila, int col)
     3062:	02a1 	add	r1, r2, r1
     3064:	0261 	add	r1, r1, r1
     3066:	43bf 	st	-2(r6), r1
-    pos=pos + 0xA000;           // la memoria de video empieza en la direccion 0xA000 (40960)
+    pos=pos + 0x4000;           // la memoria de video empieza en la direccion 0x4000 (40960)
     3068:	33bf 	ld	r1, -2(r6)
     306a:	5400 	movi	r2, 0
-    306c:	55a0 	movhi	r2, -96
+    306c:	5540 	movhi	r2, 64
     306e:	0262 	add	r1, r1, r2
     3070:	43bf 	st	-2(r6), r1
 
@@ -194,10 +194,10 @@ void mostrar_nueva_posicion(int fila, int col, char c, char color)
     30ac:	02a1 	add	r1, r2, r1
     30ae:	0261 	add	r1, r1, r1
     30b0:	43bf 	st	-2(r6), r1
-    pos=pos + 0xA000;              // la memoria de video empieza en la direccion 0xA000 (40960)
+    pos=pos + 0x4000;              // la memoria de video empieza en la direccion 0x4000 (40960)
     30b2:	33bf 	ld	r1, -2(r6)
     30b4:	5400 	movi	r2, 0
-    30b6:	55a0 	movhi	r2, -96
+    30b6:	5540 	movhi	r2, 64
     30b8:	0262 	add	r1, r1, r2
     30ba:	43bf 	st	-2(r6), r1
 
