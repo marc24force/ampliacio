@@ -16,8 +16,8 @@ Idx Name          Size      VMA       LMA       File off  Algn  Flags
   0 .sistema      00000278  0000a000  0000a000  000000b0  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
   1 .sysdata      0000003c  00009000  00009000  00000074  2**1  CONTENTS, ALLOC, LOAD, DATA
   2 .bss          00000006  0000903c  0000903c  000000b0  2**1  ALLOC
-  3 .stab         00000420  00009044  00009044  00000328  2**2  CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      000003e7  00009464  00009464  00000748  2**0  CONTENTS, READONLY, DEBUGGING
+  3 .stab         000003f0  00009044  00009044  00000328  2**2  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000338  00009434  00009434  00000718  2**0  CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
 0000a000 l    d  .sistema	00000000 .sistema
 0000a010 l       .sistema	00000000 __exit
@@ -433,8 +433,8 @@ void C_RSI_Timer () {
     a212:	32c0 	ld	r1, 0(r3)
     a214:	2241 	addi	r1, r1, 1
     a216:	42c0 	st	0(r3), r1
-	if(count==10) {
-    a218:	540a 	movi	r2, 10
+	if(count==1) {
+    a218:	5401 	movi	r2, 1
     a21a:	125a 	cmpeq	r1, r1, r2
     a21c:	6306 	bnz	r1, 14
 		count = 0;
@@ -515,8 +515,8 @@ Idx Name          Size      VMA       LMA       File off  Algn  Flags
   0 .sistema      00000278  0000a000  0000a000  000000b0  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
   1 .sysdata      0000003c  00009000  00009000  00000074  2**1  CONTENTS, ALLOC, LOAD, DATA
   2 .bss          00000006  0000903c  0000903c  000000b0  2**1  ALLOC
-  3 .stab         00000420  00009044  00009044  00000328  2**2  CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      000003e7  00009464  00009464  00000748  2**0  CONTENTS, READONLY, DEBUGGING
+  3 .stab         000003f0  00009044  00009044  00000328  2**2  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000338  00009434  00009434  00000718  2**0  CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
 00009000 l    d  .sysdata	00000000 .sysdata
 00009000 l       .sysdata	00000000 interrupts_vector
@@ -532,7 +532,7 @@ Disassembly of section .sysdata:
 
 00009000 <interrupts_vector>:
     9000:	a0c6 	.word	0xa0c6
-    9002:	a028 	.word	0xa028
+    9002:	a0c6 	.word	0xa0c6
     9004:	a028 	.word	0xa028
     9006:	a0de 	.word	0xa0de
 

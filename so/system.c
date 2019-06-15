@@ -1,20 +1,14 @@
-#include "system.h"
-// inicialitzacio del sistema
-//struct task_struct * task0;
-//struct task_struct * task1;
+//#include "system.h"
 
-//struct task_struct * task_run; // punter a la tasca que sesta executant
-//struct task_struct * task_ready; // punter a la tasca que esta esperant
+#define uint16_t int
+#define PCB_SIZE 0x500/2
+#define task0_code 0x1000
+#define task1_code 0x3000
 
 uint16_t * PCB_task0 = (uint16_t *)0x8000;
 uint16_t * PCB_task1 = (uint16_t *)0x8500;
 uint16_t * run_task;
 uint16_t * ready_task;
-#define PCB_SIZE 0x500/2
-#define task0_code 0x1000
-#define task0_stack 0x09FE
-#define task1_code 0x3000
-#define task1_stack 0x29FE
 
 //definit a rsg.s
 extern void RSG();
@@ -95,7 +89,7 @@ void return_user () {
 int count=0; //FALTA TOT LO DEL QUANTUM
 void C_RSI_Timer () {
 	++count;
-	if(count==10) {
+	if(count==1) {
 		count = 0;
 		task_switch();
 	}
