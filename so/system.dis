@@ -17,7 +17,7 @@ Idx Name          Size      VMA       LMA       File off  Algn  Flags
   1 .sysdata      0000003c  00009000  00009000  00000074  2**1  CONTENTS, ALLOC, LOAD, DATA
   2 .bss          00000006  0000903c  0000903c  000000b0  2**1  ALLOC
   3 .stab         000003f0  00009044  00009044  00000328  2**2  CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      00000338  00009434  00009434  00000718  2**0  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000331  00009434  00009434  00000718  2**0  CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
 0000a000 l    d  .sistema	00000000 .sistema
 0000a010 l       .sistema	00000000 __exit
@@ -255,59 +255,58 @@ void init_task1() {
     a13c:	5001 	movi	r0, 1
     a13e:	4080 	st	0(r2), r0
 	//kernel ebp, el 12+2 surt de la llibreta
-	uint16_t * kernel_ebp = (uint16_t *)(PCB_task1 + PCB_SIZE - 14);
+	uint16_t * ptr = (uint16_t *)(PCB_task1 + PCB_SIZE - 14);
     a140:	52e4 	movi	r1, -28
     a142:	5304 	movhi	r1, 4
     a144:	06a1 	add	r3, r2, r1
-	*(PCB_task1+1) = (uint16_t)(kernel_ebp) - 6; //kernel ebp
+	*(PCB_task1+1) = (uint16_t)(ptr) - 6; //kernel ebp
     a146:	58de 	movi	r4, -34
     a148:	5904 	movhi	r4, 4
     a14a:	02a4 	add	r1, r2, r4
     a14c:	4281 	st	2(r2), r1
-	//*(PCB_task1+2) = (uint16_t)(kernel_ebp) - 6; //kernel esp
 	
 	//Return from first task switch
-	*(kernel_ebp+1) = ((uint16_t)&RSG + 104); //92 instruccions fins a __finRSG 
+	*(ptr+1) = ((uint16_t)&RSG + 104); //104 instruccions fins a __finRSG 
     a14e:	5232 	movi	r1, 50
     a150:	53a0 	movhi	r1, -96
     a152:	5868 	movi	r4, 104
     a154:	0264 	add	r1, r1, r4
     a156:	42c1 	st	2(r3), r1
-	*(kernel_ebp+2) = (uint16_t)(PCB_task1 + PCB_SIZE); //s6 pila sist 
+	*(ptr+2) = (uint16_t)(PCB_task1 + PCB_SIZE); //s6 pila sist 
     a158:	5200 	movi	r1, 0
     a15a:	5305 	movhi	r1, 5
     a15c:	04a1 	add	r2, r2, r1
     a15e:	44c2 	st	4(r3), r2
-	*(kernel_ebp+3) = task1_code; //s4 pila user
+	*(ptr+3) = task1_code; //s4 pila user
     a160:	5200 	movi	r1, 0
     a162:	5330 	movhi	r1, 48
     a164:	42c3 	st	6(r3), r1
-	*(kernel_ebp+4) = 0; //s3
+	*(ptr+4) = 0; //s3
     a166:	5800 	movi	r4, 0
     a168:	48c4 	st	8(r3), r4
-	*(kernel_ebp+5) = task1_code; //s1
+	*(ptr+5) = task1_code; //s1
     a16a:	42c5 	st	10(r3), r1
-	*(kernel_ebp+6) = 2; //s0
+	*(ptr+6) = 2; //s0
     a16c:	5402 	movi	r2, 2
     a16e:	44c6 	st	12(r3), r2
 	//Regs
-	*(kernel_ebp+7) = 6; 
+	*(ptr+7) = 6; 
     a170:	5206 	movi	r1, 6
     a172:	42c7 	st	14(r3), r1
-	*(kernel_ebp+8) = 5;
+	*(ptr+8) = 5;
     a174:	5205 	movi	r1, 5
     a176:	42c8 	st	16(r3), r1
-	*(kernel_ebp+9) = 4;
+	*(ptr+9) = 4;
     a178:	5204 	movi	r1, 4
     a17a:	42c9 	st	18(r3), r1
-	*(kernel_ebp+10) = 3;
+	*(ptr+10) = 3;
     a17c:	5203 	movi	r1, 3
     a17e:	42ca 	st	20(r3), r1
-	*(kernel_ebp+11) = 2;
+	*(ptr+11) = 2;
     a180:	44cb 	st	22(r3), r2
-	*(kernel_ebp+12) = 1;
+	*(ptr+12) = 1;
     a182:	40cc 	st	24(r3), r0
-	*(kernel_ebp+13) = 0;
+	*(ptr+13) = 0;
     a184:	48cd 	st	26(r3), r4
 }
     a186:	31c3 	ld	r0, 6(r7)
@@ -516,7 +515,7 @@ Idx Name          Size      VMA       LMA       File off  Algn  Flags
   1 .sysdata      0000003c  00009000  00009000  00000074  2**1  CONTENTS, ALLOC, LOAD, DATA
   2 .bss          00000006  0000903c  0000903c  000000b0  2**1  ALLOC
   3 .stab         000003f0  00009044  00009044  00000328  2**2  CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      00000338  00009434  00009434  00000718  2**0  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000331  00009434  00009434  00000718  2**0  CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
 00009000 l    d  .sysdata	00000000 .sysdata
 00009000 l       .sysdata	00000000 interrupts_vector
@@ -566,7 +565,7 @@ Disassembly of section .sysdata:
 	...
 
 00009036 <tics_timer>:
-    9036:	6666 	bz	r3, 206
+	...
 
 00009038 <PCB_task0>:
     9038:	8000                                        ..

@@ -105,12 +105,6 @@ unsigned int fibonacci_recursiu(unsigned int n)
 
 int main (void)
 {
-    int getticks = 0;
-    __asm__ (
-        "calls %0\n\t"
-	: //sense sortides
-	: "r" (getticks)
-	    );
 	
     int pulsador;
     unsigned int interruptores;

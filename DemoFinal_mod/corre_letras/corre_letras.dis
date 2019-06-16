@@ -9,28 +9,28 @@ Program Header:
     LOAD off    0x00000000 vaddr 0x00001f80 paddr 0x00001f80 align 2**0
          filesz 0x000000e0 memsz 0x00000120 flags rw-
     LOAD off    0x000000e0 vaddr 0x00003000 paddr 0x00003000 align 2**0
-         filesz 0x00000532 memsz 0x00000532 flags r-x
+         filesz 0x000008ee memsz 0x000008ee flags r-x
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn  Flags
-  0 .sistema      00000532  00003000  00003000  000000e0  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  0 .sistema      000008ee  00003000  00003000  000000e0  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
   1 .sysdata      00000060  00002000  00002000  00000080  2**1  CONTENTS, ALLOC, LOAD, DATA
   2 .bss          00000040  00002060  00002060  000000e0  2**4  ALLOC
-  3 .stab         000008f4  000020a0  000020a0  00000614  2**2  CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      00000610  00002994  00002994  00000f08  2**0  CONTENTS, READONLY, DEBUGGING
+  3 .stab         00000a08  000020a0  000020a0  000009d0  2**2  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000613  00002aa8  00002aa8  000013d8  2**0  CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
 00003000 l    d  .sistema	00000000 .sistema
 0000300e l       .sistema	00000000 __exit
 0000302e l       .sistema	00000000 __repe
 00003000 g       .sistema	00000000 __entry_point
-000034ee g     F .sistema	00000022 lib_getticks
+000038aa g     F .sistema	00000022 lib_getticks
 000031a2 g     F .sistema	00000334 reset_corre_letras
 00003106 g     F .sistema	0000009c write
-000034d6 g     F .sistema	00000018 main
+000034d6 g     F .sistema	000003d4 main
 000030ce g     F .sistema	00000038 strlen_s
 00003084 g     F .sistema	0000004a mostrar_nueva_posicion
 00003042 g     F .sistema	00000042 borrar_letra
-00003510 g     F .sistema	00000022 lib_getkeyboard
+000038cc g     F .sistema	00000022 lib_getkeyboard
 00003010 g     F .sistema	00000032 clear_screen
 
 
@@ -831,60 +831,588 @@ void reset_corre_letras(void)
 
 
 int main (void) {
-    34d6:	2ff4 	addi	r7, r7, -12
-    34d8:	4bc5 	st	10(r7), r5
-    34da:	4dc4 	st	8(r7), r6
-    34dc:	2dc8 	addi	r6, r7, 8
-    int k=0;
-    34de:	5200 	movi	r1, 0
-    34e0:	43bc 	st	-8(r6), r1
-    while(1){
-	k = lib_getkeyboard();
-    34e2:	5210 	movi	r1, 16
-    34e4:	5335 	movhi	r1, 53
-    34e6:	aa44 	jal	r5, r1
-    34e8:	43bc 	st	-8(r6), r1
-    }
-    34ea:	5a00 	movi	r5, 0
-    34ec:	6afa 	bz	r5, -10
+    34d6:	2fe0 	addi	r7, r7, -32
+    34d8:	4bcf 	st	30(r7), r5
+    34da:	4dce 	st	28(r7), r6
+    34dc:	2ddc 	addi	r6, r7, 28
+    34de:	5ac2 	movi	r5, -62
+    34e0:	0fe5 	add	r7, r7, r5
+    34e2:	41c3 	st	6(r7), r0
+    34e4:	45c2 	st	4(r7), r2
+    34e6:	47c1 	st	2(r7), r3
+    34e8:	49c0 	st	0(r7), r4
 
-000034ee <lib_getticks>:
-    34ee:	2ff8 	addi	r7, r7, -8
-    34f0:	4bc3 	st	6(r7), r5
-    34f2:	4dc2 	st	4(r7), r6
-    34f4:	2dc4 	addi	r6, r7, 4
-    34f6:	5200 	movi	r1, 0
-    34f8:	43be 	st	-4(r6), r1
-    34fa:	5200 	movi	r1, 0
-    34fc:	43bf 	st	-2(r6), r1
-    34fe:	33be 	ld	r1, -4(r6)
-    3500:	a047 	calls	r1
-    3502:	2240 	addi	r1, r1, 0
-    3504:	43bf 	st	-2(r6), r1
-    3506:	33bf 	ld	r1, -2(r6)
-    3508:	3dc2 	ld	r6, 4(r7)
-    350a:	3bc3 	ld	r5, 6(r7)
-    350c:	2fc8 	addi	r7, r7, 8
-    350e:	a143 	jmp	r5
+    unsigned int tics_anterior=0;
+    34ea:	5200 	movi	r1, 0
+    34ec:	43bd 	st	-6(r6), r1
+    int pause=0;
+    34ee:	5200 	movi	r1, 0
+    34f0:	43be 	st	-4(r6), r1
+    
+    if (NUMERO_LETRAS<=LIMITE_LETRAS) {
+        
+        reset_corre_letras();
+    34f2:	52a2 	movi	r1, -94
+    34f4:	5331 	movhi	r1, 49
+    34f6:	aa44 	jal	r5, r1
 
-00003510 <lib_getkeyboard>:
-    3510:	2ff8 	addi	r7, r7, -8
-    3512:	4bc3 	st	6(r7), r5
-    3514:	4dc2 	st	4(r7), r6
-    3516:	2dc4 	addi	r6, r7, 4
-    3518:	5201 	movi	r1, 1
-    351a:	43be 	st	-4(r6), r1
-    351c:	5200 	movi	r1, 0
-    351e:	43bf 	st	-2(r6), r1
-    3520:	33be 	ld	r1, -4(r6)
-    3522:	a047 	calls	r1
-    3524:	2240 	addi	r1, r1, 0
-    3526:	43bf 	st	-2(r6), r1
-    3528:	33bf 	ld	r1, -2(r6)
-    352a:	3dc2 	ld	r6, 4(r7)
-    352c:	3bc3 	ld	r5, 6(r7)
-    352e:	2fc8 	addi	r7, r7, 8
-    3530:	a143 	jmp	r5
+        while (1) {
+	    tecla_pulsada = lib_getkeyboard();
+    34f8:	52cc 	movi	r1, -52
+    34fa:	5338 	movhi	r1, 56
+    34fc:	aa44 	jal	r5, r1
+    34fe:	2440 	addi	r2, r1, 0
+    3500:	5262 	movi	r1, 98
+    3502:	5320 	movhi	r1, 32
+    3504:	4440 	st	0(r1), r2
+            switch (tecla_pulsada)
+    3506:	5262 	movi	r1, 98
+    3508:	5320 	movhi	r1, 32
+    350a:	3240 	ld	r1, 0(r1)
+    350c:	43b7 	st	-18(r6), r1
+    350e:	5252 	movi	r1, 82
+    3510:	31b7 	ld	r0, -18(r6)
+    3512:	1219 	cmpeq	r1, r0, r1
+    3514:	6315 	bnz	r1, 44
+    3516:	5252 	movi	r1, 82
+    3518:	35b7 	ld	r2, -18(r6)
+    351a:	12a9 	cmpleu	r1, r2, r1
+    351c:	6207 	bz	r1, 16
+    351e:	5250 	movi	r1, 80
+    3520:	37b7 	ld	r3, -18(r6)
+    3522:	12d9 	cmpeq	r1, r3, r1
+    3524:	6316 	bnz	r1, 46
+    3526:	5a6a 	movi	r5, 106
+    3528:	5b35 	movhi	r5, 53
+    352a:	a143 	jmp	r5
+    352c:	5270 	movi	r1, 112
+    352e:	39b7 	ld	r4, -18(r6)
+    3530:	1319 	cmpeq	r1, r4, r1
+    3532:	630f 	bnz	r1, 32
+    3534:	5272 	movi	r1, 114
+    3536:	31b7 	ld	r0, -18(r6)
+    3538:	1219 	cmpeq	r1, r0, r1
+    353a:	6302 	bnz	r1, 6
+    353c:	5a00 	movi	r5, 0
+    353e:	6a15 	bz	r5, 44
+            {
+            case 'r':    case 'R':
+                reset_corre_letras();
+    3540:	52a2 	movi	r1, -94
+    3542:	5331 	movhi	r1, 49
+    3544:	aa44 	jal	r5, r1
+                tecla_pulsada=0;
+    3546:	5462 	movi	r2, 98
+    3548:	5520 	movhi	r2, 32
+    354a:	5200 	movi	r1, 0
+    354c:	4280 	st	0(r2), r1
+                break;
+    354e:	5a00 	movi	r5, 0
+    3550:	6a0c 	bz	r5, 26
+
+            case 'p':    case 'P':
+                if (pause==0) pause=1; else pause=0;
+    3552:	33be 	ld	r1, -4(r6)
+    3554:	6304 	bnz	r1, 10
+    3556:	5201 	movi	r1, 1
+    3558:	43be 	st	-4(r6), r1
+    355a:	5a00 	movi	r5, 0
+    355c:	6a02 	bz	r5, 6
+    355e:	5200 	movi	r1, 0
+    3560:	43be 	st	-4(r6), r1
+                tecla_pulsada=0;
+    3562:	5462 	movi	r2, 98
+    3564:	5520 	movhi	r2, 32
+    3566:	5200 	movi	r1, 0
+    3568:	4280 	st	0(r2), r1
+                break;
+
+            default:
+                break;
+            }
+
+            if (pause==0) {
+    356a:	33be 	ld	r1, -4(r6)
+    356c:	5af8 	movi	r5, -8
+    356e:	5b34 	movhi	r5, 52
+    3570:	a341 	jnz	r1, r5
+		
+		/********************************/    
+		tics_timer = lib_getticks(); //meu
+    3572:	52aa 	movi	r1, -86
+    3574:	5338 	movhi	r1, 56
+    3576:	aa44 	jal	r5, r1
+    3578:	2440 	addi	r2, r1, 0
+    357a:	5260 	movi	r1, 96
+    357c:	5320 	movhi	r1, 32
+    357e:	4440 	st	0(r1), r2
+                /********************************/
+
+		// para DEBUG: mostramos los valores del timer por los leds verdes
+                __asm__ ( "out %0, %1" 
+    3580:	5260 	movi	r1, 96
+    3582:	5320 	movhi	r1, 32
+    3584:	3240 	ld	r1, 0(r1)
+    3586:	7305 	out	5, r1
+                        : /* sin salidas*/
+                        : "i" (5), "r" (tics_timer));
+                // fin DEBUG
+                if (tics_timer!=tics_anterior) {
+    3588:	5260 	movi	r1, 96
+    358a:	5320 	movhi	r1, 32
+    358c:	3440 	ld	r2, 0(r1)
+    358e:	33bd 	ld	r1, -6(r6)
+    3590:	1299 	cmpeq	r1, r2, r1
+    3592:	5af8 	movi	r5, -8
+    3594:	5b34 	movhi	r5, 52
+    3596:	a341 	jnz	r1, r5
+                    tics_anterior=tics_timer;
+    3598:	5260 	movi	r1, 96
+    359a:	5320 	movhi	r1, 32
+    359c:	3240 	ld	r1, 0(r1)
+    359e:	43bd 	st	-6(r6), r1
+                    int fila;
+                    for (fila=0; fila<NUMERO_LETRAS; fila++) {
+    35a0:	5200 	movi	r1, 0
+    35a2:	43bf 	st	-2(r6), r1
+    35a4:	5a98 	movi	r5, -104
+    35a6:	5b38 	movhi	r5, 56
+    35a8:	a143 	jmp	r5
+                        if (tics_timer%divisores[fila]==0) {
+    35aa:	5260 	movi	r1, 96
+    35ac:	5320 	movhi	r1, 32
+    35ae:	3240 	ld	r1, 0(r1)
+    35b0:	43b8 	st	-16(r6), r1
+    35b2:	39bf 	ld	r4, -2(r6)
+    35b4:	521a 	movi	r1, 26
+    35b6:	5320 	movhi	r1, 32
+    35b8:	43b6 	st	-20(r6), r1
+    35ba:	520f 	movi	r1, 15
+    35bc:	0258 	not	r1, r1
+    35be:	2241 	addi	r1, r1, 1
+    35c0:	0731 	sha	r3, r4, r1
+    35c2:	2300 	addi	r1, r4, 0
+    35c4:	24c0 	addi	r2, r3, 0
+    35c6:	0661 	add	r3, r1, r1
+    35c8:	10e1 	cmpltu	r0, r3, r1
+    35ca:	08a2 	add	r4, r2, r2
+    35cc:	0224 	add	r1, r0, r4
+    35ce:	2840 	addi	r4, r1, 0
+    35d0:	35b6 	ld	r2, -20(r6)
+    35d2:	02a3 	add	r1, r2, r3
+    35d4:	3240 	ld	r1, 0(r1)
+    35d6:	2440 	addi	r2, r1, 0
+    35d8:	37b8 	ld	r3, -16(r6)
+    35da:	82ea 	divu	r1, r3, r2
+    35dc:	8242 	mul	r1, r1, r2
+    35de:	35b8 	ld	r2, -16(r6)
+    35e0:	02a9 	sub	r1, r2, r1
+    35e2:	5a92 	movi	r5, -110
+    35e4:	5b38 	movhi	r5, 56
+    35e6:	a341 	jnz	r1, r5
+                            borrar_letra(fila,letra[fila].posicion);
+    35e8:	35bf 	ld	r2, -2(r6)
+    35ea:	5870 	movi	r4, 112
+    35ec:	5920 	movhi	r4, 32
+    35ee:	49b5 	st	-22(r6), r4
+    35f0:	520f 	movi	r1, 15
+    35f2:	0258 	not	r1, r1
+    35f4:	2241 	addi	r1, r1, 1
+    35f6:	02b1 	sha	r1, r2, r1
+    35f8:	2680 	addi	r3, r2, 0
+    35fa:	2840 	addi	r4, r1, 0
+    35fc:	520e 	movi	r1, 14
+    35fe:	0258 	not	r1, r1
+    3600:	2241 	addi	r1, r1, 1
+    3602:	02f9 	shl	r1, r3, r1
+    3604:	43b4 	st	-24(r6), r1
+    3606:	5002 	movi	r0, 2
+    3608:	5202 	movi	r1, 2
+    360a:	43b3 	st	-26(r6), r1
+    360c:	0530 	sha	r2, r4, r0
+    360e:	31b4 	ld	r0, -24(r6)
+    3610:	040a 	or	r2, r0, r2
+    3612:	31b3 	ld	r0, -26(r6)
+    3614:	02f0 	sha	r1, r3, r0
+    3616:	37b5 	ld	r3, -22(r6)
+    3618:	02e1 	add	r1, r3, r1
+    361a:	3640 	ld	r3, 0(r1)
+    361c:	2ffc 	addi	r7, r7, -4
+    361e:	25c0 	addi	r2, r7, 0
+    3620:	33bf 	ld	r1, -2(r6)
+    3622:	4280 	st	0(r2), r1
+    3624:	4681 	st	2(r2), r3
+    3626:	5242 	movi	r1, 66
+    3628:	5330 	movhi	r1, 48
+    362a:	aa44 	jal	r5, r1
+    362c:	2fc4 	addi	r7, r7, 4
+                            if (letra[fila].posicion<80)
+    362e:	35bf 	ld	r2, -2(r6)
+    3630:	5870 	movi	r4, 112
+    3632:	5920 	movhi	r4, 32
+    3634:	49b2 	st	-28(r6), r4
+    3636:	520f 	movi	r1, 15
+    3638:	0258 	not	r1, r1
+    363a:	2241 	addi	r1, r1, 1
+    363c:	02b1 	sha	r1, r2, r1
+    363e:	2680 	addi	r3, r2, 0
+    3640:	2840 	addi	r4, r1, 0
+    3642:	520e 	movi	r1, 14
+    3644:	0258 	not	r1, r1
+    3646:	2241 	addi	r1, r1, 1
+    3648:	02f9 	shl	r1, r3, r1
+    364a:	43b1 	st	-30(r6), r1
+    364c:	5002 	movi	r0, 2
+    364e:	5202 	movi	r1, 2
+    3650:	43b0 	st	-32(r6), r1
+    3652:	0530 	sha	r2, r4, r0
+    3654:	31b1 	ld	r0, -30(r6)
+    3656:	040a 	or	r2, r0, r2
+    3658:	31b0 	ld	r0, -32(r6)
+    365a:	02f0 	sha	r1, r3, r0
+    365c:	37b2 	ld	r3, -28(r6)
+    365e:	02e1 	add	r1, r3, r1
+    3660:	3440 	ld	r2, 0(r1)
+    3662:	524f 	movi	r1, 79
+    3664:	1289 	cmple	r1, r2, r1
+    3666:	5ae6 	movi	r5, -26
+    3668:	5b36 	movhi	r5, 54
+    366a:	a340 	jz	r1, r5
+                                letra[fila].posicion++;
+    366c:	39bf 	ld	r4, -2(r6)
+    366e:	49b9 	st	-14(r6), r4
+    3670:	5070 	movi	r0, 112
+    3672:	5120 	movhi	r0, 32
+    3674:	41af 	st	-34(r6), r0
+    3676:	520f 	movi	r1, 15
+    3678:	0258 	not	r1, r1
+    367a:	2241 	addi	r1, r1, 1
+    367c:	35b9 	ld	r2, -14(r6)
+    367e:	02b1 	sha	r1, r2, r1
+    3680:	31b9 	ld	r0, -14(r6)
+    3682:	2600 	addi	r3, r0, 0
+    3684:	2840 	addi	r4, r1, 0
+    3686:	520e 	movi	r1, 14
+    3688:	0258 	not	r1, r1
+    368a:	2241 	addi	r1, r1, 1
+    368c:	02f9 	shl	r1, r3, r1
+    368e:	43ae 	st	-36(r6), r1
+    3690:	5002 	movi	r0, 2
+    3692:	5202 	movi	r1, 2
+    3694:	43ad 	st	-38(r6), r1
+    3696:	0530 	sha	r2, r4, r0
+    3698:	31ae 	ld	r0, -36(r6)
+    369a:	040a 	or	r2, r0, r2
+    369c:	31ad 	ld	r0, -38(r6)
+    369e:	02f0 	sha	r1, r3, r0
+    36a0:	37af 	ld	r3, -34(r6)
+    36a2:	02e1 	add	r1, r3, r1
+    36a4:	3240 	ld	r1, 0(r1)
+    36a6:	2241 	addi	r1, r1, 1
+    36a8:	43ba 	st	-12(r6), r1
+    36aa:	5870 	movi	r4, 112
+    36ac:	5920 	movhi	r4, 32
+    36ae:	49ac 	st	-40(r6), r4
+    36b0:	520f 	movi	r1, 15
+    36b2:	0258 	not	r1, r1
+    36b4:	2241 	addi	r1, r1, 1
+    36b6:	31b9 	ld	r0, -14(r6)
+    36b8:	0231 	sha	r1, r0, r1
+    36ba:	35b9 	ld	r2, -14(r6)
+    36bc:	2680 	addi	r3, r2, 0
+    36be:	2840 	addi	r4, r1, 0
+    36c0:	520e 	movi	r1, 14
+    36c2:	0258 	not	r1, r1
+    36c4:	2241 	addi	r1, r1, 1
+    36c6:	02f9 	shl	r1, r3, r1
+    36c8:	43ab 	st	-42(r6), r1
+    36ca:	5002 	movi	r0, 2
+    36cc:	5202 	movi	r1, 2
+    36ce:	43aa 	st	-44(r6), r1
+    36d0:	0530 	sha	r2, r4, r0
+    36d2:	31ab 	ld	r0, -42(r6)
+    36d4:	040a 	or	r2, r0, r2
+    36d6:	31aa 	ld	r0, -44(r6)
+    36d8:	02f0 	sha	r1, r3, r0
+    36da:	37ac 	ld	r3, -40(r6)
+    36dc:	02e1 	add	r1, r3, r1
+    36de:	39ba 	ld	r4, -12(r6)
+    36e0:	4840 	st	0(r1), r4
+    36e2:	5a00 	movi	r5, 0
+    36e4:	6a1b 	bz	r5, 56
+                            else
+                                letra[fila].posicion=0;
+    36e6:	35bf 	ld	r2, -2(r6)
+    36e8:	5070 	movi	r0, 112
+    36ea:	5120 	movhi	r0, 32
+    36ec:	41a9 	st	-46(r6), r0
+    36ee:	520f 	movi	r1, 15
+    36f0:	0258 	not	r1, r1
+    36f2:	2241 	addi	r1, r1, 1
+    36f4:	02b1 	sha	r1, r2, r1
+    36f6:	2680 	addi	r3, r2, 0
+    36f8:	2840 	addi	r4, r1, 0
+    36fa:	520e 	movi	r1, 14
+    36fc:	0258 	not	r1, r1
+    36fe:	2241 	addi	r1, r1, 1
+    3700:	02f9 	shl	r1, r3, r1
+    3702:	43a8 	st	-48(r6), r1
+    3704:	5002 	movi	r0, 2
+    3706:	5202 	movi	r1, 2
+    3708:	43a7 	st	-50(r6), r1
+    370a:	0530 	sha	r2, r4, r0
+    370c:	31a8 	ld	r0, -48(r6)
+    370e:	040a 	or	r2, r0, r2
+    3710:	31a7 	ld	r0, -50(r6)
+    3712:	02f0 	sha	r1, r3, r0
+    3714:	37a9 	ld	r3, -46(r6)
+    3716:	04e1 	add	r2, r3, r1
+    3718:	5200 	movi	r1, 0
+    371a:	4280 	st	0(r2), r1
+
+                            mostrar_nueva_posicion(fila,letra[fila].posicion,letra[fila].caracter,letra[fila].color);
+    371c:	35bf 	ld	r2, -2(r6)
+    371e:	5870 	movi	r4, 112
+    3720:	5920 	movhi	r4, 32
+    3722:	49a6 	st	-52(r6), r4
+    3724:	520f 	movi	r1, 15
+    3726:	0258 	not	r1, r1
+    3728:	2241 	addi	r1, r1, 1
+    372a:	02b1 	sha	r1, r2, r1
+    372c:	2680 	addi	r3, r2, 0
+    372e:	2840 	addi	r4, r1, 0
+    3730:	520e 	movi	r1, 14
+    3732:	0258 	not	r1, r1
+    3734:	2241 	addi	r1, r1, 1
+    3736:	02f9 	shl	r1, r3, r1
+    3738:	43a5 	st	-54(r6), r1
+    373a:	5002 	movi	r0, 2
+    373c:	5202 	movi	r1, 2
+    373e:	43a4 	st	-56(r6), r1
+    3740:	0530 	sha	r2, r4, r0
+    3742:	31a5 	ld	r0, -54(r6)
+    3744:	040a 	or	r2, r0, r2
+    3746:	31a4 	ld	r0, -56(r6)
+    3748:	02f0 	sha	r1, r3, r0
+    374a:	37a6 	ld	r3, -52(r6)
+    374c:	02e1 	add	r1, r3, r1
+    374e:	3240 	ld	r1, 0(r1)
+    3750:	43bb 	st	-10(r6), r1
+    3752:	39bf 	ld	r4, -2(r6)
+    3754:	5070 	movi	r0, 112
+    3756:	5120 	movhi	r0, 32
+    3758:	41a3 	st	-58(r6), r0
+    375a:	520f 	movi	r1, 15
+    375c:	0258 	not	r1, r1
+    375e:	2241 	addi	r1, r1, 1
+    3760:	0731 	sha	r3, r4, r1
+    3762:	2300 	addi	r1, r4, 0
+    3764:	24c0 	addi	r2, r3, 0
+    3766:	560e 	movi	r3, 14
+    3768:	06d8 	not	r3, r3
+    376a:	26c1 	addi	r3, r3, 1
+    376c:	067b 	shl	r3, r1, r3
+    376e:	47a2 	st	-60(r6), r3
+    3770:	5002 	movi	r0, 2
+    3772:	5602 	movi	r3, 2
+    3774:	47a1 	st	-62(r6), r3
+    3776:	08b0 	sha	r4, r2, r0
+    3778:	31a2 	ld	r0, -60(r6)
+    377a:	080c 	or	r4, r0, r4
+    377c:	31a1 	ld	r0, -62(r6)
+    377e:	0670 	sha	r3, r1, r0
+    3780:	5402 	movi	r2, 2
+    3782:	52be 	movi	r1, -66
+    3784:	0266 	add	r1, r1, r6
+    3786:	4440 	st	0(r1), r2
+    3788:	5000 	movi	r0, 0
+    378a:	41a0 	st	-64(r6), r0
+    378c:	52be 	movi	r1, -66
+    378e:	0266 	add	r1, r1, r6
+    3790:	3240 	ld	r1, 0(r1)
+    3792:	04e1 	add	r2, r3, r1
+    3794:	52ae 	movi	r1, -82
+    3796:	0266 	add	r1, r1, r6
+    3798:	4440 	st	0(r1), r2
+    379a:	54ae 	movi	r2, -82
+    379c:	04a6 	add	r2, r2, r6
+    379e:	3480 	ld	r2, 0(r2)
+    37a0:	10a3 	cmpltu	r0, r2, r3
+    37a2:	54b2 	movi	r2, -78
+    37a4:	04a6 	add	r2, r2, r6
+    37a6:	4080 	st	0(r2), r0
+    37a8:	31a0 	ld	r0, -64(r6)
+    37aa:	0320 	add	r1, r4, r0
+    37ac:	50b0 	movi	r0, -80
+    37ae:	0026 	add	r0, r0, r6
+    37b0:	4200 	st	0(r0), r1
+    37b2:	52b2 	movi	r1, -78
+    37b4:	0266 	add	r1, r1, r6
+    37b6:	3440 	ld	r2, 0(r1)
+    37b8:	52b0 	movi	r1, -80
+    37ba:	0266 	add	r1, r1, r6
+    37bc:	3240 	ld	r1, 0(r1)
+    37be:	06a1 	add	r3, r2, r1
+    37c0:	28c0 	addi	r4, r3, 0
+    37c2:	54b0 	movi	r2, -80
+    37c4:	04a6 	add	r2, r2, r6
+    37c6:	4880 	st	0(r2), r4
+    37c8:	35a3 	ld	r2, -58(r6)
+    37ca:	50ae 	movi	r0, -82
+    37cc:	0026 	add	r0, r0, r6
+    37ce:	3000 	ld	r0, 0(r0)
+    37d0:	02a0 	add	r1, r2, r0
+    37d2:	d240 	ldb	r1, 0(r1)
+    37d4:	43bc 	st	-8(r6), r1
+    37d6:	39bf 	ld	r4, -2(r6)
+    37d8:	5470 	movi	r2, 112
+    37da:	5520 	movhi	r2, 32
+    37dc:	52bc 	movi	r1, -68
+    37de:	0266 	add	r1, r1, r6
+    37e0:	4440 	st	0(r1), r2
+    37e2:	520f 	movi	r1, 15
+    37e4:	0258 	not	r1, r1
+    37e6:	2241 	addi	r1, r1, 1
+    37e8:	0731 	sha	r3, r4, r1
+    37ea:	2300 	addi	r1, r4, 0
+    37ec:	24c0 	addi	r2, r3, 0
+    37ee:	560e 	movi	r3, 14
+    37f0:	06d8 	not	r3, r3
+    37f2:	26c1 	addi	r3, r3, 1
+    37f4:	007b 	shl	r0, r1, r3
+    37f6:	58ba 	movi	r4, -70
+    37f8:	0926 	add	r4, r4, r6
+    37fa:	4100 	st	0(r4), r0
+    37fc:	5002 	movi	r0, 2
+    37fe:	5802 	movi	r4, 2
+    3800:	56b8 	movi	r3, -72
+    3802:	06e6 	add	r3, r3, r6
+    3804:	48c0 	st	0(r3), r4
+    3806:	08b0 	sha	r4, r2, r0
+    3808:	50ba 	movi	r0, -70
+    380a:	0026 	add	r0, r0, r6
+    380c:	3000 	ld	r0, 0(r0)
+    380e:	080c 	or	r4, r0, r4
+    3810:	50b8 	movi	r0, -72
+    3812:	0026 	add	r0, r0, r6
+    3814:	3000 	ld	r0, 0(r0)
+    3816:	0670 	sha	r3, r1, r0
+    3818:	5402 	movi	r2, 2
+    381a:	52b4 	movi	r1, -76
+    381c:	0266 	add	r1, r1, r6
+    381e:	4440 	st	0(r1), r2
+    3820:	5200 	movi	r1, 0
+    3822:	50b6 	movi	r0, -74
+    3824:	0026 	add	r0, r0, r6
+    3826:	4200 	st	0(r0), r1
+    3828:	54b4 	movi	r2, -76
+    382a:	04a6 	add	r2, r2, r6
+    382c:	3480 	ld	r2, 0(r2)
+    382e:	00e2 	add	r0, r3, r2
+    3830:	54ae 	movi	r2, -82
+    3832:	04a6 	add	r2, r2, r6
+    3834:	4080 	st	0(r2), r0
+    3836:	50ae 	movi	r0, -82
+    3838:	0026 	add	r0, r0, r6
+    383a:	3000 	ld	r0, 0(r0)
+    383c:	1223 	cmpltu	r1, r0, r3
+    383e:	50b2 	movi	r0, -78
+    3840:	0026 	add	r0, r0, r6
+    3842:	4200 	st	0(r0), r1
+    3844:	52b6 	movi	r1, -74
+    3846:	0266 	add	r1, r1, r6
+    3848:	3240 	ld	r1, 0(r1)
+    384a:	0521 	add	r2, r4, r1
+    384c:	52b0 	movi	r1, -80
+    384e:	0266 	add	r1, r1, r6
+    3850:	4440 	st	0(r1), r2
+    3852:	54b2 	movi	r2, -78
+    3854:	04a6 	add	r2, r2, r6
+    3856:	3880 	ld	r4, 0(r2)
+    3858:	54b0 	movi	r2, -80
+    385a:	04a6 	add	r2, r2, r6
+    385c:	3480 	ld	r2, 0(r2)
+    385e:	0722 	add	r3, r4, r2
+    3860:	20c0 	addi	r0, r3, 0
+    3862:	58b0 	movi	r4, -80
+    3864:	0926 	add	r4, r4, r6
+    3866:	4100 	st	0(r4), r0
+    3868:	54bc 	movi	r2, -68
+    386a:	04a6 	add	r2, r2, r6
+    386c:	3680 	ld	r3, 0(r2)
+    386e:	54ae 	movi	r2, -82
+    3870:	04a6 	add	r2, r2, r6
+    3872:	3480 	ld	r2, 0(r2)
+    3874:	02e2 	add	r1, r3, r2
+    3876:	d641 	ldb	r3, 1(r1)
+    3878:	2ffa 	addi	r7, r7, -6
+    387a:	23c0 	addi	r1, r7, 0
+    387c:	35bf 	ld	r2, -2(r6)
+    387e:	4440 	st	0(r1), r2
+    3880:	39bb 	ld	r4, -10(r6)
+    3882:	4841 	st	2(r1), r4
+    3884:	31bc 	ld	r0, -8(r6)
+    3886:	e044 	stb	4(r1), r0
+    3888:	e645 	stb	5(r1), r3
+    388a:	5284 	movi	r1, -124
+    388c:	5330 	movhi	r1, 48
+    388e:	aa44 	jal	r5, r1
+    3890:	2fc6 	addi	r7, r7, 6
+    3892:	33bf 	ld	r1, -2(r6)
+    3894:	2241 	addi	r1, r1, 1
+    3896:	43bf 	st	-2(r6), r1
+    3898:	33bf 	ld	r1, -2(r6)
+    389a:	540b 	movi	r2, 11
+    389c:	124a 	cmple	r1, r1, r2
+    389e:	5aaa 	movi	r5, -86
+    38a0:	5b35 	movhi	r5, 53
+    38a2:	a341 	jnz	r1, r5
+                        }
+                    }
+                }
+            }
+        }
+    38a4:	5af8 	movi	r5, -8
+    38a6:	5b34 	movhi	r5, 52
+    38a8:	a143 	jmp	r5
+
+000038aa <lib_getticks>:
+    38aa:	2ff8 	addi	r7, r7, -8
+    38ac:	4bc3 	st	6(r7), r5
+    38ae:	4dc2 	st	4(r7), r6
+    38b0:	2dc4 	addi	r6, r7, 4
+    38b2:	5200 	movi	r1, 0
+    38b4:	43be 	st	-4(r6), r1
+    38b6:	5200 	movi	r1, 0
+    38b8:	43bf 	st	-2(r6), r1
+    38ba:	33be 	ld	r1, -4(r6)
+    38bc:	a047 	calls	r1
+    38be:	2240 	addi	r1, r1, 0
+    38c0:	43bf 	st	-2(r6), r1
+    38c2:	33bf 	ld	r1, -2(r6)
+    38c4:	3dc2 	ld	r6, 4(r7)
+    38c6:	3bc3 	ld	r5, 6(r7)
+    38c8:	2fc8 	addi	r7, r7, 8
+    38ca:	a143 	jmp	r5
+
+000038cc <lib_getkeyboard>:
+    38cc:	2ff8 	addi	r7, r7, -8
+    38ce:	4bc3 	st	6(r7), r5
+    38d0:	4dc2 	st	4(r7), r6
+    38d2:	2dc4 	addi	r6, r7, 4
+    38d4:	5201 	movi	r1, 1
+    38d6:	43be 	st	-4(r6), r1
+    38d8:	5200 	movi	r1, 0
+    38da:	43bf 	st	-2(r6), r1
+    38dc:	33be 	ld	r1, -4(r6)
+    38de:	a047 	calls	r1
+    38e0:	2240 	addi	r1, r1, 0
+    38e2:	43bf 	st	-2(r6), r1
+    38e4:	33bf 	ld	r1, -2(r6)
+    38e6:	3dc2 	ld	r6, 4(r7)
+    38e8:	3bc3 	ld	r5, 6(r7)
+    38ea:	2fc8 	addi	r7, r7, 8
+    38ec:	a143 	jmp	r5
 
 temp_corre_letras.o:     file format elf32-sisa
 temp_corre_letras.o
@@ -896,15 +1424,15 @@ Program Header:
     LOAD off    0x00000000 vaddr 0x00001f80 paddr 0x00001f80 align 2**0
          filesz 0x000000e0 memsz 0x00000120 flags rw-
     LOAD off    0x000000e0 vaddr 0x00003000 paddr 0x00003000 align 2**0
-         filesz 0x00000532 memsz 0x00000532 flags r-x
+         filesz 0x000008ee memsz 0x000008ee flags r-x
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn  Flags
-  0 .sistema      00000532  00003000  00003000  000000e0  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  0 .sistema      000008ee  00003000  00003000  000000e0  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
   1 .sysdata      00000060  00002000  00002000  00000080  2**1  CONTENTS, ALLOC, LOAD, DATA
   2 .bss          00000040  00002060  00002060  000000e0  2**4  ALLOC
-  3 .stab         000008f4  000020a0  000020a0  00000614  2**2  CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      00000610  00002994  00002994  00000f08  2**0  CONTENTS, READONLY, DEBUGGING
+  3 .stab         00000a08  000020a0  000020a0  000009d0  2**2  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000613  00002aa8  00002aa8  000013d8  2**0  CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
 00002000 l    d  .sysdata	00000000 .sysdata
 00002034 g     O .sysdata	0000002b mensaje

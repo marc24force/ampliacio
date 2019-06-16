@@ -61,7 +61,7 @@
 		.word RSE_default_resume 
 		; 7 Hay que definirla en el S.O.
 	tecla_pulsada: .word 0
-	tics_timer: .word 0x6666 
+	tics_timer: .word 0 
 ; sección de código 
 .text 
 	; *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=* 

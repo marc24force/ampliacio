@@ -25,25 +25,24 @@ void init_task1() {
 
 	*(PCB_task1) = 1; //PID
 	//kernel ebp, el 12+2 surt de la llibreta
-	uint16_t * kernel_ebp = (uint16_t *)(PCB_task1 + PCB_SIZE - 14);
-	*(PCB_task1+1) = (uint16_t)(kernel_ebp) - 6; //kernel ebp
-	//*(PCB_task1+2) = (uint16_t)(kernel_ebp) - 6; //kernel esp
+	uint16_t * ptr = (uint16_t *)(PCB_task1 + PCB_SIZE - 14);
+	*(PCB_task1+1) = (uint16_t)(ptr) - 6; //kernel ebp
 	
 	//Return from first task switch
-	*(kernel_ebp+1) = ((uint16_t)&RSG + 104); //92 instruccions fins a __finRSG 
-	*(kernel_ebp+2) = (uint16_t)(PCB_task1 + PCB_SIZE); //s6 pila sist 
-	*(kernel_ebp+3) = task1_code; //s4 pila user
-	*(kernel_ebp+4) = 0; //s3
-	*(kernel_ebp+5) = task1_code; //s1
-	*(kernel_ebp+6) = 2; //s0
+	*(ptr+1) = ((uint16_t)&RSG + 104); //104 instruccions fins a __finRSG 
+	*(ptr+2) = (uint16_t)(PCB_task1 + PCB_SIZE); //s6 pila sist 
+	*(ptr+3) = task1_code; //s4 pila user
+	*(ptr+4) = 0; //s3
+	*(ptr+5) = task1_code; //s1
+	*(ptr+6) = 2; //s0
 	//Regs
-	*(kernel_ebp+7) = 6; 
-	*(kernel_ebp+8) = 5;
-	*(kernel_ebp+9) = 4;
-	*(kernel_ebp+10) = 3;
-	*(kernel_ebp+11) = 2;
-	*(kernel_ebp+12) = 1;
-	*(kernel_ebp+13) = 0;
+	*(ptr+7) = 6; 
+	*(ptr+8) = 5;
+	*(ptr+9) = 4;
+	*(ptr+10) = 3;
+	*(ptr+11) = 2;
+	*(ptr+12) = 1;
+	*(ptr+13) = 0;
 }
 void task_switch() {
 

@@ -157,11 +157,6 @@ void reset_corre_letras(void)
 
 
 int main (void) {
-    int k=0;
-    while(1){
-	k = lib_getkeyboard();
-    }
-
 
     unsigned int tics_anterior=0;
     int pause=0;
