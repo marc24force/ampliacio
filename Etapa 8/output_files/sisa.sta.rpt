@@ -1,0 +1,437 @@
+TimeQuest Timing Analyzer report for sisa
+Tue Jun 18 12:14:41 2019
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Minimum Pulse Width: 'altera_reserved_tck'
+ 12. Propagation Delay
+ 13. Minimum Propagation Delay
+ 14. Fast Model Setup Summary
+ 15. Fast Model Hold Summary
+ 16. Fast Model Recovery Summary
+ 17. Fast Model Removal Summary
+ 18. Fast Model Minimum Pulse Width Summary
+ 19. Fast Model Minimum Pulse Width: 'altera_reserved_tck'
+ 20. Propagation Delay
+ 21. Minimum Propagation Delay
+ 22. Multicorner Timing Analysis Summary
+ 23. Progagation Delay
+ 24. Minimum Progagation Delay
+ 25. Clock Transfers
+ 26. Report TCCS
+ 27. Report RSKM
+ 28. Unconstrained Paths
+ 29. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; sisa                                                              ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C20F484C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                    ;
++---------------------+------+---------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------+
+; Clock Name          ; Type ; Period  ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                 ;
++---------------------+------+---------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------+
+; altera_reserved_tck ; Base ; 100.000 ; 10.0 MHz  ; 0.000 ; 50.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { altera_reserved_tck } ;
++---------------------+------+---------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------+
+
+
+---------------------------
+; Slow Model Fmax Summary ;
+---------------------------
+No paths to report.
+
+
+----------------------------
+; Slow Model Setup Summary ;
+----------------------------
+No paths to report.
+
+
+---------------------------
+; Slow Model Hold Summary ;
+---------------------------
+No paths to report.
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------------+
+; Slow Model Minimum Pulse Width Summary       ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 97.531 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'altera_reserved_tck'                                                       ;
++--------+--------------+----------------+-----------+---------------------+------------+---------------------+
+; Slack  ; Actual Width ; Required Width ; Type      ; Clock               ; Clock Edge ; Target              ;
++--------+--------------+----------------+-----------+---------------------+------------+---------------------+
+; 97.531 ; 100.000      ; 2.469          ; Port Rate ; altera_reserved_tck ; Rise       ; altera_reserved_tck ;
++--------+--------------+----------------+-----------+---------------------+------------+---------------------+
+
+
++-------------------------------------------------------+
+; Propagation Delay                                     ;
++-------------+-------------+--------+----+----+--------+
+; Input Port  ; Output Port ; RR     ; RF ; FR ; FF     ;
++-------------+-------------+--------+----+----+--------+
+; SRAM_DQ[0]  ; SRAM_DQ[0]  ; 14.339 ;    ;    ; 14.339 ;
+; SRAM_DQ[1]  ; SRAM_DQ[1]  ; 14.415 ;    ;    ; 14.415 ;
+; SRAM_DQ[2]  ; SRAM_DQ[2]  ; 13.624 ;    ;    ; 13.624 ;
+; SRAM_DQ[3]  ; SRAM_DQ[3]  ; 12.762 ;    ;    ; 12.762 ;
+; SRAM_DQ[4]  ; SRAM_DQ[4]  ; 14.757 ;    ;    ; 14.757 ;
+; SRAM_DQ[5]  ; SRAM_DQ[5]  ; 14.288 ;    ;    ; 14.288 ;
+; SRAM_DQ[6]  ; SRAM_DQ[6]  ; 12.007 ;    ;    ; 12.007 ;
+; SRAM_DQ[7]  ; SRAM_DQ[7]  ; 12.009 ;    ;    ; 12.009 ;
+; SRAM_DQ[8]  ; SRAM_DQ[8]  ; 13.268 ;    ;    ; 13.268 ;
+; SRAM_DQ[9]  ; SRAM_DQ[9]  ; 13.443 ;    ;    ; 13.443 ;
+; SRAM_DQ[10] ; SRAM_DQ[10] ; 13.242 ;    ;    ; 13.242 ;
+; SRAM_DQ[11] ; SRAM_DQ[11] ; 13.908 ;    ;    ; 13.908 ;
+; SRAM_DQ[12] ; SRAM_DQ[12] ; 14.576 ;    ;    ; 14.576 ;
+; SRAM_DQ[13] ; SRAM_DQ[13] ; 16.546 ;    ;    ; 16.546 ;
+; SRAM_DQ[14] ; SRAM_DQ[14] ; 13.631 ;    ;    ; 13.631 ;
+; SRAM_DQ[15] ; SRAM_DQ[15] ; 13.362 ;    ;    ; 13.362 ;
++-------------+-------------+--------+----+----+--------+
+
+
++-------------------------------------------------------+
+; Minimum Propagation Delay                             ;
++-------------+-------------+--------+----+----+--------+
+; Input Port  ; Output Port ; RR     ; RF ; FR ; FF     ;
++-------------+-------------+--------+----+----+--------+
+; SRAM_DQ[0]  ; SRAM_DQ[0]  ; 13.712 ;    ;    ; 13.712 ;
+; SRAM_DQ[1]  ; SRAM_DQ[1]  ; 13.433 ;    ;    ; 13.433 ;
+; SRAM_DQ[2]  ; SRAM_DQ[2]  ; 13.250 ;    ;    ; 13.250 ;
+; SRAM_DQ[3]  ; SRAM_DQ[3]  ; 12.570 ;    ;    ; 12.570 ;
+; SRAM_DQ[4]  ; SRAM_DQ[4]  ; 14.357 ;    ;    ; 14.357 ;
+; SRAM_DQ[5]  ; SRAM_DQ[5]  ; 13.740 ;    ;    ; 13.740 ;
+; SRAM_DQ[6]  ; SRAM_DQ[6]  ; 11.773 ;    ;    ; 11.773 ;
+; SRAM_DQ[7]  ; SRAM_DQ[7]  ; 11.563 ;    ;    ; 11.563 ;
+; SRAM_DQ[8]  ; SRAM_DQ[8]  ; 12.968 ;    ;    ; 12.968 ;
+; SRAM_DQ[9]  ; SRAM_DQ[9]  ; 13.055 ;    ;    ; 13.055 ;
+; SRAM_DQ[10] ; SRAM_DQ[10] ; 13.128 ;    ;    ; 13.128 ;
+; SRAM_DQ[11] ; SRAM_DQ[11] ; 13.554 ;    ;    ; 13.554 ;
+; SRAM_DQ[12] ; SRAM_DQ[12] ; 14.366 ;    ;    ; 14.366 ;
+; SRAM_DQ[13] ; SRAM_DQ[13] ; 14.284 ;    ;    ; 14.284 ;
+; SRAM_DQ[14] ; SRAM_DQ[14] ; 13.073 ;    ;    ; 13.073 ;
+; SRAM_DQ[15] ; SRAM_DQ[15] ; 13.325 ;    ;    ; 13.325 ;
++-------------+-------------+--------+----+----+--------+
+
+
+----------------------------
+; Fast Model Setup Summary ;
+----------------------------
+No paths to report.
+
+
+---------------------------
+; Fast Model Hold Summary ;
+---------------------------
+No paths to report.
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------------+
+; Fast Model Minimum Pulse Width Summary       ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 97.778 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'altera_reserved_tck'                                                       ;
++--------+--------------+----------------+-----------+---------------------+------------+---------------------+
+; Slack  ; Actual Width ; Required Width ; Type      ; Clock               ; Clock Edge ; Target              ;
++--------+--------------+----------------+-----------+---------------------+------------+---------------------+
+; 97.778 ; 100.000      ; 2.222          ; Port Rate ; altera_reserved_tck ; Rise       ; altera_reserved_tck ;
++--------+--------------+----------------+-----------+---------------------+------------+---------------------+
+
+
++-----------------------------------------------------+
+; Propagation Delay                                   ;
++-------------+-------------+-------+----+----+-------+
+; Input Port  ; Output Port ; RR    ; RF ; FR ; FF    ;
++-------------+-------------+-------+----+----+-------+
+; SRAM_DQ[0]  ; SRAM_DQ[0]  ; 6.970 ;    ;    ; 6.970 ;
+; SRAM_DQ[1]  ; SRAM_DQ[1]  ; 6.959 ;    ;    ; 6.959 ;
+; SRAM_DQ[2]  ; SRAM_DQ[2]  ; 6.597 ;    ;    ; 6.597 ;
+; SRAM_DQ[3]  ; SRAM_DQ[3]  ; 6.287 ;    ;    ; 6.287 ;
+; SRAM_DQ[4]  ; SRAM_DQ[4]  ; 7.142 ;    ;    ; 7.142 ;
+; SRAM_DQ[5]  ; SRAM_DQ[5]  ; 6.977 ;    ;    ; 6.977 ;
+; SRAM_DQ[6]  ; SRAM_DQ[6]  ; 5.934 ;    ;    ; 5.934 ;
+; SRAM_DQ[7]  ; SRAM_DQ[7]  ; 5.949 ;    ;    ; 5.949 ;
+; SRAM_DQ[8]  ; SRAM_DQ[8]  ; 6.501 ;    ;    ; 6.501 ;
+; SRAM_DQ[9]  ; SRAM_DQ[9]  ; 6.506 ;    ;    ; 6.506 ;
+; SRAM_DQ[10] ; SRAM_DQ[10] ; 6.523 ;    ;    ; 6.523 ;
+; SRAM_DQ[11] ; SRAM_DQ[11] ; 6.673 ;    ;    ; 6.673 ;
+; SRAM_DQ[12] ; SRAM_DQ[12] ; 7.115 ;    ;    ; 7.115 ;
+; SRAM_DQ[13] ; SRAM_DQ[13] ; 7.789 ;    ;    ; 7.789 ;
+; SRAM_DQ[14] ; SRAM_DQ[14] ; 6.631 ;    ;    ; 6.631 ;
+; SRAM_DQ[15] ; SRAM_DQ[15] ; 6.496 ;    ;    ; 6.496 ;
++-------------+-------------+-------+----+----+-------+
+
+
++-----------------------------------------------------+
+; Minimum Propagation Delay                           ;
++-------------+-------------+-------+----+----+-------+
+; Input Port  ; Output Port ; RR    ; RF ; FR ; FF    ;
++-------------+-------------+-------+----+----+-------+
+; SRAM_DQ[0]  ; SRAM_DQ[0]  ; 6.726 ;    ;    ; 6.726 ;
+; SRAM_DQ[1]  ; SRAM_DQ[1]  ; 6.575 ;    ;    ; 6.575 ;
+; SRAM_DQ[2]  ; SRAM_DQ[2]  ; 6.482 ;    ;    ; 6.482 ;
+; SRAM_DQ[3]  ; SRAM_DQ[3]  ; 6.213 ;    ;    ; 6.213 ;
+; SRAM_DQ[4]  ; SRAM_DQ[4]  ; 7.008 ;    ;    ; 7.008 ;
+; SRAM_DQ[5]  ; SRAM_DQ[5]  ; 6.786 ;    ;    ; 6.786 ;
+; SRAM_DQ[6]  ; SRAM_DQ[6]  ; 5.847 ;    ;    ; 5.847 ;
+; SRAM_DQ[7]  ; SRAM_DQ[7]  ; 5.785 ;    ;    ; 5.785 ;
+; SRAM_DQ[8]  ; SRAM_DQ[8]  ; 6.389 ;    ;    ; 6.389 ;
+; SRAM_DQ[9]  ; SRAM_DQ[9]  ; 6.362 ;    ;    ; 6.362 ;
+; SRAM_DQ[10] ; SRAM_DQ[10] ; 6.486 ;    ;    ; 6.486 ;
+; SRAM_DQ[11] ; SRAM_DQ[11] ; 6.549 ;    ;    ; 6.549 ;
+; SRAM_DQ[12] ; SRAM_DQ[12] ; 7.041 ;    ;    ; 7.041 ;
+; SRAM_DQ[13] ; SRAM_DQ[13] ; 6.953 ;    ;    ; 6.953 ;
+; SRAM_DQ[14] ; SRAM_DQ[14] ; 6.430 ;    ;    ; 6.430 ;
+; SRAM_DQ[15] ; SRAM_DQ[15] ; 6.492 ;    ;    ; 6.492 ;
++-------------+-------------+-------+----+----+-------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++----------------------+-------+------+----------+---------+---------------------+
+; Clock                ; Setup ; Hold ; Recovery ; Removal ; Minimum Pulse Width ;
++----------------------+-------+------+----------+---------+---------------------+
+; Worst-case Slack     ; N/A   ; N/A  ; N/A      ; N/A     ; 97.531              ;
+;  altera_reserved_tck ; N/A   ; N/A  ; N/A      ; N/A     ; 97.531              ;
+; Design-wide TNS      ; 0.0   ; 0.0  ; 0.0      ; 0.0     ; 0.0                 ;
+;  altera_reserved_tck ; N/A   ; N/A  ; N/A      ; N/A     ; 0.000               ;
++----------------------+-------+------+----------+---------+---------------------+
+
+
++-------------------------------------------------------+
+; Progagation Delay                                     ;
++-------------+-------------+--------+----+----+--------+
+; Input Port  ; Output Port ; RR     ; RF ; FR ; FF     ;
++-------------+-------------+--------+----+----+--------+
+; SRAM_DQ[0]  ; SRAM_DQ[0]  ; 14.339 ;    ;    ; 14.339 ;
+; SRAM_DQ[1]  ; SRAM_DQ[1]  ; 14.415 ;    ;    ; 14.415 ;
+; SRAM_DQ[2]  ; SRAM_DQ[2]  ; 13.624 ;    ;    ; 13.624 ;
+; SRAM_DQ[3]  ; SRAM_DQ[3]  ; 12.762 ;    ;    ; 12.762 ;
+; SRAM_DQ[4]  ; SRAM_DQ[4]  ; 14.757 ;    ;    ; 14.757 ;
+; SRAM_DQ[5]  ; SRAM_DQ[5]  ; 14.288 ;    ;    ; 14.288 ;
+; SRAM_DQ[6]  ; SRAM_DQ[6]  ; 12.007 ;    ;    ; 12.007 ;
+; SRAM_DQ[7]  ; SRAM_DQ[7]  ; 12.009 ;    ;    ; 12.009 ;
+; SRAM_DQ[8]  ; SRAM_DQ[8]  ; 13.268 ;    ;    ; 13.268 ;
+; SRAM_DQ[9]  ; SRAM_DQ[9]  ; 13.443 ;    ;    ; 13.443 ;
+; SRAM_DQ[10] ; SRAM_DQ[10] ; 13.242 ;    ;    ; 13.242 ;
+; SRAM_DQ[11] ; SRAM_DQ[11] ; 13.908 ;    ;    ; 13.908 ;
+; SRAM_DQ[12] ; SRAM_DQ[12] ; 14.576 ;    ;    ; 14.576 ;
+; SRAM_DQ[13] ; SRAM_DQ[13] ; 16.546 ;    ;    ; 16.546 ;
+; SRAM_DQ[14] ; SRAM_DQ[14] ; 13.631 ;    ;    ; 13.631 ;
+; SRAM_DQ[15] ; SRAM_DQ[15] ; 13.362 ;    ;    ; 13.362 ;
++-------------+-------------+--------+----+----+--------+
+
+
++-----------------------------------------------------+
+; Minimum Progagation Delay                           ;
++-------------+-------------+-------+----+----+-------+
+; Input Port  ; Output Port ; RR    ; RF ; FR ; FF    ;
++-------------+-------------+-------+----+----+-------+
+; SRAM_DQ[0]  ; SRAM_DQ[0]  ; 6.726 ;    ;    ; 6.726 ;
+; SRAM_DQ[1]  ; SRAM_DQ[1]  ; 6.575 ;    ;    ; 6.575 ;
+; SRAM_DQ[2]  ; SRAM_DQ[2]  ; 6.482 ;    ;    ; 6.482 ;
+; SRAM_DQ[3]  ; SRAM_DQ[3]  ; 6.213 ;    ;    ; 6.213 ;
+; SRAM_DQ[4]  ; SRAM_DQ[4]  ; 7.008 ;    ;    ; 7.008 ;
+; SRAM_DQ[5]  ; SRAM_DQ[5]  ; 6.786 ;    ;    ; 6.786 ;
+; SRAM_DQ[6]  ; SRAM_DQ[6]  ; 5.847 ;    ;    ; 5.847 ;
+; SRAM_DQ[7]  ; SRAM_DQ[7]  ; 5.785 ;    ;    ; 5.785 ;
+; SRAM_DQ[8]  ; SRAM_DQ[8]  ; 6.389 ;    ;    ; 6.389 ;
+; SRAM_DQ[9]  ; SRAM_DQ[9]  ; 6.362 ;    ;    ; 6.362 ;
+; SRAM_DQ[10] ; SRAM_DQ[10] ; 6.486 ;    ;    ; 6.486 ;
+; SRAM_DQ[11] ; SRAM_DQ[11] ; 6.549 ;    ;    ; 6.549 ;
+; SRAM_DQ[12] ; SRAM_DQ[12] ; 7.041 ;    ;    ; 7.041 ;
+; SRAM_DQ[13] ; SRAM_DQ[13] ; 6.953 ;    ;    ; 6.953 ;
+; SRAM_DQ[14] ; SRAM_DQ[14] ; 6.430 ;    ;    ; 6.430 ;
+; SRAM_DQ[15] ; SRAM_DQ[15] ; 6.492 ;    ;    ; 6.492 ;
++-------------+-------------+-------+----+----+-------+
+
+
+-------------------
+; Clock Transfers ;
+-------------------
+Nothing to report.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++-------------------------------------------------+
+; Unconstrained Paths                             ;
++---------------------------------+-------+-------+
+; Property                        ; Setup ; Hold  ;
++---------------------------------+-------+-------+
+; Illegal Clocks                  ; 0     ; 0     ;
+; Unconstrained Clocks            ; 6     ; 6     ;
+; Unconstrained Input Ports       ; 31    ; 31    ;
+; Unconstrained Input Port Paths  ; 2212  ; 2212  ;
+; Unconstrained Output Ports      ; 94    ; 94    ;
+; Unconstrained Output Port Paths ; 12228 ; 12228 ;
++---------------------------------+-------+-------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Jun 18 12:14:39 2019
+Info: Command: quartus_sta sisa -c sisa
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 143 combinational loops as latches.
+Info (332164): Evaluating HDL-embedded SDC commands
+    Info (332165): Entity sld_jtag_hub
+        Info (332166): create_clock -name altera_reserved_tck [get_ports {altera_reserved_tck}] -period 10MHz   
+        Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'sisa.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Warning (332060): Node: genericClock:clock|outClock was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: vga_controller:vga|clk_25mhz was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: CLOCK_50 was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: MemoryController:control_mem|SRAM_SIMDController:simd_sram|x[0] was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: SW[9] was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: proc:processador|unidad_control:c0|multi:multi_0|state.SYSTEM was determined to be a clock but was found without an associated clock assignment.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Info (332140): No fmax paths to report
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 97.531
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    97.531         0.000 altera_reserved_tck 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Warning (332060): Node: genericClock:clock|outClock was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: vga_controller:vga|clk_25mhz was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: CLOCK_50 was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: MemoryController:control_mem|SRAM_SIMDController:simd_sram|x[0] was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: SW[9] was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: proc:processador|unidad_control:c0|multi:multi_0|state.SYSTEM was determined to be a clock but was found without an associated clock assignment.
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 97.778
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    97.778         0.000 altera_reserved_tck 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 568 megabytes
+    Info: Processing ended: Tue Jun 18 12:14:41 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

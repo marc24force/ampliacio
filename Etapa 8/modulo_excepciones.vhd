@@ -63,23 +63,23 @@ BEGIN
 
 	inter <= (intr and intr_enabled);
 
-	unalignment <= (mem_unaligned and acces_mem);
+	unalignment <= '0'; --(mem_unaligned and acces_mem);
 	
 	
 	s_MEMORIA_PROTEGIDA <= ((not sys_mode) and mem_protegida and mem_ld_st );
-	s_MEMORIA_PROTEGIDA_INS <= ((not sys_mode) and mem_protegida and (not mem_ld_st));
-	s_INSTR_PROTEGIDA  <= ((not sys_mode) and inst_prohibida);
+	s_MEMORIA_PROTEGIDA_INS <= '0'; --((not sys_mode) and mem_protegida and (not mem_ld_st));
+	s_INSTR_PROTEGIDA  <= '0'; --((not sys_mode) and inst_prohibida);
 	
-	s_MISS_TLB_INS <= miss_tlbi;
-	s_MISS_TLB_DATOS <= miss_tlbd;
-	s_INV_PAG_TLB_INS <= pag_inv_i;
-	s_INV_PAG_TLB_DATOS <= pag_inv_d;
-	s_READ_ONLY_PAG <= pag_read_only;
+	s_MISS_TLB_INS <= '0'; --miss_tlbi;
+	s_MISS_TLB_DATOS <= '0'; --miss_tlbd;
+	s_INV_PAG_TLB_INS <= '0'; --pag_inv_i;
+	s_INV_PAG_TLB_DATOS <= '0'; --pag_inv_d;
+	s_READ_ONLY_PAG <= '0'; --pag_read_only;
 	
 	excep <= no_impl or unalignment or inter or div_zero or 
-							s_MEMORIA_PROTEGIDA or s_INSTR_PROTEGIDA or is_calls or
-							s_MEMORIA_PROTEGIDA_INS or s_MISS_TLB_INS or s_MISS_TLB_DATOS or
-							s_INV_PAG_TLB_INS or s_INV_PAG_TLB_DATOS	or s_READ_ONLY_PAG;
+				s_MEMORIA_PROTEGIDA or s_INSTR_PROTEGIDA or is_calls or
+				s_MEMORIA_PROTEGIDA_INS or s_MISS_TLB_INS or s_MISS_TLB_DATOS or
+				s_INV_PAG_TLB_INS or s_INV_PAG_TLB_DATOS	or s_READ_ONLY_PAG;
 
 	code_excep <= 		 MISS_TLB_INS          when reg_excep(12) = '1' else
 							 MISS_TLB_DATOS        when reg_excep(11) = '1' else

@@ -95,7 +95,7 @@ END component;
 
 --******************************************
 
-   type MEMORIA_IO is array (255 downto 0) of std_logic_vector(15 downto 0);
+   type MEMORIA_IO is array (63 downto 0) of std_logic_vector(15 downto 0);
 	signal puertos : MEMORIA_IO;
 	signal s_v0 : STD_LOGIC_VECTOR(6 downto 0);
 	signal s_v1 : STD_LOGIC_VECTOR(6 downto 0);

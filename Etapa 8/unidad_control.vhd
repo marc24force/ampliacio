@@ -19,15 +19,19 @@ ENTITY unidad_control IS
 			 flush     : OUT std_logic;-- indica si hay que hacer flush
 			 is_tlb_data: out std_LOGIC; --1 if it is tlb data
 			 acces_mem : OUT STD_LOGIC;
+			 simd_mem  : OUT STD_LOGIC; -- oussama dice que es new
+ 			 second_acces: out    std_logic; --es new
 			 mem_ld_st : OUT STD_LOGIC;
 			 sys_state : OUT STD_Logic; 
 			 intr_ack  : OUT STD_LOGIC; 
 			 d_sys 	  : OUT  STD_LOGIC;
 			 a_sys 	  : OUT  STD_LOGIC;
           op        : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+			 op_simd   : OUT STD_LOGIC_VECTor(2 DOWNTO 0);
 			 codigo    : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 			 intr_ctrl : OUT STD_LOGIC_VECTor(2 DOWNTO 0); 
           wrd       : OUT STD_LOGIC;
+			 wrd_simd  : OUT STD_LOGIC; -- new indica permiso escritura en br simd
           addr_a    : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
           addr_b    : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
           addr_d    : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
@@ -35,7 +39,8 @@ ENTITY unidad_control IS
 			 pcup		  : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
           pc        : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
           ins_dad   : OUT STD_LOGIC;
-          in_d      : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  
+          in_d      : OUT STD_LOGIC_VECTOR(2 DOWNTO 0); -- +1 bit 
+			 in_d_simd : OUT STD_LOGIC_VECTor(1 DOWNTO 0); -- new indica la fuente del registro d simd
           immed_x2  : OUT STD_LOGIC;
           wr_m      : OUT STD_LOGIC;
           word_byte : OUT STD_LOGIC;
@@ -53,6 +58,7 @@ component control_l IS
 			 d_sys 	  : OUT  STD_LOGIC;
 			 a_sys 	  : OUT  STD_LOGIC;
           op        : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+			 op_simd   : OUT STD_LOGIC_VECTor(2 DOWNTO 0);
 			 codigo    : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 			 intr_ctrl : OUT STD_LOGIC_VECTor(2 DOWNTO 0); 
 			 intr_ack  : OUT STD_LOGIC; 
@@ -65,14 +71,17 @@ component control_l IS
 			 flush     : OUT std_logic;-- indica si hay que hacer flush
 			 is_tlb_data: out std_LOGIC; --1 if it is tlb data
 			 acces_mem : OUT STD_LOGIC; 
+			 simd_mem  : OUT STD_LOGIC; -- oussama dice que es new
           ldpc      : OUT STD_LOGIC;
           wrd       : OUT STD_LOGIC;
-          addr_a    : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-          addr_b    : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-          addr_d    : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-          immed     : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+			 wrd_simd  : OUT STD_LOGIC; -- new indica permiso escritura en br simd
+          addr_a    : OUT STD_LOGIC_VECTor(2 DOWNTO 0);
+          addr_b    : OUT STD_LOGIC_VECTor(2 DOWNTO 0);
+          addr_d    : OUT STD_LOGIC_VECTor(2 DOWNTO 0);
+          immed     : OUT STD_LOGIC_VECTor(15 DOWNTO 0);
           wr_m      : OUT STD_LOGIC;
-          in_d      : OUT STD_LOGIC_VECTor(1 DOWNTO 0);
+          in_d      : OUT STD_LOGIC_VECTor(2 DOWNTO 0); --added 1 bit
+			 in_d_simd : OUT STD_LOGIC_VECTor(1 DOWNTO 0); -- new indica la fuente del registro d simd
           immed_x2  : OUT STD_LOGIC;
 			 tknbr 	  : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
           word_byte : OUT STD_LOGIC;
@@ -86,6 +95,8 @@ component multi is
          boot      : IN  STD_LOGIC;
          ldpc_l    : IN  STD_LOGIC;
          wrd_l     : IN  STD_LOGIC;
+			wrd_simd_l: IN  STD_LOGIC;
+			simd_mem_l: IN  STD_LOGIC;
          wr_m_l    : IN  STD_LOGIC;
          w_b       : IN  STD_LOGIC;
 			intr_enabled :IN  STD_LOGIC;
@@ -95,6 +106,9 @@ component multi is
 			sys_state : OUT STD_LOGIC; 
          ldpc      : OUT STD_LOGIC;
          wrd       : OUT STD_LOGIC;
+			wrd_simd  : OUT STD_LOGIC;
+			simd_mem  : OUT STD_LOGIC;
+ 			second_acces: out    std_logic; --es new
          wr_m      : OUT STD_LOGIC;
          ldir      : OUT STD_LOGIC;
          ins_dad   : OUT STD_LOGIC;
@@ -104,12 +118,14 @@ component multi is
 end component;
  
 signal ld_pc :std_logic;
-signal next_pc :STD_LOGIC_VECTOR(15 DOWNTO 0) := x"C000";
+signal next_pc :STD_LOGIC_VECTOR(15 DOWNTO 0) := x"A000";
 signal previous_ir : STD_LOGIC_VECTOR(15 DOWNTO 0) := x"0000";
  
 signal immed_m       : STD_LOGIC_VECTOR(15 DOWNTO 0); -- immed salido de control_l
 signal ldpc_m      : STD_LOGIC;
 signal wrd_m       : STD_LOGIC;
+signal wrd_simd_m  : STD_LOGIC;
+signal simd_mem_m  : STD_LOGIC;
 signal wr_m_m      : STD_LOGIC;
 signal w_b_m       : STD_LOGIC;
 signal ldir_m_out  : std_LOGIC;
@@ -128,6 +144,7 @@ BEGIN
 				 d_sys  => s_d_sys,
 				 a_sys  => s_a_sys,
 				 op	  => op,
+				 op_simd=> op_simd,
 				 codigo => codigo,
 				 intr_ctrl => intr_ctrl,
 				 intr_ack  => intr_ack,
@@ -140,14 +157,17 @@ BEGIN
 				 flush    => flush,
 				 is_tlb_data => is_tlb_data,
 				 acces_mem => s_acces_mem,
+				 simd_mem  => simd_mem_m,
 				 ldpc   => ldpc_m,
 				 wrd    => wrd_m,
+				 wrd_simd => wrd_simd_m,
 				 addr_a => addr_a,
 				 addr_b => addr_b,
 				 addr_d => addr_d,
 				 immed  => immed_m,
 				 wr_m   => wr_m_m,
 				 in_d   => in_d,
+				 in_d_simd => in_d_simd,
 				 immed_x2  => immed_x2,
 				 tknbr  => tknbr,
 				 word_byte => w_b_m,
@@ -160,6 +180,8 @@ BEGIN
 				 boot => boot,
 				 ldpc_l => ldpc_m,
 				 wrd_l  => wrd_m,
+				 wrd_simd_l => wrd_simd_m,
+				 simd_mem_l => simd_mem_m,
 				 wr_m_l => wr_m_m,
 				 w_b    => w_b_m,
 				 intr_enabled => intr_enabled, 
@@ -169,6 +191,9 @@ BEGIN
 				 sys_state => s_sys_state,
 				 ldpc   => ld_pc,
 				 wrd    => wrd,
+				 wrd_simd => wrd_simd,
+				 simd_mem => simd_mem,
+				 second_acces => second_acces,
 				 wr_m   => wr_m,
 				 ldir   => ldir_m_out,
 				 ins_dad  => ins_dad,
@@ -189,7 +214,7 @@ BEGIN
 	process (clk, boot) begin
 		if rising_edge(clk) then
 			if boot='1' then
-				next_pc <= x"C000";
+				next_pc <= x"A000"; --cambiamos pc para funcionar con el SO
 				previous_ir <= x"0000";
 			else
 				if ld_pc='1'then

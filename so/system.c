@@ -85,13 +85,13 @@ void return_user () {
 	);
 }
 
-int count=0; //FALTA TOT LO DEL QUANTUM
+//int count=0; //FALTA TOT LO DEL QUANTUM
 void C_RSI_Timer () {
-	++count;
-	if(count==1) {
-		count = 0;
-		task_switch();
-	}
+	//++count;
+	//if(count==1) {
+	//count = 0;
+	task_switch();
+	//}
 	//count++;
 //	if (count == task_run->quantum)
 }

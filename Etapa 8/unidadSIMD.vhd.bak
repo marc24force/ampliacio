@@ -1,0 +1,45 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+
+ENTITY unidadSIMD IS
+ PORT    (clk    : IN  STD_LOGIC;
+          wrd    : IN  STD_LOGIC;
+          addr_a : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
+			 addr_b : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
+          addr_d : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
+			 boot   : IN  STD_LOGIC;
+          a      : OUT STD_LOGIC_VECTOR(127 DOWNTO 0);
+			 b      : OUT STD_LOGIC_VECTOR(127 DOWNTO 0));
+END unidadSIMD;
+
+ARCHITECTURE Structure OF unidadSIMD IS
+
+component regfileSIMD IS --new
+    PORT (clk    : IN  STD_LOGIC;
+          wrd    : IN  STD_LOGIC;
+          d      : IN  STD_LOGIC_VECTOR(127 DOWNTO 0);
+          addr_a : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
+			 addr_b : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
+          addr_d : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
+			 boot   : IN  STD_LOGIC;
+          a      : OUT STD_LOGIC_VECTOR(127 DOWNTO 0);
+			 b      : OUT STD_LOGIC_VECTOR(127 DOWNTO 0));
+END component;
+signal s_input_REG : STD_LOGIC_VECTOR(127 DOWNTO 0);
+signal s_output_a : STD_LOGIC_VECTOR(127 DOWNTO 0);
+signal s_output_b : STD_LOGIC_VECTOR(127 DOWNTO 0);
+
+BEGIN
+	   banco_SIMD: regfileSIMD
+		PORT map (clk    => clk,
+					 wrd    => wrd,
+					 d      => s_input_REG,
+					 addr_a => addr_a,
+					 addr_b => addr_b,
+					 addr_d => addr_d,
+					 boot  => boot,
+					 a      => s_output_a,
+					 b      => s_output_b);
+
+END Structure;

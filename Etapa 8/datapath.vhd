@@ -18,15 +18,16 @@ ENTITY datapath IS
           ins_dad  : IN  STD_LOGIC;
 			 pcup		 : IN  STD_LOGIC_VECTOR(15 DOWNTO 0); 
           pc       : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
-          in_d     : IN  STD_LOGIC_VECTOR (1 DOWNTO 0); 
+          in_d     : IN  STD_LOGIC_VECTOR (2 DOWNTO 0); 
 		    rd_io 	  : IN std_logic_vector(15 downto 0);
+			 out_simd : IN std_logic_vector(15 downto 0);
 			 d_sys  : IN  STD_LOGIC;
 			 a_sys  : IN  STD_LOGIC;
 			 inter  : IN  STD_LOGIC;
 			 --EXCEPCIONS
-			 code_excep	: IN STD_LOGIC_VECTOR(3 DOWNTO 0); --new
-			 div_zero : OUT STD_LOGIC; --new
-			 sys_mode : OUT STD_LOGIC; --new
+			 code_excep	: IN STD_LOGIC_VECTOR(3 DOWNTO 0); 
+			 div_zero : OUT STD_LOGIC; 
+			 sys_mode : OUT STD_LOGIC; 
 			 ---
 			 intr_enabled: OUT STD_LOGIC; 
           addr_m   : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -58,7 +59,7 @@ ARCHITECTURE Structure OF datapath IS
 			 addr_m 		: IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 			 code_excep	: IN STD_LOGIC_VECTOR(3 DOWNTO 0);
 			 intr_enabled : OUT STD_LOGIC; 
-			 sys_mode : OUT STD_LOGIC; --new
+			 sys_mode : OUT STD_LOGIC;
           a      : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 			 b      : OUT STD_LOGIC_VECTOR(15 DOWNTO 0));
 END component;
@@ -71,7 +72,7 @@ component alu IS
 			 intr_ctrl : IN STD_LOGIC_VECTOR(2 DOWNTO 0); 
 			 z  		: OUT STD_LOGIC;
 			 w  		: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-			 div_zero: OUT STD_LOGIC); --new
+			 div_zero: OUT STD_LOGIC); 
 END component;
 --op_codes que NO tenen immed
 constant AL   : STD_LOGIC_VECTOR(3 downto 0):="0000";
@@ -99,10 +100,11 @@ signal s_addr_m : std_LOGIC_VECTOR(15 downto 0);
 BEGIN
 
     with in_d select
-	 input_REG <= w        when "00",
-					  datard_m when "01",
-					  pcup     when "10",
-					  rd_io	  when "11",
+	 input_REG <= w        when "000",
+					  datard_m when "001",
+					  pcup     when "010",
+					  rd_io	  when "011",
+					  out_simd when "100",
 					  x"DEAD" when others;
 					 
     

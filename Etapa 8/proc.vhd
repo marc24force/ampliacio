@@ -8,6 +8,9 @@ ENTITY proc IS
 			 rd_io 	  : IN std_logic_vector(15 downto 0); 
 			 inter     : IN  STD_LOGIC; 
 			 code_excep	: IN STD_LOGIC_VECTOR(3 DOWNTO 0); 
+			 simd_readed: IN STD_LOGIC_VECTOR(127 DOWNTO 0); -- este si que es nuevo (MARC)
+			 simd_toWrite: OUT STD_LOGIC_VECTOR(127 DOWNTO 0); -- este tambien
+ 			 second_acces: out    std_logic;
 			 inst_prohibida : OUT STD_LOGIC; 
 			 is_calls  : OUT STd_logic;
 			 miss_tlbd : OUT STd_logic; --n
@@ -20,6 +23,7 @@ ENTITY proc IS
           intr_enabled :OUT  STD_LOGIC; 
 			 no_impl   : OUT STD_LOGIC;
 			 acces_mem : OUT STD_LOGIC; 
+			 simd_mem  : OUT STD_LOGIC; -- oussama dice que es new
 			 mem_ld_st : OUT STD_LOGIC; 
 			 intr_ack  : OUT  STD_LOGIC;
           addr_m    : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -52,8 +56,9 @@ component datapath IS
           ins_dad  : IN  STD_LOGIC;
 			 pcup		 : IN  STD_LOGIC_VECTOR(15 DOWNTO 0); 
           pc       : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
-          in_d     : IN  STD_LOGIC_VECTOR (1 DOWNTO 0); 
+          in_d     : IN  STD_LOGIC_VECTOR (2 DOWNTO 0); 
 		    rd_io 	  : IN std_logic_vector(15 downto 0);
+			 out_simd : IN std_logic_vector(15 downto 0);
 			 d_sys  : IN  STD_LOGIC;
 			 a_sys  : IN  STD_LOGIC;
 			 inter  : IN  STD_LOGIC;
@@ -72,6 +77,21 @@ component datapath IS
 			 wr_io 	  : OUT std_logic_vector(15 downto 0));
 END component;
 
+component unidadSIMD IS
+ PORT    (clk    : IN  STD_LOGIC;
+          wrd    : IN  STD_LOGIC;
+          addr_a : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
+			 addr_b : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
+          addr_d : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
+			 reg_16 : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
+			 boot   : IN  STD_LOGIC;
+			 in_d   : IN STD_LOGIC_VECTOR(1 DOWNTO 0); --nou
+			 op_simd: IN  STD_LOGIC_VECTOR(2 DOWNTO 0); -- indica la operacion
+			 simd_readed: IN STD_LOGIC_VECTOR(127 DOWNTO 0); -- este si que es nuevo (MARC)
+			 simd_toWrite: OUT STD_LOGIC_VECTOR(127 DOWNTO 0); -- este tambien
+			 out_simd: OUT STD_LOGIC_VECTOR(15 DOWNTO 0)); --de momento solo saca los movsr (16b)
+END component;
+
 component unidad_control is
      PORT (boot     : IN  STD_LOGIC;
           clk       : IN  STD_LOGIC;
@@ -88,15 +108,19 @@ component unidad_control is
 			 flush     : OUT std_logic;-- indica si hay que hacer flush
 			 is_tlb_data: out std_LOGIC; --1 if it is tlb data
 			 acces_mem : OUT STD_LOGIC;
+			 simd_mem  : OUT STD_LOGIC; -- oussama dice que es new
+ 			 second_acces: out    std_logic; -- es new
 			 mem_ld_st : OUT STD_LOGIC; 
 			 sys_state : OUT STD_Logic; 
 			 intr_ack  : OUT STD_LOGIC; 
 			 d_sys 	  : OUT  STD_LOGIC;
 			 a_sys 	  : OUT  STD_LOGIC;
           op        : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+			 op_simd   : OUT STD_LOGIC_VECTor(2 DOWNTO 0); --new
 			 codigo    : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 			 intr_ctrl : OUT STD_LOGIC_VECTor(2 DOWNTO 0); 
           wrd       : OUT STD_LOGIC;
+			 wrd_simd  : OUT STD_LOGIC; -- new indica permiso escritura en br simd
           addr_a    : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
           addr_b    : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
           addr_d    : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
@@ -104,7 +128,8 @@ component unidad_control is
 			 pcup		  : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
           pc        : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
           ins_dad   : OUT STD_LOGIC;
-          in_d      : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  
+          in_d      : OUT STD_LOGIC_VECTOR(2 DOWNTO 0); -- +1 bit 
+			 in_d_simd : OUT STD_LOGIC_VECTor(1 DOWNTO 0); -- new indica la fuente del registro d simd  
           immed_x2  : OUT STD_LOGIC;
           wr_m      : OUT STD_LOGIC;
           word_byte : OUT STD_LOGIC;
@@ -133,19 +158,24 @@ component tlb is --new
 END component;
 
 signal s_op     :  STD_LOGIC_VECTOR(2 DOWNTO 0);
+signal s_op_simd:  STD_LOGIC_VECTOR(2 DOWNTO 0); --new
 signal s_codigo :  STD_LOGIC_VECTOR(3 DOWNTO 0);
 signal s_wrd    :  STD_LOGIC;
+signal s_wrd_simd:  STD_LOGIC; --new
 signal s_addr_a :  STD_LOGIC_VECTOR(2 DOWNTO 0);
 signal s_addr_b :  STD_LOGIC_VECTOR(2 DOWNTO 0);
 signal s_addr_d :  STD_LOGIC_VECTOR(2 DOWNTO 0);
 signal s_immed  :  STD_LOGIC_VECTOR(15 DOWNTO 0);
 signal s_pc        : STD_LOGIC_VECTOR(15 DOWNTO 0);
 signal s_ins_dad   : STD_LOGIC;
-signal s_in_d      : STD_LOGIC_VECTOR(1 DOWNTO 0);
+signal s_in_d      : STD_LOGIC_VECTOR(2 DOWNTO 0);
+signal s_in_d_simd : STD_LOGIC_VECTOR(1 DOWNTO 0); --new
 signal s_immed_x2  : STD_LOGIC;
 signal s_z		    : STD_LOGIC; 	
 signal s_aluout	 : STD_LOGIC_VECTOR(15 DOWNTO 0);
 signal s_pcup		 : STD_LOGIC_VECTOR(15 DOWNTO 0);
+signal s_out_simd_16: std_logic_vector(15 downto 0);
+
 signal s_intr_ctrl : STD_LOGIC_VECTor(2 DOWNTO 0); 
 signal s_intr_enabled : STD_LOGIC; 
 
@@ -265,7 +295,10 @@ BEGIN
 	pag_inv_i <= (not s_v_out_i) and (not s_ins_dad);
 	
 	pag_read_only <= s_r_out_d and s_ins_dad and s_wr_m and s_mem_ld_st;
-	
+	 
+	--TLB comentada 
+--   addr_m <= s_addr_m_in;
+
 	mem_ld_st <= s_mem_ld_st;
 	wr_m <= s_wr_m;
 	
@@ -288,13 +321,17 @@ BEGIN
 			    flush    => s_flush,
 			    is_tlb_data => s_is_tlb_data,
 				 acces_mem => acces_mem,
+				 simd_mem => simd_mem,
+				 second_acces => second_acces,
 				 mem_ld_st => s_mem_ld_st,
 				 sys_state => s_sys_state,
 				 intr_ack => intr_ack,
 				 op     => s_op,
+				 op_simd => s_op_simd,
 				 codigo => s_codigo,
 				 intr_ctrl => s_intr_ctrl,
 				 wrd    => s_wrd,
+				 wrd_simd => s_wrd_simd,
 				 addr_a => s_addr_a,
 				 addr_b => s_addr_b,
 				 addr_d => s_addr_d,
@@ -303,6 +340,7 @@ BEGIN
 				 pc     => s_pc,
 				 ins_dad => s_ins_dad,
 				 in_d      => s_in_d,
+				 in_d_simd => s_in_d_simd,
 				 immed_x2  => s_immed_x2,
 				 wr_m      => s_wr_m,
 				 word_byte => word_byte,
@@ -311,6 +349,20 @@ BEGIN
 				 rd_in 	  => rd_in);
 				 
 	intr_enabled <= s_intr_enabled;
+	
+	simd:unidadSIMD
+	PORT  map(clk => clk,
+				 wrd => s_wrd_simd,
+				 addr_a => s_addr_a,
+				 addr_b => s_addr_b,
+				 addr_d => s_addr_d,
+				 reg_16 => s_reg_a,
+				 boot => boot,
+				 op_simd => s_op_simd,
+				 in_d => s_in_d_simd,
+				 simd_readed => simd_readed,
+				 simd_toWrite=> simd_toWrite,
+				 out_simd => s_out_simd_16);
 	
 	-- En los esquemas de la documentacion a la instancia del DATAPATH le hemos llamado e0
 	e0:datapath
@@ -331,6 +383,7 @@ BEGIN
 				 pc       => s_pc,
 				 in_d     => s_in_d,
 				 rd_io 	 => rd_io,
+				 out_simd => s_out_simd_16,
 				 d_sys  => s_d_sys,
 				 a_sys  => s_a_sys,
 				 inter	=> s_sys_state,

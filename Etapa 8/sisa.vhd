@@ -35,6 +35,7 @@ component MemoryController is
           wr_data   : in  std_logic_vector(15 downto 0);
           rd_data   : out std_logic_vector(15 downto 0);
           we        : in  std_logic;
+			 simd_mem  : in STD_LOGIC; -- oussama dice que es new
           byte_m    : in  std_logic;
           -- señales para la placa de desarrollo
           SRAM_ADDR : out   std_logic_vector(17 downto 0);
@@ -46,6 +47,10 @@ component MemoryController is
           SRAM_WE_N : out   std_logic := '1';
 			 mem_unaligned : out std_logic;
 			 mem_protegida : out std_logic; --new
+			 --SIMD
+			 simd_readed: OUT STD_LOGIC_VECTOR(127 DOWNTO 0); -- este si que es nuevo (MARC)
+			 simd_toWrite: IN STD_LOGIC_VECTOR(127 DOWNTO 0); -- este tambien
+ 			 second_acces: in    std_logic;
 			 --VGA
 			 vga_addr          : out std_logic_vector(12 downto 0);
           vga_we            : out std_logic;
@@ -61,19 +66,25 @@ component proc IS
 			 rd_io 	  : IN std_logic_vector(15 downto 0); 
 			 inter     : IN  STD_LOGIC; 
 			 code_excep	: IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-			 inst_prohibida : OUT STD_LOGIC; 
+			-- SIMD
+			 simd_readed: IN STD_LOGIC_VECTOR(127 DOWNTO 0); -- este si que es nuevo (MARC)
+			 simd_toWrite: OUT STD_LOGIC_VECTOR(127 DOWNTO 0); -- este tambien
+ 			 second_acces: out    std_logic;
+		   --end simd	
+		 	 inst_prohibida : OUT STD_LOGIC; 
 			 is_calls  : OUT STd_logic; 
-			  miss_tlbd : OUT STd_logic; --n
-			 miss_tlbi  : OUT STd_logic;--n
-			 pag_inv_d  : OUT STd_logic;--n
-		    pag_inv_i  : OUT STd_logic;--n
-			 pag_read_only  : OUT STd_logic;--n
+			 miss_tlbd : OUT STd_logic; 
+			 miss_tlbi  : OUT STd_logic;
+			 pag_inv_d  : OUT STd_logic;
+		    pag_inv_i  : OUT STd_logic;
+			 pag_read_only  : OUT STd_logic;
 			 sys_mode : OUT STD_LOGIC; 
 			 div_zero : OUT STD_LOGIC; 
-          intr_enabled :OUT  STD_LOGIC; --
-			 no_impl   : OUT STD_LOGIC;--
+          intr_enabled :OUT  STD_LOGIC; 
+			 no_impl   : OUT STD_LOGIC;
 			 acces_mem : OUT STD_LOGIC; 
-			 mem_ld_st : OUT STD_LOGIC; --
+			 simd_mem  : OUT STD_LOGIC; -- oussama dice que es new
+			 mem_ld_st : OUT STD_LOGIC; 
 			 intr_ack  : OUT  STD_LOGIC;
           addr_m    : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 			 addr_io   : OUT std_logic_vector(7 downto 0); 
@@ -122,11 +133,11 @@ component modulo_excepciones IS
 			div_zero		  : IN STD_LOGIC;
 			inst_prohibida : IN STD_LOGIC; 
 			is_calls      : IN STd_logic; 
-			miss_tlbd  : IN STd_logic; --n
-			miss_tlbi  : IN STd_logic;--n
-			pag_inv_d  : IN STd_logic;--n
-		   pag_inv_i  : IN STd_logic;--n
-			pag_read_only  : IN STd_logic;--n
+			miss_tlbd  : IN STd_logic; 
+			miss_tlbi  : IN STd_logic;
+			pag_inv_d  : IN STd_logic;
+		   pag_inv_i  : IN STd_logic;
+			pag_read_only  : IN STd_logic;
 			sys_mode      : IN STD_LOGIC; 
 			code_excep	  : OUT STD_LOGIC_VECTOR (3 downto 0);
 			excep 		  : OUT STD_LOGIC);
@@ -184,6 +195,12 @@ signal s_vga_cursor_enable : std_logic;
 signal s_intr: STD_LOGIC :='0';
 signal s_inta: STD_LOGIC :='0';
 
+signal s_simd_mem  : STD_LOGIC; -- oussama dice que es new
+signal s_simd_readed: STD_LOGIC_VECTOR(127 DOWNTO 0); -- este si que es nuevo (MARC)
+signal s_simd_toWrite: STD_LOGIC_VECTOR(127 DOWNTO 0); -- este tambien
+signal s_second_acces: std_logic;
+
+
 signal s_intr_enabled  :  STD_LOGIC;
 signal s_no_impl 		  :  STD_LOGIC;
 signal s_acces_mem	  :  STD_LOGIC;
@@ -194,14 +211,14 @@ signal s_code_excep	  :  STD_LOGIC_VECTOR (3 downto 0);
 signal s_excep 		  :  STD_LOGIC;
 signal s_inst_prohibida : STD_LOGIC;
 signal s_is_calls  :      STd_logic; 
-signal s_mem_protegida : std_logic;--new 
+signal s_mem_protegida : std_logic;
 signal s_sys_mode : STD_LOGIC; 
 
-signal s_miss_tlbd  : STd_logic; --n
-signal s_miss_tlbi  : STd_logic;--n
-signal s_pag_inv_d  : STd_logic;--n
-signal s_pag_inv_i  : STd_logic;--n
-signal s_pag_read_only  : STd_logic;--n
+signal s_miss_tlbd  : STd_logic; 
+signal s_miss_tlbi  : STd_logic;
+signal s_pag_inv_d  : STd_logic;
+signal s_pag_inv_i  : STd_logic;
+signal s_pag_read_only  : STd_logic;
 
 
 BEGIN
@@ -219,18 +236,22 @@ clock : genericClock
 				 rd_io 	  => s_rd_io,
 				 inter     => s_excep,
 				 code_excep	=> s_code_excep,
+				 simd_readed => s_simd_readed,   --new
+				 simd_toWrite => s_simd_toWrite, --nou
+				 second_acces => s_second_acces, --nw
 				 inst_prohibida => s_inst_prohibida, 
 				 is_calls  => s_is_calls, 
-				 miss_tlbd => s_miss_tlbd,--new
-				 miss_tlbi => s_miss_tlbi ,--new
-				 pag_inv_d => s_pag_inv_d ,--new
-				 pag_inv_i => s_pag_inv_i ,--new
-				 pag_read_only => s_pag_read_only,--new
+				 miss_tlbd => s_miss_tlbd,
+				 miss_tlbi => s_miss_tlbi ,
+				 pag_inv_d => s_pag_inv_d ,
+				 pag_inv_i => s_pag_inv_i ,
+				 pag_read_only => s_pag_read_only,
 				 div_zero => s_div_zero,
 				 sys_mode => s_sys_mode, 
 				 intr_enabled => s_intr_enabled,
 				 no_impl   => s_no_impl,
 				 acces_mem => s_acces_mem,
+				 simd_mem => s_simd_mem,
 				 mem_ld_st => s_mem_ld_st,
 				 intr_ack  => s_inta,
 				 addr_m    => addr_m_m,
@@ -250,6 +271,7 @@ port map (CLOCK_50  => CLOCK_50,
           wr_data   => data_wr_m,
           rd_data   => rd_mem,
           we        => wr_enable,
+			 simd_mem  => s_simd_mem,
           byte_m    => byte_w,
           -- señales para la placa de desarrollo
           SRAM_ADDR  => SRAM_ADDR,
@@ -260,7 +282,10 @@ port map (CLOCK_50  => CLOCK_50,
           SRAM_OE_N  => SRAM_OE_N,
           SRAM_WE_N  => SRAM_WE_N,
 			 mem_unaligned => s_mem_unaligned,
-			 mem_protegida => s_mem_protegida, --new
+			 mem_protegida => s_mem_protegida, 
+		    simd_readed => s_simd_readed,  --now
+			 simd_toWrite => s_simd_toWrite,--neu
+			 second_acces => s_second_acces, --nw
 			 vga_addr => s_addr_vga,      
 			 vga_we    =>   s_we,       
 			 vga_wr_data =>  s_wr_data ,    
@@ -297,16 +322,16 @@ port map (CLOCK_50  => CLOCK_50,
 				acces_mem => s_acces_mem,
 				mem_ld_st => s_mem_ld_st,
 				mem_unaligned => s_mem_unaligned,
-				mem_protegida => s_mem_protegida, --new
+				mem_protegida => s_mem_protegida, 
 				intr		=> s_intr,
 				div_zero	=> s_div_zero,
 				inst_prohibida => s_inst_prohibida,
 				is_calls  => s_is_calls, 
-				miss_tlbd => s_miss_tlbd, --new
-				miss_tlbi => s_miss_tlbi ,--new
-				pag_inv_d => s_pag_inv_d ,--new
-				pag_inv_i => s_pag_inv_i ,--new
-				pag_read_only => s_pag_read_only,--new
+				miss_tlbd => s_miss_tlbd, 
+				miss_tlbi => s_miss_tlbi ,
+				pag_inv_d => s_pag_inv_d ,
+				pag_inv_i => s_pag_inv_i ,
+				pag_read_only => s_pag_read_only,
 				sys_mode => s_sys_mode,
 				code_excep	=> s_code_excep,
 				excep =>s_excep);
